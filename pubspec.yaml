@@ -103,7 +103,7 @@ flutter:
       windows:
         pluginClass: FlutterFreedomePlugin
       web:
-        pluginClass: FlutterFreedomePlugin
+        pluginClass: FlutterFreedomeWeb
         fileName: flutter_freedome_web.dart
 
   assets:

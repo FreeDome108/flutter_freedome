@@ -1,4 +1,4 @@
-#include "flutter_magento_plugin.h"
+#include "flutter_freedome_plugin.h"
 
 // This must be included before many other Windows headers.
 #include <windows.h>
@@ -13,17 +13,17 @@
 #include <memory>
 #include <sstream>
 
-namespace flutter_magento {
+namespace flutter_freedome {
 
 // static
-void FlutterMagentoPlugin::RegisterWithRegistrar(
+void FlutterFreedomePlugin::RegisterWithRegistrar(
     flutter::PluginRegistrarWindows *registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-          registrar->messenger(), "flutter_magento",
+          registrar->messenger(), "flutter_freedome",
           &flutter::StandardMethodCodec::GetInstance());
 
-  auto plugin = std::make_unique<FlutterMagentoPlugin>();
+  auto plugin = std::make_unique<FlutterFreedomePlugin>();
 
   channel->SetMethodCallHandler(
       [plugin_pointer = plugin.get()](const auto &call, auto result) {
@@ -33,11 +33,11 @@ void FlutterMagentoPlugin::RegisterWithRegistrar(
   registrar->AddPlugin(std::move(plugin));
 }
 
-FlutterMagentoPlugin::FlutterMagentoPlugin() {}
+FlutterFreedomePlugin::FlutterFreedomePlugin() {}
 
-FlutterMagentoPlugin::~FlutterMagentoPlugin() {}
+FlutterFreedomePlugin::~FlutterFreedomePlugin() {}
 
-void FlutterMagentoPlugin::HandleMethodCall(
+void FlutterFreedomePlugin::HandleMethodCall(
     const flutter::MethodCall<flutter::EncodableValue> &method_call,
     std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
   if (method_call.method_name().compare("getPlatformVersion") == 0) {
@@ -56,4 +56,4 @@ void FlutterMagentoPlugin::HandleMethodCall(
   }
 }
 
-}  // namespace flutter_magento
+}  // namespace flutter_freedome

@@ -1,10 +1,10 @@
 import Cocoa
 import FlutterMacOS
 
-public class FlutterMagentoPlugin: NSObject, FlutterPlugin {
+public class FlutterFreedomePlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_magento", binaryMessenger: registrar.messenger)
-    let instance = FlutterMagentoPlugin()
+    let channel = FlutterMethodChannel(name: "flutter_freedome", binaryMessenger: registrar.messenger)
+    let instance = FlutterFreedomePlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

@@ -3,7 +3,7 @@ import FlutterMacOS
 import XCTest
 
 
-@testable import flutter_magento
+@testable import flutter_freedome
 
 // This demonstrates a simple unit test of the Swift portion of this plugin's implementation.
 //
@@ -12,7 +12,7 @@ import XCTest
 class RunnerTests: XCTestCase {
 
   func testGetPlatformVersion() {
-    let plugin = FlutterMagentoPlugin()
+    let plugin = FlutterFreedomePlugin()
 
     let call = FlutterMethodCall(methodName: "getPlatformVersion", arguments: [])
 

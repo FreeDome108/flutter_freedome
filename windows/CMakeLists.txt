@@ -14,19 +14,19 @@ cmake_policy(VERSION 3.14...3.25)
 
 # This value is used when generating builds using this plugin, so it must
 # not be changed
-set(PLUGIN_NAME "flutter_magento_plugin")
+set(PLUGIN_NAME "flutter_freedome_plugin"
 
 # Any new source files that you add to the plugin should be added here.
 list(APPEND PLUGIN_SOURCES
-  "flutter_magento_plugin.cpp"
-  "flutter_magento_plugin.h"
+  "flutter_freedome_plugin.cpp"
+  "flutter_freedome_plugin.h"
 )
 
 # Define the plugin library target. Its name must not be changed (see comment
 # on PLUGIN_NAME above).
 add_library(${PLUGIN_NAME} SHARED
-  "include/flutter_magento/flutter_magento_plugin_c_api.h"
-  "flutter_magento_plugin_c_api.cpp"
+  "include/flutter_freedome/flutter_freedome_plugin_c_api.h"
+  "flutter_freedome_plugin_c_api.cpp"
   ${PLUGIN_SOURCES}
 )
 
@@ -81,7 +81,7 @@ FetchContent_MakeAvailable(googletest)
 # The plugin's C API is not very useful for unit testing, so build the sources
 # directly into the test binary rather than using the DLL.
 add_executable(${TEST_RUNNER}
-  test/flutter_magento_plugin_test.cpp
+  test/flutter_freedome_plugin_test.cpp
   ${PLUGIN_SOURCES}
 )
 apply_standard_settings(${TEST_RUNNER})

@@ -1,12 +1,12 @@
-#include "include/flutter_magento/flutter_magento_plugin_c_api.h"
+#include "include/flutter_freedome/flutter_freedome_plugin_c_api.h"
 
 #include <flutter/plugin_registrar_windows.h>
 
-#include "flutter_magento_plugin.h"
+#include "flutter_freedome_plugin.h"
 
-void FlutterMagentoPluginCApiRegisterWithRegistrar(
+void FlutterFreedomePluginCApiRegisterWithRegistrar(
     FlutterDesktopPluginRegistrarRef registrar) {
-  flutter_magento::FlutterMagentoPlugin::RegisterWithRegistrar(
+  flutter_freedome::FlutterFreedomePlugin::RegisterWithRegistrar(
       flutter::PluginRegistrarManager::GetInstance()
           ->GetRegistrar<flutter::PluginRegistrarWindows>(registrar));
 }

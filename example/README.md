@@ -1,6 +1,6 @@
-# flutter_magento_example
+# flutter_freedome_example
 
-Demonstrates how to use the flutter_magento plugin.
+Demonstrates how to use the flutter_freedome plugin.
 
 ## Getting Started
 

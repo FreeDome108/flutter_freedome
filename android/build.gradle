@@ -1,4 +1,4 @@
-group = "ru.nativemind.flutter.magento.flutter_magento"
+group = "ru.nativemind.flutter.freedome.flutter_freedome"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -25,7 +25,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "ru.nativemind.flutter.magento.flutter_magento"
+    namespace = "ru.nativemind.flutter.freedome.flutter_freedome"
 
     compileSdk = 36
 

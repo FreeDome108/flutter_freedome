@@ -1,13 +1,14 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint flutter_magento.podspec` to validate before publishing.
+# Run `pod lib lint flutter_freedome.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'flutter_magento'
+  s.name             = 'flutter_freedome'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.summary          = 'Flutter plugin for FreeDome planetarium systems integration.'
   s.description      = <<-DESC
-A new Flutter plugin project.
+Unified Flutter library for integration with FreeDome dome cinema systems. 
+Supports guest mode for content playback and admin mode for full configuration and calibration.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
