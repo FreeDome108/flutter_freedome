@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'dome_models.dart';
 
 part 'calibration_models.freezed.dart';
 part 'calibration_models.g.dart';
