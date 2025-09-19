@@ -35,7 +35,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
   // Таймеры и подписки
   Timer? _discoveryTimer;
   Timer? _heartbeatTimer;
-  StreamSubscription<ConnectivityResult>? _connectivitySubscription;
+  StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
 
   // Контроллеры событий
   final StreamController<FreeDomeEvent> _eventController =
@@ -76,8 +76,8 @@ class FreeDomeConnectionService extends ChangeNotifier {
   /// Настройка мониторинга сетевого подключения
   void _setupConnectivityMonitoring() {
     _connectivitySubscription = Connectivity().onConnectivityChanged.listen(
-      (ConnectivityResult result) {
-        if (result == ConnectivityResult.none) {
+      (List<ConnectivityResult> results) {
+        if (results.contains(ConnectivityResult.none) || results.isEmpty) {
           _handleNetworkDisconnected();
         } else {
           _handleNetworkConnected();

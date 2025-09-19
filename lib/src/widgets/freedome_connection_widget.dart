@@ -344,7 +344,7 @@ class _ManualConnectionDialogState extends State<_ManualConnectionDialog> {
               labelText: 'IP адрес',
               hintText: '192.168.1.100',
             ),
-            keyboardType: TextInputType.numberWithOptions(decimal: true),
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
           ),
           const SizedBox(height: 16),
           TextField(
