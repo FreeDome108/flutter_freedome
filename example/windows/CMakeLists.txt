@@ -53,7 +53,7 @@ add_subdirectory(${FLUTTER_MANAGED_DIR})
 add_subdirectory("runner")
 
 # Enable the test target.
-set(include_flutter_magento_tests TRUE)
+set(include_flutter_freedome_tests TRUE)
 
 # Generated plugin build rules, which manage building the plugins and adding
 # them to the application.

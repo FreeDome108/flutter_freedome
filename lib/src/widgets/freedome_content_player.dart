@@ -314,7 +314,7 @@ class _FreeDomeContentPlayerState extends State<FreeDomeContentPlayer> {
       children: [
         Row(
           children: [
-            Icon(Icons.brightness_6, size: 20),
+            const Icon(Icons.brightness_6, size: 20),
             const SizedBox(width: 8),
             Text('Яркость', style: Theme.of(context).textTheme.bodyMedium),
             const Spacer(),

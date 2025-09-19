@@ -48,6 +48,10 @@ library flutter_freedome;
 
 import 'package:flutter/foundation.dart';
 
+// Импорт для внутреннего использования
+import 'src/core/freedome_provider.dart';
+import 'src/models/dome_models.dart';
+
 // Экспорт основных классов
 export 'src/core/freedome_provider.dart';
 export 'src/core/connection_service.dart';
