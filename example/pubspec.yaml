@@ -1,27 +1,30 @@
-name: flutter_magento_example
-description: "Example app for flutter_magento plugin"
-publish_to: 'none'
-
+name: flutter_freedome_example
+description: Пример использования Flutter FreeDome библиотеки
 version: 1.0.0+1
+publish_to: 'none'
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:
     sdk: flutter
   
-  # Plugin dependency
-  flutter_magento:
+  # FreeDome библиотека
+  flutter_freedome:
     path: ../
   
-  # Core dependencies
-  cupertino_icons: ^1.0.2
+  # State management
   provider: ^6.1.1
+  
+  # UI
+  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
   flutter_lints: ^3.0.1
 
 flutter:

@@ -81,7 +81,7 @@ class ChannelResult with _$ChannelResult {
   const factory ChannelResult({
     required String channelId,
     required String channelName,
-    required AudioChannelType channelType,
+    required String channelType,
     @Default([]) List<FrequencyPoint> frequencyResponse,
     @Default(0.0) double delay,
     @Default(0.0) double distortion,
