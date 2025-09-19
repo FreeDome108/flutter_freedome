@@ -167,16 +167,16 @@ class _FreeDomeContentPlayerState extends State<FreeDomeContentPlayer> {
   Widget _buildStatusIcon(PlaybackStatus status) {
     switch (status) {
       case PlaybackStatus.playing:
-        return Icon(Icons.play_circle_filled, color: Colors.green, size: 24);
+        return const Icon(Icons.play_circle_filled, color: Colors.green, size: 24);
       case PlaybackStatus.paused:
-        return Icon(Icons.pause_circle_filled, color: Colors.orange, size: 24);
+        return const Icon(Icons.pause_circle_filled, color: Colors.orange, size: 24);
       case PlaybackStatus.stopped:
-        return Icon(Icons.stop_circle, color: Colors.grey, size: 24);
+        return const Icon(Icons.stop_circle, color: Colors.grey, size: 24);
       case PlaybackStatus.buffering:
-        return SizedBox(
+        return const SizedBox(
           width: 24,
           height: 24,
-          child: const CircularProgressIndicator(strokeWidth: 2),
+          child: CircularProgressIndicator(strokeWidth: 2),
         );
       case PlaybackStatus.error:
         return const Icon(Icons.error, color: Colors.red, size: 24);
