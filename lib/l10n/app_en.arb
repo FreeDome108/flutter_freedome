@@ -1,14 +1,14 @@
 {
   "@@locale": "en",
-  "appName": "Flutter Magento",
+  "appName": "Flutter FreeDome",
   "@appName": {
     "description": "The name of the application"
   },
-  "appDescription": "Flutter plugin for Magento integration",
+  "appDescription": "Flutter plugin for FreeDome integration",
   "@appDescription": {
     "description": "The description of the application"
   },
-  "welcome": "Welcome to Flutter Magento",
+  "welcome": "Welcome to Flutter FreeDome",
   "@welcome": {
     "description": "Welcome message"
   },

@@ -3,66 +3,64 @@ class FreeDomeConstants {
   // API Endpoints
   static const String apiVersion = 'V1';
   static const String restApiPath = 'rest';
-
+  
   // Authentication
   static const String customerTokenEndpoint = 'integration/customer/token';
   static const String adminTokenEndpoint = 'integration/admin/token';
-
+  
   // Customer endpoints
   static const String customersEndpoint = 'customers';
   static const String customerMeEndpoint = 'customers/me';
   static const String customerAddressesEndpoint = 'customers/me/addresses';
-
+  
   // Product endpoints
   static const String productsEndpoint = 'products';
   static const String searchEndpoint = 'search';
-
+  
   // Category endpoints
   static const String categoriesEndpoint = 'categories';
-
+  
   // Cart endpoints
   static const String guestCartsEndpoint = 'guest-carts';
   static const String cartItemsEndpoint = 'items';
-
+  
   // Order endpoints
   static const String ordersEndpoint = 'orders';
   static const String customerOrdersEndpoint = 'customers/me/orders';
-
+  
   // Wishlist endpoints
   static const String wishlistEndpoint = 'customers/me/wishlist';
   static const String wishlistAddEndpoint = 'customers/me/wishlist/add';
   static const String wishlistRemoveEndpoint = 'customers/me/wishlist/remove';
-
+  
   // Checkout endpoints
   static const String estimateShippingEndpoint = 'estimate-shipping-methods';
   static const String paymentMethodsEndpoint = 'payment-methods';
   static const String placeOrderEndpoint = 'order';
-
+  
   // HTTP Headers
   static const String contentTypeHeader = 'Content-Type';
   static const String acceptHeader = 'Accept';
   static const String authorizationHeader = 'Authorization';
   static const String userAgentHeader = 'User-Agent';
-
+  
   // Content Types
   static const String jsonContentType = 'application/json';
-  static const String formUrlEncodedContentType =
-      'application/x-www-form-urlencoded';
-
+  static const String formUrlEncodedContentType = 'application/x-www-form-urlencoded';
+  
   // Default values
   static const int defaultPageSize = 20;
   static const int maxPageSize = 100;
   static const int defaultConnectionTimeout = 30000; // 30 seconds
   static const int defaultReceiveTimeout = 30000; // 30 seconds
-
+  
   // Search criteria
   static const String searchCriteriaCurrentPage = 'searchCriteria[currentPage]';
   static const String searchCriteriaPageSize = 'searchCriteria[pageSize]';
-  static const String searchCriteriaFilterGroups =
-      'searchCriteria[filterGroups]';
+  static const String searchCriteriaFilterGroups = 'searchCriteria[filterGroups]';
   static const String searchCriteriaFilters = 'filters';
   static const String searchCriteriaSortOrders = 'searchCriteria[sortOrders]';
-
+  
   // Filter conditions
   static const String filterConditionEq = 'eq'; // equals
   static const String filterConditionNeq = 'neq'; // not equals
@@ -76,11 +74,11 @@ class FreeDomeConstants {
   static const String filterConditionNull = 'null'; // null
   static const String filterConditionLike = 'like'; // like
   static const String filterConditionNlike = 'nlike'; // not like
-
+  
   // Sort directions
   static const String sortDirectionAsc = 'ASC';
   static const String sortDirectionDesc = 'DESC';
-
+  
   // Common fields
   static const String fieldId = 'id';
   static const String fieldSku = 'sku';
@@ -92,7 +90,7 @@ class FreeDomeConstants {
   static const String fieldStatus = 'status';
   static const String fieldCreatedAt = 'created_at';
   static const String fieldUpdatedAt = 'updated_at';
-
+  
   // Error codes
   static const String errorCodeAuthentication = 'AUTH_ERROR';
   static const String errorCodeAuthorization = 'AUTHZ_ERROR';
@@ -100,7 +98,7 @@ class FreeDomeConstants {
   static const String errorCodeNotFound = 'NOT_FOUND';
   static const String errorCodeServerError = 'SERVER_ERROR';
   static const String errorCodeRateLimit = 'RATE_LIMIT';
-
+  
   // HTTP Status codes
   static const int statusOk = 200;
   static const int statusCreated = 201;
@@ -116,49 +114,49 @@ class FreeDomeConstants {
   static const int statusInternalServerError = 500;
   static const int statusBadGateway = 502;
   static const int statusServiceUnavailable = 503;
-
+  
   // User agent
   static const String userAgent = 'FlutterFreeDome/1.0.0';
-
+  
   // Storage keys
   static const String storageUserToken = 'freedome_user_token';
   static const String storageUserData = 'freedome_user_data';
   static const String storageDomeId = 'freedome_dome_id';
   static const String storageSettings = 'freedome_settings';
-
+  
   // Cache keys
   static const String cacheContent = 'freedome_content';
   static const String cacheDomeSystems = 'freedome_dome_systems';
   static const String cacheUser = 'freedome_user';
   static const String cachePlaylist = 'freedome_playlist';
-
+  
   // Cache TTL (Time To Live) in seconds
   static const int cacheTtlProducts = 300; // 5 minutes
   static const int cacheTtlCategories = 1800; // 30 minutes
   static const int cacheTtlCustomer = 3600; // 1 hour
   static const int cacheTtlCart = 300; // 5 minutes
-
+  
   // Pagination
   static const int minPage = 1;
   static const int maxPage = 1000;
-
+  
   // Quantity limits
   static const int minQuantity = 1;
   static const int maxQuantity = 999;
-
+  
   // Price precision
   static const int pricePrecision = 2;
-
+  
   // Date formats
   static const String dateFormat = 'yyyy-MM-dd HH:mm:ss';
   static const String dateFormatShort = 'yyyy-MM-dd';
-
+  
   // Currency
   static const String defaultCurrency = 'USD';
-
+  
   // Language
   static const String defaultLanguage = 'en_US';
-
+  
   // Timezone
   static const String defaultTimezone = 'UTC';
 }
