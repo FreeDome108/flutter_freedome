@@ -4,8 +4,9 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   connectivity_plus
-  flutter_magento
+  flutter_freedome
   flutter_secure_storage_windows
+  permission_handler_windows
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

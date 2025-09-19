@@ -46,6 +46,8 @@
 /// - **SystemService** - системное управление (только админ)
 library flutter_freedome;
 
+import 'package:flutter/foundation.dart';
+
 // Экспорт основных классов
 export 'src/core/freedome_provider.dart';
 export 'src/core/connection_service.dart';

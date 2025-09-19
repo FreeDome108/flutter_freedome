@@ -1,11 +1,11 @@
 {
-    "name": "flutter_magento_example",
-    "short_name": "flutter_magento_example",
+    "name": "flutter_freedome_example",
+    "short_name": "flutter_freedome_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Demonstrates how to use the flutter_magento plugin.",
+    "description": "Demonstrates how to use the flutter_freedome plugin.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

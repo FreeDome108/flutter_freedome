@@ -367,7 +367,7 @@ class _ContentTile extends StatelessWidget {
             if (content.description != null) Text(content.description!),
             const SizedBox(height: 4),
             Text(
-              '${content.type.displayName} • ${_formatDuration(content.duration)}',
+              '${content.type.name} • ${_formatDuration(content.duration)}',
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
@@ -406,7 +406,7 @@ class _ContentTile extends StatelessWidget {
   String _formatDuration(Duration duration) {
     final minutes = duration.inMinutes;
     final seconds = duration.inSeconds % 60;
-    return '${minutes}:${seconds.toString().padLeft(2, '0')}';
+    return '$minutes:${seconds.toString().padLeft(2, '0')}';
   }
 }
 
@@ -732,25 +732,44 @@ class _AdminLoginDialogState extends State<_AdminLoginDialog> {
   }
 }
 
-/// Остальные вкладки (заглушки)
-class _ContentLibraryTab extends StatelessWidget {
-  const _ContentLibraryTab();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Библиотека контента'),
-    );
-  }
-}
-
+/// Вкладка настроек
 class _SettingsTab extends StatelessWidget {
   const _SettingsTab();
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Настройки'),
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Настройки',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          const SizedBox(height: 24),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'О библиотеке Flutter FreeDome',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const SizedBox(height: 12),
+                  Text('Версия: ${FlutterFreeDome.version}'),
+                  const SizedBox(height: 8),
+                  Text('Автор: NativeMind Team'),
+                  const SizedBox(height: 8),
+                  Text('Лицензия: NativeMindNONC'),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

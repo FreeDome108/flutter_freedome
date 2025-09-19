@@ -1,455 +1,387 @@
-# 🚀 Flutter Magento Plugin 2.0
+# Flutter FreeDome
 
-Унифицированная Flutter библиотека для интеграции с Magento e-commerce платформой. Версия 2.0 устраняет дублирование кода между приложениями и предоставляет 200+ функций для создания современных мобильных коммерческих приложений.
+[![pub package](https://img.shields.io/pub/v/flutter_freedome.svg)](https://pub.dev/packages/flutter_freedome)
+[![License](https://img.shields.io/badge/License-NativeMindNONC-blue.svg)](LICENSE)
 
-## ✨ Новые возможности в версии 2.0
+Унифицированная Flutter библиотека для интеграции с купольными кинотеатрами FreeDome. Поддерживает гостевой режим для воспроизведения контента и административный режим для полной настройки и калибровки купольных систем.
 
-### 🎯 **Унифицированная архитектура**
-- **Устранение дублирования**: Один API для всех приложений
-- **Модульная структура**: Используйте только нужные компоненты
-- **Типобезопасность**: Строгая типизация с Freezed моделями
-- **Консистентность**: Одинаковый подход во всех приложениях
+## 🌟 Основные возможности
 
-### 🔐 **Продвинутая аутентификация**
-- JWT токены с автоматическим обновлением
-- Безопасное хранение с FlutterSecureStorage
-- Поддержка "Запомнить меня"
-- Автоматическая валидация токенов
-- Обработка истечения сессии
+### 🎭 Гостевой режим
+- **Автоматическое обнаружение** купольных систем в локальной сети
+- **Воспроизведение контента** любых приложений на купольном экране
+- **Базовые настройки** (громкость, яркость, ротация)
+- **Простой API** для быстрой интеграции
+- **Готовые UI виджеты** для управления
 
-### 🌐 **Унифицированный сетевой слой**
-- Dio + HTTP клиент с автоматическими повторными попытками
-- Мониторинг подключения к интернету
-- Автоматическая обработка ошибок
-- Логирование запросов в debug режиме
-- Кэширование ответов
+### 🔧 Режим администратора
+- **Полная калибровка** аудио и видео систем
+- **Управление проекторами** и аудиоканалами
+- **Системное администрирование** и мониторинг
+- **Поддержка множественных вендоров** (Digistar, DomeMaster, IMAX Dome)
+- **Диагностика и метрики** системы
 
-### 🌍 **Система локализации**
-- **45+ языков** из коробки
-- Автоматическое определение системной локали
-- Поддержка множественного числа
-- RTL поддержка для арабского и иврита
-- Кастомные переводы
+### 🏗️ Архитектура
+- **Модульная структура** с разделением на гостевой и административный режимы
+- **Система ролей и разрешений** для безопасного доступа
+- **Поддержка множественных форматов** контента (360°, Fulldome, Fisheye)
+- **Реактивное программирование** с Provider pattern
 
-### 📱 **Офлайн режим**
-- Автоматическое кэширование данных
-- Очередь операций для офлайн режима
-- SQLite + Hive для быстрого доступа
-- Автоматическая синхронизация при восстановлении сети
-- Настраиваемые стратегии кэширования
+## 🚀 Быстрый старт
 
-### 🎨 **Управление состоянием**
-- Provider + ChangeNotifier паттерн
-- Готовые провайдеры для всех сервисов
-- Реактивные обновления UI
-- Централизованное управление состоянием
-
-### 🛍️ **Расширенная e-commerce функциональность**
-- Полная интеграция с Magento REST API
-- GraphQL поддержка для сложных запросов
-- Корзина с поддержкой гостевых пользователей
-- Wishlist с множественными списками
-- Продвинутый поиск и фильтрация
-
-## 🚀 Getting Started
-
-### Installation
-
-Add the dependency to your `pubspec.yaml`:
+### Установка
 
 ```yaml
 dependencies:
-  flutter_magento: ^2.0.0
+  flutter_freedome: ^1.0.0
 ```
 
-### Быстрый старт
+### Базовое использование
 
 ```dart
-import 'package:flutter_magento/flutter_magento.dart';
+import 'package:flutter_freedome/flutter_freedome.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => MagentoProvider()),
-        ChangeNotifierProxyProvider<MagentoProvider, AuthProvider>(
-          create: (context) => AuthProvider(context.read<MagentoProvider>().auth),
-          update: (context, magentoProvider, previous) => 
-              previous ?? AuthProvider(magentoProvider.auth),
-        ),
-      ],
-      child: MyApp(),
-    ),
-  );
-}
-
+// 1. Оберните приложение в Provider
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Consumer<MagentoProvider>(
-        builder: (context, magento, child) {
-          if (!magento.isInitialized) {
-            return FutureBuilder(
-              future: magento.initialize(
-                baseUrl: 'https://your-magento-store.com',
-                supportedLanguages: ['en', 'ru', 'de', 'fr', 'es'],
-              ),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Scaffold(body: Center(child: CircularProgressIndicator()));
-                }
-                return HomePage();
-              },
-            );
-          }
-          return HomePage();
-        },
+    return ChangeNotifierProvider(
+      create: (_) => FreeDomeProvider(),
+      child: MaterialApp(
+        home: FreeDomeExampleScreen(),
       ),
     );
   }
 }
 
-// Пример использования аутентификации
-class LoginPage extends StatelessWidget {
+// 2. Используйте FreeDome в виджетах
+class FreeDomeExampleScreen extends StatefulWidget {
+  @override
+  _FreeDomeExampleScreenState createState() => _FreeDomeExampleScreenState();
+}
+
+class _FreeDomeExampleScreenState extends State<FreeDomeExampleScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _initializeFreeDome();
+  }
+
+  Future<void> _initializeFreeDome() async {
+    final freedome = context.read<FreeDomeProvider>();
+    await freedome.initialize();
+    await freedome.connectToNearestDome();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Consumer<AuthProvider>(
-      builder: (context, auth, child) {
-        return Scaffold(
-          body: Column(
-            children: [
-              TextField(/* email field */),
-              TextField(/* password field */),
-              ElevatedButton(
-                onPressed: auth.isLoading ? null : () async {
-                  final success = await auth.authenticate(
-                    email: emailController.text,
-                    password: passwordController.text,
-                    rememberMe: true,
-                  );
-                  if (success) {
-                    Navigator.pushReplacementNamed(context, '/home');
-                  }
-                },
-                child: auth.isLoading 
-                    ? CircularProgressIndicator() 
-                    : Text('Войти'),
-              ),
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('FreeDome Example'),
+        actions: [
+          FreeDomeStatusIndicator(), // Готовый виджет статуса
+        ],
+      ),
+      body: Column(
+        children: [
+          FreeDomeConnectionWidget(), // Виджет управления подключением
+          FreeDomeContentPlayer(),    // Плеер контента
+          
+          // Кнопка воспроизведения вашего контента
+          ElevatedButton(
+            onPressed: () => _playMyContent(),
+            child: Text('Показать мой контент'),
           ),
-        );
+        ],
+      ),
+    );
+  }
+
+  Future<void> _playMyContent() async {
+    final freedome = context.read<FreeDomeProvider>();
+    
+    await freedome.playAppContent(
+      appName: 'MyApp',
+      contentName: 'Звездное небо',
+      appData: {
+        'type': 'starfield',
+        'constellation': 'all',
+        'time': DateTime.now().toIso8601String(),
       },
     );
   }
 }
 ```
 
-## 📚 API Reference
-
-### Authentication
+### Быстрое воспроизведение
 
 ```dart
-// Customer login
-final authResponse = await magento.authenticateCustomer(
-  email: 'customer@example.com',
-  password: 'password123',
+// Самый простой способ - одной командой
+final success = await FlutterFreeDome.quickPlay(
+  appName: 'MyApp',
+  contentName: 'Мой контент',
+  appData: {'type': 'visualization', 'data': myData},
 );
 
-// Customer registration
-final customer = await magento.createCustomer(
-  email: 'new@example.com',
-  password: 'password123',
-  firstName: 'John',
-  lastName: 'Doe',
-);
-
-// Get current customer
-final currentCustomer = await magento.getCurrentCustomer();
-
-// Logout
-await magento.logout();
+if (success) {
+  print('Контент воспроизводится на куполе!');
+}
 ```
 
-### Products
+## 🎮 Примеры интеграции
 
+### Звездное небо
 ```dart
-// Get products with filters
-final products = await magento.getProducts(
-  page: 1,
-  pageSize: 20,
-  searchQuery: 'phone',
-  categoryId: '123',
-  sortBy: 'price',
-  sortOrder: 'asc',
-  filters: {'brand': 'Apple'},
-);
-
-// Get single product
-final product = await magento.getProduct('SKU123');
-
-// Search products
-final searchResults = await magento.searchProducts(
-  'smartphone',
-  page: 1,
-  pageSize: 20,
-);
-
-// Get product reviews
-final reviews = await magento.getProductReviews('SKU123');
-```
-
-### Cart Management
-
-```dart
-// Create cart
-final cart = await magento.createCart();
-
-// Add item to cart
-final updatedCart = await magento.addToCart(
-  cartId: cart.id!,
-  sku: 'SKU123',
-  quantity: 2,
-);
-
-// Get cart totals
-final totals = await magento.getCartTotals(cart.id!);
-
-// Apply coupon
-final cartWithCoupon = await magento.applyCoupon(
-  cartId: cart.id!,
-  couponCode: 'SAVE20',
-);
-
-// Estimate shipping
-final shippingMethods = await magento.estimateShipping(
-  cartId: cart.id!,
-  address: shippingAddress,
-);
-```
-
-### Orders
-
-```dart
-// Get customer orders
-final orders = await magento.getCustomerOrders(
-  page: 1,
-  pageSize: 20,
-);
-
-// Get order details
-final order = await magento.getOrder('ORDER123');
-
-// Get order status
-final status = await magento.getOrderStatus('ORDER123');
-
-// Cancel order
-final cancelled = await magento.cancelOrder(
-  'ORDER123',
-  reason: 'Changed mind',
-);
-
-// Reorder
-final newCart = await magento.reorder('ORDER123');
-```
-
-### Wishlist
-
-```dart
-// Get wishlist
-final wishlist = await magento.getWishlist();
-
-// Add to wishlist
-final wishlistItem = await magento.addToDefaultWishlist(
-  productId: '123',
-);
-
-// Remove from wishlist
-final removed = await magento.removeFromDefaultWishlist(1);
-
-// Share wishlist
-final shared = await magento.shareDefaultWishlist(
-  email: 'friend@example.com',
-  message: 'Check out my wishlist!',
-);
-
-// Add all to cart
-final addedToCart = await magento.addAllDefaultWishlistToCart();
-```
-
-### Advanced Search
-
-```dart
-// Advanced search
-final searchResults = await magento.search(
-  query: 'smartphone',
-  filters: {'brand': 'Apple', 'price': '100-500'},
-  page: 1,
-  pageSize: 20,
-  sortBy: 'price',
-  sortOrder: 'asc',
-);
-
-// Search by category
-final categoryResults = await magento.searchByCategory(
-  categoryId: '123',
-  query: 'phone',
-);
-
-// Search by attribute
-final attributeResults = await magento.searchByAttribute(
-  attribute: 'brand',
-  value: 'Apple',
-);
-
-// Get search suggestions
-final suggestions = await magento.getSearchSuggestions('smart');
-
-// Get filterable attributes
-final attributes = await magento.getFilterableAttributes();
-
-// Apply price filter
-final priceFiltered = await magento.applyPriceFilter(
-  minPrice: 100.0,
-  maxPrice: 500.0,
-);
-```
-
-## 🏗️ Architecture
-
-The plugin follows a clean architecture pattern with the following layers:
-
-- **API Layer**: HTTP client with Dio, REST API integration
-- **Service Layer**: Business logic and data processing
-- **Model Layer**: Data models with JSON serialization
-- **Plugin Layer**: Flutter plugin interface
-
-### Directory Structure
-
-```
-lib/
-├── src/
-│   ├── api/           # API classes
-│   │   ├── auth_api.dart
-│   │   ├── product_api.dart
-│   │   ├── cart_api.dart
-│   │   ├── order_api.dart
-│   │   ├── wishlist_api.dart
-│   │   └── search_api.dart
-│   ├── models/        # Data models
-│   │   ├── auth_models.dart
-│   │   ├── product_models.dart
-│   │   ├── cart_models.dart
-│   │   ├── order_models.dart
-│   │   ├── wishlist_models.dart
-│   │   └── search_models.dart
-│   └── flutter_magento_plugin.dart
-├── flutter_magento.dart
-└── flutter_magento_platform_interface.dart
-```
-
-## 🔧 Configuration
-
-### Environment Setup
-
-```dart
-// Development
-await magento.initialize(
-  baseUrl: 'https://dev-store.com',
-  connectionTimeout: 30000,
-  receiveTimeout: 30000,
-);
-
-// Production
-await magento.initialize(
-  baseUrl: 'https://store.com',
-  headers: {
-    'X-API-Key': 'your-api-key',
-    'X-Store-Code': 'default',
+await freedome.playAppContent(
+  appName: 'StarrySkr',
+  contentName: 'Звездное небо',
+  appData: {
+    'type': 'starfield',
+    'constellation': 'all',
+    'time': DateTime.now().toIso8601String(),
   },
 );
 ```
 
-### Custom Headers
-
+### Солнечная система
 ```dart
-await magento.initialize(
-  baseUrl: 'https://store.com',
-  headers: {
-    'Authorization': 'Bearer token',
-    'Accept-Language': 'en-US',
-    'X-Custom-Header': 'value',
+await freedome.playAppContent(
+  appName: 'SolarSystem',
+  contentName: 'Планеты',
+  appData: {
+    'type': 'solar_system',
+    'showOrbits': true,
+    'speed': 1.0,
   },
 );
 ```
 
-## 🧪 Testing
+### Медитация
+```dart
+await freedome.playAppContent(
+  appName: 'MeditationApp',
+  contentName: 'Релаксация',
+  appData: {
+    'type': 'meditation',
+    'duration': 300,
+    'background': 'nature',
+  },
+);
+```
+
+## 🔧 Режим администратора
+
+```dart
+// Аутентификация как администратор
+final success = await freedome.authenticateAsAdmin(
+  username: 'admin',
+  password: 'your_password',
+);
+
+if (success) {
+  // Доступ к административным функциям
+  final calibrationService = freedome.calibration;
+  final systemService = freedome.system;
+  
+  // Запуск калибровки аудио
+  await calibrationService?.startAudioCalibration();
+  
+  // Мониторинг системы
+  final metrics = await systemService?.getSystemHealth();
+}
+```
+
+## 📱 Готовые виджеты
+
+### FreeDomeConnectionWidget
+Виджет для управления подключением к купольным системам:
+
+```dart
+FreeDomeConnectionWidget(
+  autoConnect: true,
+  showDiscoveredSystems: true,
+  onConnected: () => print('Подключен к FreeDome!'),
+  onDisconnected: () => print('Отключен от FreeDome'),
+)
+```
+
+### FreeDomeContentPlayer
+Плеер для управления воспроизведением контента:
+
+```dart
+FreeDomeContentPlayer(
+  content: myContent,
+  showControls: true,
+  showVolumeSlider: true,
+  showBrightnessSlider: true,
+  onPlayStarted: () => print('Воспроизведение началось'),
+  onPlayStopped: () => print('Воспроизведение остановлено'),
+)
+```
+
+### FreeDomeStatusIndicator
+Индикатор статуса подключения:
+
+```dart
+FreeDomeStatusIndicator(
+  showDetails: true,
+  showDomeName: true,
+  onTap: () => showStatusDialog(),
+)
+```
+
+## 🌐 Поддерживаемые платформы
+
+- ✅ **Android** (API 21+)
+- ✅ **iOS** (iOS 11.0+)
+- ✅ **Web** (Chrome, Firefox, Safari)
+- ✅ **Windows** (Windows 10+)
+- ✅ **macOS** (macOS 10.14+)
+- ✅ **Linux** (Ubuntu 18.04+)
+
+## 🎯 Поддерживаемые форматы контента
+
+- **360° видео** (Equirectangular)
+- **Fulldome** контент
+- **Fisheye** проекция
+- **Кубические карты** (Cubemap)
+- **Интерактивный контент**
+- **Контент в реальном времени**
+
+## 📋 Системные требования
+
+### Минимальные требования
+- Flutter 3.10.0+
+- Dart 3.0.0+
+- FreeDome Core 2.0+
+
+### Рекомендуемые требования
+- Flutter 3.16.0+
+- Dart 3.2.0+
+- FreeDome Core 2.5+
+
+## 🔒 Безопасность
+
+- **Система ролей**: Guest, Operator, Admin, Superadmin
+- **Разрешения**: Детальный контроль доступа к функциям
+- **Безопасное хранение**: Токены в FlutterSecureStorage
+- **Аутентификация**: JWT токены и хэширование паролей
+
+## 🛠️ Разработка
+
+### Сборка из исходников
 
 ```bash
-# Run tests
-flutter test
-
-# Run tests with coverage
-flutter test --coverage
-
-# Generate code
-flutter packages pub run build_runner build --delete-conflicting-outputs
+git clone https://github.com/nativemind/flutter_freedome.git
+cd flutter_freedome
+flutter pub get
+flutter packages pub run build_runner build
 ```
 
-## 📱 Platform Support
+### Запуск примера
 
-- ✅ Android
-- ✅ iOS
-- ✅ Web
-- ✅ Windows
-- ✅ macOS
-- ✅ Linux
+```bash
+cd example
+flutter run
+```
 
-## 🔒 Security Features
+### Тестирование
 
-- JWT token authentication
-- HTTPS enforcement
-- Input validation and sanitization
-- Secure token storage
-- Rate limiting support
-- CSRF protection
+```bash
+flutter test
+```
 
-## 📊 Performance Features
+## 📖 API Документация
 
-- Request caching
-- Image optimization
-- Lazy loading support
-- Offline mode
-- Background sync
-- Memory management
+### FreeDomeProvider
+Главный класс для управления FreeDome системой:
 
-## 🤝 Contributing
+```dart
+class FreeDomeProvider extends ChangeNotifier {
+  // Инициализация
+  Future<bool> initialize({
+    bool autoDiscovery = true,
+    FreeDomeUserRole defaultRole = FreeDomeUserRole.guest,
+  });
+  
+  // Подключение
+  Future<bool> connectToNearestDome();
+  Future<bool> connectToDome(DomeSystem dome);
+  Future<void> disconnect();
+  
+  // Воспроизведение
+  Future<bool> playContent(FreeDomeContent content);
+  Future<bool> playAppContent({
+    required String appName,
+    required String contentName,
+    required Map<String, dynamic> appData,
+  });
+  
+  // Управление
+  Future<bool> pausePlayback();
+  Future<bool> resumePlayback();
+  Future<bool> stopPlayback();
+  Future<bool> setVolume(double volume);
+  Future<bool> setBrightness(double brightness);
+  
+  // Аутентификация
+  Future<bool> authenticateAsAdmin({
+    required String username,
+    required String password,
+  });
+  Future<bool> switchToGuestMode();
+  Future<void> logout();
+}
+```
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+### FreeDomeGuestService
+Упрощенный API для гостевого режима:
 
-## 📄 License
+```dart
+class FreeDomeGuestService extends ChangeNotifier {
+  Future<bool> initialize();
+  Future<bool> connectToNearestDome();
+  Future<bool> playAppContent({
+    required String appName,
+    required String contentName,
+    required Map<String, dynamic> appData,
+  });
+  Future<bool> pause();
+  Future<bool> resume();
+  Future<bool> stop();
+  Future<bool> setVolume(double volume);
+  Future<bool> setBrightness(double brightness);
+}
+```
 
-This project is licensed under the NativeMindNONC License - see the [LICENSE](LICENSE) file for details.
+## 🤝 Участие в разработке
 
-## 🆘 Support
+Мы приветствуем вклад в развитие проекта! Пожалуйста:
 
-- 📧 Email: support@nativemind.net
-- 🐛 Issues: [GitHub Issues](https://github.com/nativemind/flutter_magento/issues)
-- 📚 Documentation: [Wiki](https://github.com/nativemind/flutter_magento/wiki)
-- 💬 Community: [Discord](https://discord.gg/nativemind)
+1. Форкните репозиторий
+2. Создайте ветку для новой функции (`git checkout -b feature/amazing-feature`)
+3. Зафиксируйте изменения (`git commit -m 'Add amazing feature'`)
+4. Отправьте в ветку (`git push origin feature/amazing-feature`)
+5. Откройте Pull Request
 
-## 🙏 Acknowledgments
+## 📄 Лицензия
 
-- Magento team for the excellent e-commerce platform
-- Flutter team for the amazing framework
-- ScandiPWA team for inspiration and best practices
-- All contributors and community members
+Этот проект лицензирован под NativeMindNONC License - см. файл [LICENSE](LICENSE) для деталей.
+
+## 🆘 Поддержка
+
+- 📧 Email: support@nativemind.ru
+- 💬 Telegram: @nativemind_support
+- 🐛 Issues: [GitHub Issues](https://github.com/nativemind/flutter_freedome/issues)
+- 📚 Docs: [Documentation](https://docs.nativemind.ru/flutter_freedome)
+
+## 📈 Статистика
+
+- ⭐ **GitHub Stars**: Поставьте звезду, если проект полезен!
+- 📦 **Pub Points**: Следите за качеством на pub.dev
+- 🏆 **Популярность**: Используется в купольных планетариях по всему миру
 
 ---
 
-**Made with ❤️ by NativeMind Team**
+Сделано с ❤️ командой [NativeMind](https://nativemind.ru)

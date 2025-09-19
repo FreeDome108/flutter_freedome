@@ -12,6 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
   
+  # Web support
+  flutter_web_plugins:
+    sdk: flutter
+  
   # Platform Interface
   plugin_platform_interface: ^2.1.7
   
