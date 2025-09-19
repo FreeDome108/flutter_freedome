@@ -176,10 +176,10 @@ class _FreeDomeContentPlayerState extends State<FreeDomeContentPlayer> {
         return SizedBox(
           width: 24,
           height: 24,
-          child: CircularProgressIndicator(strokeWidth: 2),
+          child: const CircularProgressIndicator(strokeWidth: 2),
         );
       case PlaybackStatus.error:
-        return Icon(Icons.error, color: Colors.red, size: 24);
+        return const Icon(Icons.error, color: Colors.red, size: 24);
     }
   }
 
@@ -284,7 +284,7 @@ class _FreeDomeContentPlayerState extends State<FreeDomeContentPlayer> {
       children: [
         Row(
           children: [
-            Icon(Icons.volume_up, size: 20),
+            const Icon(Icons.volume_up, size: 20),
             const SizedBox(width: 8),
             Text('Громкость', style: Theme.of(context).textTheme.bodyMedium),
             const Spacer(),

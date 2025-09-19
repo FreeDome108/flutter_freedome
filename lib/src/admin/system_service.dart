@@ -6,6 +6,7 @@ import '../core/connection_service.dart';
 import '../core/auth_service.dart';
 import '../models/dome_models.dart';
 import '../models/content_models.dart';
+import '../models/calibration_models.dart';
 
 /// Сервис системного управления FreeDome (только для администраторов)
 class FreeDomeSystemService extends ChangeNotifier {
