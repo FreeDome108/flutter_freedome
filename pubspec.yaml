@@ -1,7 +1,7 @@
 name: flutter_freedome
 description: Унифицированная Flutter библиотека для интеграции с купольными кинотеатрами FreeDome
 license: NativeMindNONC
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/nativemind/flutter_freedome
 
 environment:
@@ -20,9 +20,9 @@ dependencies:
   plugin_platform_interface: ^2.1.7
   
   # HTTP Client & WebSocket
-  dio: ^5.4.0
-  http: ^1.1.0
-  web_socket_channel: ^2.4.0
+  dio: ^5.4.3
+  http: ^1.2.1
+  web_socket_channel: ^3.0.3
   socket_io_client: ^2.0.3+1
   
   # State Management
@@ -39,7 +39,7 @@ dependencies:
   hive_flutter: ^1.1.0
   
   # Network Connectivity
-  connectivity_plus: ^5.0.2
+  connectivity_plus: ^6.0.5
   
   # Security & Crypto
   crypto: ^3.0.3
@@ -58,7 +58,7 @@ dependencies:
   audio_session: ^0.1.25
   
   # Device Info
-  device_info_plus: ^10.1.0
+  device_info_plus: ^12.1.0
   
   # Permissions
   permission_handler: ^11.3.0
