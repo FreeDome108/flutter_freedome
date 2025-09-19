@@ -50,7 +50,7 @@ abstract class FreeDomeContent {
 
 /// Основная модель контента
 @freezed
-class ProjectionContent with _$ProjectionContent implements FreeDomeContent {
+class ProjectionContent with _$ProjectionContent {
   const factory ProjectionContent({
     required String id,
     required String name,
@@ -75,7 +75,6 @@ class ProjectionContent with _$ProjectionContent implements FreeDomeContent {
 
 /// Реализация toFreeDomeData для ProjectionContent
 extension ProjectionContentFreeDome on ProjectionContent {
-  @override
   Map<String, dynamic> toFreeDomeData() {
     return {
       'type': 'projection_content',
@@ -143,7 +142,7 @@ class Playlist with _$Playlist {
 
 /// Интерактивный контент (для приложений)
 @freezed
-class InteractiveContent with _$InteractiveContent implements FreeDomeContent {
+class InteractiveContent with _$InteractiveContent {
   const factory InteractiveContent({
     required String id,
     required String name,
@@ -160,10 +159,8 @@ class InteractiveContent with _$InteractiveContent implements FreeDomeContent {
 
 /// Реализация toFreeDomeData для InteractiveContent
 extension InteractiveContentFreeDome on InteractiveContent {
-  @override
   ContentType get type => ContentType.interactive;
 
-  @override
   Map<String, dynamic> toFreeDomeData() {
     return {
       'type': 'interactive_content',
@@ -185,7 +182,7 @@ extension InteractiveContentFreeDome on InteractiveContent {
 
 /// Контент в реальном времени
 @freezed
-class RealtimeContent with _$RealtimeContent implements FreeDomeContent {
+class RealtimeContent with _$RealtimeContent {
   const factory RealtimeContent({
     required String id,
     required String name,
@@ -201,10 +198,8 @@ class RealtimeContent with _$RealtimeContent implements FreeDomeContent {
 
 /// Реализация toFreeDomeData для RealtimeContent
 extension RealtimeContentFreeDome on RealtimeContent {
-  @override
   ContentType get type => ContentType.realtime;
 
-  @override
   Map<String, dynamic> toFreeDomeData() {
     return {
       'type': 'realtime_content',

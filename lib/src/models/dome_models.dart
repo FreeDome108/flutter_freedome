@@ -34,8 +34,8 @@ enum ProjectorStatus {
   standby, // В режиме ожидания
   error, // Ошибка
   calibrating, // Калибровка
-  warming_up, // Прогрев
-  cooling_down, // Охлаждение
+  warmingUp, // Прогрев
+  coolingDown, // Охлаждение
 }
 
 /// Типы аудиоканалов
