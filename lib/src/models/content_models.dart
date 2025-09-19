@@ -278,6 +278,44 @@ extension ContentTypeExtension on ContentType {
   }
 }
 
+/// Расширения для статусов воспроизведения
+extension PlaybackStatusExtension on PlaybackStatus {
+  String get displayName {
+    switch (this) {
+      case PlaybackStatus.stopped:
+        return 'Остановлено';
+      case PlaybackStatus.playing:
+        return 'Воспроизводится';
+      case PlaybackStatus.paused:
+        return 'На паузе';
+      case PlaybackStatus.buffering:
+        return 'Буферизация';
+      case PlaybackStatus.error:
+        return 'Ошибка';
+    }
+  }
+
+  bool get isPlaying => this == PlaybackStatus.playing;
+  bool get canPause => this == PlaybackStatus.playing;
+  bool get canResume => this == PlaybackStatus.paused;
+  bool get canStop => this == PlaybackStatus.playing || this == PlaybackStatus.paused;
+}
+
+/// Расширения для состояния воспроизведения
+extension PlaybackStateExtension on PlaybackState {
+  bool get canStop => status.canStop;
+  bool get canPause => status.canPause;
+  bool get canResume => status.canResume;
+  bool get isPlaying => status.isPlaying;
+
+  String get statusDisplayName => status.displayName;
+
+  double get progressPercent {
+    if (duration == null || duration!.inMilliseconds == 0) return 0.0;
+    return position.inMilliseconds / duration!.inMilliseconds;
+  }
+}
+
 /// Расширения для форматов проекции
 extension ProjectionFormatExtension on ProjectionFormat {
   String get displayName {

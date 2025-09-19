@@ -252,6 +252,31 @@ extension FreeDomeUserRoleExtension on FreeDomeUserRole {
   }
 }
 
+/// Расширения для типов купольных систем
+extension DomeSystemTypeExtension on DomeSystemType {
+  String get displayName {
+    switch (this) {
+      case DomeSystemType.professional:
+        return 'Профессиональная';
+      case DomeSystemType.mobile:
+        return 'Мобильная';
+      case DomeSystemType.hybrid:
+        return 'Гибридная';
+    }
+  }
+
+  String get description {
+    switch (this) {
+      case DomeSystemType.professional:
+        return 'Стационарная профессиональная система';
+      case DomeSystemType.mobile:
+        return 'Портативная мобильная система';
+      case DomeSystemType.hybrid:
+        return 'Гибридная система (стационарная + мобильная)';
+    }
+  }
+}
+
 /// Расширения для статусов
 extension DomeSystemStatusExtension on DomeSystemStatus {
   String get displayName {

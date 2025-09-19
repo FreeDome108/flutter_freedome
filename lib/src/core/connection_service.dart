@@ -7,7 +7,6 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:http/http.dart' as http;
 import 'package:connectivity_plus/connectivity_plus.dart';
 import '../models/dome_models.dart';
-import '../models/content_models.dart';
 import '../models/calibration_models.dart';
 
 /// Сервис для управления подключениями к FreeDome системам
