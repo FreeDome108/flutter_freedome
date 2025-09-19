@@ -1,0 +1,151 @@
+{
+  "@@locale": "ru",
+  "appName": "Флаттер Мадженто",
+  "@appName": {
+    "description": "The name of the application"
+  },
+  "appDescription": "Флаттер плагин для интеграции с Мадженто",
+  "@appDescription": {
+    "description": "The description of the application"
+  },
+  "welcome": "Добро пожаловать в Флаттер Мадженто",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "loading": "Загружаем...",
+  "@loading": {
+    "description": "Loading text"
+  },
+  "error": "Ошибка",
+  "@error": {
+    "description": "Error text"
+  },
+  "success": "Успешно",
+  "@success": {
+    "description": "Success text"
+  },
+  "retry": "Повторить",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "Отмена",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "save": "Сохранить",
+  "@save": {
+    "description": "Save button text"
+  },
+  "delete": "Удалить",
+  "@delete": {
+    "description": "Delete button text"
+  },
+  "edit": "Редактировать",
+  "@edit": {
+    "description": "Edit button text"
+  },
+  "add": "Добавить",
+  "@add": {
+    "description": "Add button text"
+  },
+  "search": "Поиск",
+  "@search": {
+    "description": "Search text"
+  },
+  "filter": "Фильтр",
+  "@filter": {
+    "description": "Filter text"
+  },
+  "sort": "Сортировка",
+  "@sort": {
+    "description": "Sort text"
+  },
+  "price": "Цена",
+  "@price": {
+    "description": "Price label"
+  },
+  "quantity": "Количество",
+  "@quantity": {
+    "description": "Quantity label"
+  },
+  "total": "Итого",
+  "@total": {
+    "description": "Total label"
+  },
+  "subtotal": "Подытог",
+  "@subtotal": {
+    "description": "Subtotal label"
+  },
+  "tax": "Налог",
+  "@tax": {
+    "description": "Tax label"
+  },
+  "shipping": "Доставка",
+  "@shipping": {
+    "description": "Shipping label"
+  },
+  "discount": "Скидка",
+  "@discount": {
+    "description": "Discount label"
+  },
+  "cart": "Корзина",
+  "@cart": {
+    "description": "Cart label"
+  },
+  "checkout": "Оформить заказ",
+  "@checkout": {
+    "description": "Checkout label"
+  },
+  "order": "Заказ",
+  "@order": {
+    "description": "Order label"
+  },
+  "product": "Товар",
+  "@product": {
+    "description": "Product label"
+  },
+  "category": "Категория",
+  "@category": {
+    "description": "Category label"
+  },
+  "customer": "Клиент",
+  "@customer": {
+    "description": "Customer label"
+  },
+  "login": "Войти",
+  "@login": {
+    "description": "Login button text"
+  },
+  "logout": "Выйти",
+  "@logout": {
+    "description": "Logout button text"
+  },
+  "register": "Регистрация",
+  "@register": {
+    "description": "Register button text"
+  },
+  "profile": "Профиль",
+  "@profile": {
+    "description": "Profile label"
+  },
+  "settings": "Настройки",
+  "@settings": {
+    "description": "Settings label"
+  },
+  "language": "Язык",
+  "@language": {
+    "description": "Language label"
+  },
+  "theme": "Тема",
+  "@theme": {
+    "description": "Theme label"
+  },
+  "darkMode": "Темный режим",
+  "@darkMode": {
+    "description": "Dark mode label"
+  },
+  "lightMode": "Светлый режим",
+  "@lightMode": {
+    "description": "Light mode label"
+  }
+}

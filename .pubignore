@@ -1,0 +1,52 @@
+# Files to ignore when publishing to pub.dev
+
+# Legacy examples and documentation
+legacy_example/
+doc_backup/
+
+# Build artifacts
+build/
+.dart_tool/
+.packages
+pubspec.lock
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git files
+.git/
+.gitignore
+
+# Development files
+gitlab-variables.md
+docker-compose.yml
+Dockerfile.web
+update.sh
+
+# Generated files that are in gitignore
+**/*.freezed.dart
+**/*.g.dart
+!lib/src/models/localization_models.g.dart
+!lib/src/models/offline_models.g.dart
+
+# Platform specific ephemeral files
+**/ephemeral/
+**/.plugin_symlinks/
+**/Flutter/Generated.xcconfig
+**/flutter_export_environment.sh
+**/GeneratedPluginRegistrant.*
+
+# Large example files
+example/lib/core/
+example/lib/features/
+example/lib/screens/
+example/linux/
+example/macos/
+example/windows/
+example/ios/Runner/Assets.xcassets/

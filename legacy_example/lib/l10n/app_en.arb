@@ -1,0 +1,145 @@
+{
+  "@@locale": "en",
+  "appName": "TaxLien.online",
+  "@appName": {
+    "description": "The name of the application"
+  },
+  "appDescription": "Native marketplace for tax lien investments",
+  "@appDescription": {
+    "description": "The description of the application"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home tab label"
+  },
+  "marketplace": "Marketplace",
+  "@marketplace": {
+    "description": "Marketplace tab label"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search tab label"
+  },
+  "cart": "Cart",
+  "@cart": {
+    "description": "Cart tab label"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile tab label"
+  },
+  "welcome": "Welcome to TaxLien.online",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "exploreInvestments": "Explore Investments",
+  "@exploreInvestments": {
+    "description": "Button text to explore investments"
+  },
+  "learnMore": "Learn More",
+  "@learnMore": {
+    "description": "Button text to learn more"
+  },
+  "addToCart": "Add to Cart",
+  "@addToCart": {
+    "description": "Button text to add item to cart"
+  },
+  "removeFromCart": "Remove from Cart",
+  "@removeFromCart": {
+    "description": "Button text to remove item from cart"
+  },
+  "price": "Price",
+  "@price": {
+    "description": "Price label"
+  },
+  "interestRate": "Interest Rate",
+  "@interestRate": {
+    "description": "Interest rate label"
+  },
+  "riskLevel": "Risk Level",
+  "@riskLevel": {
+    "description": "Risk level label"
+  },
+  "lowRisk": "Low Risk",
+  "@lowRisk": {
+    "description": "Low risk level"
+  },
+  "mediumRisk": "Medium Risk",
+  "@mediumRisk": {
+    "description": "Medium risk level"
+  },
+  "highRisk": "High Risk",
+  "@highRisk": {
+    "description": "High risk level"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading text"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error text"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "noInvestmentsFound": "No investments found",
+  "@noInvestmentsFound": {
+    "description": "Message when no investments are found"
+  },
+  "tryAdjustingFilters": "Try adjusting your search or filters",
+  "@tryAdjustingFilters": {
+    "description": "Suggestion when no results found"
+  },
+  "featuredInvestments": "Featured Investments",
+  "@featuredInvestments": {
+    "description": "Section title for featured investments"
+  },
+  "investmentCategories": "Investment Categories",
+  "@investmentCategories": {
+    "description": "Section title for investment categories"
+  },
+  "viewAll": "View All",
+  "@viewAll": {
+    "description": "Button text to view all items"
+  },
+  "residential": "Residential",
+  "@residential": {
+    "description": "Residential property type"
+  },
+  "commercial": "Commercial",
+  "@commercial": {
+    "description": "Commercial property type"
+  },
+  "industrial": "Industrial",
+  "@industrial": {
+    "description": "Industrial property type"
+  },
+  "land": "Land",
+  "@land": {
+    "description": "Land property type"
+  },
+  "filters": "Filters",
+  "@filters": {
+    "description": "Filters button text"
+  },
+  "sort": "Sort",
+  "@sort": {
+    "description": "Sort button text"
+  },
+  "clearAll": "Clear All",
+  "@clearAll": {
+    "description": "Clear all filters button text"
+  },
+  "investmentsFound": "{count} investments found",
+  "@investmentsFound": {
+    "description": "Number of investments found",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "123"
+      }
+    }
+  }
+}

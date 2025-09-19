@@ -1,0 +1,151 @@
+{
+  "@@locale": "en",
+  "appName": "Flutter Magento",
+  "@appName": {
+    "description": "The name of the application"
+  },
+  "appDescription": "Flutter plugin for Magento integration",
+  "@appDescription": {
+    "description": "The description of the application"
+  },
+  "welcome": "Welcome to Flutter Magento",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading text"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error text"
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Success text"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button text"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button text"
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Edit button text"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Add button text"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search text"
+  },
+  "filter": "Filter",
+  "@filter": {
+    "description": "Filter text"
+  },
+  "sort": "Sort",
+  "@sort": {
+    "description": "Sort text"
+  },
+  "price": "Price",
+  "@price": {
+    "description": "Price label"
+  },
+  "quantity": "Quantity",
+  "@quantity": {
+    "description": "Quantity label"
+  },
+  "total": "Total",
+  "@total": {
+    "description": "Total label"
+  },
+  "subtotal": "Subtotal",
+  "@subtotal": {
+    "description": "Subtotal label"
+  },
+  "tax": "Tax",
+  "@tax": {
+    "tax": "Tax label"
+  },
+  "shipping": "Shipping",
+  "@shipping": {
+    "description": "Shipping label"
+  },
+  "discount": "Discount",
+  "@discount": {
+    "description": "Discount label"
+  },
+  "cart": "Cart",
+  "@cart": {
+    "description": "Cart label"
+  },
+  "checkout": "Checkout",
+  "@checkout": {
+    "description": "Checkout label"
+  },
+  "order": "Order",
+  "@order": {
+    "description": "Order label"
+  },
+  "product": "Product",
+  "@product": {
+    "description": "Product label"
+  },
+  "category": "Category",
+  "@category": {
+    "description": "Category label"
+  },
+  "customer": "Customer",
+  "@customer": {
+    "description": "Customer label"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login button text"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button text"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register button text"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile label"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings label"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language label"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme label"
+  },
+  "darkMode": "Dark Mode",
+  "@darkMode": {
+    "description": "Dark mode label"
+  },
+  "lightMode": "Light Mode",
+  "@lightMode": {
+    "description": "Light mode label"
+  }
+}
