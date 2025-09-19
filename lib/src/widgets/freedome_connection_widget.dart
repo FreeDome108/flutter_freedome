@@ -99,7 +99,7 @@ class _FreeDomeConnectionWidgetState extends State<FreeDomeConnectionWidget> {
           children: [
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.check_circle,
                   color: Colors.green,
                   size: 24,
@@ -157,7 +157,7 @@ class _FreeDomeConnectionWidgetState extends State<FreeDomeConnectionWidget> {
           children: [
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.error_outline,
                   color: Colors.orange,
                   size: 24,
@@ -176,7 +176,7 @@ class _FreeDomeConnectionWidgetState extends State<FreeDomeConnectionWidget> {
               const SizedBox(height: 8),
               Text(
                 'Ошибка: ${freedome.error}',
-                style: TextStyle(color: Colors.red),
+                style: const TextStyle(color: Colors.red),
               ),
             ],
             const SizedBox(height: 16),
