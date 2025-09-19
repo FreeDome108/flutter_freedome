@@ -11,7 +11,8 @@ import '../models/content_models.dart';
 
 /// Сервис для управления подключениями к FreeDome системам
 class FreeDomeConnectionService extends ChangeNotifier {
-  static final FreeDomeConnectionService _instance = FreeDomeConnectionService._internal();
+  static final FreeDomeConnectionService _instance =
+      FreeDomeConnectionService._internal();
   factory FreeDomeConnectionService() => _instance;
   FreeDomeConnectionService._internal();
 
@@ -25,20 +26,20 @@ class FreeDomeConnectionService extends ChangeNotifier {
   final Map<String, IO.Socket> _socketConnections = {};
   final Map<String, WebSocketChannel> _wsConnections = {};
   final Map<String, http.Client> _httpClients = {};
-  
+
   // Обнаруженные системы
   final List<DomeSystem> _discoveredSystems = [];
   DomeSystem? _activeDome;
-  
+
   // Таймеры и подписки
   Timer? _discoveryTimer;
   Timer? _heartbeatTimer;
   StreamSubscription<ConnectivityResult>? _connectivitySubscription;
-  
+
   // Контроллеры событий
-  final StreamController<FreeDomeEvent> _eventController = 
+  final StreamController<FreeDomeEvent> _eventController =
       StreamController<FreeDomeEvent>.broadcast();
-  final StreamController<List<DomeSystem>> _systemsController = 
+  final StreamController<List<DomeSystem>> _systemsController =
       StreamController<List<DomeSystem>>.broadcast();
 
   // Геттеры
@@ -47,7 +48,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
   DomeSystem? get activeDome => _activeDome;
   bool get isConnected => _connectionStatus.isConnected;
   bool get isConnecting => _connectionStatus.isConnecting;
-  
+
   // Потоки событий
   Stream<FreeDomeEvent> get eventStream => _eventController.stream;
   Stream<List<DomeSystem>> get systemsStream => _systemsController.stream;
@@ -57,10 +58,10 @@ class FreeDomeConnectionService extends ChangeNotifier {
     try {
       // Настройка мониторинга сетевого подключения
       _setupConnectivityMonitoring();
-      
+
       // Запуск автоматического обнаружения систем
       await startDiscovery();
-      
+
       if (kDebugMode) {
         print('✅ FreeDomeConnectionService инициализирован');
       }
@@ -89,13 +90,14 @@ class FreeDomeConnectionService extends ChangeNotifier {
     if (kDebugMode) {
       print('📵 Сетевое подключение потеряно');
     }
-    
+
     // Отключаем все активные соединения
     for (final systemId in _socketConnections.keys.toList()) {
       _disconnectSocket(systemId);
     }
-    
-    _updateConnectionStatus(isConnected: false, error: 'Нет сетевого подключения');
+
+    _updateConnectionStatus(
+        isConnected: false, error: 'Нет сетевого подключения');
   }
 
   /// Обработка восстановления сетевого подключения
@@ -103,7 +105,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
     if (kDebugMode) {
       print('🌐 Сетевое подключение восстановлено');
     }
-    
+
     // Попытка переподключения к активному куполу
     if (_activeDome != null) {
       connectToDome(_activeDome!);
@@ -113,9 +115,9 @@ class FreeDomeConnectionService extends ChangeNotifier {
   /// Запуск автоматического обнаружения систем
   Future<void> startDiscovery() async {
     _discoveryTimer?.cancel();
-    
+
     await _scanForSystems();
-    
+
     // Периодическое обновление списка систем
     _discoveryTimer = Timer.periodic(const Duration(seconds: 30), (_) {
       _scanForSystems();
@@ -132,35 +134,35 @@ class FreeDomeConnectionService extends ChangeNotifier {
   Future<void> _scanForSystems() async {
     try {
       final List<DomeSystem> foundSystems = [];
-      
+
       // Получаем локальную подсеть
       final subnet = await _getLocalSubnet();
       final List<int> commonPorts = [8080, 8081, 3000, 5000, 9000];
-      
+
       // Сканируем IP адреса в подсети
       final List<Future<DomeSystem?>> scanTasks = [];
-      
+
       for (int i = 1; i <= 254; i++) {
         final ip = '$subnet.$i';
         for (final port in commonPorts) {
           scanTasks.add(_checkSystemAtAddress(ip, port));
         }
       }
-      
+
       // Выполняем сканирование параллельно
       final results = await Future.wait(scanTasks);
-      
+
       for (final system in results) {
         if (system != null) {
           foundSystems.add(system);
         }
       }
-      
+
       // Обновляем список обнаруженных систем
       _discoveredSystems.clear();
       _discoveredSystems.addAll(foundSystems);
       _systemsController.add(_discoveredSystems);
-      
+
       if (kDebugMode) {
         print('🔍 Найдено ${foundSystems.length} FreeDome систем');
       }
@@ -175,17 +177,17 @@ class FreeDomeConnectionService extends ChangeNotifier {
   Future<DomeSystem?> _checkSystemAtAddress(String ip, int port) async {
     try {
       final client = http.Client();
-      
+
       final response = await client.get(
         Uri.parse('http://$ip:$port/api/dome/info'),
         headers: {'Accept': 'application/json'},
       ).timeout(const Duration(seconds: 2));
-      
+
       client.close();
-      
+
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        
+
         return DomeSystem(
           id: data['id'] ?? '$ip:$port',
           name: data['name'] ?? 'FreeDome System',
@@ -200,7 +202,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
     } catch (e) {
       // Игнорируем ошибки - система недоступна
     }
-    
+
     return null;
   }
 
@@ -211,7 +213,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
     }
 
     _updateConnectionStatus(isConnecting: true);
-    
+
     try {
       // Проверяем доступность системы
       final isAvailable = await _testSystemAvailability(dome);
@@ -280,7 +282,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
 
     try {
       final domeId = _activeDome!.id;
-      
+
       // Отправляем команду отключения
       await sendCommand(FreeDomeCommand(
         type: 'disconnect',
@@ -328,7 +330,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
     try {
       final domeId = _activeDome!.id;
       final wsChannel = _wsConnections[domeId];
-      
+
       if (wsChannel == null) {
         throw Exception('WebSocket соединение не найдено');
       }
@@ -370,9 +372,9 @@ class FreeDomeConnectionService extends ChangeNotifier {
       if (kDebugMode) {
         print('🔌 Socket.IO подключен к ${dome.name}');
       }
-      
+
       _setupSocketListeners(socket, dome.id);
-      
+
       if (!completer.isCompleted) {
         completer.complete(socket);
       }
@@ -437,7 +439,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
         isConnected: false,
         error: 'Соединение потеряно: $reason',
       );
-      
+
       // Попытка переподключения
       _attemptReconnect();
     }
@@ -445,12 +447,15 @@ class FreeDomeConnectionService extends ChangeNotifier {
 
   /// Попытка переподключения
   void _attemptReconnect() async {
-    if (_activeDome == null || _connectionStatus.reconnectAttempts >= _connectionStatus.maxReconnectAttempts) {
+    if (_activeDome == null ||
+        _connectionStatus.reconnectAttempts >=
+            _connectionStatus.maxReconnectAttempts) {
       return;
     }
 
-    await Future.delayed(Duration(seconds: 2 * (_connectionStatus.reconnectAttempts + 1)));
-    
+    await Future.delayed(
+        Duration(seconds: 2 * (_connectionStatus.reconnectAttempts + 1)));
+
     _updateConnectionStatus(
       reconnectAttempts: _connectionStatus.reconnectAttempts + 1,
     );
@@ -465,10 +470,12 @@ class FreeDomeConnectionService extends ChangeNotifier {
   Future<bool> _testSystemAvailability(DomeSystem dome) async {
     try {
       final client = http.Client();
-      final response = await client.get(
-        Uri.parse('http://${dome.ipAddress}:${dome.port}/api/dome/status'),
-      ).timeout(const Duration(seconds: 5));
-      
+      final response = await client
+          .get(
+            Uri.parse('http://${dome.ipAddress}:${dome.port}/api/dome/status'),
+          )
+          .timeout(const Duration(seconds: 5));
+
       client.close();
       return response.statusCode == 200;
     } catch (e) {
@@ -482,11 +489,11 @@ class FreeDomeConnectionService extends ChangeNotifier {
       final interfaces = await NetworkInterface.list();
       for (final interface in interfaces) {
         for (final address in interface.addresses) {
-          if (address.type == InternetAddressType.IPv4 && 
-              !address.isLoopback && 
-              (address.address.startsWith('192.168.') || 
-               address.address.startsWith('10.') ||
-               address.address.startsWith('172.'))) {
+          if (address.type == InternetAddressType.IPv4 &&
+              !address.isLoopback &&
+              (address.address.startsWith('192.168.') ||
+                  address.address.startsWith('10.') ||
+                  address.address.startsWith('172.'))) {
             final parts = address.address.split('.');
             return '${parts[0]}.${parts[1]}.${parts[2]}';
           }
@@ -533,7 +540,8 @@ class FreeDomeConnectionService extends ChangeNotifier {
     try {
       final socket = _socketConnections[domeId];
       if (socket != null && socket.connected) {
-        socket.emit('heartbeat', {'timestamp': DateTime.now().toIso8601String()});
+        socket
+            .emit('heartbeat', {'timestamp': DateTime.now().toIso8601String()});
       }
     } catch (e) {
       if (kDebugMode) {
@@ -617,9 +625,10 @@ class FreeDomeConnectionService extends ChangeNotifier {
       serverUrl: serverUrl ?? _connectionStatus.serverUrl,
       lastConnected: lastConnected ?? _connectionStatus.lastConnected,
       error: error,
-      reconnectAttempts: reconnectAttempts ?? _connectionStatus.reconnectAttempts,
+      reconnectAttempts:
+          reconnectAttempts ?? _connectionStatus.reconnectAttempts,
     );
-    
+
     notifyListeners();
   }
 
@@ -643,7 +652,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
     stopDiscovery();
     _stopHeartbeat();
     _connectivitySubscription?.cancel();
-    
+
     // Закрываем все соединения
     for (final socket in _socketConnections.values) {
       socket.disconnect();
@@ -654,10 +663,10 @@ class FreeDomeConnectionService extends ChangeNotifier {
     for (final client in _httpClients.values) {
       client.close();
     }
-    
+
     _eventController.close();
     _systemsController.close();
-    
+
     super.dispose();
   }
 }

@@ -6,64 +6,64 @@ part 'dome_models.g.dart';
 
 /// Типы купольных систем
 enum DomeSystemType {
-  professional,  // Профессиональная стационарная система
-  mobile,        // Мобильная портативная система
-  hybrid,        // Гибридная система
+  professional, // Профессиональная стационарная система
+  mobile, // Мобильная портативная система
+  hybrid, // Гибридная система
 }
 
 /// Статусы купольной системы
 enum DomeSystemStatus {
-  online,        // В сети и готова к работе
-  offline,       // Не в сети
-  connecting,    // Процесс подключения
-  error,         // Ошибка системы
-  maintenance,   // Режим обслуживания
-  calibrating,   // Процесс калибровки
+  online, // В сети и готова к работе
+  offline, // Не в сети
+  connecting, // Процесс подключения
+  error, // Ошибка системы
+  maintenance, // Режим обслуживания
+  calibrating, // Процесс калибровки
 }
 
 /// Типы проекторов
 enum ProjectorType {
-  laser,         // Лазерный проектор
-  led,           // LED проектор
-  dlp,           // DLP проектор
-  lcd,           // LCD проектор
+  laser, // Лазерный проектор
+  led, // LED проектор
+  dlp, // DLP проектор
+  lcd, // LCD проектор
 }
 
 /// Статусы проектора
 enum ProjectorStatus {
-  active,        // Активен
-  standby,       // В режиме ожидания
-  error,         // Ошибка
-  calibrating,   // Калибровка
-  warming_up,    // Прогрев
-  cooling_down,  // Охлаждение
+  active, // Активен
+  standby, // В режиме ожидания
+  error, // Ошибка
+  calibrating, // Калибровка
+  warming_up, // Прогрев
+  cooling_down, // Охлаждение
 }
 
 /// Типы аудиоканалов
 enum AudioChannelType {
-  mono,          // Моно
-  stereo,        // Стерео
-  surround,      // Объемный звук
-  ambisonic,     // Амбисонический
+  mono, // Моно
+  stereo, // Стерео
+  surround, // Объемный звук
+  ambisonic, // Амбисонический
 }
 
 /// Роли пользователей FreeDome
 enum FreeDomeUserRole {
-  guest,         // Гость - только воспроизведение
-  operator,      // Оператор - базовые настройки
-  admin,         // Администратор - калибровка
-  superadmin,    // Суперадминистратор - системные настройки
+  guest, // Гость - только воспроизведение
+  operator, // Оператор - базовые настройки
+  admin, // Администратор - калибровка
+  superadmin, // Суперадминистратор - системные настройки
 }
 
 /// Разрешения FreeDome
 enum FreeDomePermission {
-  playContent,           // Воспроизведение контента
-  controlBasics,         // Базовые настройки (громкость, яркость)
-  manageContent,         // Управление библиотекой контента
-  calibrateAudio,        // Калибровка аудио
-  calibrateProjectors,   // Калибровка проекторов
-  systemManagement,      // Управление системой
-  vendorManagement,      // Управление вендорами
+  playContent, // Воспроизведение контента
+  controlBasics, // Базовые настройки (громкость, яркость)
+  manageContent, // Управление библиотекой контента
+  calibrateAudio, // Калибровка аудио
+  calibrateProjectors, // Калибровка проекторов
+  systemManagement, // Управление системой
+  vendorManagement, // Управление вендорами
 }
 
 /// Основная модель купольной системы
@@ -273,6 +273,6 @@ extension DomeSystemStatusExtension on DomeSystemStatus {
 
   bool get isOperational => this == DomeSystemStatus.online;
   bool get canConnect => this == DomeSystemStatus.offline;
-  bool get requiresAttention => 
+  bool get requiresAttention =>
       this == DomeSystemStatus.error || this == DomeSystemStatus.maintenance;
 }

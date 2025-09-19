@@ -9,22 +9,24 @@ import '../models/dome_models.dart';
 
 /// Сервис для управления контентом FreeDome
 class FreeDomeContentService extends ChangeNotifier {
-  static final FreeDomeContentService _instance = FreeDomeContentService._internal();
+  static final FreeDomeContentService _instance =
+      FreeDomeContentService._internal();
   factory FreeDomeContentService() => _instance;
   FreeDomeContentService._internal();
 
-  final FreeDomeConnectionService _connectionService = FreeDomeConnectionService();
+  final FreeDomeConnectionService _connectionService =
+      FreeDomeConnectionService();
   final FreeDomeAuthService _authService = FreeDomeAuthService();
 
   // Состояние воспроизведения
   PlaybackState _playbackState = const PlaybackState();
-  
+
   // Библиотека контента
   final List<ProjectionContent> _contentLibrary = [];
   final List<Playlist> _playlists = [];
-  
+
   // Контроллеры событий
-  final StreamController<PlaybackState> _playbackController = 
+  final StreamController<PlaybackState> _playbackController =
       StreamController<PlaybackState>.broadcast();
 
   // Геттеры
@@ -38,7 +40,7 @@ class FreeDomeContentService extends ChangeNotifier {
     try {
       await _loadContentLibrary();
       await _loadPlaylists();
-      
+
       if (kDebugMode) {
         print('✅ FreeDomeContentService инициализирован');
         print('📚 Загружено ${_contentLibrary.length} элементов контента');
@@ -110,11 +112,11 @@ class FreeDomeContentService extends ChangeNotifier {
         status: PlaybackStatus.error,
         error: e.toString(),
       );
-      
+
       if (kDebugMode) {
         print('❌ Ошибка воспроизведения контента: $e');
       }
-      
+
       return false;
     }
   }
@@ -145,7 +147,7 @@ class FreeDomeContentService extends ChangeNotifier {
         print('❌ Ошибка паузы: $e');
       }
     }
-    
+
     return false;
   }
 
@@ -175,7 +177,7 @@ class FreeDomeContentService extends ChangeNotifier {
         print('❌ Ошибка возобновления: $e');
       }
     }
-    
+
     return false;
   }
 
@@ -209,7 +211,7 @@ class FreeDomeContentService extends ChangeNotifier {
         print('❌ Ошибка остановки: $e');
       }
     }
-    
+
     return false;
   }
 
@@ -239,7 +241,7 @@ class FreeDomeContentService extends ChangeNotifier {
         print('❌ Ошибка установки громкости: $e');
       }
     }
-    
+
     return false;
   }
 
@@ -342,7 +344,7 @@ class FreeDomeContentService extends ChangeNotifier {
   Future<bool> playPlaylist(String playlistId) async {
     try {
       final playlist = _playlists.firstWhere((p) => p.id == playlistId);
-      
+
       if (playlist.contentIds.isEmpty) {
         return false;
       }
@@ -351,7 +353,7 @@ class FreeDomeContentService extends ChangeNotifier {
       final content = _contentLibrary.firstWhere((c) => c.id == firstContentId);
 
       _updatePlaybackState(currentPlaylistId: playlistId);
-      
+
       return await playContent(content);
     } catch (e) {
       if (kDebugMode) {
@@ -371,10 +373,12 @@ class FreeDomeContentService extends ChangeNotifier {
       bool matches = true;
 
       if (query != null && query.isNotEmpty) {
-        matches = matches && (
-          content.name.toLowerCase().contains(query.toLowerCase()) ||
-          (content.description?.toLowerCase().contains(query.toLowerCase()) ?? false)
-        );
+        matches = matches &&
+            (content.name.toLowerCase().contains(query.toLowerCase()) ||
+                (content.description
+                        ?.toLowerCase()
+                        .contains(query.toLowerCase()) ??
+                    false));
       }
 
       if (type != null) {
@@ -441,12 +445,13 @@ class FreeDomeContentService extends ChangeNotifier {
 
     try {
       _contentLibrary.removeWhere((content) => content.id == contentId);
-      
+
       // Удаляем из всех плейлистов
       for (int i = 0; i < _playlists.length; i++) {
         final playlist = _playlists[i];
-        final updatedContentIds = playlist.contentIds.where((id) => id != contentId).toList();
-        
+        final updatedContentIds =
+            playlist.contentIds.where((id) => id != contentId).toList();
+
         if (updatedContentIds.length != playlist.contentIds.length) {
           _playlists[i] = playlist.copyWith(
             contentIds: updatedContentIds,
@@ -543,7 +548,7 @@ class FreeDomeContentService extends ChangeNotifier {
     try {
       final prefs = await SharedPreferences.getInstance();
       final contentJson = prefs.getString('freedome_content_library');
-      
+
       if (contentJson != null) {
         final contentList = json.decode(contentJson) as List;
         _contentLibrary.clear();
@@ -567,7 +572,7 @@ class FreeDomeContentService extends ChangeNotifier {
     try {
       final prefs = await SharedPreferences.getInstance();
       final playlistsJson = prefs.getString('freedome_playlists');
-      
+
       if (playlistsJson != null) {
         final playlistsList = json.decode(playlistsJson) as List;
         _playlists.clear();
@@ -654,9 +659,10 @@ class FreeDomeContentService extends ChangeNotifier {
   /// Получение статистики использования
   Map<String, dynamic> getUsageStats() {
     final totalPlayCount = _contentLibrary.fold<int>(
-      0, (sum, content) => sum + content.playCount,
+      0,
+      (sum, content) => sum + content.playCount,
     );
-    
+
     final mostPlayedContent = _contentLibrary.isNotEmpty
         ? _contentLibrary.reduce((a, b) => a.playCount > b.playCount ? a : b)
         : null;

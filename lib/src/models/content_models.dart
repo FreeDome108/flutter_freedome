@@ -6,39 +6,39 @@ part 'content_models.g.dart';
 
 /// Типы контента FreeDome
 enum ContentType {
-  video,           // Видео файлы
-  image,           // Изображения
-  interactive,     // Интерактивный контент
-  realtime,        // Контент в реальном времени
-  audio,           // Аудио файлы
-  procedural,      // Процедурно генерируемый контент
+  video, // Видео файлы
+  image, // Изображения
+  interactive, // Интерактивный контент
+  realtime, // Контент в реальном времени
+  audio, // Аудио файлы
+  procedural, // Процедурно генерируемый контент
 }
 
 /// Форматы проекции
 enum ProjectionFormat {
   equirectangular, // Равнопромежуточная проекция
-  fisheye,         // Рыбий глаз
-  cubemap,         // Кубическая карта
-  domemaster,      // DomeMaster формат
-  fulldome,        // FullDome формат
-  spherical,       // Сферическая проекция
-  cylindrical,     // Цилиндрическая проекция
+  fisheye, // Рыбий глаз
+  cubemap, // Кубическая карта
+  domemaster, // DomeMaster формат
+  fulldome, // FullDome формат
+  spherical, // Сферическая проекция
+  cylindrical, // Цилиндрическая проекция
 }
 
 /// Статусы воспроизведения
 enum PlaybackStatus {
-  stopped,         // Остановлено
-  playing,         // Воспроизводится
-  paused,          // На паузе
-  buffering,       // Буферизация
-  error,           // Ошибка
+  stopped, // Остановлено
+  playing, // Воспроизводится
+  paused, // На паузе
+  buffering, // Буферизация
+  error, // Ошибка
 }
 
 /// Режимы плейлиста
 enum PlaylistMode {
-  sequential,      // Последовательное воспроизведение
-  shuffle,         // Случайное воспроизведение
-  random,          // Полностью случайное
+  sequential, // Последовательное воспроизведение
+  shuffle, // Случайное воспроизведение
+  random, // Полностью случайное
 }
 
 /// Абстрактный базовый класс для контента FreeDome

@@ -128,7 +128,7 @@ class FreeDomeProvider extends ChangeNotifier {
 
     _authService.addListener(() {
       notifyListeners();
-      
+
       // При смене роли пользователя пересоздаем админские сервисы
       _calibrationService = null;
       _systemService = null;
@@ -208,7 +208,7 @@ class FreeDomeProvider extends ChangeNotifier {
     }
 
     final success = await _authService.switchToGuestMode();
-    
+
     if (success) {
       // Очищаем админские сервисы
       _calibrationService = null;
@@ -226,11 +226,11 @@ class FreeDomeProvider extends ChangeNotifier {
     }
 
     await _authService.logout();
-    
+
     // Очищаем админские сервисы
     _calibrationService = null;
     _systemService = null;
-    
+
     notifyListeners();
   }
 
@@ -261,13 +261,13 @@ class FreeDomeProvider extends ChangeNotifier {
   }
 
   /// Управление воспроизведением
-  Future<bool> pausePlayback() async => 
+  Future<bool> pausePlayback() async =>
       _isInitialized ? await _contentService.pausePlayback() : false;
 
-  Future<bool> resumePlayback() async => 
+  Future<bool> resumePlayback() async =>
       _isInitialized ? await _contentService.resumePlayback() : false;
 
-  Future<bool> stopPlayback() async => 
+  Future<bool> stopPlayback() async =>
       _isInitialized ? await _contentService.stopPlayback() : false;
 
   /// Базовые настройки (доступны гостям)
@@ -305,17 +305,17 @@ class FreeDomeProvider extends ChangeNotifier {
     try {
       await disconnect();
       await logout();
-      
+
       _isInitialized = false;
       _isInitializing = false;
       _error = null;
-      
+
       // Очищаем админские сервисы
       _calibrationService = null;
       _systemService = null;
-      
+
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('🔄 FreeDome система сброшена');
       }
@@ -333,10 +333,10 @@ class FreeDomeProvider extends ChangeNotifier {
     _connectionService.removeListener(() {});
     _authService.removeListener(() {});
     _contentService.removeListener(() {});
-    
+
     _calibrationService?.dispose();
     _systemService?.dispose();
-    
+
     super.dispose();
   }
 }

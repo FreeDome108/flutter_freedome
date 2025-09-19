@@ -6,31 +6,31 @@ part 'calibration_models.g.dart';
 
 /// Типы калибровки
 enum CalibrationType {
-  auto,            // Автоматическая калибровка
-  manual,          // Ручная калибровка
-  quick,           // Быстрая калибровка
-  full,            // Полная калибровка
-  audio_only,      // Только аудио
-  video_only,      // Только видео
+  auto, // Автоматическая калибровка
+  manual, // Ручная калибровка
+  quick, // Быстрая калибровка
+  full, // Полная калибровка
+  audio_only, // Только аудио
+  video_only, // Только видео
 }
 
 /// Статусы калибровки
 enum CalibrationStatus {
-  pending,         // Ожидает запуска
-  running,         // Выполняется
-  completed,       // Завершена успешно
-  failed,          // Завершена с ошибкой
-  cancelled,       // Отменена
-  paused,          // Приостановлена
+  pending, // Ожидает запуска
+  running, // Выполняется
+  completed, // Завершена успешно
+  failed, // Завершена с ошибкой
+  cancelled, // Отменена
+  paused, // Приостановлена
 }
 
 /// Типы тестовых сигналов
 enum TestSignalType {
-  tone,            // Тональный сигнал
-  sweep,           // Свип
-  noise,           // Шум
-  impulse,         // Импульс
-  music,           // Музыкальный сигнал
+  tone, // Тональный сигнал
+  sweep, // Свип
+  noise, // Шум
+  impulse, // Импульс
+  music, // Музыкальный сигнал
 }
 
 /// Прогресс калибровки
@@ -296,7 +296,8 @@ extension PlaybackStatusExtension on PlaybackStatus {
     }
   }
 
-  bool get isActive => this == PlaybackStatus.playing || this == PlaybackStatus.buffering;
+  bool get isActive =>
+      this == PlaybackStatus.playing || this == PlaybackStatus.buffering;
   bool get canPause => this == PlaybackStatus.playing;
   bool get canResume => this == PlaybackStatus.paused;
   bool get canStop => isActive || this == PlaybackStatus.paused;

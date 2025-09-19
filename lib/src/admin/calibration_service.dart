@@ -9,30 +9,33 @@ import '../models/dome_models.dart';
 
 /// Сервис калибровки FreeDome (только для администраторов)
 class FreeDomeCalibrationService extends ChangeNotifier {
-  final FreeDomeConnectionService _connectionService = FreeDomeConnectionService();
+  final FreeDomeConnectionService _connectionService =
+      FreeDomeConnectionService();
   final FreeDomeAuthService _authService = FreeDomeAuthService();
 
   // Состояние калибровки
   CalibrationProgress? _currentCalibration;
   final List<CalibrationResult> _calibrationHistory = [];
-  
+
   // Таймеры
   Timer? _progressTimer;
-  
+
   // Контроллеры событий
-  final StreamController<CalibrationProgress> _progressController = 
+  final StreamController<CalibrationProgress> _progressController =
       StreamController<CalibrationProgress>.broadcast();
-  final StreamController<List<MicrophoneStatus>> _microphonesController = 
+  final StreamController<List<MicrophoneStatus>> _microphonesController =
       StreamController<List<MicrophoneStatus>>.broadcast();
 
   // Геттеры
   CalibrationProgress? get currentCalibration => _currentCalibration;
-  List<CalibrationResult> get calibrationHistory => List.from(_calibrationHistory);
+  List<CalibrationResult> get calibrationHistory =>
+      List.from(_calibrationHistory);
   Stream<CalibrationProgress> get progressStream => _progressController.stream;
-  Stream<List<MicrophoneStatus>> get microphonesStream => _microphonesController.stream;
+  Stream<List<MicrophoneStatus>> get microphonesStream =>
+      _microphonesController.stream;
 
   /// Проверка разрешений для калибровки
-  bool get canCalibrate => 
+  bool get canCalibrate =>
       _authService.hasPermission(FreeDomePermission.calibrateAudio) ||
       _authService.hasPermission(FreeDomePermission.calibrateProjectors);
 
@@ -56,8 +59,9 @@ class FreeDomeCalibrationService extends ChangeNotifier {
     }
 
     try {
-      final calibrationId = 'calibration_${DateTime.now().millisecondsSinceEpoch}';
-      
+      final calibrationId =
+          'calibration_${DateTime.now().millisecondsSinceEpoch}';
+
       // Создаем объект прогресса калибровки
       _currentCalibration = CalibrationProgress(
         id: calibrationId,
@@ -115,7 +119,7 @@ class FreeDomeCalibrationService extends ChangeNotifier {
         status: CalibrationStatus.failed,
         error: e.toString(),
       );
-      
+
       if (_currentCalibration != null) {
         _progressController.add(_currentCalibration!);
       }
@@ -123,7 +127,7 @@ class FreeDomeCalibrationService extends ChangeNotifier {
       if (kDebugMode) {
         print('❌ Ошибка запуска калибровки: $e');
       }
-      
+
       return null;
     }
   }
@@ -183,7 +187,7 @@ class FreeDomeCalibrationService extends ChangeNotifier {
     if (!_authService.hasPermission(FreeDomePermission.calibrateAudio)) {
       return null;
     }
-    
+
     return await startAutoCalibration(type: CalibrationType.audio_only);
   }
 
@@ -192,7 +196,7 @@ class FreeDomeCalibrationService extends ChangeNotifier {
     if (!_authService.hasPermission(FreeDomePermission.calibrateProjectors)) {
       return null;
     }
-    
+
     return await startAutoCalibration(type: CalibrationType.video_only);
   }
 
@@ -221,10 +225,10 @@ class FreeDomeCalibrationService extends ChangeNotifier {
       );
 
       final response = await _connectionService.sendCommand(command);
-      
+
       if (kDebugMode) {
-        print(response.success 
-            ? '✅ Тест канала $channelId запущен' 
+        print(response.success
+            ? '✅ Тест канала $channelId запущен'
             : '❌ Ошибка теста канала: ${response.error}');
       }
 
@@ -281,15 +285,15 @@ class FreeDomeCalibrationService extends ChangeNotifier {
       if (client == null) return [];
 
       final response = await client.get(
-        Uri.parse('http://${dome.ipAddress}:${dome.port}/api/audio/microphones'),
+        Uri.parse(
+            'http://${dome.ipAddress}:${dome.port}/api/audio/microphones'),
         headers: {'Content-Type': 'application/json'},
       );
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body) as List;
-        final microphones = data
-            .map((item) => MicrophoneStatus.fromJson(item))
-            .toList();
+        final microphones =
+            data.map((item) => MicrophoneStatus.fromJson(item)).toList();
 
         _microphonesController.add(microphones);
         return microphones;
@@ -317,14 +321,15 @@ class FreeDomeCalibrationService extends ChangeNotifier {
       if (client == null) return null;
 
       final response = await client.get(
-        Uri.parse('http://${dome.ipAddress}:${dome.port}/api/calibration/results/$calibrationId'),
+        Uri.parse(
+            'http://${dome.ipAddress}:${dome.port}/api/calibration/results/$calibrationId'),
         headers: {'Content-Type': 'application/json'},
       );
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         final result = CalibrationResult.fromJson(data);
-        
+
         // Добавляем в историю если еще нет
         if (!_calibrationHistory.any((r) => r.id == result.id)) {
           _calibrationHistory.add(result);
@@ -365,14 +370,15 @@ class FreeDomeCalibrationService extends ChangeNotifier {
       if (client == null) return;
 
       final response = await client.get(
-        Uri.parse('http://${dome.ipAddress}:${dome.port}/api/calibration/progress/$calibrationId'),
+        Uri.parse(
+            'http://${dome.ipAddress}:${dome.port}/api/calibration/progress/$calibrationId'),
         headers: {'Content-Type': 'application/json'},
       );
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         _currentCalibration = CalibrationProgress.fromJson(data);
-        
+
         _progressController.add(_currentCalibration!);
         notifyListeners();
 
@@ -381,7 +387,7 @@ class FreeDomeCalibrationService extends ChangeNotifier {
             _currentCalibration!.status == CalibrationStatus.failed ||
             _currentCalibration!.status == CalibrationStatus.cancelled) {
           _stopProgressMonitoring();
-          
+
           // Загружаем результаты калибровки
           if (_currentCalibration!.status == CalibrationStatus.completed) {
             await getCalibrationResult(calibrationId);
@@ -489,7 +495,7 @@ class FreeDomeCalibrationService extends ChangeNotifier {
       final response = await _connectionService.sendCommand(command);
 
       if (kDebugMode) {
-        print(response.success 
+        print(response.success
             ? '✅ Калибровка проектора $projectorId запущена'
             : '❌ Ошибка калибровки проектора: ${response.error}');
       }
@@ -504,7 +510,8 @@ class FreeDomeCalibrationService extends ChangeNotifier {
   }
 
   /// Настройка яркости проектора
-  Future<bool> setProjectorBrightness(String projectorId, int brightness) async {
+  Future<bool> setProjectorBrightness(
+      String projectorId, int brightness) async {
     if (!_authService.hasPermission(FreeDomePermission.calibrateProjectors)) {
       return false;
     }
@@ -574,7 +581,7 @@ class FreeDomeCalibrationService extends ChangeNotifier {
       final response = await _connectionService.sendCommand(command);
 
       if (kDebugMode) {
-        print(response.success 
+        print(response.success
             ? '✅ Выравнивание проекторов запущено'
             : '❌ Ошибка выравнивания проекторов: ${response.error}');
       }
@@ -593,20 +600,19 @@ class FreeDomeCalibrationService extends ChangeNotifier {
     final completedCalibrations = _calibrationHistory
         .where((r) => r.status == CalibrationStatus.completed)
         .length;
-    
+
     final failedCalibrations = _calibrationHistory
         .where((r) => r.status == CalibrationStatus.failed)
         .length;
 
-    final lastCalibration = _calibrationHistory.isNotEmpty
-        ? _calibrationHistory.last
-        : null;
+    final lastCalibration =
+        _calibrationHistory.isNotEmpty ? _calibrationHistory.last : null;
 
     return {
       'totalCalibrations': _calibrationHistory.length,
       'completedCalibrations': completedCalibrations,
       'failedCalibrations': failedCalibrations,
-      'successRate': _calibrationHistory.isNotEmpty 
+      'successRate': _calibrationHistory.isNotEmpty
           ? (completedCalibrations / _calibrationHistory.length * 100).round()
           : 0,
       'lastCalibration': lastCalibration?.toJson(),

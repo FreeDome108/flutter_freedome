@@ -17,7 +17,7 @@ class FreeDomeAuthService extends ChangeNotifier {
   static const String _guestSessionKey = 'freedome_guest_session';
 
   final FlutterSecureStorage _secureStorage = const FlutterSecureStorage();
-  
+
   FreeDomeUser? _currentUser;
   FreeDomeSession? _currentSession;
   bool _isAuthenticated = false;
@@ -28,17 +28,19 @@ class FreeDomeAuthService extends ChangeNotifier {
   FreeDomeSession? get currentSession => _currentSession;
   bool get isAuthenticated => _isAuthenticated;
   bool get isGuest => _isGuest;
-  FreeDomeUserRole get currentRole => _currentUser?.role ?? FreeDomeUserRole.guest;
-  
+  FreeDomeUserRole get currentRole =>
+      _currentUser?.role ?? FreeDomeUserRole.guest;
+
   /// Инициализация сервиса
   Future<void> initialize() async {
     try {
       await _loadStoredSession();
-      
+
       if (kDebugMode) {
         print('✅ FreeDomeAuthService инициализирован');
         if (_isAuthenticated) {
-          print('👤 Пользователь: ${_currentUser?.name} (${currentRole.displayName})');
+          print(
+              '👤 Пользователь: ${_currentUser?.name} (${currentRole.displayName})');
         }
       }
     } catch (e) {
@@ -52,7 +54,7 @@ class FreeDomeAuthService extends ChangeNotifier {
   Future<void> _loadStoredSession() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // Проверяем гостевую сессию
       final guestSessionJson = prefs.getString(_guestSessionKey);
       if (guestSessionJson != null) {
@@ -60,7 +62,7 @@ class FreeDomeAuthService extends ChangeNotifier {
         _currentSession = FreeDomeSession.fromJson(sessionData);
         _isGuest = true;
         _isAuthenticated = true;
-        
+
         // Создаем временного пользователя-гостя
         _currentUser = FreeDomeUser(
           id: 'guest_${_currentSession!.id}',
@@ -68,14 +70,14 @@ class FreeDomeAuthService extends ChangeNotifier {
           role: FreeDomeUserRole.guest,
           permissions: FreeDomeUserRole.guest.defaultPermissions,
         );
-        
+
         return;
       }
 
       // Проверяем аутентифицированную сессию
       final userJson = await _secureStorage.read(key: _userKey);
       final sessionJson = await _secureStorage.read(key: _sessionKey);
-      
+
       if (userJson != null && sessionJson != null) {
         _currentUser = FreeDomeUser.fromJson(json.decode(userJson));
         _currentSession = FreeDomeSession.fromJson(json.decode(sessionJson));
@@ -98,11 +100,11 @@ class FreeDomeAuthService extends ChangeNotifier {
     try {
       // Хэшируем пароль
       final passwordHash = _hashPassword(password);
-      
+
       // В реальной реализации здесь должен быть запрос к серверу аутентификации
       // Для демонстрации используем предопределенные учетные данные
       final isValid = await _validateCredentials(username, passwordHash);
-      
+
       if (isValid) {
         final user = FreeDomeUser(
           id: 'admin_${DateTime.now().millisecondsSinceEpoch}',
@@ -121,18 +123,18 @@ class FreeDomeAuthService extends ChangeNotifier {
         );
 
         await _saveAuthenticatedSession(user, session);
-        
+
         _currentUser = user;
         _currentSession = session;
         _isAuthenticated = true;
         _isGuest = false;
-        
+
         notifyListeners();
-        
+
         if (kDebugMode) {
           print('✅ Администратор аутентифицирован: $username');
         }
-        
+
         return true;
       }
     } catch (e) {
@@ -140,7 +142,7 @@ class FreeDomeAuthService extends ChangeNotifier {
         print('❌ Ошибка аутентификации: $e');
       }
     }
-    
+
     return false;
   }
 
@@ -162,18 +164,18 @@ class FreeDomeAuthService extends ChangeNotifier {
       );
 
       await _saveGuestSession(session);
-      
+
       _currentUser = user;
       _currentSession = session;
       _isAuthenticated = true;
       _isGuest = true;
-      
+
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('✅ Гостевая сессия создана');
       }
-      
+
       return true;
     } catch (e) {
       if (kDebugMode) {
@@ -192,7 +194,7 @@ class FreeDomeAuthService extends ChangeNotifier {
           endTime: DateTime.now(),
           duration: DateTime.now().difference(_currentSession!.startTime),
         );
-        
+
         // В реальной реализации отправляем на сервер
         if (kDebugMode) {
           print('📊 Сессия завершена: ${endedSession.duration}');
@@ -201,14 +203,14 @@ class FreeDomeAuthService extends ChangeNotifier {
 
       // Очищаем сохраненные данные
       await _clearStoredSession();
-      
+
       _currentUser = null;
       _currentSession = null;
       _isAuthenticated = false;
       _isGuest = false;
-      
+
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('✅ Выход из системы выполнен');
       }
@@ -224,7 +226,7 @@ class FreeDomeAuthService extends ChangeNotifier {
     if (!_isAuthenticated || _currentUser == null) {
       return false;
     }
-    
+
     return _currentUser!.permissions.contains(permission);
   }
 
@@ -233,7 +235,7 @@ class FreeDomeAuthService extends ChangeNotifier {
     if (!_isAuthenticated || _currentUser == null) {
       return false;
     }
-    
+
     return _currentUser!.role.index >= role.index;
   }
 
@@ -242,19 +244,20 @@ class FreeDomeAuthService extends ChangeNotifier {
     if (!_isAuthenticated || _currentUser == null) {
       return [];
     }
-    
+
     return _currentUser!.permissions;
   }
 
   /// Валидация учетных данных
-  Future<bool> _validateCredentials(String username, String passwordHash) async {
+  Future<bool> _validateCredentials(
+      String username, String passwordHash) async {
     // Предопределенные учетные данные для демонстрации
     final validCredentials = {
       'admin': _hashPassword('admin123'),
       'operator': _hashPassword('operator123'),
       'technician': _hashPassword('tech123'),
     };
-    
+
     return validCredentials[username] == passwordHash;
   }
 
@@ -266,9 +269,12 @@ class FreeDomeAuthService extends ChangeNotifier {
   }
 
   /// Сохранение аутентифицированной сессии
-  Future<void> _saveAuthenticatedSession(FreeDomeUser user, FreeDomeSession session) async {
-    await _secureStorage.write(key: _userKey, value: json.encode(user.toJson()));
-    await _secureStorage.write(key: _sessionKey, value: json.encode(session.toJson()));
+  Future<void> _saveAuthenticatedSession(
+      FreeDomeUser user, FreeDomeSession session) async {
+    await _secureStorage.write(
+        key: _userKey, value: json.encode(user.toJson()));
+    await _secureStorage.write(
+        key: _sessionKey, value: json.encode(session.toJson()));
   }
 
   /// Сохранение гостевой сессии
@@ -281,7 +287,7 @@ class FreeDomeAuthService extends ChangeNotifier {
   Future<void> _clearStoredSession() async {
     await _secureStorage.delete(key: _userKey);
     await _secureStorage.delete(key: _sessionKey);
-    
+
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_guestSessionKey);
   }
@@ -301,17 +307,17 @@ class FreeDomeAuthService extends ChangeNotifier {
   /// Продление сессии
   Future<bool> extendSession() async {
     if (_currentSession == null) return false;
-    
+
     try {
       // В реальной реализации отправляем запрос на сервер
       // Для демонстрации просто обновляем локальные данные
-      
+
       if (_isGuest) {
         await _saveGuestSession(_currentSession!);
       } else {
         await _saveAuthenticatedSession(_currentUser!, _currentSession!);
       }
-      
+
       return true;
     } catch (e) {
       if (kDebugMode) {
@@ -324,7 +330,7 @@ class FreeDomeAuthService extends ChangeNotifier {
   /// Переключение в гостевой режим
   Future<bool> switchToGuestMode() async {
     if (_isGuest) return true;
-    
+
     await logout();
     return await createGuestSession();
   }
