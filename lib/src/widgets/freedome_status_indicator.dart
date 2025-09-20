@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../core/freedome_provider.dart';
 import '../models/dome_models.dart';
+import '../models/content_models.dart';
 
 /// Виджет индикатора статуса подключения к FreeDome
 class FreeDomeStatusIndicator extends StatelessWidget {

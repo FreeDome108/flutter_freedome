@@ -6,6 +6,7 @@ import 'connection_service.dart';
 import 'auth_service.dart';
 import '../models/content_models.dart';
 import '../models/dome_models.dart';
+import '../models/calibration_models.dart';
 
 /// Сервис для управления контентом FreeDome
 class FreeDomeContentService extends ChangeNotifier {
@@ -54,7 +55,7 @@ class FreeDomeContentService extends ChangeNotifier {
   }
 
   /// Воспроизведение контента
-  Future<bool> playContent(FreeDomeContent content) async {
+  Future<bool> playContent(dynamic content) async {
     // Проверяем разрешения
     if (!_authService.hasPermission(FreeDomePermission.playContent)) {
       if (kDebugMode) {
@@ -526,7 +527,7 @@ class FreeDomeContentService extends ChangeNotifier {
   }
 
   /// Обновление статистики контента
-  Future<void> _updateContentStats(ProjectionContent content) async {
+  Future<void> _updateContentStats(dynamic content) async {
     try {
       final index = _contentLibrary.indexWhere((c) => c.id == content.id);
       if (index != -1) {

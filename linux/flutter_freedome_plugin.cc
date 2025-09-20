@@ -74,3 +74,4 @@ void flutter_freedome_plugin_register_with_registrar(FlPluginRegistrar* registra
 
   g_object_unref(plugin);
 }
+

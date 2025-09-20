@@ -63,7 +63,7 @@ class FreeDomeGuestService extends ChangeNotifier {
   }
 
   /// Воспроизведение контента
-  Future<bool> playContent(FreeDomeContent content) async {
+  Future<bool> playContent(dynamic content) async {
     return await _provider.playContent(content);
   }
 

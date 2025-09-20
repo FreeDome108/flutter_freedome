@@ -24,3 +24,4 @@ FLUTTER_PLUGIN_EXPORT void flutter_freedome_plugin_register_with_registrar(
 G_END_DECLS
 
 #endif  // FLUTTER_PLUGIN_FLUTTER_FREEDOME_PLUGIN_H_
+

@@ -292,7 +292,8 @@ extension PlaybackStatusExtension on PlaybackStatus {
   bool get isPlaying => this == PlaybackStatus.playing;
   bool get canPause => this == PlaybackStatus.playing;
   bool get canResume => this == PlaybackStatus.paused;
-  bool get canStop => this == PlaybackStatus.playing || this == PlaybackStatus.paused;
+  bool get canStop =>
+      this == PlaybackStatus.playing || this == PlaybackStatus.paused;
 }
 
 /// Расширения для состояния воспроизведения

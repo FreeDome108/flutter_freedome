@@ -280,27 +280,3 @@ extension CalibrationTypeExtension on CalibrationType {
     }
   }
 }
-
-/// Расширения для статусов воспроизведения
-extension PlaybackStatusExtension on PlaybackStatus {
-  String get displayName {
-    switch (this) {
-      case PlaybackStatus.stopped:
-        return 'Остановлено';
-      case PlaybackStatus.playing:
-        return 'Воспроизводится';
-      case PlaybackStatus.paused:
-        return 'Пауза';
-      case PlaybackStatus.buffering:
-        return 'Буферизация';
-      case PlaybackStatus.error:
-        return 'Ошибка';
-    }
-  }
-
-  bool get isActive =>
-      this == PlaybackStatus.playing || this == PlaybackStatus.buffering;
-  bool get canPause => this == PlaybackStatus.playing;
-  bool get canResume => this == PlaybackStatus.paused;
-  bool get canStop => isActive || this == PlaybackStatus.paused;
-}

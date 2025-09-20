@@ -70,7 +70,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
     setState(() {
       _isSearchFocused = _searchFocusNode.hasFocus;
     });
-    
+
     if (_isSearchFocused) {
       _animationController.forward();
     } else {
@@ -94,7 +94,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
               color: colorScheme.surface,
               border: Border(
                 bottom: BorderSide(
-                  color: colorScheme.outline.withOpacity(0.2),
+                  color: colorScheme.outline.withValues(0.2),
                   width: 1,
                 ),
               ),
@@ -108,21 +108,20 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
                     Expanded(
                       child: _buildSearchField(theme, colorScheme),
                     ),
-                    
+
                     const SizedBox(width: 12),
-                    
+
                     // Filter Button
                     if (widget.showFilters)
                       _buildFilterButton(theme, colorScheme),
-                    
+
                     const SizedBox(width: 8),
-                    
+
                     // Sort Button
-                    if (widget.showSort)
-                      _buildSortButton(theme, colorScheme),
+                    if (widget.showSort) _buildSortButton(theme, colorScheme),
                   ],
                 ),
-                
+
                 // Quick Filters (when search is focused)
                 if (_isSearchFocused) ...[
                   const SizedBox(height: 12),
@@ -141,9 +140,9 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: _isSearchFocused 
-              ? colorScheme.primary 
-              : colorScheme.outline.withOpacity(0.3),
+          color: _isSearchFocused
+              ? colorScheme.primary
+              : colorScheme.outline.withValues(0.3),
           width: _isSearchFocused ? 2 : 1,
         ),
         color: colorScheme.surface,
@@ -156,14 +155,14 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
         decoration: InputDecoration(
           hintText: 'Search tax liens, properties, counties...',
           hintStyle: TextStyle(
-            color: colorScheme.onSurface.withOpacity(0.6),
+            color: colorScheme.onSurface.withValues(0.6),
             fontSize: 14,
           ),
           prefixIcon: Icon(
             Icons.search,
-            color: _isSearchFocused 
-                ? colorScheme.primary 
-                : colorScheme.onSurface.withOpacity(0.6),
+            color: _isSearchFocused
+                ? colorScheme.primary
+                : colorScheme.onSurface.withValues(0.6),
             size: 20,
           ),
           suffixIcon: _searchController.text.isNotEmpty
@@ -174,7 +173,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
                   },
                   icon: Icon(
                     Icons.clear,
-                    color: colorScheme.onSurface.withOpacity(0.6),
+                    color: colorScheme.onSurface.withValues(0.6),
                     size: 18,
                   ),
                 )
@@ -191,20 +190,20 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
   }
 
   Widget _buildFilterButton(ThemeData theme, ColorScheme colorScheme) {
-    final hasActiveFilters = widget.activeFilterCount != null && 
-                            widget.activeFilterCount! > 0;
+    final hasActiveFilters =
+        widget.activeFilterCount != null && widget.activeFilterCount! > 0;
 
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: hasActiveFilters 
-              ? colorScheme.primary 
-              : colorScheme.outline.withOpacity(0.3),
+          color: hasActiveFilters
+              ? colorScheme.primary
+              : colorScheme.outline.withValues(0.3),
           width: hasActiveFilters ? 2 : 1,
         ),
-        color: hasActiveFilters 
-            ? colorScheme.primaryContainer 
+        color: hasActiveFilters
+            ? colorScheme.primaryContainer
             : colorScheme.surface,
       ),
       child: Material(
@@ -218,9 +217,9 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
               children: [
                 Icon(
                   Icons.tune,
-                  color: hasActiveFilters 
-                      ? colorScheme.onPrimaryContainer 
-                      : colorScheme.onSurface.withOpacity(0.7),
+                  color: hasActiveFilters
+                      ? colorScheme.onPrimaryContainer
+                      : colorScheme.onSurface.withValues(0.7),
                   size: 20,
                 ),
                 if (hasActiveFilters)
@@ -259,7 +258,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: colorScheme.outline.withOpacity(0.3),
+          color: colorScheme.outline.withValues(0.3),
           width: 1,
         ),
         color: colorScheme.surface,
@@ -273,7 +272,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
             padding: const EdgeInsets.all(12),
             child: Icon(
               Icons.sort,
-              color: colorScheme.onSurface.withOpacity(0.7),
+              color: colorScheme.onSurface.withValues(0.7),
               size: 20,
             ),
           ),
@@ -330,10 +329,10 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: color.withOpacity(0.3),
+          color: color.withValues(0.3),
           width: 1,
         ),
-        color: color.withOpacity(0.1),
+        color: color.withValues(0.1),
       ),
       child: Material(
         color: Colors.transparent,
@@ -462,7 +461,7 @@ class _TaxLienFilterDialogState extends State<TaxLienFilterDialog> {
                 ],
               ),
             ),
-            
+
             // Filter Content
             Flexible(
               child: SingleChildScrollView(
@@ -472,38 +471,38 @@ class _TaxLienFilterDialogState extends State<TaxLienFilterDialog> {
                   children: [
                     // Price Range
                     _buildPriceRangeFilter(theme, colorScheme),
-                    
+
                     const SizedBox(height: 24),
-                    
+
                     // Interest Rate Range
                     _buildInterestRangeFilter(theme, colorScheme),
-                    
+
                     const SizedBox(height: 24),
-                    
+
                     // Risk Level
                     _buildRiskLevelFilter(theme, colorScheme),
-                    
+
                     const SizedBox(height: 24),
-                    
+
                     // County
                     _buildCountyFilter(theme, colorScheme),
-                    
+
                     const SizedBox(height: 24),
-                    
+
                     // Stock Status
                     _buildStockStatusFilter(theme, colorScheme),
                   ],
                 ),
               ),
             ),
-            
+
             // Action Buttons
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    color: colorScheme.outline.withOpacity(0.2),
+                    color: colorScheme.outline.withValues(0.2),
                     width: 1,
                   ),
                 ),
@@ -642,7 +641,7 @@ class _TaxLienFilterDialogState extends State<TaxLienFilterDialog> {
                   _selectedRiskLevel = selected ? risk : null;
                 });
               },
-              selectedColor: _getRiskColor(risk).withOpacity(0.2),
+              selectedColor: _getRiskColor(risk).withValues(0.2),
               checkmarkColor: _getRiskColor(risk),
             );
           }).toList(),
@@ -663,19 +662,20 @@ class _TaxLienFilterDialogState extends State<TaxLienFilterDialog> {
         ),
         const SizedBox(height: 8),
         DropdownButtonFormField<String>(
-          value: _selectedCounty,
+          initialValue: _selectedCounty,
           decoration: InputDecoration(
             hintText: 'Select County',
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
             ),
           ),
-          items: ['Miami-Dade', 'Broward', 'Palm Beach', 'Orange', 'Hillsborough']
-              .map((county) => DropdownMenuItem(
-                    value: county,
-                    child: Text(county),
-                  ))
-              .toList(),
+          items:
+              ['Miami-Dade', 'Broward', 'Palm Beach', 'Orange', 'Hillsborough']
+                  .map((county) => DropdownMenuItem(
+                        value: county,
+                        child: Text(county),
+                      ))
+                  .toList(),
           onChanged: (value) {
             setState(() {
               _selectedCounty = value;

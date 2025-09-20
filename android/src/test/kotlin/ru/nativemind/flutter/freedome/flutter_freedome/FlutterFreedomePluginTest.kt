@@ -25,3 +25,4 @@ internal class FlutterFreedomePluginTest {
         Mockito.verify(mockResult).success("Android " + android.os.Build.VERSION.RELEASE)
     }
 }
+

@@ -57,3 +57,4 @@ void FlutterFreedomePlugin::HandleMethodCall(
 }
 
 }  // namespace flutter_freedome
+

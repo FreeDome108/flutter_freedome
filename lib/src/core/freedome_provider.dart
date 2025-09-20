@@ -235,7 +235,7 @@ class FreeDomeProvider extends ChangeNotifier {
   }
 
   /// Воспроизведение контента (упрощенный API)
-  Future<bool> playContent(FreeDomeContent content) async {
+  Future<bool> playContent(dynamic content) async {
     if (!_isInitialized) {
       return false;
     }

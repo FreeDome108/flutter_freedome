@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class FlutterFreedomePlugin: NSObject, FlutterPlugin {
+public class FlutterMagentoPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_freedome", binaryMessenger: registrar.messenger())
-    let instance = FlutterFreedomePlugin()
+    let channel = FlutterMethodChannel(name: "flutter_magento", binaryMessenger: registrar.messenger())
+    let instance = FlutterMagentoPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

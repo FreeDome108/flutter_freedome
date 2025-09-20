@@ -69,3 +69,4 @@ class FreeDomeException implements Exception {
   @override
   int get hashCode => message.hashCode ^ code.hashCode ^ statusCode.hashCode;
 }
+

@@ -141,8 +141,8 @@ const _$ProjectorStatusEnumMap = {
   ProjectorStatus.standby: 'standby',
   ProjectorStatus.error: 'error',
   ProjectorStatus.calibrating: 'calibrating',
-  ProjectorStatus.warming_up: 'warming_up',
-  ProjectorStatus.cooling_down: 'cooling_down',
+  ProjectorStatus.warmingUp: 'warmingUp',
+  ProjectorStatus.coolingDown: 'coolingDown',
 };
 
 _$AudioChannelImpl _$$AudioChannelImplFromJson(Map<String, dynamic> json) =>

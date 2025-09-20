@@ -29,3 +29,4 @@ class FlutterFreedomePlugin : public flutter::Plugin {
 }  // namespace flutter_freedome
 
 #endif  // FLUTTER_PLUGIN_FLUTTER_FREEDOME_PLUGIN_H_
+
