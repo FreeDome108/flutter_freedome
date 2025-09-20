@@ -1,7 +1,7 @@
 name: flutter_freedome
 description: Унифицированная Flutter библиотека для интеграции с купольными кинотеатрами FreeDome
 license: NativeMindNONC
-version: 1.0.1
+version: 1.2.0+3
 homepage: https://github.com/nativemind/flutter_freedome
 
 environment:
@@ -87,6 +87,10 @@ dev_dependencies:
   # Testing
   mockito: ^5.4.4
   test: ^1.24.9
+  
+  # Test coverage
+  coverage: ^1.9.2
+  test_coverage: ^0.5.0
 
 flutter:
   plugin:
