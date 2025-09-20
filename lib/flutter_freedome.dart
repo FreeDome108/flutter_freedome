@@ -57,6 +57,7 @@ export 'src/core/freedome_provider.dart';
 export 'src/core/connection_service.dart';
 export 'src/core/auth_service.dart';
 export 'src/core/content_service.dart';
+export 'src/core/storage_service.dart';
 
 // Экспорт гостевого режима
 export 'src/guest/guest_service.dart';
