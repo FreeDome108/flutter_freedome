@@ -41,3 +41,4 @@ TEST(FlutterFreedomePluginTest, GetPlatformVersion) {
 }  // namespace test
 }  // namespace flutter_freedome
 
+

@@ -69,7 +69,10 @@ export 'src/admin/system_service.dart';
 // Экспорт моделей
 export 'src/models/dome_models.dart';
 export 'src/models/content_models.dart';
-export 'src/models/calibration_models.dart';
+
+// Экспорт подключенных пакетов
+export 'package:flutter_freedome_connectivity/flutter_freedome_connectivity.dart';
+export 'package:flutter_freedome_calibration/flutter_freedome_calibration.dart';
 
 // Экспорт виджетов
 export 'src/widgets/freedome_connection_widget.dart';

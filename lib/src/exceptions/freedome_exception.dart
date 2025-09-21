@@ -70,3 +70,4 @@ class FreeDomeException implements Exception {
   int get hashCode => message.hashCode ^ code.hashCode ^ statusCode.hashCode;
 }
 
+

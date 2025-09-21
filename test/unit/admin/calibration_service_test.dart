@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-import 'package:mockito/annotations.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:flutter_freedome/src/admin/calibration_service.dart';
 import 'package:flutter_freedome/src/core/connection_service.dart';
 import 'package:flutter_freedome/src/core/auth_service.dart';
@@ -72,7 +71,7 @@ void main() {
         final calibration =
             calibrationService.getCalibrationProgress(calibrationId!);
         expect(calibration, isNotNull);
-        expect(calibration!.type, CalibrationType.audio_only);
+        expect(calibration!.type, CalibrationType.audioOnly);
         expect(calibration.status, CalibrationStatus.running);
 
         verify(mockConnectionService.sendCommand(any)).called(1);
@@ -180,7 +179,7 @@ void main() {
         final calibration =
             calibrationService.getCalibrationProgress(calibrationId!);
         expect(calibration, isNotNull);
-        expect(calibration!.type, CalibrationType.video_only);
+        expect(calibration!.type, CalibrationType.videoOnly);
         expect(calibration.status, CalibrationStatus.running);
 
         verify(mockConnectionService.sendCommand(any)).called(1);
@@ -398,7 +397,7 @@ void main() {
           calibrationId!,
           const CalibrationProgress(
             id: 'test-id',
-            type: CalibrationType.audio_only,
+            type: CalibrationType.audioOnly,
             status: CalibrationStatus.completed,
             progress: 1.0,
             currentStep: 'Completed',
@@ -444,7 +443,7 @@ void main() {
           calibrationId!,
           CalibrationProgress(
             id: calibrationId,
-            type: CalibrationType.audio_only,
+            type: CalibrationType.audioOnly,
             status: CalibrationStatus.running,
             progress: 0.5,
             currentStep: 'Testing channels',
@@ -561,7 +560,7 @@ void main() {
         const testResult = CalibrationResult(
           id: 'test-result',
           calibrationId: 'test-calibration',
-          type: CalibrationType.audio_only,
+          type: CalibrationType.audioOnly,
           status: CalibrationStatus.completed,
           startTime: DateTime.now(),
           endTime: DateTime.now(),
@@ -582,7 +581,7 @@ void main() {
         const testResult1 = CalibrationResult(
           id: 'result-1',
           calibrationId: 'calibration-1',
-          type: CalibrationType.audio_only,
+          type: CalibrationType.audioOnly,
           status: CalibrationStatus.completed,
           startTime: DateTime.now(),
           endTime: DateTime.now(),
@@ -592,7 +591,7 @@ void main() {
         const testResult2 = CalibrationResult(
           id: 'result-2',
           calibrationId: 'calibration-2',
-          type: CalibrationType.video_only,
+          type: CalibrationType.videoOnly,
           status: CalibrationStatus.completed,
           startTime: DateTime.now(),
           endTime: DateTime.now(),
@@ -605,15 +604,15 @@ void main() {
         final history = calibrationService.getCalibrationHistory();
         expect(history.length, 2);
         expect(
-            history[0].type, CalibrationType.video_only); // Most recent first
-        expect(history[1].type, CalibrationType.audio_only);
+            history[0].type, CalibrationType.videoOnly); // Most recent first
+        expect(history[1].type, CalibrationType.audioOnly);
       });
 
       test('should filter history by type', () {
         const testResult1 = CalibrationResult(
           id: 'result-1',
           calibrationId: 'calibration-1',
-          type: CalibrationType.audio_only,
+          type: CalibrationType.audioOnly,
           status: CalibrationStatus.completed,
           startTime: DateTime.now(),
           endTime: DateTime.now(),
@@ -623,7 +622,7 @@ void main() {
         const testResult2 = CalibrationResult(
           id: 'result-2',
           calibrationId: 'calibration-2',
-          type: CalibrationType.video_only,
+          type: CalibrationType.videoOnly,
           status: CalibrationStatus.completed,
           startTime: DateTime.now(),
           endTime: DateTime.now(),
@@ -634,17 +633,17 @@ void main() {
         calibrationService.saveCalibrationResult(testResult2);
 
         final audioHistory = calibrationService.getCalibrationHistory(
-          type: CalibrationType.audio_only,
+          type: CalibrationType.audioOnly,
         );
         expect(audioHistory.length, 1);
-        expect(audioHistory.first.type, CalibrationType.audio_only);
+        expect(audioHistory.first.type, CalibrationType.audioOnly);
       });
 
       test('should clear old calibration results', () async {
         const testResult = CalibrationResult(
           id: 'old-result',
           calibrationId: 'old-calibration',
-          type: CalibrationType.audio_only,
+          type: CalibrationType.audioOnly,
           status: CalibrationStatus.completed,
           startTime: DateTime.now(),
           endTime: DateTime.now(),
@@ -701,7 +700,7 @@ void main() {
           final result = CalibrationResult(
             id: 'result-$i',
             calibrationId: 'calibration-$i',
-            type: CalibrationType.audio_only,
+            type: CalibrationType.audioOnly,
             status: CalibrationStatus.completed,
             startTime: DateTime.now().subtract(Duration(days: i)),
             endTime: DateTime.now().subtract(Duration(days: i)),

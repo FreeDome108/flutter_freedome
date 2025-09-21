@@ -94,7 +94,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
               color: colorScheme.surface,
               border: Border(
                 bottom: BorderSide(
-                  color: colorScheme.outline.withValues(0.2),
+                  color: colorScheme.outline.withOpacity(0.2),
                   width: 1,
                 ),
               ),
@@ -142,7 +142,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
         border: Border.all(
           color: _isSearchFocused
               ? colorScheme.primary
-              : colorScheme.outline.withValues(0.3),
+              : colorScheme.outline.withOpacity(0.3),
           width: _isSearchFocused ? 2 : 1,
         ),
         color: colorScheme.surface,
@@ -199,7 +199,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar>
         border: Border.all(
           color: hasActiveFilters
               ? colorScheme.primary
-              : colorScheme.outline.withValues(0.3),
+              : colorScheme.outline.withOpacity(0.3),
           width: hasActiveFilters ? 2 : 1,
         ),
         color: hasActiveFilters
@@ -502,7 +502,7 @@ class _TaxLienFilterDialogState extends State<TaxLienFilterDialog> {
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    color: colorScheme.outline.withValues(0.2),
+                    color: colorScheme.outline.withOpacity(0.2),
                     width: 1,
                   ),
                 ),

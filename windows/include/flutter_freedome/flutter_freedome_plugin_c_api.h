@@ -22,3 +22,4 @@ FLUTTER_PLUGIN_EXPORT void FlutterFreedomePluginCApiRegisterWithRegistrar(
 
 #endif  // FLUTTER_PLUGIN_FLUTTER_FREEDOME_PLUGIN_C_API_H_
 
+

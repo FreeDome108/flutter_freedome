@@ -26,3 +26,4 @@ internal class FlutterFreedomePluginTest {
     }
 }
 
+

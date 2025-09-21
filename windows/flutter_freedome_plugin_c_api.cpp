@@ -11,3 +11,4 @@ void FlutterFreedomePluginCApiRegisterWithRegistrar(
           ->GetRegistrar<flutter::PluginRegistrarWindows>(registrar));
 }
 
+

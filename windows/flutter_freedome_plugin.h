@@ -30,3 +30,4 @@ class FlutterFreedomePlugin : public flutter::Plugin {
 
 #endif  // FLUTTER_PLUGIN_FLUTTER_FREEDOME_PLUGIN_H_
 
+

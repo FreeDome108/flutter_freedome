@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-import 'package:mockito/annotations.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:flutter_freedome/src/core/connection_service.dart';
 import 'package:flutter_freedome/src/models/dome_models.dart';
 
