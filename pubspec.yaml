@@ -20,11 +20,9 @@ dependencies:
   # Platform Interface
   plugin_platform_interface: ^2.1.8
   
-  # FreeDome packages
-  flutter_freedome_connectivity:
-    path: ../flutter_freedome_connectivity
-  flutter_freedome_calibration:
-    path: ../flutter_freedome_calibration
+  # FreeDome packages (temporarily disabled for publication)
+  # flutter_freedome_connectivity: any
+  # flutter_freedome_calibration: any
   
   # HTTP Client & WebSocket (2025 лучшие практики)
   dio: ^5.6.0

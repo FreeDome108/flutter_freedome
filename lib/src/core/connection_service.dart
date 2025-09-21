@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_freedome_connectivity/flutter_freedome_connectivity.dart'
-    as connectivity;
+// Temporarily using stubs for publication
+import '../stubs/connectivity_stub.dart' as connectivity;
 import 'package:http/http.dart' as http;
 import 'package:socket_io_client/socket_io_client.dart' as socket_io_client;
 import '../models/dome_models.dart';
@@ -15,7 +15,7 @@ class FreeDomeConnectionService extends ChangeNotifier {
 
   // Используем новый сервис подключений
   final connectivity.FreeDomeConnectionService _connectivityService =
-      connectivity.FreeDomeConnectionService();
+      connectivity.FreeDomeConnectionService.instance;
 
   // Геттеры делегируют к сервису подключений
   connectivity.FreeDomeConnectionStatus get connectionStatus =>

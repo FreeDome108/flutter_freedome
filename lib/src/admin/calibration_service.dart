@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_freedome_calibration/flutter_freedome_calibration.dart'
-    as calibration;
-import 'package:flutter_freedome_connectivity/flutter_freedome_connectivity.dart'
-    as connectivity;
+// Temporarily using stubs for publication
+import '../stubs/calibration_stub.dart' as calibration;
+import '../stubs/connectivity_stub.dart' as connectivity;
 import 'package:http/http.dart' as http;
 import '../core/connection_service.dart';
 import '../core/auth_service.dart';
@@ -36,8 +35,8 @@ class FreeDomeConnectionProviderImpl
       calibration.FreeDomeCommand command) async {
     // Конвертируем команду из калибровочного пакета в connectivity пакет
     final connectivityCommand = connectivity.FreeDomeCommand(
-      type: command.type,
-      data: command.data,
+      command.type,
+      command.data,
       targetSystemId: command.targetSystemId,
       sessionId: command.sessionId,
       priority: command.priority,

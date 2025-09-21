@@ -70,9 +70,10 @@ export 'src/admin/system_service.dart';
 export 'src/models/dome_models.dart';
 export 'src/models/content_models.dart';
 
-// Экспорт подключенных пакетов
-export 'package:flutter_freedome_connectivity/flutter_freedome_connectivity.dart';
-export 'package:flutter_freedome_calibration/flutter_freedome_calibration.dart';
+// Экспорт подключенных пакетов (temporarily disabled for publication)
+// export 'package:flutter_freedome_connectivity/flutter_freedome_connectivity.dart'
+//     hide DomeSystemType, FreeDomePermission;
+// export 'package:flutter_freedome_calibration/flutter_freedome_calibration.dart';
 
 // Экспорт виджетов
 export 'src/widgets/freedome_connection_widget.dart';
@@ -157,7 +158,7 @@ class FlutterFreeDome {
   }
 
   /// Получение версии библиотеки
-  static String get version => '1.0.0';
+  static String get version => '2.0.0+1';
 
   /// Получение информации о библиотеке
   static Map<String, dynamic> get info => {
