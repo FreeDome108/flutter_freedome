@@ -1,257 +1,439 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-// Temporarily using stubs for publication
-import '../stubs/calibration_stub.dart' as calibration;
-import '../stubs/connectivity_stub.dart' as connectivity;
 import 'package:http/http.dart' as http;
 import '../core/connection_service.dart';
 import '../core/auth_service.dart';
 import '../models/dome_models.dart';
+import '../models/calibration_models.dart';
 
-/// Адаптер для подключения к FreeDome системе
-class FreeDomeConnectionProviderImpl
-    implements calibration.FreeDomeConnectionProvider {
+/// Сервис калибровки FreeDome систем
+class FreeDomeCalibrationService extends ChangeNotifier {
   final FreeDomeConnectionService _connectionService;
-
-  FreeDomeConnectionProviderImpl(this._connectionService);
-
-  @override
-  bool get isConnected => _connectionService.isConnected;
-
-  @override
-  String? get activeDomeId => _connectionService.activeDome?.id;
-
-  @override
-  String? get activeDomeUrl {
-    final dome = _connectionService.activeDome;
-    if (dome != null) {
-      return 'http://${dome.ipAddress}:${dome.port}';
-    }
-    return null;
-  }
-
-  @override
-  Future<calibration.FreeDomeResponse> sendCommand(
-      calibration.FreeDomeCommand command) async {
-    // Конвертируем команду из калибровочного пакета в connectivity пакет
-    final connectivityCommand = connectivity.FreeDomeCommand(
-      command.type,
-      command.data,
-      targetSystemId: command.targetSystemId,
-      sessionId: command.sessionId,
-      priority: command.priority,
-      timestamp: command.timestamp,
-      timeout: command.timeout,
-    );
-
-    final response = await _connectionService.sendCommand(connectivityCommand);
-
-    // Конвертируем ответ обратно
-    return calibration.FreeDomeResponse(
-      success: response.success,
-      error: response.error,
-      data: response.data,
-      commandId: response.commandId,
-      timestamp: response.timestamp,
-    );
-  }
-
-  @override
-  http.Client? getHttpClient(String domeId) {
-    return _connectionService.getHttpClient(domeId);
-  }
-}
-
-/// Адаптер для аутентификации пользователя
-class FreeDomeAuthProviderImpl implements calibration.FreeDomeAuthProvider {
   final FreeDomeAuthService _authService;
 
-  FreeDomeAuthProviderImpl(this._authService);
+  // Состояние калибровки
+  final Map<String, CalibrationProgress> _activeCalibrations = {};
+  final List<CalibrationResult> _calibrationHistory = [];
+  final List<MicrophoneStatus> _microphones = [];
 
-  @override
-  calibration.FreeDomeUser? get currentUser {
-    final user = _authService.currentUser;
-    if (user != null) {
-      return calibration.FreeDomeUser(
-        id: user.id,
-        name: user.name,
-        permissions:
-            user.permissions.map((p) => _convertPermission(p)).toList(),
-        email: user.email,
-        lastLogin: user.lastLogin,
-      );
-    }
-    return null;
-  }
-
-  @override
-  calibration.FreeDomeSession? get currentSession {
-    final session = _authService.currentSession;
-    if (session != null) {
-      return calibration.FreeDomeSession(
-        id: session.id,
-        userId: session.userId,
-        domeId: session.domeId,
-        startTime: session.startTime,
-        endTime: session.endTime,
-      );
-    }
-    return null;
-  }
-
-  @override
-  bool hasPermission(calibration.FreeDomePermission permission) {
-    return _authService.hasPermission(_convertPermissionBack(permission));
-  }
-
-  calibration.FreeDomePermission _convertPermission(
-      FreeDomePermission permission) {
-    switch (permission) {
-      case FreeDomePermission.playContent:
-        return calibration.FreeDomePermission.playContent;
-      case FreeDomePermission.controlBasics:
-        return calibration.FreeDomePermission.controlBasics;
-      case FreeDomePermission.manageContent:
-        return calibration.FreeDomePermission.manageContent;
-      case FreeDomePermission.calibrateAudio:
-        return calibration.FreeDomePermission.calibrateAudio;
-      case FreeDomePermission.calibrateProjectors:
-        return calibration.FreeDomePermission.calibrateProjectors;
-      case FreeDomePermission.systemManagement:
-        return calibration.FreeDomePermission.systemManagement;
-      case FreeDomePermission.vendorManagement:
-        return calibration.FreeDomePermission.vendorManagement;
-    }
-  }
-
-  FreeDomePermission _convertPermissionBack(
-      calibration.FreeDomePermission permission) {
-    switch (permission) {
-      case calibration.FreeDomePermission.playContent:
-        return FreeDomePermission.playContent;
-      case calibration.FreeDomePermission.controlBasics:
-        return FreeDomePermission.controlBasics;
-      case calibration.FreeDomePermission.manageContent:
-        return FreeDomePermission.manageContent;
-      case calibration.FreeDomePermission.calibrateAudio:
-        return FreeDomePermission.calibrateAudio;
-      case calibration.FreeDomePermission.calibrateProjectors:
-        return FreeDomePermission.calibrateProjectors;
-      case calibration.FreeDomePermission.systemManagement:
-        return FreeDomePermission.systemManagement;
-      case calibration.FreeDomePermission.vendorManagement:
-        return FreeDomePermission.vendorManagement;
-    }
-  }
-}
-
-/// Сервис калибровки FreeDome (только для администраторов)
-class FreeDomeCalibrationService extends ChangeNotifier {
-  final calibration.FreeDomeCalibrationService _calibrationService;
+  // Потоки для обновлений
+  final StreamController<CalibrationProgress> _progressController =
+      StreamController<CalibrationProgress>.broadcast();
+  final StreamController<List<MicrophoneStatus>> _microphonesController =
+      StreamController<List<MicrophoneStatus>>.broadcast();
 
   FreeDomeCalibrationService({
     required FreeDomeConnectionService connectionService,
     required FreeDomeAuthService authService,
-  }) : _calibrationService = calibration.FreeDomeCalibrationService(
-          connectionProvider: FreeDomeConnectionProviderImpl(connectionService),
-          authProvider: FreeDomeAuthProviderImpl(authService),
-        ) {
-    // Прослушиваем изменения в сервисе калибровки
-    _calibrationService.addListener(() {
-      notifyListeners();
-    });
+  })  : _connectionService = connectionService,
+        _authService = authService;
+
+  /// Получить активные калибровки
+  Map<String, CalibrationProgress> get activeCalibrations =>
+      Map.unmodifiable(_activeCalibrations);
+
+  /// Получить историю калибровок
+  List<CalibrationResult> get calibrationHistory =>
+      List.unmodifiable(_calibrationHistory);
+
+  /// Получить поток прогресса калибровки
+  Stream<CalibrationProgress> get progressStream => _progressController.stream;
+
+  /// Получить поток статуса микрофонов
+  Stream<List<MicrophoneStatus>> get microphonesStream =>
+      _microphonesController.stream;
+
+  /// Проверить инициализацию
+  bool get isInitialized =>
+      _connectionService.isConnected && _authService.isAuthenticated;
+
+  /// Проверить права на калибровку
+  bool get canCalibrate =>
+      _authService.currentUser?.role
+          .hasPermission(FreeDomePermission.calibrateAudio) ??
+      false;
+
+  /// Инициализация сервиса
+  Future<void> initialize() async {
+    if (!isInitialized) {
+      throw Exception(
+          'Service not initialized. Connection and authentication required.');
+    }
+    await _loadMicrophones();
+    notifyListeners();
   }
 
-  // Делегируем все методы к сервису калибровки
-  Map<String, calibration.CalibrationProgress> get activeCalibrations =>
-      _calibrationService.activeCalibrations;
-  List<calibration.CalibrationResult> get calibrationHistory =>
-      _calibrationService.calibrationHistory;
-  Stream<calibration.CalibrationProgress> get progressStream =>
-      _calibrationService.progressStream;
-  Stream<List<calibration.MicrophoneStatus>> get microphonesStream =>
-      _calibrationService.microphonesStream;
-  bool get isInitialized => _calibrationService.isInitialized;
-  bool get canCalibrate => _calibrationService.canCalibrate;
+  /// Запуск аудиокалибровки
+  Future<CalibrationProgress> startAudioCalibration({
+    required String domeId,
+    CalibrationType type = CalibrationType.auto,
+    Map<String, dynamic>? settings,
+  }) async {
+    if (!canCalibrate) {
+      throw Exception('Insufficient permissions for audio calibration');
+    }
 
-  Future<void> initialize() => _calibrationService.initialize();
+    final calibrationId = _generateCalibrationId();
+    final progress = CalibrationProgress(
+      id: calibrationId,
+      type: type,
+      status: CalibrationStatus.pending,
+      progress: 0.0,
+      currentStep: 'Preparing audio calibration...',
+      totalSteps: _getTotalSteps(type),
+      completedSteps: 0,
+      startTime: DateTime.now(),
+      estimatedCompletion: DateTime.now().add(type.estimatedDuration),
+      stepData: settings,
+    );
 
-  Future<String?> startAudioCalibration({
-    calibration.CalibrationType type = calibration.CalibrationType.audioOnly,
-    List<int>? channels,
-    double? frequency,
-    double? duration,
-    double? targetLevel,
-  }) =>
-      _calibrationService.startAudioCalibration(
-        type: type,
-        channels: channels,
-        frequency: frequency,
-        duration: duration,
-        targetLevel: targetLevel,
+    _activeCalibrations[calibrationId] = progress;
+    _progressController.add(progress);
+    notifyListeners();
+
+    // Запуск калибровки в фоне
+    _runAudioCalibration(progress, domeId);
+
+    return progress;
+  }
+
+  /// Запуск видеокалибровки
+  Future<CalibrationProgress> startProjectorCalibration({
+    required String domeId,
+    required String projectorId,
+    CalibrationType type = CalibrationType.auto,
+    Map<String, dynamic>? settings,
+  }) async {
+    if (!canCalibrate) {
+      throw Exception('Insufficient permissions for projector calibration');
+    }
+
+    final calibrationId = _generateCalibrationId();
+    final progress = CalibrationProgress(
+      id: calibrationId,
+      type: type,
+      status: CalibrationStatus.pending,
+      progress: 0.0,
+      currentStep: 'Preparing projector calibration...',
+      totalSteps: _getTotalSteps(type),
+      completedSteps: 0,
+      startTime: DateTime.now(),
+      estimatedCompletion: DateTime.now().add(type.estimatedDuration),
+      stepData: settings,
+    );
+
+    _activeCalibrations[calibrationId] = progress;
+    _progressController.add(progress);
+    notifyListeners();
+
+    // Запуск калибровки в фоне
+    _runProjectorCalibration(progress, domeId, projectorId);
+
+    return progress;
+  }
+
+  /// Запуск полной калибровки
+  Future<CalibrationProgress> startFullCalibration({
+    required String domeId,
+    CalibrationType type = CalibrationType.full,
+    Map<String, dynamic>? settings,
+  }) async {
+    return startAudioCalibration(
+        domeId: domeId, type: type, settings: settings);
+  }
+
+  /// Запуск быстрой калибровки
+  Future<CalibrationProgress> startQuickCalibration(
+      {required String domeId}) async {
+    return startAudioCalibration(domeId: domeId, type: CalibrationType.quick);
+  }
+
+  /// Запуск автоматической калибровки
+  Future<CalibrationProgress> startAutoCalibration(
+      {required String domeId}) async {
+    return startAudioCalibration(domeId: domeId, type: CalibrationType.auto);
+  }
+
+  /// Приостановка калибровки
+  Future<void> pauseCalibration(String calibrationId) async {
+    final progress = _activeCalibrations[calibrationId];
+    if (progress != null && progress.status == CalibrationStatus.running) {
+      final updatedProgress =
+          progress.copyWith(status: CalibrationStatus.paused);
+      _activeCalibrations[calibrationId] = updatedProgress;
+      _progressController.add(updatedProgress);
+      notifyListeners();
+    }
+  }
+
+  /// Возобновление калибровки
+  Future<void> resumeCalibration(String calibrationId) async {
+    final progress = _activeCalibrations[calibrationId];
+    if (progress != null && progress.status == CalibrationStatus.paused) {
+      final updatedProgress =
+          progress.copyWith(status: CalibrationStatus.running);
+      _activeCalibrations[calibrationId] = updatedProgress;
+      _progressController.add(updatedProgress);
+      notifyListeners();
+    }
+  }
+
+  /// Отмена калибровки
+  Future<void> cancelCalibration(String calibrationId) async {
+    final progress = _activeCalibrations[calibrationId];
+    if (progress != null) {
+      final updatedProgress = progress.copyWith(
+        status: CalibrationStatus.cancelled,
+        estimatedCompletion: DateTime.now(),
       );
+      _activeCalibrations[calibrationId] = updatedProgress;
+      _progressController.add(updatedProgress);
+      notifyListeners();
+    }
+  }
 
-  Future<String?> startProjectorCalibration({
-    calibration.CalibrationType type = calibration.CalibrationType.videoOnly,
-    List<String>? projectorIds,
-    int? brightness,
-    int? contrast,
-    double? gamma,
-  }) =>
-      _calibrationService.startProjectorCalibration(
-        type: type,
-        projectorIds: projectorIds,
-        brightness: brightness,
-        contrast: contrast,
-        gamma: gamma,
-      );
+  /// Получение прогресса калибровки
+  CalibrationProgress? getCalibrationProgress(String calibrationId) {
+    return _activeCalibrations[calibrationId];
+  }
 
-  Future<String?> startFullCalibration() =>
-      _calibrationService.startFullCalibration();
-  Future<String?> startQuickCalibration() =>
-      _calibrationService.startQuickCalibration();
-  Future<String?> startAutoCalibration() =>
-      _calibrationService.startAutoCalibration();
+  /// Очистка завершенных калибровок
+  Future<void> clearCompletedCalibrations() async {
+    _activeCalibrations.removeWhere((id, progress) =>
+        progress.status == CalibrationStatus.completed ||
+        progress.status == CalibrationStatus.failed ||
+        progress.status == CalibrationStatus.cancelled);
+    notifyListeners();
+  }
 
-  Future<bool> pauseCalibration(String calibrationId) =>
-      _calibrationService.pauseCalibration(calibrationId);
-  Future<bool> resumeCalibration(String calibrationId) =>
-      _calibrationService.resumeCalibration(calibrationId);
-  Future<bool> cancelCalibration(String calibrationId) =>
-      _calibrationService.cancelCalibration(calibrationId);
-
-  calibration.CalibrationProgress? getCalibrationProgress(
-          String calibrationId) =>
-      _calibrationService.getCalibrationProgress(calibrationId);
-
-  Future<void> clearCompletedCalibrations() =>
-      _calibrationService.clearCompletedCalibrations();
-
+  /// Обновление прогресса калибровки
   void updateCalibrationProgress(
-          String calibrationId, calibration.CalibrationProgress progress) =>
-      _calibrationService.updateCalibrationProgress(calibrationId, progress);
-
-  Future<calibration.FreeDomeResponse> generateTestSignal({
-    required calibration.TestSignalType type,
-    double frequency = 1000.0,
-    double duration = 2.0,
-    double amplitude = 0.5,
-    List<int>? channels,
-  }) =>
-      _calibrationService.generateTestSignal(
-        type: type,
-        frequency: frequency,
-        duration: duration,
-        amplitude: amplitude,
-        channels: channels,
+    String calibrationId, {
+    required double progress,
+    required String currentStep,
+    int? completedSteps,
+    String? error,
+    Map<String, dynamic>? stepData,
+  }) {
+    final calibration = _activeCalibrations[calibrationId];
+    if (calibration != null) {
+      final updatedCalibration = calibration.copyWith(
+        progress: progress,
+        currentStep: currentStep,
+        completedSteps: completedSteps ?? calibration.completedSteps + 1,
+        error: error,
+        stepData: stepData,
       );
+      _activeCalibrations[calibrationId] = updatedCalibration;
+      _progressController.add(updatedCalibration);
+      notifyListeners();
+    }
+  }
 
-  Future<List<calibration.MicrophoneStatus>> getMicrophonesStatus() =>
-      _calibrationService.getMicrophonesStatus();
+  /// Генерация тестового сигнала
+  Future<void> generateTestSignal({
+    required TestSignalType type,
+    required double frequency,
+    required Duration duration,
+    double volume = 0.5,
+  }) async {
+    final command = FreeDomeCommand(
+      type: 'generate_test_signal',
+      data: {
+        'signal_type': type.name,
+        'frequency': frequency,
+        'duration': duration.inSeconds,
+        'volume': volume,
+      },
+    );
 
+    final response = await _connectionService.sendCommand(command);
+    if (!response.success) {
+      throw Exception('Failed to generate test signal: ${response.error}');
+    }
+  }
+
+  /// Получение статуса микрофонов
+  List<MicrophoneStatus> getMicrophonesStatus() {
+    return List.unmodifiable(_microphones);
+  }
+
+  /// Освобождение ресурсов
   @override
   void dispose() {
-    _calibrationService.dispose();
+    _progressController.close();
+    _microphonesController.close();
     super.dispose();
+  }
+
+  // Приватные методы
+
+  String _generateCalibrationId() {
+    return 'cal_${DateTime.now().millisecondsSinceEpoch}_${_activeCalibrations.length}';
+  }
+
+  int _getTotalSteps(CalibrationType type) {
+    switch (type) {
+      case CalibrationType.quick:
+        return 5;
+      case CalibrationType.auto:
+        return 10;
+      case CalibrationType.audio_only:
+        return 8;
+      case CalibrationType.video_only:
+        return 12;
+      case CalibrationType.full:
+        return 20;
+      case CalibrationType.manual:
+        return 30;
+    }
+  }
+
+  Future<void> _loadMicrophones() async {
+    final command = FreeDomeCommand(
+      type: 'get_microphones',
+      data: {},
+    );
+
+    final response = await _connectionService.sendCommand(command);
+    if (response.success && response.data != null) {
+      final microphonesData =
+          response.data!['microphones'] as List<dynamic>? ?? [];
+      _microphones.clear();
+      _microphones.addAll(microphonesData.map(
+          (data) => MicrophoneStatus.fromJson(data as Map<String, dynamic>)));
+      _microphonesController.add(_microphones);
+    }
+  }
+
+  Future<void> _runAudioCalibration(
+      CalibrationProgress progress, String domeId) async {
+    try {
+      final updatedProgress =
+          progress.copyWith(status: CalibrationStatus.running);
+      _activeCalibrations[progress.id] = updatedProgress;
+      _progressController.add(updatedProgress);
+      notifyListeners();
+
+      // Симуляция калибровки
+      for (int step = 1; step <= progress.totalSteps; step++) {
+        if (_activeCalibrations[progress.id]?.status ==
+            CalibrationStatus.cancelled) {
+          return;
+        }
+
+        await Future.delayed(const Duration(seconds: 2));
+
+        final stepProgress = step / progress.totalSteps;
+        final currentStep =
+            'Audio calibration step $step of ${progress.totalSteps}';
+
+        updateCalibrationProgress(
+          progress.id,
+          progress: stepProgress,
+          currentStep: currentStep,
+          completedSteps: step,
+        );
+      }
+
+      // Завершение калибровки
+      final completedProgress = progress.copyWith(
+        status: CalibrationStatus.completed,
+        progress: 1.0,
+        currentStep: 'Audio calibration completed',
+        completedSteps: progress.totalSteps,
+      );
+
+      _activeCalibrations[progress.id] = completedProgress;
+      _progressController.add(completedProgress);
+
+      // Сохранение результата
+      await _saveCalibrationResult(completedProgress);
+
+      notifyListeners();
+    } catch (e) {
+      final failedProgress = progress.copyWith(
+        status: CalibrationStatus.failed,
+        error: e.toString(),
+      );
+      _activeCalibrations[progress.id] = failedProgress;
+      _progressController.add(failedProgress);
+      notifyListeners();
+    }
+  }
+
+  Future<void> _runProjectorCalibration(
+      CalibrationProgress progress, String domeId, String projectorId) async {
+    try {
+      final updatedProgress =
+          progress.copyWith(status: CalibrationStatus.running);
+      _activeCalibrations[progress.id] = updatedProgress;
+      _progressController.add(updatedProgress);
+      notifyListeners();
+
+      // Симуляция калибровки проектора
+      for (int step = 1; step <= progress.totalSteps; step++) {
+        if (_activeCalibrations[progress.id]?.status ==
+            CalibrationStatus.cancelled) {
+          return;
+        }
+
+        await Future.delayed(const Duration(seconds: 3));
+
+        final stepProgress = step / progress.totalSteps;
+        final currentStep =
+            'Projector calibration step $step of ${progress.totalSteps}';
+
+        updateCalibrationProgress(
+          progress.id,
+          progress: stepProgress,
+          currentStep: currentStep,
+          completedSteps: step,
+        );
+      }
+
+      // Завершение калибровки
+      final completedProgress = progress.copyWith(
+        status: CalibrationStatus.completed,
+        progress: 1.0,
+        currentStep: 'Projector calibration completed',
+        completedSteps: progress.totalSteps,
+      );
+
+      _activeCalibrations[progress.id] = completedProgress;
+      _progressController.add(completedProgress);
+
+      // Сохранение результата
+      await _saveCalibrationResult(completedProgress);
+
+      notifyListeners();
+    } catch (e) {
+      final failedProgress = progress.copyWith(
+        status: CalibrationStatus.failed,
+        error: e.toString(),
+      );
+      _activeCalibrations[progress.id] = failedProgress;
+      _progressController.add(failedProgress);
+      notifyListeners();
+    }
+  }
+
+  Future<void> _saveCalibrationResult(CalibrationProgress progress) async {
+    final result = CalibrationResult(
+      id: progress.id,
+      type: progress.type,
+      status: progress.status,
+      startTime: progress.startTime ?? DateTime.now(),
+      endTime: progress.status == CalibrationStatus.completed
+          ? DateTime.now()
+          : null,
+      channelResults: [],
+      projectorResults: [],
+      overallQuality:
+          progress.status == CalibrationStatus.completed ? 95.0 : 0.0,
+    );
+
+    _calibrationHistory.add(result);
+    notifyListeners();
   }
 }

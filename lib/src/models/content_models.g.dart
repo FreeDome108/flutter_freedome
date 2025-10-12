@@ -34,33 +34,24 @@ _$ProjectionContentImpl _$$ProjectionContentImplFromJson(
     );
 
 Map<String, dynamic> _$$ProjectionContentImplToJson(
-    _$ProjectionContentImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'filePath': instance.filePath,
-    'type': _$ContentTypeEnumMap[instance.type]!,
-    'duration': instance.duration.inMicroseconds,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  val['tags'] = instance.tags;
-  val['format'] = _$ProjectionFormatEnumMap[instance.format]!;
-  writeNotNull('thumbnailPath', instance.thumbnailPath);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('lastPlayed', instance.lastPlayed?.toIso8601String());
-  val['playCount'] = instance.playCount;
-  val['defaultVolume'] = instance.defaultVolume;
-  val['defaultBrightness'] = instance.defaultBrightness;
-  writeNotNull('metadata', instance.metadata);
-  return val;
-}
+        _$ProjectionContentImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'filePath': instance.filePath,
+      'type': _$ContentTypeEnumMap[instance.type]!,
+      'duration': instance.duration.inMicroseconds,
+      'description': instance.description,
+      'tags': instance.tags,
+      'format': _$ProjectionFormatEnumMap[instance.format]!,
+      'thumbnailPath': instance.thumbnailPath,
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'lastPlayed': instance.lastPlayed?.toIso8601String(),
+      'playCount': instance.playCount,
+      'defaultVolume': instance.defaultVolume,
+      'defaultBrightness': instance.defaultBrightness,
+      'metadata': instance.metadata,
+    };
 
 const _$ContentTypeEnumMap = {
   ContentType.video: 'video',
@@ -100,28 +91,19 @@ _$PlaybackStateImpl _$$PlaybackStateImplFromJson(Map<String, dynamic> json) =>
       error: json['error'] as String?,
     );
 
-Map<String, dynamic> _$$PlaybackStateImplToJson(_$PlaybackStateImpl instance) {
-  final val = <String, dynamic>{
-    'status': _$PlaybackStatusEnumMap[instance.status]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('currentContentId', instance.currentContentId);
-  writeNotNull('currentPlaylistId', instance.currentPlaylistId);
-  val['position'] = instance.position.inMicroseconds;
-  writeNotNull('duration', instance.duration?.inMicroseconds);
-  val['volume'] = instance.volume;
-  val['speed'] = instance.speed;
-  val['isLooping'] = instance.isLooping;
-  val['isMuted'] = instance.isMuted;
-  writeNotNull('error', instance.error);
-  return val;
-}
+Map<String, dynamic> _$$PlaybackStateImplToJson(_$PlaybackStateImpl instance) =>
+    <String, dynamic>{
+      'status': _$PlaybackStatusEnumMap[instance.status]!,
+      'currentContentId': instance.currentContentId,
+      'currentPlaylistId': instance.currentPlaylistId,
+      'position': instance.position.inMicroseconds,
+      'duration': instance.duration?.inMicroseconds,
+      'volume': instance.volume,
+      'speed': instance.speed,
+      'isLooping': instance.isLooping,
+      'isMuted': instance.isMuted,
+      'error': instance.error,
+    };
 
 const _$PlaybackStatusEnumMap = {
   PlaybackStatus.stopped: 'stopped',
@@ -154,30 +136,21 @@ _$PlaylistImpl _$$PlaylistImplFromJson(Map<String, dynamic> json) =>
               const [],
     );
 
-Map<String, dynamic> _$$PlaylistImplToJson(_$PlaylistImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'contentIds': instance.contentIds,
-    'createdAt': instance.createdAt.toIso8601String(),
-    'updatedAt': instance.updatedAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('lastModified', instance.lastModified?.toIso8601String());
-  val['currentIndex'] = instance.currentIndex;
-  val['mode'] = _$PlaylistModeEnumMap[instance.mode]!;
-  val['isLooping'] = instance.isLooping;
-  val['isShuffled'] = instance.isShuffled;
-  writeNotNull('description', instance.description);
-  val['tags'] = instance.tags;
-  return val;
-}
+Map<String, dynamic> _$$PlaylistImplToJson(_$PlaylistImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'contentIds': instance.contentIds,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'lastModified': instance.lastModified?.toIso8601String(),
+      'currentIndex': instance.currentIndex,
+      'mode': _$PlaylistModeEnumMap[instance.mode]!,
+      'isLooping': instance.isLooping,
+      'isShuffled': instance.isShuffled,
+      'description': instance.description,
+      'tags': instance.tags,
+    };
 
 const _$PlaylistModeEnumMap = {
   PlaylistMode.sequential: 'sequential',
@@ -202,25 +175,16 @@ _$InteractiveContentImpl _$$InteractiveContentImplFromJson(
     );
 
 Map<String, dynamic> _$$InteractiveContentImplToJson(
-    _$InteractiveContentImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'appName': instance.appName,
-    'appData': instance.appData,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  val['tags'] = instance.tags;
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  return val;
-}
+        _$InteractiveContentImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'appName': instance.appName,
+      'appData': instance.appData,
+      'description': instance.description,
+      'tags': instance.tags,
+      'createdAt': instance.createdAt?.toIso8601String(),
+    };
 
 _$RealtimeContentImpl _$$RealtimeContentImplFromJson(
         Map<String, dynamic> json) =>
@@ -236,24 +200,15 @@ _$RealtimeContentImpl _$$RealtimeContentImplFromJson(
     );
 
 Map<String, dynamic> _$$RealtimeContentImplToJson(
-    _$RealtimeContentImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'sourceType': instance.sourceType,
-    'sourceConfig': instance.sourceConfig,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  val['tags'] = instance.tags;
-  return val;
-}
+        _$RealtimeContentImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'sourceType': instance.sourceType,
+      'sourceConfig': instance.sourceConfig,
+      'description': instance.description,
+      'tags': instance.tags,
+    };
 
 _$ContentLibraryImpl _$$ContentLibraryImplFromJson(Map<String, dynamic> json) =>
     _$ContentLibraryImpl(
@@ -275,22 +230,13 @@ _$ContentLibraryImpl _$$ContentLibraryImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$ContentLibraryImplToJson(
-    _$ContentLibraryImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'contentIds': instance.contentIds,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  val['tags'] = instance.tags;
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+        _$ContentLibraryImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'contentIds': instance.contentIds,
+      'description': instance.description,
+      'tags': instance.tags,
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
+    };

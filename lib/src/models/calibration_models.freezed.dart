@@ -32,8 +32,12 @@ mixin _$CalibrationProgress {
   String? get error => throw _privateConstructorUsedError;
   Map<String, dynamic>? get stepData => throw _privateConstructorUsedError;
 
+  /// Serializes this CalibrationProgress to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CalibrationProgress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CalibrationProgressCopyWith<CalibrationProgress> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -68,6 +72,8 @@ class _$CalibrationProgressCopyWithImpl<$Res, $Val extends CalibrationProgress>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CalibrationProgress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,6 +168,8 @@ class __$$CalibrationProgressImplCopyWithImpl<$Res>
       $Res Function(_$CalibrationProgressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CalibrationProgress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -307,7 +315,7 @@ class _$CalibrationProgressImpl implements _CalibrationProgress {
             const DeepCollectionEquality().equals(other._stepData, _stepData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -323,7 +331,9 @@ class _$CalibrationProgressImpl implements _CalibrationProgress {
       error,
       const DeepCollectionEquality().hash(_stepData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CalibrationProgress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CalibrationProgressImplCopyWith<_$CalibrationProgressImpl> get copyWith =>
@@ -377,8 +387,11 @@ abstract class _CalibrationProgress implements CalibrationProgress {
   String? get error;
   @override
   Map<String, dynamic>? get stepData;
+
+  /// Create a copy of CalibrationProgress
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CalibrationProgressImplCopyWith<_$CalibrationProgressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -401,8 +414,12 @@ mixin _$CalibrationResult {
   String? get error => throw _privateConstructorUsedError;
   double get overallQuality => throw _privateConstructorUsedError;
 
+  /// Serializes this CalibrationResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CalibrationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CalibrationResultCopyWith<CalibrationResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -436,6 +453,8 @@ class _$CalibrationResultCopyWithImpl<$Res, $Val extends CalibrationResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CalibrationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -524,6 +543,8 @@ class __$$CalibrationResultImplCopyWithImpl<$Res>
       $Res Function(_$CalibrationResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CalibrationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -676,7 +697,7 @@ class _$CalibrationResultImpl implements _CalibrationResult {
                 other.overallQuality == overallQuality));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -691,7 +712,9 @@ class _$CalibrationResultImpl implements _CalibrationResult {
       error,
       overallQuality);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CalibrationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CalibrationResultImplCopyWith<_$CalibrationResultImpl> get copyWith =>
@@ -742,8 +765,11 @@ abstract class _CalibrationResult implements CalibrationResult {
   String? get error;
   @override
   double get overallQuality;
+
+  /// Create a copy of CalibrationResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CalibrationResultImplCopyWith<_$CalibrationResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -768,8 +794,12 @@ mixin _$ChannelResult {
   Map<String, dynamic>? get equalizerSettings =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ChannelResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ChannelResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ChannelResultCopyWith<ChannelResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -804,6 +834,8 @@ class _$ChannelResultCopyWithImpl<$Res, $Val extends ChannelResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ChannelResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -898,6 +930,8 @@ class __$$ChannelResultImplCopyWithImpl<$Res>
       _$ChannelResultImpl _value, $Res Function(_$ChannelResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChannelResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1058,7 +1092,7 @@ class _$ChannelResultImpl implements _ChannelResult {
                 .equals(other._equalizerSettings, _equalizerSettings));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1074,7 +1108,9 @@ class _$ChannelResultImpl implements _ChannelResult {
       quality,
       const DeepCollectionEquality().hash(_equalizerSettings));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChannelResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChannelResultImplCopyWith<_$ChannelResultImpl> get copyWith =>
@@ -1127,8 +1163,11 @@ abstract class _ChannelResult implements ChannelResult {
   double get quality;
   @override
   Map<String, dynamic>? get equalizerSettings;
+
+  /// Create a copy of ChannelResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChannelResultImplCopyWith<_$ChannelResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1143,8 +1182,12 @@ mixin _$FrequencyPoint {
   double get magnitude => throw _privateConstructorUsedError;
   double get phase => throw _privateConstructorUsedError;
 
+  /// Serializes this FrequencyPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FrequencyPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FrequencyPointCopyWith<FrequencyPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1168,6 +1211,8 @@ class _$FrequencyPointCopyWithImpl<$Res, $Val extends FrequencyPoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FrequencyPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1211,6 +1256,8 @@ class __$$FrequencyPointImplCopyWithImpl<$Res>
       _$FrequencyPointImpl _value, $Res Function(_$FrequencyPointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FrequencyPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1268,11 +1315,13 @@ class _$FrequencyPointImpl implements _FrequencyPoint {
             (identical(other.phase, phase) || other.phase == phase));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, frequency, magnitude, phase);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FrequencyPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FrequencyPointImplCopyWith<_$FrequencyPointImpl> get copyWith =>
@@ -1302,8 +1351,11 @@ abstract class _FrequencyPoint implements FrequencyPoint {
   double get magnitude;
   @override
   double get phase;
+
+  /// Create a copy of FrequencyPoint
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FrequencyPointImplCopyWith<_$FrequencyPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1327,8 +1379,12 @@ mixin _$ProjectorResult {
   Map<String, dynamic>? get lensCorrection =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ProjectorResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProjectorResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProjectorResultCopyWith<ProjectorResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1362,6 +1418,8 @@ class _$ProjectorResultCopyWithImpl<$Res, $Val extends ProjectorResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProjectorResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1450,6 +1508,8 @@ class __$$ProjectorResultImplCopyWithImpl<$Res>
       _$ProjectorResultImpl _value, $Res Function(_$ProjectorResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProjectorResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1608,7 +1668,7 @@ class _$ProjectorResultImpl implements _ProjectorResult {
                 .equals(other._lensCorrection, _lensCorrection));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1623,7 +1683,9 @@ class _$ProjectorResultImpl implements _ProjectorResult {
       quality,
       const DeepCollectionEquality().hash(_lensCorrection));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProjectorResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProjectorResultImplCopyWith<_$ProjectorResultImpl> get copyWith =>
@@ -1674,8 +1736,11 @@ abstract class _ProjectorResult implements ProjectorResult {
   double get quality;
   @override
   Map<String, dynamic>? get lensCorrection;
+
+  /// Create a copy of ProjectorResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProjectorResultImplCopyWith<_$ProjectorResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1692,8 +1757,12 @@ mixin _$CalibrationPoint {
   double get targetY => throw _privateConstructorUsedError;
   double get error => throw _privateConstructorUsedError;
 
+  /// Serializes this CalibrationPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CalibrationPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CalibrationPointCopyWith<CalibrationPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1717,6 +1786,8 @@ class _$CalibrationPointCopyWithImpl<$Res, $Val extends CalibrationPoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CalibrationPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1770,6 +1841,8 @@ class __$$CalibrationPointImplCopyWithImpl<$Res>
       $Res Function(_$CalibrationPointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CalibrationPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1845,11 +1918,13 @@ class _$CalibrationPointImpl implements _CalibrationPoint {
             (identical(other.error, error) || other.error == error));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, x, y, targetX, targetY, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CalibrationPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CalibrationPointImplCopyWith<_$CalibrationPointImpl> get copyWith =>
@@ -1885,8 +1960,11 @@ abstract class _CalibrationPoint implements CalibrationPoint {
   double get targetY;
   @override
   double get error;
+
+  /// Create a copy of CalibrationPoint
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CalibrationPointImplCopyWith<_$CalibrationPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1908,8 +1986,12 @@ mixin _$MicrophoneStatus {
   Map<String, dynamic>? get calibrationData =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this MicrophoneStatus to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MicrophoneStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MicrophoneStatusCopyWith<MicrophoneStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1942,6 +2024,8 @@ class _$MicrophoneStatusCopyWithImpl<$Res, $Val extends MicrophoneStatus>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MicrophoneStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2024,6 +2108,8 @@ class __$$MicrophoneStatusImplCopyWithImpl<$Res>
       $Res Function(_$MicrophoneStatusImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MicrophoneStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2152,7 +2238,7 @@ class _$MicrophoneStatusImpl implements _MicrophoneStatus {
                 .equals(other._calibrationData, _calibrationData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2166,7 +2252,9 @@ class _$MicrophoneStatusImpl implements _MicrophoneStatus {
       lastCalibrated,
       const DeepCollectionEquality().hash(_calibrationData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MicrophoneStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MicrophoneStatusImplCopyWith<_$MicrophoneStatusImpl> get copyWith =>
@@ -2214,8 +2302,11 @@ abstract class _MicrophoneStatus implements MicrophoneStatus {
   DateTime? get lastCalibrated;
   @override
   Map<String, dynamic>? get calibrationData;
+
+  /// Create a copy of MicrophoneStatus
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MicrophoneStatusImplCopyWith<_$MicrophoneStatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2233,8 +2324,12 @@ mixin _$VolumeSettings {
   double get trebleBoost => throw _privateConstructorUsedError;
   bool get loudnessCompensation => throw _privateConstructorUsedError;
 
+  /// Serializes this VolumeSettings to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VolumeSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VolumeSettingsCopyWith<VolumeSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2264,6 +2359,8 @@ class _$VolumeSettingsCopyWithImpl<$Res, $Val extends VolumeSettings>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VolumeSettings
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2328,6 +2425,8 @@ class __$$VolumeSettingsImplCopyWithImpl<$Res>
       _$VolumeSettingsImpl _value, $Res Function(_$VolumeSettingsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VolumeSettings
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2430,7 +2529,7 @@ class _$VolumeSettingsImpl implements _VolumeSettings {
                 other.loudnessCompensation == loudnessCompensation));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2441,7 +2540,9 @@ class _$VolumeSettingsImpl implements _VolumeSettings {
       trebleBoost,
       loudnessCompensation);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VolumeSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VolumeSettingsImplCopyWith<_$VolumeSettingsImpl> get copyWith =>
@@ -2480,8 +2581,11 @@ abstract class _VolumeSettings implements VolumeSettings {
   double get trebleBoost;
   @override
   bool get loudnessCompensation;
+
+  /// Create a copy of VolumeSettings
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VolumeSettingsImplCopyWith<_$VolumeSettingsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2502,8 +2606,12 @@ mixin _$AudioProfile {
   bool get isActive => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
+  /// Serializes this AudioProfile to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AudioProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AudioProfileCopyWith<AudioProfile> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2537,6 +2645,8 @@ class _$AudioProfileCopyWithImpl<$Res, $Val extends AudioProfile>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AudioProfile
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2585,6 +2695,8 @@ class _$AudioProfileCopyWithImpl<$Res, $Val extends AudioProfile>
     ) as $Val);
   }
 
+  /// Create a copy of AudioProfile
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $VolumeSettingsCopyWith<$Res> get volumeSettings {
@@ -2624,6 +2736,8 @@ class __$$AudioProfileImplCopyWithImpl<$Res>
       _$AudioProfileImpl _value, $Res Function(_$AudioProfileImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AudioProfile
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2748,7 +2862,7 @@ class _$AudioProfileImpl implements _AudioProfile {
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2761,7 +2875,9 @@ class _$AudioProfileImpl implements _AudioProfile {
       isActive,
       createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AudioProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AudioProfileImplCopyWith<_$AudioProfileImpl> get copyWith =>
@@ -2805,8 +2921,11 @@ abstract class _AudioProfile implements AudioProfile {
   bool get isActive;
   @override
   DateTime? get createdAt;
+
+  /// Create a copy of AudioProfile
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AudioProfileImplCopyWith<_$AudioProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2825,8 +2944,12 @@ mixin _$FreeDomeCommand {
   DateTime? get timestamp => throw _privateConstructorUsedError;
   Duration? get timeout => throw _privateConstructorUsedError;
 
+  /// Serializes this FreeDomeCommand to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FreeDomeCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FreeDomeCommandCopyWith<FreeDomeCommand> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2857,6 +2980,8 @@ class _$FreeDomeCommandCopyWithImpl<$Res, $Val extends FreeDomeCommand>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FreeDomeCommand
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2927,6 +3052,8 @@ class __$$FreeDomeCommandImplCopyWithImpl<$Res>
       _$FreeDomeCommandImpl _value, $Res Function(_$FreeDomeCommandImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FreeDomeCommand
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3032,7 +3159,7 @@ class _$FreeDomeCommandImpl implements _FreeDomeCommand {
             (identical(other.timeout, timeout) || other.timeout == timeout));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3044,7 +3171,9 @@ class _$FreeDomeCommandImpl implements _FreeDomeCommand {
       timestamp,
       timeout);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FreeDomeCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FreeDomeCommandImplCopyWith<_$FreeDomeCommandImpl> get copyWith =>
@@ -3086,8 +3215,11 @@ abstract class _FreeDomeCommand implements FreeDomeCommand {
   DateTime? get timestamp;
   @override
   Duration? get timeout;
+
+  /// Create a copy of FreeDomeCommand
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FreeDomeCommandImplCopyWith<_$FreeDomeCommandImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3104,8 +3236,12 @@ mixin _$FreeDomeResponse {
   String? get commandId => throw _privateConstructorUsedError;
   DateTime? get timestamp => throw _privateConstructorUsedError;
 
+  /// Serializes this FreeDomeResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FreeDomeResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FreeDomeResponseCopyWith<FreeDomeResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3134,6 +3270,8 @@ class _$FreeDomeResponseCopyWithImpl<$Res, $Val extends FreeDomeResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FreeDomeResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3192,6 +3330,8 @@ class __$$FreeDomeResponseImplCopyWithImpl<$Res>
       $Res Function(_$FreeDomeResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FreeDomeResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3278,12 +3418,14 @@ class _$FreeDomeResponseImpl implements _FreeDomeResponse {
                 other.timestamp == timestamp));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, success, error,
       const DeepCollectionEquality().hash(_data), commandId, timestamp);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FreeDomeResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FreeDomeResponseImplCopyWith<_$FreeDomeResponseImpl> get copyWith =>
@@ -3319,8 +3461,11 @@ abstract class _FreeDomeResponse implements FreeDomeResponse {
   String? get commandId;
   @override
   DateTime? get timestamp;
+
+  /// Create a copy of FreeDomeResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FreeDomeResponseImplCopyWith<_$FreeDomeResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3336,8 +3481,12 @@ mixin _$FreeDomeEvent {
   String? get sourceSystemId => throw _privateConstructorUsedError;
   DateTime? get timestamp => throw _privateConstructorUsedError;
 
+  /// Serializes this FreeDomeEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FreeDomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FreeDomeEventCopyWith<FreeDomeEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3365,6 +3514,8 @@ class _$FreeDomeEventCopyWithImpl<$Res, $Val extends FreeDomeEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FreeDomeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3417,6 +3568,8 @@ class __$$FreeDomeEventImplCopyWithImpl<$Res>
       _$FreeDomeEventImpl _value, $Res Function(_$FreeDomeEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FreeDomeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3492,12 +3645,14 @@ class _$FreeDomeEventImpl implements _FreeDomeEvent {
                 other.timestamp == timestamp));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type,
       const DeepCollectionEquality().hash(_data), sourceSystemId, timestamp);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FreeDomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FreeDomeEventImplCopyWith<_$FreeDomeEventImpl> get copyWith =>
@@ -3529,8 +3684,11 @@ abstract class _FreeDomeEvent implements FreeDomeEvent {
   String? get sourceSystemId;
   @override
   DateTime? get timestamp;
+
+  /// Create a copy of FreeDomeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FreeDomeEventImplCopyWith<_$FreeDomeEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -37,8 +37,12 @@ mixin _$DomeSystem {
   double get systemBrightness => throw _privateConstructorUsedError;
   double get systemRotation => throw _privateConstructorUsedError;
 
+  /// Serializes this DomeSystem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DomeSystem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DomeSystemCopyWith<DomeSystem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -78,6 +82,8 @@ class _$DomeSystemCopyWithImpl<$Res, $Val extends DomeSystem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DomeSystem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -202,6 +208,8 @@ class __$$DomeSystemImplCopyWithImpl<$Res>
       _$DomeSystemImpl _value, $Res Function(_$DomeSystemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DomeSystem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -416,7 +424,7 @@ class _$DomeSystemImpl implements _DomeSystem {
                 other.systemRotation == systemRotation));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -437,7 +445,9 @@ class _$DomeSystemImpl implements _DomeSystem {
       systemBrightness,
       systemRotation);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DomeSystem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DomeSystemImplCopyWith<_$DomeSystemImpl> get copyWith =>
@@ -505,8 +515,11 @@ abstract class _DomeSystem implements DomeSystem {
   double get systemBrightness;
   @override
   double get systemRotation;
+
+  /// Create a copy of DomeSystem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DomeSystemImplCopyWith<_$DomeSystemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -535,8 +548,12 @@ mixin _$ProjectorConfig {
   Map<String, dynamic>? get calibrationData =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ProjectorConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProjectorConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProjectorConfigCopyWith<ProjectorConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -576,6 +593,8 @@ class _$ProjectorConfigCopyWithImpl<$Res, $Val extends ProjectorConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProjectorConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -700,6 +719,8 @@ class __$$ProjectorConfigImplCopyWithImpl<$Res>
       _$ProjectorConfigImpl _value, $Res Function(_$ProjectorConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProjectorConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -897,7 +918,7 @@ class _$ProjectorConfigImpl implements _ProjectorConfig {
                 .equals(other._calibrationData, _calibrationData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -918,7 +939,9 @@ class _$ProjectorConfigImpl implements _ProjectorConfig {
       refreshRate,
       const DeepCollectionEquality().hash(_calibrationData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProjectorConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProjectorConfigImplCopyWith<_$ProjectorConfigImpl> get copyWith =>
@@ -987,8 +1010,11 @@ abstract class _ProjectorConfig implements ProjectorConfig {
   double get refreshRate;
   @override
   Map<String, dynamic>? get calibrationData;
+
+  /// Create a copy of ProjectorConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProjectorConfigImplCopyWith<_$ProjectorConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1013,8 +1039,12 @@ mixin _$AudioChannel {
   Map<String, dynamic>? get calibrationData =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this AudioChannel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AudioChannelCopyWith<AudioChannel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1049,6 +1079,8 @@ class _$AudioChannelCopyWithImpl<$Res, $Val extends AudioChannel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1143,6 +1175,8 @@ class __$$AudioChannelImplCopyWithImpl<$Res>
       _$AudioChannelImpl _value, $Res Function(_$AudioChannelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1298,7 +1332,7 @@ class _$AudioChannelImpl implements _AudioChannel {
                 .equals(other._calibrationData, _calibrationData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1314,7 +1348,9 @@ class _$AudioChannelImpl implements _AudioChannel {
       const DeepCollectionEquality().hash(_equalizerSettings),
       const DeepCollectionEquality().hash(_calibrationData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AudioChannelImplCopyWith<_$AudioChannelImpl> get copyWith =>
@@ -1367,8 +1403,11 @@ abstract class _AudioChannel implements AudioChannel {
   Map<String, dynamic>? get equalizerSettings;
   @override
   Map<String, dynamic>? get calibrationData;
+
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AudioChannelImplCopyWith<_$AudioChannelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1389,8 +1428,12 @@ mixin _$FreeDomeConnectionStatus {
   int get reconnectAttempts => throw _privateConstructorUsedError;
   int get maxReconnectAttempts => throw _privateConstructorUsedError;
 
+  /// Serializes this FreeDomeConnectionStatus to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FreeDomeConnectionStatusCopyWith<FreeDomeConnectionStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1423,6 +1466,8 @@ class _$FreeDomeConnectionStatusCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1502,6 +1547,8 @@ class __$$FreeDomeConnectionStatusImplCopyWithImpl<$Res>
       $Res Function(_$FreeDomeConnectionStatusImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1613,7 +1660,7 @@ class _$FreeDomeConnectionStatusImpl implements _FreeDomeConnectionStatus {
                 other.maxReconnectAttempts == maxReconnectAttempts));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1626,7 +1673,9 @@ class _$FreeDomeConnectionStatusImpl implements _FreeDomeConnectionStatus {
       reconnectAttempts,
       maxReconnectAttempts);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FreeDomeConnectionStatusImplCopyWith<_$FreeDomeConnectionStatusImpl>
@@ -1671,8 +1720,11 @@ abstract class _FreeDomeConnectionStatus implements FreeDomeConnectionStatus {
   int get reconnectAttempts;
   @override
   int get maxReconnectAttempts;
+
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FreeDomeConnectionStatusImplCopyWith<_$FreeDomeConnectionStatusImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1692,8 +1744,12 @@ mixin _$FreeDomeUser {
   DateTime? get lastLogin => throw _privateConstructorUsedError;
   Map<String, dynamic>? get preferences => throw _privateConstructorUsedError;
 
+  /// Serializes this FreeDomeUser to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FreeDomeUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FreeDomeUserCopyWith<FreeDomeUser> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1724,6 +1780,8 @@ class _$FreeDomeUserCopyWithImpl<$Res, $Val extends FreeDomeUser>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FreeDomeUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1794,6 +1852,8 @@ class __$$FreeDomeUserImplCopyWithImpl<$Res>
       _$FreeDomeUserImpl _value, $Res Function(_$FreeDomeUserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FreeDomeUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1905,7 +1965,7 @@ class _$FreeDomeUserImpl implements _FreeDomeUser {
                 .equals(other._preferences, _preferences));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1917,7 +1977,9 @@ class _$FreeDomeUserImpl implements _FreeDomeUser {
       lastLogin,
       const DeepCollectionEquality().hash(_preferences));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FreeDomeUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FreeDomeUserImplCopyWith<_$FreeDomeUserImpl> get copyWith =>
@@ -1958,8 +2020,11 @@ abstract class _FreeDomeUser implements FreeDomeUser {
   DateTime? get lastLogin;
   @override
   Map<String, dynamic>? get preferences;
+
+  /// Create a copy of FreeDomeUser
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FreeDomeUserImplCopyWith<_$FreeDomeUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1979,8 +2044,12 @@ mixin _$FreeDomeSession {
   String? get currentContentId => throw _privateConstructorUsedError;
   Map<String, dynamic>? get sessionData => throw _privateConstructorUsedError;
 
+  /// Serializes this FreeDomeSession to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FreeDomeSessionCopyWith<FreeDomeSession> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2012,6 +2081,8 @@ class _$FreeDomeSessionCopyWithImpl<$Res, $Val extends FreeDomeSession>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2088,6 +2159,8 @@ class __$$FreeDomeSessionImplCopyWithImpl<$Res>
       _$FreeDomeSessionImpl _value, $Res Function(_$FreeDomeSessionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2203,7 +2276,7 @@ class _$FreeDomeSessionImpl implements _FreeDomeSession {
                 .equals(other._sessionData, _sessionData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2216,7 +2289,9 @@ class _$FreeDomeSessionImpl implements _FreeDomeSession {
       currentContentId,
       const DeepCollectionEquality().hash(_sessionData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FreeDomeSessionImplCopyWith<_$FreeDomeSessionImpl> get copyWith =>
@@ -2261,8 +2336,11 @@ abstract class _FreeDomeSession implements FreeDomeSession {
   String? get currentContentId;
   @override
   Map<String, dynamic>? get sessionData;
+
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FreeDomeSessionImplCopyWith<_$FreeDomeSessionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

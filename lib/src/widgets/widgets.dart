@@ -1,4 +1,2 @@
 // Export all widgets
-export 'product_card.dart';
-export 'product_list.dart';
-
+// Note: Additional widgets can be exported here as they are created

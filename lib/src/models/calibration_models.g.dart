@@ -27,30 +27,20 @@ _$CalibrationProgressImpl _$$CalibrationProgressImplFromJson(
     );
 
 Map<String, dynamic> _$$CalibrationProgressImplToJson(
-    _$CalibrationProgressImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'type': _$CalibrationTypeEnumMap[instance.type]!,
-    'status': _$CalibrationStatusEnumMap[instance.status]!,
-    'progress': instance.progress,
-    'currentStep': instance.currentStep,
-    'totalSteps': instance.totalSteps,
-    'completedSteps': instance.completedSteps,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('startTime', instance.startTime?.toIso8601String());
-  writeNotNull(
-      'estimatedCompletion', instance.estimatedCompletion?.toIso8601String());
-  writeNotNull('error', instance.error);
-  writeNotNull('stepData', instance.stepData);
-  return val;
-}
+        _$CalibrationProgressImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'type': _$CalibrationTypeEnumMap[instance.type]!,
+      'status': _$CalibrationStatusEnumMap[instance.status]!,
+      'progress': instance.progress,
+      'currentStep': instance.currentStep,
+      'totalSteps': instance.totalSteps,
+      'completedSteps': instance.completedSteps,
+      'startTime': instance.startTime?.toIso8601String(),
+      'estimatedCompletion': instance.estimatedCompletion?.toIso8601String(),
+      'error': instance.error,
+      'stepData': instance.stepData,
+    };
 
 const _$CalibrationTypeEnumMap = {
   CalibrationType.auto: 'auto',
@@ -94,30 +84,19 @@ _$CalibrationResultImpl _$$CalibrationResultImplFromJson(
     );
 
 Map<String, dynamic> _$$CalibrationResultImplToJson(
-    _$CalibrationResultImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'type': _$CalibrationTypeEnumMap[instance.type]!,
-    'status': _$CalibrationStatusEnumMap[instance.status]!,
-    'startTime': instance.startTime.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('endTime', instance.endTime?.toIso8601String());
-  val['channelResults'] =
-      instance.channelResults.map((e) => e.toJson()).toList();
-  val['projectorResults'] =
-      instance.projectorResults.map((e) => e.toJson()).toList();
-  writeNotNull('systemResults', instance.systemResults);
-  writeNotNull('error', instance.error);
-  val['overallQuality'] = instance.overallQuality;
-  return val;
-}
+        _$CalibrationResultImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'type': _$CalibrationTypeEnumMap[instance.type]!,
+      'status': _$CalibrationStatusEnumMap[instance.status]!,
+      'startTime': instance.startTime.toIso8601String(),
+      'endTime': instance.endTime?.toIso8601String(),
+      'channelResults': instance.channelResults,
+      'projectorResults': instance.projectorResults,
+      'systemResults': instance.systemResults,
+      'error': instance.error,
+      'overallQuality': instance.overallQuality,
+    };
 
 _$ChannelResultImpl _$$ChannelResultImplFromJson(Map<String, dynamic> json) =>
     _$ChannelResultImpl(
@@ -137,30 +116,20 @@ _$ChannelResultImpl _$$ChannelResultImplFromJson(Map<String, dynamic> json) =>
       equalizerSettings: json['equalizerSettings'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ChannelResultImplToJson(_$ChannelResultImpl instance) {
-  final val = <String, dynamic>{
-    'channelId': instance.channelId,
-    'channelName': instance.channelName,
-    'channelType': instance.channelType,
-    'frequencyResponse':
-        instance.frequencyResponse.map((e) => e.toJson()).toList(),
-    'delay': instance.delay,
-    'distortion': instance.distortion,
-    'noiseFloor': instance.noiseFloor,
-    'gain': instance.gain,
-    'phase': instance.phase,
-    'quality': instance.quality,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('equalizerSettings', instance.equalizerSettings);
-  return val;
-}
+Map<String, dynamic> _$$ChannelResultImplToJson(_$ChannelResultImpl instance) =>
+    <String, dynamic>{
+      'channelId': instance.channelId,
+      'channelName': instance.channelName,
+      'channelType': instance.channelType,
+      'frequencyResponse': instance.frequencyResponse,
+      'delay': instance.delay,
+      'distortion': instance.distortion,
+      'noiseFloor': instance.noiseFloor,
+      'gain': instance.gain,
+      'phase': instance.phase,
+      'quality': instance.quality,
+      'equalizerSettings': instance.equalizerSettings,
+    };
 
 _$FrequencyPointImpl _$$FrequencyPointImplFromJson(Map<String, dynamic> json) =>
     _$FrequencyPointImpl(
@@ -199,29 +168,19 @@ _$ProjectorResultImpl _$$ProjectorResultImplFromJson(
     );
 
 Map<String, dynamic> _$$ProjectorResultImplToJson(
-    _$ProjectorResultImpl instance) {
-  final val = <String, dynamic>{
-    'projectorId': instance.projectorId,
-    'projectorName': instance.projectorName,
-    'calibrationPoints':
-        instance.calibrationPoints.map((e) => e.toJson()).toList(),
-    'brightness': instance.brightness,
-    'contrast': instance.contrast,
-    'gamma': instance.gamma,
-    'colorMatrix': instance.colorMatrix,
-    'geometryAccuracy': instance.geometryAccuracy,
-    'quality': instance.quality,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('lensCorrection', instance.lensCorrection);
-  return val;
-}
+        _$ProjectorResultImpl instance) =>
+    <String, dynamic>{
+      'projectorId': instance.projectorId,
+      'projectorName': instance.projectorName,
+      'calibrationPoints': instance.calibrationPoints,
+      'brightness': instance.brightness,
+      'contrast': instance.contrast,
+      'gamma': instance.gamma,
+      'colorMatrix': instance.colorMatrix,
+      'geometryAccuracy': instance.geometryAccuracy,
+      'quality': instance.quality,
+      'lensCorrection': instance.lensCorrection,
+    };
 
 _$CalibrationPointImpl _$$CalibrationPointImplFromJson(
         Map<String, dynamic> json) =>
@@ -260,27 +219,18 @@ _$MicrophoneStatusImpl _$$MicrophoneStatusImplFromJson(
     );
 
 Map<String, dynamic> _$$MicrophoneStatusImplToJson(
-    _$MicrophoneStatusImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'isConnected': instance.isConnected,
-    'isCalibrated': instance.isCalibrated,
-    'sensitivity': instance.sensitivity,
-    'noiseLevel': instance.noiseLevel,
-    'type': instance.type,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('lastCalibrated', instance.lastCalibrated?.toIso8601String());
-  writeNotNull('calibrationData', instance.calibrationData);
-  return val;
-}
+        _$MicrophoneStatusImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'isConnected': instance.isConnected,
+      'isCalibrated': instance.isCalibrated,
+      'sensitivity': instance.sensitivity,
+      'noiseLevel': instance.noiseLevel,
+      'type': instance.type,
+      'lastCalibrated': instance.lastCalibrated?.toIso8601String(),
+      'calibrationData': instance.calibrationData,
+    };
 
 _$VolumeSettingsImpl _$$VolumeSettingsImplFromJson(Map<String, dynamic> json) =>
     _$VolumeSettingsImpl(
@@ -323,26 +273,17 @@ _$AudioProfileImpl _$$AudioProfileImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['createdAt'] as String),
     );
 
-Map<String, dynamic> _$$AudioProfileImplToJson(_$AudioProfileImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'volumeSettings': instance.volumeSettings.toJson(),
-    'equalizerSettings': instance.equalizerSettings,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  val['tags'] = instance.tags;
-  val['isActive'] = instance.isActive;
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$AudioProfileImplToJson(_$AudioProfileImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'volumeSettings': instance.volumeSettings,
+      'equalizerSettings': instance.equalizerSettings,
+      'description': instance.description,
+      'tags': instance.tags,
+      'isActive': instance.isActive,
+      'createdAt': instance.createdAt?.toIso8601String(),
+    };
 
 _$FreeDomeCommandImpl _$$FreeDomeCommandImplFromJson(
         Map<String, dynamic> json) =>
@@ -361,25 +302,16 @@ _$FreeDomeCommandImpl _$$FreeDomeCommandImplFromJson(
     );
 
 Map<String, dynamic> _$$FreeDomeCommandImplToJson(
-    _$FreeDomeCommandImpl instance) {
-  final val = <String, dynamic>{
-    'type': instance.type,
-    'data': instance.data,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('targetSystemId', instance.targetSystemId);
-  writeNotNull('sessionId', instance.sessionId);
-  val['priority'] = instance.priority;
-  writeNotNull('timestamp', instance.timestamp?.toIso8601String());
-  writeNotNull('timeout', instance.timeout?.inMicroseconds);
-  return val;
-}
+        _$FreeDomeCommandImpl instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+      'data': instance.data,
+      'targetSystemId': instance.targetSystemId,
+      'sessionId': instance.sessionId,
+      'priority': instance.priority,
+      'timestamp': instance.timestamp?.toIso8601String(),
+      'timeout': instance.timeout?.inMicroseconds,
+    };
 
 _$FreeDomeResponseImpl _$$FreeDomeResponseImplFromJson(
         Map<String, dynamic> json) =>
@@ -394,23 +326,14 @@ _$FreeDomeResponseImpl _$$FreeDomeResponseImplFromJson(
     );
 
 Map<String, dynamic> _$$FreeDomeResponseImplToJson(
-    _$FreeDomeResponseImpl instance) {
-  final val = <String, dynamic>{
-    'success': instance.success,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('error', instance.error);
-  writeNotNull('data', instance.data);
-  writeNotNull('commandId', instance.commandId);
-  writeNotNull('timestamp', instance.timestamp?.toIso8601String());
-  return val;
-}
+        _$FreeDomeResponseImpl instance) =>
+    <String, dynamic>{
+      'success': instance.success,
+      'error': instance.error,
+      'data': instance.data,
+      'commandId': instance.commandId,
+      'timestamp': instance.timestamp?.toIso8601String(),
+    };
 
 _$FreeDomeEventImpl _$$FreeDomeEventImplFromJson(Map<String, dynamic> json) =>
     _$FreeDomeEventImpl(
@@ -422,19 +345,10 @@ _$FreeDomeEventImpl _$$FreeDomeEventImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['timestamp'] as String),
     );
 
-Map<String, dynamic> _$$FreeDomeEventImplToJson(_$FreeDomeEventImpl instance) {
-  final val = <String, dynamic>{
-    'type': instance.type,
-    'data': instance.data,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('sourceSystemId', instance.sourceSystemId);
-  writeNotNull('timestamp', instance.timestamp?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$FreeDomeEventImplToJson(_$FreeDomeEventImpl instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+      'data': instance.data,
+      'sourceSystemId': instance.sourceSystemId,
+      'timestamp': instance.timestamp?.toIso8601String(),
+    };

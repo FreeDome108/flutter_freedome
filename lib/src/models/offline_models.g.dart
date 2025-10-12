@@ -12,7 +12,9 @@ CacheEntry _$CacheEntryFromJson(Map<String, dynamic> json) => CacheEntry(
       expiry: json['expiry'] == null
           ? null
           : DateTime.parse(json['expiry'] as String),
-      tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const [],
+      tags:
+          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const [],
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),

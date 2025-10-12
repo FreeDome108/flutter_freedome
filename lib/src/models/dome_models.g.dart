@@ -34,34 +34,25 @@ _$DomeSystemImpl _$$DomeSystemImplFromJson(Map<String, dynamic> json) =>
       systemRotation: (json['systemRotation'] as num?)?.toDouble() ?? 0.0,
     );
 
-Map<String, dynamic> _$$DomeSystemImplToJson(_$DomeSystemImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'ipAddress': instance.ipAddress,
-    'port': instance.port,
-    'type': _$DomeSystemTypeEnumMap[instance.type]!,
-    'status': _$DomeSystemStatusEnumMap[instance.status]!,
-    'isConnected': instance.isConnected,
-    'projectors': instance.projectors.map((e) => e.toJson()).toList(),
-    'audioChannels': instance.audioChannels.map((e) => e.toJson()).toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('lastConnected', instance.lastConnected?.toIso8601String());
-  writeNotNull('firmwareVersion', instance.firmwareVersion);
-  writeNotNull('capabilities', instance.capabilities);
-  writeNotNull('activeVendor', instance.activeVendor);
-  val['systemVolume'] = instance.systemVolume;
-  val['systemBrightness'] = instance.systemBrightness;
-  val['systemRotation'] = instance.systemRotation;
-  return val;
-}
+Map<String, dynamic> _$$DomeSystemImplToJson(_$DomeSystemImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'ipAddress': instance.ipAddress,
+      'port': instance.port,
+      'type': _$DomeSystemTypeEnumMap[instance.type]!,
+      'status': _$DomeSystemStatusEnumMap[instance.status]!,
+      'isConnected': instance.isConnected,
+      'projectors': instance.projectors,
+      'audioChannels': instance.audioChannels,
+      'lastConnected': instance.lastConnected?.toIso8601String(),
+      'firmwareVersion': instance.firmwareVersion,
+      'capabilities': instance.capabilities,
+      'activeVendor': instance.activeVendor,
+      'systemVolume': instance.systemVolume,
+      'systemBrightness': instance.systemBrightness,
+      'systemRotation': instance.systemRotation,
+    };
 
 const _$DomeSystemTypeEnumMap = {
   DomeSystemType.professional: 'professional',
@@ -100,34 +91,25 @@ _$ProjectorConfigImpl _$$ProjectorConfigImplFromJson(
     );
 
 Map<String, dynamic> _$$ProjectorConfigImplToJson(
-    _$ProjectorConfigImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'type': _$ProjectorTypeEnumMap[instance.type]!,
-    'brightness': instance.brightness,
-    'contrast': instance.contrast,
-    'status': _$ProjectorStatusEnumMap[instance.status]!,
-    'x': instance.x,
-    'y': instance.y,
-    'z': instance.z,
-    'pitch': instance.pitch,
-    'yaw': instance.yaw,
-    'roll': instance.roll,
-    'resolutionWidth': instance.resolutionWidth,
-    'resolutionHeight': instance.resolutionHeight,
-    'refreshRate': instance.refreshRate,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('calibrationData', instance.calibrationData);
-  return val;
-}
+        _$ProjectorConfigImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'type': _$ProjectorTypeEnumMap[instance.type]!,
+      'brightness': instance.brightness,
+      'contrast': instance.contrast,
+      'status': _$ProjectorStatusEnumMap[instance.status]!,
+      'x': instance.x,
+      'y': instance.y,
+      'z': instance.z,
+      'pitch': instance.pitch,
+      'yaw': instance.yaw,
+      'roll': instance.roll,
+      'resolutionWidth': instance.resolutionWidth,
+      'resolutionHeight': instance.resolutionHeight,
+      'refreshRate': instance.refreshRate,
+      'calibrationData': instance.calibrationData,
+    };
 
 const _$ProjectorTypeEnumMap = {
   ProjectorType.laser: 'laser',
@@ -160,29 +142,20 @@ _$AudioChannelImpl _$$AudioChannelImplFromJson(Map<String, dynamic> json) =>
       calibrationData: json['calibrationData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$AudioChannelImplToJson(_$AudioChannelImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'type': _$AudioChannelTypeEnumMap[instance.type]!,
-    'volume': instance.volume,
-    'isMuted': instance.isMuted,
-    'x': instance.x,
-    'y': instance.y,
-    'z': instance.z,
-    'delay': instance.delay,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('equalizerSettings', instance.equalizerSettings);
-  writeNotNull('calibrationData', instance.calibrationData);
-  return val;
-}
+Map<String, dynamic> _$$AudioChannelImplToJson(_$AudioChannelImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'type': _$AudioChannelTypeEnumMap[instance.type]!,
+      'volume': instance.volume,
+      'isMuted': instance.isMuted,
+      'x': instance.x,
+      'y': instance.y,
+      'z': instance.z,
+      'delay': instance.delay,
+      'equalizerSettings': instance.equalizerSettings,
+      'calibrationData': instance.calibrationData,
+    };
 
 const _$AudioChannelTypeEnumMap = {
   AudioChannelType.mono: 'mono',
@@ -208,26 +181,17 @@ _$FreeDomeConnectionStatusImpl _$$FreeDomeConnectionStatusImplFromJson(
     );
 
 Map<String, dynamic> _$$FreeDomeConnectionStatusImplToJson(
-    _$FreeDomeConnectionStatusImpl instance) {
-  final val = <String, dynamic>{
-    'isConnected': instance.isConnected,
-    'isConnecting': instance.isConnecting,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('connectedDomeId', instance.connectedDomeId);
-  writeNotNull('serverUrl', instance.serverUrl);
-  writeNotNull('lastConnected', instance.lastConnected?.toIso8601String());
-  writeNotNull('error', instance.error);
-  val['reconnectAttempts'] = instance.reconnectAttempts;
-  val['maxReconnectAttempts'] = instance.maxReconnectAttempts;
-  return val;
-}
+        _$FreeDomeConnectionStatusImpl instance) =>
+    <String, dynamic>{
+      'isConnected': instance.isConnected,
+      'isConnecting': instance.isConnecting,
+      'connectedDomeId': instance.connectedDomeId,
+      'serverUrl': instance.serverUrl,
+      'lastConnected': instance.lastConnected?.toIso8601String(),
+      'error': instance.error,
+      'reconnectAttempts': instance.reconnectAttempts,
+      'maxReconnectAttempts': instance.maxReconnectAttempts,
+    };
 
 _$FreeDomeUserImpl _$$FreeDomeUserImplFromJson(Map<String, dynamic> json) =>
     _$FreeDomeUserImpl(
@@ -244,27 +208,18 @@ _$FreeDomeUserImpl _$$FreeDomeUserImplFromJson(Map<String, dynamic> json) =>
       preferences: json['preferences'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$FreeDomeUserImplToJson(_$FreeDomeUserImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'role': _$FreeDomeUserRoleEnumMap[instance.role]!,
-    'permissions': instance.permissions
-        .map((e) => _$FreeDomePermissionEnumMap[e]!)
-        .toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('email', instance.email);
-  writeNotNull('lastLogin', instance.lastLogin?.toIso8601String());
-  writeNotNull('preferences', instance.preferences);
-  return val;
-}
+Map<String, dynamic> _$$FreeDomeUserImplToJson(_$FreeDomeUserImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'role': _$FreeDomeUserRoleEnumMap[instance.role]!,
+      'permissions': instance.permissions
+          .map((e) => _$FreeDomePermissionEnumMap[e]!)
+          .toList(),
+      'email': instance.email,
+      'lastLogin': instance.lastLogin?.toIso8601String(),
+      'preferences': instance.preferences,
+    };
 
 const _$FreeDomeUserRoleEnumMap = {
   FreeDomeUserRole.guest: 'guest',
@@ -301,23 +256,14 @@ _$FreeDomeSessionImpl _$$FreeDomeSessionImplFromJson(
     );
 
 Map<String, dynamic> _$$FreeDomeSessionImplToJson(
-    _$FreeDomeSessionImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'userId': instance.userId,
-    'domeId': instance.domeId,
-    'startTime': instance.startTime.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('endTime', instance.endTime?.toIso8601String());
-  val['duration'] = instance.duration.inMicroseconds;
-  writeNotNull('currentContentId', instance.currentContentId);
-  writeNotNull('sessionData', instance.sessionData);
-  return val;
-}
+        _$FreeDomeSessionImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'userId': instance.userId,
+      'domeId': instance.domeId,
+      'startTime': instance.startTime.toIso8601String(),
+      'endTime': instance.endTime?.toIso8601String(),
+      'duration': instance.duration.inMicroseconds,
+      'currentContentId': instance.currentContentId,
+      'sessionData': instance.sessionData,
+    };

@@ -38,7 +38,10 @@ class FreeDomeProvider extends ChangeNotifier {
         !_authService.hasPermission(FreeDomePermission.calibrateProjectors)) {
       return null;
     }
-    _calibrationService ??= FreeDomeCalibrationService();
+    _calibrationService ??= FreeDomeCalibrationService(
+      connectionService: _connectionService,
+      authService: _authService,
+    );
     return _calibrationService;
   }
 
@@ -59,6 +62,7 @@ class FreeDomeProvider extends ChangeNotifier {
   // Делегированные геттеры для удобства
   bool get isConnected => _connectionService.isConnected;
   bool get isAuthenticated => _authService.isAuthenticated;
+  bool get isGuest => _authService.isGuest;
   FreeDomeUserRole get currentRole => _authService.currentRole;
   DomeSystem? get activeDome => _connectionService.activeDome;
   PlaybackState get playbackState => _contentService.playbackState;
@@ -155,7 +159,7 @@ class FreeDomeProvider extends ChangeNotifier {
 
     // Выбираем первую доступную систему
     final nearestDome = systems.first;
-    return await _connectionService.connectToDome(nearestDome);
+    return await _connectionService.connectToDome(nearestDome.id);
   }
 
   /// Подключение к конкретному куполу
@@ -164,7 +168,7 @@ class FreeDomeProvider extends ChangeNotifier {
       return false;
     }
 
-    return await _connectionService.connectToDome(dome);
+    return await _connectionService.connectToDome(dome.id);
   }
 
   /// Отключение от купола

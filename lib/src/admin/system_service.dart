@@ -72,7 +72,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return;
 
       final response = await client.get(
@@ -97,7 +97,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return;
 
       final response = await client.get(
@@ -123,7 +123,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return;
 
       final response = await client.get(
@@ -187,7 +187,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return null;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return null;
 
       final response = await client.post(
@@ -280,7 +280,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return [];
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return [];
 
       final response = await client.get(
@@ -338,7 +338,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return null;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return null;
 
       final response = await client.post(
@@ -415,7 +415,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return;
 
       final response = await client.get(
@@ -445,7 +445,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return null;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return null;
 
       final response = await client.get(
@@ -599,7 +599,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return [];
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return [];
 
       final response = await client.get(
@@ -691,7 +691,7 @@ class FreeDomeSystemService extends ChangeNotifier {
       final dome = _connectionService.activeDome;
       if (dome == null) return null;
 
-      final client = _connectionService.getHttpClient(dome.id);
+      final client = _connectionService.getHttpClient();
       if (client == null) return null;
 
       final response = await client.get(

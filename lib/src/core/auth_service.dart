@@ -334,4 +334,69 @@ class FreeDomeAuthService extends ChangeNotifier {
     await logout();
     return await createGuestSession();
   }
+
+  /// Аутентификация администратора
+  Future<bool> authenticateAsAdmin({
+    required String username,
+    required String password,
+  }) async {
+    try {
+      if (kDebugMode) {
+        print('🔐 Authenticating admin: $username');
+      }
+
+      // В реальной реализации здесь должен быть запрос к серверу
+      // Для демонстрации используем фиксированные данные
+      if (username == 'admin' && password == 'admin123') {
+        final user = FreeDomeUser(
+          id: 'admin_001',
+          name: 'System Administrator',
+          role: FreeDomeUserRole.admin,
+          permissions: FreeDomeUserRole.admin.defaultPermissions,
+          email: 'admin@freedome.com',
+          lastLogin: DateTime.now(),
+          preferences: {
+            'language': 'en',
+            'theme': 'dark',
+          },
+        );
+
+        final session = FreeDomeSession(
+          id: 'session_${DateTime.now().millisecondsSinceEpoch}',
+          userId: user.id,
+          domeId: 'current',
+          startTime: DateTime.now(),
+          sessionData: {
+            'login_method': 'admin_password',
+            'ip_address': '127.0.0.1',
+          },
+        );
+
+        await _saveAuthenticatedSession(user, session);
+
+        _currentUser = user;
+        _currentSession = session;
+        _isAuthenticated = true;
+        _isGuest = false;
+
+        notifyListeners();
+
+        if (kDebugMode) {
+          print('✅ Admin authentication successful');
+        }
+
+        return true;
+      } else {
+        if (kDebugMode) {
+          print('❌ Admin authentication failed: Invalid credentials');
+        }
+        return false;
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Admin authentication error: $e');
+      }
+      return false;
+    }
+  }
 }
