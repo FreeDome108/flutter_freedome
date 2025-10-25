@@ -6,9 +6,8 @@ part of 'content_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProjectionContentImpl _$$ProjectionContentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ProjectionContentImpl(
+_ProjectionContent _$ProjectionContentFromJson(Map<String, dynamic> json) =>
+    _ProjectionContent(
       id: json['id'] as String,
       name: json['name'] as String,
       filePath: json['filePath'] as String,
@@ -33,8 +32,7 @@ _$ProjectionContentImpl _$$ProjectionContentImplFromJson(
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ProjectionContentImplToJson(
-        _$ProjectionContentImpl instance) =>
+Map<String, dynamic> _$ProjectionContentToJson(_ProjectionContent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -72,8 +70,8 @@ const _$ProjectionFormatEnumMap = {
   ProjectionFormat.cylindrical: 'cylindrical',
 };
 
-_$PlaybackStateImpl _$$PlaybackStateImplFromJson(Map<String, dynamic> json) =>
-    _$PlaybackStateImpl(
+_PlaybackState _$PlaybackStateFromJson(Map<String, dynamic> json) =>
+    _PlaybackState(
       status: $enumDecodeNullable(_$PlaybackStatusEnumMap, json['status']) ??
           PlaybackStatus.stopped,
       currentContentId: json['currentContentId'] as String?,
@@ -91,7 +89,7 @@ _$PlaybackStateImpl _$$PlaybackStateImplFromJson(Map<String, dynamic> json) =>
       error: json['error'] as String?,
     );
 
-Map<String, dynamic> _$$PlaybackStateImplToJson(_$PlaybackStateImpl instance) =>
+Map<String, dynamic> _$PlaybackStateToJson(_PlaybackState instance) =>
     <String, dynamic>{
       'status': _$PlaybackStatusEnumMap[instance.status]!,
       'currentContentId': instance.currentContentId,
@@ -113,8 +111,7 @@ const _$PlaybackStatusEnumMap = {
   PlaybackStatus.error: 'error',
 };
 
-_$PlaylistImpl _$$PlaylistImplFromJson(Map<String, dynamic> json) =>
-    _$PlaylistImpl(
+_Playlist _$PlaylistFromJson(Map<String, dynamic> json) => _Playlist(
       id: json['id'] as String,
       name: json['name'] as String,
       contentIds: (json['contentIds'] as List<dynamic>)
@@ -136,8 +133,7 @@ _$PlaylistImpl _$$PlaylistImplFromJson(Map<String, dynamic> json) =>
               const [],
     );
 
-Map<String, dynamic> _$$PlaylistImplToJson(_$PlaylistImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PlaylistToJson(_Playlist instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'contentIds': instance.contentIds,
@@ -158,9 +154,8 @@ const _$PlaylistModeEnumMap = {
   PlaylistMode.random: 'random',
 };
 
-_$InteractiveContentImpl _$$InteractiveContentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$InteractiveContentImpl(
+_InteractiveContent _$InteractiveContentFromJson(Map<String, dynamic> json) =>
+    _InteractiveContent(
       id: json['id'] as String,
       name: json['name'] as String,
       appName: json['appName'] as String,
@@ -174,8 +169,7 @@ _$InteractiveContentImpl _$$InteractiveContentImplFromJson(
           : DateTime.parse(json['createdAt'] as String),
     );
 
-Map<String, dynamic> _$$InteractiveContentImplToJson(
-        _$InteractiveContentImpl instance) =>
+Map<String, dynamic> _$InteractiveContentToJson(_InteractiveContent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -186,9 +180,8 @@ Map<String, dynamic> _$$InteractiveContentImplToJson(
       'createdAt': instance.createdAt?.toIso8601String(),
     };
 
-_$RealtimeContentImpl _$$RealtimeContentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RealtimeContentImpl(
+_RealtimeContent _$RealtimeContentFromJson(Map<String, dynamic> json) =>
+    _RealtimeContent(
       id: json['id'] as String,
       name: json['name'] as String,
       sourceType: json['sourceType'] as String,
@@ -199,8 +192,7 @@ _$RealtimeContentImpl _$$RealtimeContentImplFromJson(
               const [],
     );
 
-Map<String, dynamic> _$$RealtimeContentImplToJson(
-        _$RealtimeContentImpl instance) =>
+Map<String, dynamic> _$RealtimeContentToJson(_RealtimeContent instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -210,8 +202,8 @@ Map<String, dynamic> _$$RealtimeContentImplToJson(
       'tags': instance.tags,
     };
 
-_$ContentLibraryImpl _$$ContentLibraryImplFromJson(Map<String, dynamic> json) =>
-    _$ContentLibraryImpl(
+_ContentLibrary _$ContentLibraryFromJson(Map<String, dynamic> json) =>
+    _ContentLibrary(
       id: json['id'] as String,
       name: json['name'] as String,
       contentIds: (json['contentIds'] as List<dynamic>)
@@ -229,8 +221,7 @@ _$ContentLibraryImpl _$$ContentLibraryImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ContentLibraryImplToJson(
-        _$ContentLibraryImpl instance) =>
+Map<String, dynamic> _$ContentLibraryToJson(_ContentLibrary instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

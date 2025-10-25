@@ -6,9 +6,8 @@ part of 'calibration_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CalibrationProgressImpl _$$CalibrationProgressImplFromJson(
-        Map<String, dynamic> json) =>
-    _$CalibrationProgressImpl(
+_CalibrationProgress _$CalibrationProgressFromJson(Map<String, dynamic> json) =>
+    _CalibrationProgress(
       id: json['id'] as String,
       type: $enumDecode(_$CalibrationTypeEnumMap, json['type']),
       status: $enumDecode(_$CalibrationStatusEnumMap, json['status']),
@@ -26,8 +25,8 @@ _$CalibrationProgressImpl _$$CalibrationProgressImplFromJson(
       stepData: json['stepData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$CalibrationProgressImplToJson(
-        _$CalibrationProgressImpl instance) =>
+Map<String, dynamic> _$CalibrationProgressToJson(
+        _CalibrationProgress instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$CalibrationTypeEnumMap[instance.type]!,
@@ -60,9 +59,8 @@ const _$CalibrationStatusEnumMap = {
   CalibrationStatus.paused: 'paused',
 };
 
-_$CalibrationResultImpl _$$CalibrationResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$CalibrationResultImpl(
+_CalibrationResult _$CalibrationResultFromJson(Map<String, dynamic> json) =>
+    _CalibrationResult(
       id: json['id'] as String,
       type: $enumDecode(_$CalibrationTypeEnumMap, json['type']),
       status: $enumDecode(_$CalibrationStatusEnumMap, json['status']),
@@ -83,8 +81,7 @@ _$CalibrationResultImpl _$$CalibrationResultImplFromJson(
       overallQuality: (json['overallQuality'] as num?)?.toDouble() ?? 0.0,
     );
 
-Map<String, dynamic> _$$CalibrationResultImplToJson(
-        _$CalibrationResultImpl instance) =>
+Map<String, dynamic> _$CalibrationResultToJson(_CalibrationResult instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$CalibrationTypeEnumMap[instance.type]!,
@@ -98,8 +95,8 @@ Map<String, dynamic> _$$CalibrationResultImplToJson(
       'overallQuality': instance.overallQuality,
     };
 
-_$ChannelResultImpl _$$ChannelResultImplFromJson(Map<String, dynamic> json) =>
-    _$ChannelResultImpl(
+_ChannelResult _$ChannelResultFromJson(Map<String, dynamic> json) =>
+    _ChannelResult(
       channelId: json['channelId'] as String,
       channelName: json['channelName'] as String,
       channelType: json['channelType'] as String,
@@ -116,7 +113,7 @@ _$ChannelResultImpl _$$ChannelResultImplFromJson(Map<String, dynamic> json) =>
       equalizerSettings: json['equalizerSettings'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ChannelResultImplToJson(_$ChannelResultImpl instance) =>
+Map<String, dynamic> _$ChannelResultToJson(_ChannelResult instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
       'channelName': instance.channelName,
@@ -131,24 +128,22 @@ Map<String, dynamic> _$$ChannelResultImplToJson(_$ChannelResultImpl instance) =>
       'equalizerSettings': instance.equalizerSettings,
     };
 
-_$FrequencyPointImpl _$$FrequencyPointImplFromJson(Map<String, dynamic> json) =>
-    _$FrequencyPointImpl(
+_FrequencyPoint _$FrequencyPointFromJson(Map<String, dynamic> json) =>
+    _FrequencyPoint(
       frequency: (json['frequency'] as num).toDouble(),
       magnitude: (json['magnitude'] as num).toDouble(),
       phase: (json['phase'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$FrequencyPointImplToJson(
-        _$FrequencyPointImpl instance) =>
+Map<String, dynamic> _$FrequencyPointToJson(_FrequencyPoint instance) =>
     <String, dynamic>{
       'frequency': instance.frequency,
       'magnitude': instance.magnitude,
       'phase': instance.phase,
     };
 
-_$ProjectorResultImpl _$$ProjectorResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ProjectorResultImpl(
+_ProjectorResult _$ProjectorResultFromJson(Map<String, dynamic> json) =>
+    _ProjectorResult(
       projectorId: json['projectorId'] as String,
       projectorName: json['projectorName'] as String,
       calibrationPoints: (json['calibrationPoints'] as List<dynamic>?)
@@ -167,8 +162,7 @@ _$ProjectorResultImpl _$$ProjectorResultImplFromJson(
       lensCorrection: json['lensCorrection'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ProjectorResultImplToJson(
-        _$ProjectorResultImpl instance) =>
+Map<String, dynamic> _$ProjectorResultToJson(_ProjectorResult instance) =>
     <String, dynamic>{
       'projectorId': instance.projectorId,
       'projectorName': instance.projectorName,
@@ -182,9 +176,8 @@ Map<String, dynamic> _$$ProjectorResultImplToJson(
       'lensCorrection': instance.lensCorrection,
     };
 
-_$CalibrationPointImpl _$$CalibrationPointImplFromJson(
-        Map<String, dynamic> json) =>
-    _$CalibrationPointImpl(
+_CalibrationPoint _$CalibrationPointFromJson(Map<String, dynamic> json) =>
+    _CalibrationPoint(
       x: (json['x'] as num).toDouble(),
       y: (json['y'] as num).toDouble(),
       targetX: (json['targetX'] as num).toDouble(),
@@ -192,8 +185,7 @@ _$CalibrationPointImpl _$$CalibrationPointImplFromJson(
       error: (json['error'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$CalibrationPointImplToJson(
-        _$CalibrationPointImpl instance) =>
+Map<String, dynamic> _$CalibrationPointToJson(_CalibrationPoint instance) =>
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,
@@ -202,9 +194,8 @@ Map<String, dynamic> _$$CalibrationPointImplToJson(
       'error': instance.error,
     };
 
-_$MicrophoneStatusImpl _$$MicrophoneStatusImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MicrophoneStatusImpl(
+_MicrophoneStatus _$MicrophoneStatusFromJson(Map<String, dynamic> json) =>
+    _MicrophoneStatus(
       id: json['id'] as String,
       name: json['name'] as String,
       isConnected: json['isConnected'] as bool,
@@ -218,8 +209,7 @@ _$MicrophoneStatusImpl _$$MicrophoneStatusImplFromJson(
       calibrationData: json['calibrationData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$MicrophoneStatusImplToJson(
-        _$MicrophoneStatusImpl instance) =>
+Map<String, dynamic> _$MicrophoneStatusToJson(_MicrophoneStatus instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -232,8 +222,8 @@ Map<String, dynamic> _$$MicrophoneStatusImplToJson(
       'calibrationData': instance.calibrationData,
     };
 
-_$VolumeSettingsImpl _$$VolumeSettingsImplFromJson(Map<String, dynamic> json) =>
-    _$VolumeSettingsImpl(
+_VolumeSettings _$VolumeSettingsFromJson(Map<String, dynamic> json) =>
+    _VolumeSettings(
       masterVolume: (json['masterVolume'] as num?)?.toDouble() ?? 0.5,
       channelVolumes: (json['channelVolumes'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(k, (e as num).toDouble()),
@@ -245,8 +235,7 @@ _$VolumeSettingsImpl _$$VolumeSettingsImplFromJson(Map<String, dynamic> json) =>
       loudnessCompensation: json['loudnessCompensation'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$VolumeSettingsImplToJson(
-        _$VolumeSettingsImpl instance) =>
+Map<String, dynamic> _$VolumeSettingsToJson(_VolumeSettings instance) =>
     <String, dynamic>{
       'masterVolume': instance.masterVolume,
       'channelVolumes': instance.channelVolumes,
@@ -256,8 +245,8 @@ Map<String, dynamic> _$$VolumeSettingsImplToJson(
       'loudnessCompensation': instance.loudnessCompensation,
     };
 
-_$AudioProfileImpl _$$AudioProfileImplFromJson(Map<String, dynamic> json) =>
-    _$AudioProfileImpl(
+_AudioProfile _$AudioProfileFromJson(Map<String, dynamic> json) =>
+    _AudioProfile(
       id: json['id'] as String,
       name: json['name'] as String,
       volumeSettings: VolumeSettings.fromJson(
@@ -273,7 +262,7 @@ _$AudioProfileImpl _$$AudioProfileImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['createdAt'] as String),
     );
 
-Map<String, dynamic> _$$AudioProfileImplToJson(_$AudioProfileImpl instance) =>
+Map<String, dynamic> _$AudioProfileToJson(_AudioProfile instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -285,9 +274,8 @@ Map<String, dynamic> _$$AudioProfileImplToJson(_$AudioProfileImpl instance) =>
       'createdAt': instance.createdAt?.toIso8601String(),
     };
 
-_$FreeDomeCommandImpl _$$FreeDomeCommandImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FreeDomeCommandImpl(
+_FreeDomeCommand _$FreeDomeCommandFromJson(Map<String, dynamic> json) =>
+    _FreeDomeCommand(
       type: json['type'] as String,
       data: json['data'] as Map<String, dynamic>,
       targetSystemId: json['targetSystemId'] as String?,
@@ -301,8 +289,7 @@ _$FreeDomeCommandImpl _$$FreeDomeCommandImplFromJson(
           : Duration(microseconds: (json['timeout'] as num).toInt()),
     );
 
-Map<String, dynamic> _$$FreeDomeCommandImplToJson(
-        _$FreeDomeCommandImpl instance) =>
+Map<String, dynamic> _$FreeDomeCommandToJson(_FreeDomeCommand instance) =>
     <String, dynamic>{
       'type': instance.type,
       'data': instance.data,
@@ -313,9 +300,8 @@ Map<String, dynamic> _$$FreeDomeCommandImplToJson(
       'timeout': instance.timeout?.inMicroseconds,
     };
 
-_$FreeDomeResponseImpl _$$FreeDomeResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FreeDomeResponseImpl(
+_FreeDomeResponse _$FreeDomeResponseFromJson(Map<String, dynamic> json) =>
+    _FreeDomeResponse(
       success: json['success'] as bool,
       error: json['error'] as String?,
       data: json['data'] as Map<String, dynamic>?,
@@ -325,8 +311,7 @@ _$FreeDomeResponseImpl _$$FreeDomeResponseImplFromJson(
           : DateTime.parse(json['timestamp'] as String),
     );
 
-Map<String, dynamic> _$$FreeDomeResponseImplToJson(
-        _$FreeDomeResponseImpl instance) =>
+Map<String, dynamic> _$FreeDomeResponseToJson(_FreeDomeResponse instance) =>
     <String, dynamic>{
       'success': instance.success,
       'error': instance.error,
@@ -335,8 +320,8 @@ Map<String, dynamic> _$$FreeDomeResponseImplToJson(
       'timestamp': instance.timestamp?.toIso8601String(),
     };
 
-_$FreeDomeEventImpl _$$FreeDomeEventImplFromJson(Map<String, dynamic> json) =>
-    _$FreeDomeEventImpl(
+_FreeDomeEvent _$FreeDomeEventFromJson(Map<String, dynamic> json) =>
+    _FreeDomeEvent(
       type: json['type'] as String,
       data: json['data'] as Map<String, dynamic>,
       sourceSystemId: json['sourceSystemId'] as String?,
@@ -345,7 +330,7 @@ _$FreeDomeEventImpl _$$FreeDomeEventImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['timestamp'] as String),
     );
 
-Map<String, dynamic> _$$FreeDomeEventImplToJson(_$FreeDomeEventImpl instance) =>
+Map<String, dynamic> _$FreeDomeEventToJson(_FreeDomeEvent instance) =>
     <String, dynamic>{
       'type': instance.type,
       'data': instance.data,

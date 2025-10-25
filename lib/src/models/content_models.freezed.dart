@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,170 +9,100 @@ part of 'content_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ProjectionContent _$ProjectionContentFromJson(Map<String, dynamic> json) {
-  return _ProjectionContent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ProjectionContent {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get filePath => throw _privateConstructorUsedError;
-  ContentType get type => throw _privateConstructorUsedError;
-  Duration get duration => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
-  ProjectionFormat get format => throw _privateConstructorUsedError;
-  String? get thumbnailPath => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  DateTime? get lastPlayed => throw _privateConstructorUsedError;
-  int get playCount => throw _privateConstructorUsedError;
-  double get defaultVolume => throw _privateConstructorUsedError;
-  double get defaultBrightness => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-
-  /// Serializes this ProjectionContent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get filePath;
+  ContentType get type;
+  Duration get duration;
+  String? get description;
+  List<String> get tags;
+  ProjectionFormat get format;
+  String? get thumbnailPath;
+  DateTime? get createdAt;
+  DateTime? get lastPlayed;
+  int get playCount;
+  double get defaultVolume;
+  double get defaultBrightness;
+  Map<String, dynamic>? get metadata;
 
   /// Create a copy of ProjectionContent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ProjectionContentCopyWith<ProjectionContent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProjectionContentCopyWith<$Res> {
-  factory $ProjectionContentCopyWith(
-          ProjectionContent value, $Res Function(ProjectionContent) then) =
-      _$ProjectionContentCopyWithImpl<$Res, ProjectionContent>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String filePath,
-      ContentType type,
-      Duration duration,
-      String? description,
-      List<String> tags,
-      ProjectionFormat format,
-      String? thumbnailPath,
-      DateTime? createdAt,
-      DateTime? lastPlayed,
-      int playCount,
-      double defaultVolume,
-      double defaultBrightness,
-      Map<String, dynamic>? metadata});
-}
-
-/// @nodoc
-class _$ProjectionContentCopyWithImpl<$Res, $Val extends ProjectionContent>
-    implements $ProjectionContentCopyWith<$Res> {
-  _$ProjectionContentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ProjectionContent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ProjectionContentCopyWith<ProjectionContent> get copyWith =>
+      _$ProjectionContentCopyWithImpl<ProjectionContent>(
+          this as ProjectionContent, _$identity);
+
+  /// Serializes this ProjectionContent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? filePath = null,
-    Object? type = null,
-    Object? duration = null,
-    Object? description = freezed,
-    Object? tags = null,
-    Object? format = null,
-    Object? thumbnailPath = freezed,
-    Object? createdAt = freezed,
-    Object? lastPlayed = freezed,
-    Object? playCount = null,
-    Object? defaultVolume = null,
-    Object? defaultBrightness = null,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      filePath: null == filePath
-          ? _value.filePath
-          : filePath // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ContentType,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      format: null == format
-          ? _value.format
-          : format // ignore: cast_nullable_to_non_nullable
-              as ProjectionFormat,
-      thumbnailPath: freezed == thumbnailPath
-          ? _value.thumbnailPath
-          : thumbnailPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      lastPlayed: freezed == lastPlayed
-          ? _value.lastPlayed
-          : lastPlayed // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      playCount: null == playCount
-          ? _value.playCount
-          : playCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      defaultVolume: null == defaultVolume
-          ? _value.defaultVolume
-          : defaultVolume // ignore: cast_nullable_to_non_nullable
-              as double,
-      defaultBrightness: null == defaultBrightness
-          ? _value.defaultBrightness
-          : defaultBrightness // ignore: cast_nullable_to_non_nullable
-              as double,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ProjectionContent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.filePath, filePath) ||
+                other.filePath == filePath) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.duration, duration) ||
+                other.duration == duration) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.tags, tags) &&
+            (identical(other.format, format) || other.format == format) &&
+            (identical(other.thumbnailPath, thumbnailPath) ||
+                other.thumbnailPath == thumbnailPath) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.lastPlayed, lastPlayed) ||
+                other.lastPlayed == lastPlayed) &&
+            (identical(other.playCount, playCount) ||
+                other.playCount == playCount) &&
+            (identical(other.defaultVolume, defaultVolume) ||
+                other.defaultVolume == defaultVolume) &&
+            (identical(other.defaultBrightness, defaultBrightness) ||
+                other.defaultBrightness == defaultBrightness) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      filePath,
+      type,
+      duration,
+      description,
+      const DeepCollectionEquality().hash(tags),
+      format,
+      thumbnailPath,
+      createdAt,
+      lastPlayed,
+      playCount,
+      defaultVolume,
+      defaultBrightness,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'ProjectionContent(id: $id, name: $name, filePath: $filePath, type: $type, duration: $duration, description: $description, tags: $tags, format: $format, thumbnailPath: $thumbnailPath, createdAt: $createdAt, lastPlayed: $lastPlayed, playCount: $playCount, defaultVolume: $defaultVolume, defaultBrightness: $defaultBrightness, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$ProjectionContentImplCopyWith<$Res>
-    implements $ProjectionContentCopyWith<$Res> {
-  factory _$$ProjectionContentImplCopyWith(_$ProjectionContentImpl value,
-          $Res Function(_$ProjectionContentImpl) then) =
-      __$$ProjectionContentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ProjectionContentCopyWith<$Res> {
+  factory $ProjectionContentCopyWith(
+          ProjectionContent value, $Res Function(ProjectionContent) _then) =
+      _$ProjectionContentCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -193,12 +123,12 @@ abstract class _$$ProjectionContentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ProjectionContentImplCopyWithImpl<$Res>
-    extends _$ProjectionContentCopyWithImpl<$Res, _$ProjectionContentImpl>
-    implements _$$ProjectionContentImplCopyWith<$Res> {
-  __$$ProjectionContentImplCopyWithImpl(_$ProjectionContentImpl _value,
-      $Res Function(_$ProjectionContentImpl) _then)
-      : super(_value, _then);
+class _$ProjectionContentCopyWithImpl<$Res>
+    implements $ProjectionContentCopyWith<$Res> {
+  _$ProjectionContentCopyWithImpl(this._self, this._then);
+
+  final ProjectionContent _self;
+  final $Res Function(ProjectionContent) _then;
 
   /// Create a copy of ProjectionContent
   /// with the given fields replaced by the non-null parameter values.
@@ -221,75 +151,325 @@ class __$$ProjectionContentImplCopyWithImpl<$Res>
     Object? defaultBrightness = null,
     Object? metadata = freezed,
   }) {
-    return _then(_$ProjectionContentImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       filePath: null == filePath
-          ? _value.filePath
+          ? _self.filePath
           : filePath // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as ContentType,
       duration: null == duration
-          ? _value.duration
+          ? _self.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as Duration,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       tags: null == tags
-          ? _value._tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       format: null == format
-          ? _value.format
+          ? _self.format
           : format // ignore: cast_nullable_to_non_nullable
               as ProjectionFormat,
       thumbnailPath: freezed == thumbnailPath
-          ? _value.thumbnailPath
+          ? _self.thumbnailPath
           : thumbnailPath // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAt: freezed == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       lastPlayed: freezed == lastPlayed
-          ? _value.lastPlayed
+          ? _self.lastPlayed
           : lastPlayed // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       playCount: null == playCount
-          ? _value.playCount
+          ? _self.playCount
           : playCount // ignore: cast_nullable_to_non_nullable
               as int,
       defaultVolume: null == defaultVolume
-          ? _value.defaultVolume
+          ? _self.defaultVolume
           : defaultVolume // ignore: cast_nullable_to_non_nullable
               as double,
       defaultBrightness: null == defaultBrightness
-          ? _value.defaultBrightness
+          ? _self.defaultBrightness
           : defaultBrightness // ignore: cast_nullable_to_non_nullable
               as double,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [ProjectionContent].
+extension ProjectionContentPatterns on ProjectionContent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ProjectionContent value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectionContent() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ProjectionContent value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectionContent():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ProjectionContent value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectionContent() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String filePath,
+            ContentType type,
+            Duration duration,
+            String? description,
+            List<String> tags,
+            ProjectionFormat format,
+            String? thumbnailPath,
+            DateTime? createdAt,
+            DateTime? lastPlayed,
+            int playCount,
+            double defaultVolume,
+            double defaultBrightness,
+            Map<String, dynamic>? metadata)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectionContent() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.filePath,
+            _that.type,
+            _that.duration,
+            _that.description,
+            _that.tags,
+            _that.format,
+            _that.thumbnailPath,
+            _that.createdAt,
+            _that.lastPlayed,
+            _that.playCount,
+            _that.defaultVolume,
+            _that.defaultBrightness,
+            _that.metadata);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String filePath,
+            ContentType type,
+            Duration duration,
+            String? description,
+            List<String> tags,
+            ProjectionFormat format,
+            String? thumbnailPath,
+            DateTime? createdAt,
+            DateTime? lastPlayed,
+            int playCount,
+            double defaultVolume,
+            double defaultBrightness,
+            Map<String, dynamic>? metadata)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectionContent():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.filePath,
+            _that.type,
+            _that.duration,
+            _that.description,
+            _that.tags,
+            _that.format,
+            _that.thumbnailPath,
+            _that.createdAt,
+            _that.lastPlayed,
+            _that.playCount,
+            _that.defaultVolume,
+            _that.defaultBrightness,
+            _that.metadata);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String filePath,
+            ContentType type,
+            Duration duration,
+            String? description,
+            List<String> tags,
+            ProjectionFormat format,
+            String? thumbnailPath,
+            DateTime? createdAt,
+            DateTime? lastPlayed,
+            int playCount,
+            double defaultVolume,
+            double defaultBrightness,
+            Map<String, dynamic>? metadata)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectionContent() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.filePath,
+            _that.type,
+            _that.duration,
+            _that.description,
+            _that.tags,
+            _that.format,
+            _that.thumbnailPath,
+            _that.createdAt,
+            _that.lastPlayed,
+            _that.playCount,
+            _that.defaultVolume,
+            _that.defaultBrightness,
+            _that.metadata);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$ProjectionContentImpl implements _ProjectionContent {
-  const _$ProjectionContentImpl(
+class _ProjectionContent implements ProjectionContent {
+  const _ProjectionContent(
       {required this.id,
       required this.name,
       required this.filePath,
@@ -307,9 +487,8 @@ class _$ProjectionContentImpl implements _ProjectionContent {
       final Map<String, dynamic>? metadata})
       : _tags = tags,
         _metadata = metadata;
-
-  factory _$ProjectionContentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProjectionContentImplFromJson(json);
+  factory _ProjectionContent.fromJson(Map<String, dynamic> json) =>
+      _$ProjectionContentFromJson(json);
 
   @override
   final String id;
@@ -360,16 +539,26 @@ class _$ProjectionContentImpl implements _ProjectionContent {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of ProjectionContent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ProjectionContent(id: $id, name: $name, filePath: $filePath, type: $type, duration: $duration, description: $description, tags: $tags, format: $format, thumbnailPath: $thumbnailPath, createdAt: $createdAt, lastPlayed: $lastPlayed, playCount: $playCount, defaultVolume: $defaultVolume, defaultBrightness: $defaultBrightness, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ProjectionContentCopyWith<_ProjectionContent> get copyWith =>
+      __$ProjectionContentCopyWithImpl<_ProjectionContent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ProjectionContentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectionContentImpl &&
+            other is _ProjectionContent &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.filePath, filePath) ||
@@ -416,345 +605,161 @@ class _$ProjectionContentImpl implements _ProjectionContent {
       defaultBrightness,
       const DeepCollectionEquality().hash(_metadata));
 
-  /// Create a copy of ProjectionContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ProjectionContentImplCopyWith<_$ProjectionContentImpl> get copyWith =>
-      __$$ProjectionContentImplCopyWithImpl<_$ProjectionContentImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProjectionContentImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ProjectionContent implements ProjectionContent {
-  const factory _ProjectionContent(
-      {required final String id,
-      required final String name,
-      required final String filePath,
-      required final ContentType type,
-      required final Duration duration,
-      final String? description,
-      final List<String> tags,
-      final ProjectionFormat format,
-      final String? thumbnailPath,
-      final DateTime? createdAt,
-      final DateTime? lastPlayed,
-      final int playCount,
-      final double defaultVolume,
-      final double defaultBrightness,
-      final Map<String, dynamic>? metadata}) = _$ProjectionContentImpl;
-
-  factory _ProjectionContent.fromJson(Map<String, dynamic> json) =
-      _$ProjectionContentImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get filePath;
-  @override
-  ContentType get type;
-  @override
-  Duration get duration;
-  @override
-  String? get description;
-  @override
-  List<String> get tags;
-  @override
-  ProjectionFormat get format;
-  @override
-  String? get thumbnailPath;
-  @override
-  DateTime? get createdAt;
-  @override
-  DateTime? get lastPlayed;
-  @override
-  int get playCount;
-  @override
-  double get defaultVolume;
-  @override
-  double get defaultBrightness;
-  @override
-  Map<String, dynamic>? get metadata;
-
-  /// Create a copy of ProjectionContent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProjectionContentImplCopyWith<_$ProjectionContentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-PlaybackState _$PlaybackStateFromJson(Map<String, dynamic> json) {
-  return _PlaybackState.fromJson(json);
-}
-
-/// @nodoc
-mixin _$PlaybackState {
-  PlaybackStatus get status => throw _privateConstructorUsedError;
-  String? get currentContentId => throw _privateConstructorUsedError;
-  String? get currentPlaylistId => throw _privateConstructorUsedError;
-  Duration get position => throw _privateConstructorUsedError;
-  Duration? get duration => throw _privateConstructorUsedError;
-  double get volume => throw _privateConstructorUsedError;
-  double get speed => throw _privateConstructorUsedError;
-  bool get isLooping => throw _privateConstructorUsedError;
-  bool get isMuted => throw _privateConstructorUsedError;
-  String? get error => throw _privateConstructorUsedError;
-
-  /// Serializes this PlaybackState to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of PlaybackState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $PlaybackStateCopyWith<PlaybackState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PlaybackStateCopyWith<$Res> {
-  factory $PlaybackStateCopyWith(
-          PlaybackState value, $Res Function(PlaybackState) then) =
-      _$PlaybackStateCopyWithImpl<$Res, PlaybackState>;
-  @useResult
-  $Res call(
-      {PlaybackStatus status,
-      String? currentContentId,
-      String? currentPlaylistId,
-      Duration position,
-      Duration? duration,
-      double volume,
-      double speed,
-      bool isLooping,
-      bool isMuted,
-      String? error});
-}
-
-/// @nodoc
-class _$PlaybackStateCopyWithImpl<$Res, $Val extends PlaybackState>
-    implements $PlaybackStateCopyWith<$Res> {
-  _$PlaybackStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of PlaybackState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-    Object? currentContentId = freezed,
-    Object? currentPlaylistId = freezed,
-    Object? position = null,
-    Object? duration = freezed,
-    Object? volume = null,
-    Object? speed = null,
-    Object? isLooping = null,
-    Object? isMuted = null,
-    Object? error = freezed,
-  }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as PlaybackStatus,
-      currentContentId: freezed == currentContentId
-          ? _value.currentContentId
-          : currentContentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currentPlaylistId: freezed == currentPlaylistId
-          ? _value.currentPlaylistId
-          : currentPlaylistId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      duration: freezed == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-      volume: null == volume
-          ? _value.volume
-          : volume // ignore: cast_nullable_to_non_nullable
-              as double,
-      speed: null == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as double,
-      isLooping: null == isLooping
-          ? _value.isLooping
-          : isLooping // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isMuted: null == isMuted
-          ? _value.isMuted
-          : isMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'ProjectionContent(id: $id, name: $name, filePath: $filePath, type: $type, duration: $duration, description: $description, tags: $tags, format: $format, thumbnailPath: $thumbnailPath, createdAt: $createdAt, lastPlayed: $lastPlayed, playCount: $playCount, defaultVolume: $defaultVolume, defaultBrightness: $defaultBrightness, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$PlaybackStateImplCopyWith<$Res>
-    implements $PlaybackStateCopyWith<$Res> {
-  factory _$$PlaybackStateImplCopyWith(
-          _$PlaybackStateImpl value, $Res Function(_$PlaybackStateImpl) then) =
-      __$$PlaybackStateImplCopyWithImpl<$Res>;
+abstract mixin class _$ProjectionContentCopyWith<$Res>
+    implements $ProjectionContentCopyWith<$Res> {
+  factory _$ProjectionContentCopyWith(
+          _ProjectionContent value, $Res Function(_ProjectionContent) _then) =
+      __$ProjectionContentCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {PlaybackStatus status,
-      String? currentContentId,
-      String? currentPlaylistId,
-      Duration position,
-      Duration? duration,
-      double volume,
-      double speed,
-      bool isLooping,
-      bool isMuted,
-      String? error});
+      {String id,
+      String name,
+      String filePath,
+      ContentType type,
+      Duration duration,
+      String? description,
+      List<String> tags,
+      ProjectionFormat format,
+      String? thumbnailPath,
+      DateTime? createdAt,
+      DateTime? lastPlayed,
+      int playCount,
+      double defaultVolume,
+      double defaultBrightness,
+      Map<String, dynamic>? metadata});
 }
 
 /// @nodoc
-class __$$PlaybackStateImplCopyWithImpl<$Res>
-    extends _$PlaybackStateCopyWithImpl<$Res, _$PlaybackStateImpl>
-    implements _$$PlaybackStateImplCopyWith<$Res> {
-  __$$PlaybackStateImplCopyWithImpl(
-      _$PlaybackStateImpl _value, $Res Function(_$PlaybackStateImpl) _then)
-      : super(_value, _then);
+class __$ProjectionContentCopyWithImpl<$Res>
+    implements _$ProjectionContentCopyWith<$Res> {
+  __$ProjectionContentCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of PlaybackState
+  final _ProjectionContent _self;
+  final $Res Function(_ProjectionContent) _then;
+
+  /// Create a copy of ProjectionContent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? status = null,
-    Object? currentContentId = freezed,
-    Object? currentPlaylistId = freezed,
-    Object? position = null,
-    Object? duration = freezed,
-    Object? volume = null,
-    Object? speed = null,
-    Object? isLooping = null,
-    Object? isMuted = null,
-    Object? error = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? filePath = null,
+    Object? type = null,
+    Object? duration = null,
+    Object? description = freezed,
+    Object? tags = null,
+    Object? format = null,
+    Object? thumbnailPath = freezed,
+    Object? createdAt = freezed,
+    Object? lastPlayed = freezed,
+    Object? playCount = null,
+    Object? defaultVolume = null,
+    Object? defaultBrightness = null,
+    Object? metadata = freezed,
   }) {
-    return _then(_$PlaybackStateImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as PlaybackStatus,
-      currentContentId: freezed == currentContentId
-          ? _value.currentContentId
-          : currentContentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currentPlaylistId: freezed == currentPlaylistId
-          ? _value.currentPlaylistId
-          : currentPlaylistId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      duration: freezed == duration
-          ? _value.duration
+    return _then(_ProjectionContent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      filePath: null == filePath
+          ? _self.filePath
+          : filePath // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ContentType,
+      duration: null == duration
+          ? _self.duration
           : duration // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-      volume: null == volume
-          ? _value.volume
-          : volume // ignore: cast_nullable_to_non_nullable
-              as double,
-      speed: null == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as double,
-      isLooping: null == isLooping
-          ? _value.isLooping
-          : isLooping // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isMuted: null == isMuted
-          ? _value.isMuted
-          : isMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      tags: null == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      format: null == format
+          ? _self.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as ProjectionFormat,
+      thumbnailPath: freezed == thumbnailPath
+          ? _self.thumbnailPath
+          : thumbnailPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      lastPlayed: freezed == lastPlayed
+          ? _self.lastPlayed
+          : lastPlayed // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      playCount: null == playCount
+          ? _self.playCount
+          : playCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      defaultVolume: null == defaultVolume
+          ? _self.defaultVolume
+          : defaultVolume // ignore: cast_nullable_to_non_nullable
+              as double,
+      defaultBrightness: null == defaultBrightness
+          ? _self.defaultBrightness
+          : defaultBrightness // ignore: cast_nullable_to_non_nullable
+              as double,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$PlaybackStateImpl implements _PlaybackState {
-  const _$PlaybackStateImpl(
-      {this.status = PlaybackStatus.stopped,
-      this.currentContentId,
-      this.currentPlaylistId,
-      this.position = Duration.zero,
-      this.duration,
-      this.volume = 0.5,
-      this.speed = 1.0,
-      this.isLooping = false,
-      this.isMuted = false,
-      this.error});
+mixin _$PlaybackState {
+  PlaybackStatus get status;
+  String? get currentContentId;
+  String? get currentPlaylistId;
+  Duration get position;
+  Duration? get duration;
+  double get volume;
+  double get speed;
+  bool get isLooping;
+  bool get isMuted;
+  String? get error;
 
-  factory _$PlaybackStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PlaybackStateImplFromJson(json);
+  /// Create a copy of PlaybackState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PlaybackStateCopyWith<PlaybackState> get copyWith =>
+      _$PlaybackStateCopyWithImpl<PlaybackState>(
+          this as PlaybackState, _$identity);
 
-  @override
-  @JsonKey()
-  final PlaybackStatus status;
-  @override
-  final String? currentContentId;
-  @override
-  final String? currentPlaylistId;
-  @override
-  @JsonKey()
-  final Duration position;
-  @override
-  final Duration? duration;
-  @override
-  @JsonKey()
-  final double volume;
-  @override
-  @JsonKey()
-  final double speed;
-  @override
-  @JsonKey()
-  final bool isLooping;
-  @override
-  @JsonKey()
-  final bool isMuted;
-  @override
-  final String? error;
-
-  @override
-  String toString() {
-    return 'PlaybackState(status: $status, currentContentId: $currentContentId, currentPlaylistId: $currentPlaylistId, position: $position, duration: $duration, volume: $volume, speed: $speed, isLooping: $isLooping, isMuted: $isMuted, error: $error)';
-  }
+  /// Serializes this PlaybackState to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PlaybackStateImpl &&
+            other is PlaybackState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.currentContentId, currentContentId) ||
                 other.currentContentId == currentContentId) &&
@@ -787,204 +792,591 @@ class _$PlaybackStateImpl implements _PlaybackState {
       isMuted,
       error);
 
-  /// Create a copy of PlaybackState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PlaybackStateImplCopyWith<_$PlaybackStateImpl> get copyWith =>
-      __$$PlaybackStateImplCopyWithImpl<_$PlaybackStateImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PlaybackStateImplToJson(
-      this,
-    );
+  String toString() {
+    return 'PlaybackState(status: $status, currentContentId: $currentContentId, currentPlaylistId: $currentPlaylistId, position: $position, duration: $duration, volume: $volume, speed: $speed, isLooping: $isLooping, isMuted: $isMuted, error: $error)';
   }
 }
 
-abstract class _PlaybackState implements PlaybackState {
-  const factory _PlaybackState(
-      {final PlaybackStatus status,
-      final String? currentContentId,
-      final String? currentPlaylistId,
-      final Duration position,
-      final Duration? duration,
-      final double volume,
-      final double speed,
-      final bool isLooping,
-      final bool isMuted,
-      final String? error}) = _$PlaybackStateImpl;
+/// @nodoc
+abstract mixin class $PlaybackStateCopyWith<$Res> {
+  factory $PlaybackStateCopyWith(
+          PlaybackState value, $Res Function(PlaybackState) _then) =
+      _$PlaybackStateCopyWithImpl;
+  @useResult
+  $Res call(
+      {PlaybackStatus status,
+      String? currentContentId,
+      String? currentPlaylistId,
+      Duration position,
+      Duration? duration,
+      double volume,
+      double speed,
+      bool isLooping,
+      bool isMuted,
+      String? error});
+}
 
-  factory _PlaybackState.fromJson(Map<String, dynamic> json) =
-      _$PlaybackStateImpl.fromJson;
+/// @nodoc
+class _$PlaybackStateCopyWithImpl<$Res>
+    implements $PlaybackStateCopyWith<$Res> {
+  _$PlaybackStateCopyWithImpl(this._self, this._then);
+
+  final PlaybackState _self;
+  final $Res Function(PlaybackState) _then;
+
+  /// Create a copy of PlaybackState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+    Object? currentContentId = freezed,
+    Object? currentPlaylistId = freezed,
+    Object? position = null,
+    Object? duration = freezed,
+    Object? volume = null,
+    Object? speed = null,
+    Object? isLooping = null,
+    Object? isMuted = null,
+    Object? error = freezed,
+  }) {
+    return _then(_self.copyWith(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as PlaybackStatus,
+      currentContentId: freezed == currentContentId
+          ? _self.currentContentId
+          : currentContentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      currentPlaylistId: freezed == currentPlaylistId
+          ? _self.currentPlaylistId
+          : currentPlaylistId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      position: null == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      duration: freezed == duration
+          ? _self.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      speed: null == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as double,
+      isLooping: null == isLooping
+          ? _self.isLooping
+          : isLooping // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: null == isMuted
+          ? _self.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      error: freezed == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [PlaybackState].
+extension PlaybackStatePatterns on PlaybackState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_PlaybackState value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PlaybackState() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_PlaybackState value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PlaybackState():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_PlaybackState value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PlaybackState() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            PlaybackStatus status,
+            String? currentContentId,
+            String? currentPlaylistId,
+            Duration position,
+            Duration? duration,
+            double volume,
+            double speed,
+            bool isLooping,
+            bool isMuted,
+            String? error)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _PlaybackState() when $default != null:
+        return $default(
+            _that.status,
+            _that.currentContentId,
+            _that.currentPlaylistId,
+            _that.position,
+            _that.duration,
+            _that.volume,
+            _that.speed,
+            _that.isLooping,
+            _that.isMuted,
+            _that.error);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            PlaybackStatus status,
+            String? currentContentId,
+            String? currentPlaylistId,
+            Duration position,
+            Duration? duration,
+            double volume,
+            double speed,
+            bool isLooping,
+            bool isMuted,
+            String? error)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PlaybackState():
+        return $default(
+            _that.status,
+            _that.currentContentId,
+            _that.currentPlaylistId,
+            _that.position,
+            _that.duration,
+            _that.volume,
+            _that.speed,
+            _that.isLooping,
+            _that.isMuted,
+            _that.error);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            PlaybackStatus status,
+            String? currentContentId,
+            String? currentPlaylistId,
+            Duration position,
+            Duration? duration,
+            double volume,
+            double speed,
+            bool isLooping,
+            bool isMuted,
+            String? error)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _PlaybackState() when $default != null:
+        return $default(
+            _that.status,
+            _that.currentContentId,
+            _that.currentPlaylistId,
+            _that.position,
+            _that.duration,
+            _that.volume,
+            _that.speed,
+            _that.isLooping,
+            _that.isMuted,
+            _that.error);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _PlaybackState implements PlaybackState {
+  const _PlaybackState(
+      {this.status = PlaybackStatus.stopped,
+      this.currentContentId,
+      this.currentPlaylistId,
+      this.position = Duration.zero,
+      this.duration,
+      this.volume = 0.5,
+      this.speed = 1.0,
+      this.isLooping = false,
+      this.isMuted = false,
+      this.error});
+  factory _PlaybackState.fromJson(Map<String, dynamic> json) =>
+      _$PlaybackStateFromJson(json);
 
   @override
-  PlaybackStatus get status;
+  @JsonKey()
+  final PlaybackStatus status;
   @override
-  String? get currentContentId;
+  final String? currentContentId;
   @override
-  String? get currentPlaylistId;
+  final String? currentPlaylistId;
   @override
-  Duration get position;
+  @JsonKey()
+  final Duration position;
   @override
-  Duration? get duration;
+  final Duration? duration;
   @override
-  double get volume;
+  @JsonKey()
+  final double volume;
   @override
-  double get speed;
+  @JsonKey()
+  final double speed;
   @override
-  bool get isLooping;
+  @JsonKey()
+  final bool isLooping;
   @override
-  bool get isMuted;
+  @JsonKey()
+  final bool isMuted;
   @override
-  String? get error;
+  final String? error;
 
   /// Create a copy of PlaybackState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PlaybackStateImplCopyWith<_$PlaybackStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$PlaybackStateCopyWith<_PlaybackState> get copyWith =>
+      __$PlaybackStateCopyWithImpl<_PlaybackState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PlaybackStateToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PlaybackState &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.currentContentId, currentContentId) ||
+                other.currentContentId == currentContentId) &&
+            (identical(other.currentPlaylistId, currentPlaylistId) ||
+                other.currentPlaylistId == currentPlaylistId) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            (identical(other.duration, duration) ||
+                other.duration == duration) &&
+            (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.speed, speed) || other.speed == speed) &&
+            (identical(other.isLooping, isLooping) ||
+                other.isLooping == isLooping) &&
+            (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      status,
+      currentContentId,
+      currentPlaylistId,
+      position,
+      duration,
+      volume,
+      speed,
+      isLooping,
+      isMuted,
+      error);
+
+  @override
+  String toString() {
+    return 'PlaybackState(status: $status, currentContentId: $currentContentId, currentPlaylistId: $currentPlaylistId, position: $position, duration: $duration, volume: $volume, speed: $speed, isLooping: $isLooping, isMuted: $isMuted, error: $error)';
+  }
 }
 
-Playlist _$PlaylistFromJson(Map<String, dynamic> json) {
-  return _Playlist.fromJson(json);
+/// @nodoc
+abstract mixin class _$PlaybackStateCopyWith<$Res>
+    implements $PlaybackStateCopyWith<$Res> {
+  factory _$PlaybackStateCopyWith(
+          _PlaybackState value, $Res Function(_PlaybackState) _then) =
+      __$PlaybackStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {PlaybackStatus status,
+      String? currentContentId,
+      String? currentPlaylistId,
+      Duration position,
+      Duration? duration,
+      double volume,
+      double speed,
+      bool isLooping,
+      bool isMuted,
+      String? error});
+}
+
+/// @nodoc
+class __$PlaybackStateCopyWithImpl<$Res>
+    implements _$PlaybackStateCopyWith<$Res> {
+  __$PlaybackStateCopyWithImpl(this._self, this._then);
+
+  final _PlaybackState _self;
+  final $Res Function(_PlaybackState) _then;
+
+  /// Create a copy of PlaybackState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? status = null,
+    Object? currentContentId = freezed,
+    Object? currentPlaylistId = freezed,
+    Object? position = null,
+    Object? duration = freezed,
+    Object? volume = null,
+    Object? speed = null,
+    Object? isLooping = null,
+    Object? isMuted = null,
+    Object? error = freezed,
+  }) {
+    return _then(_PlaybackState(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as PlaybackStatus,
+      currentContentId: freezed == currentContentId
+          ? _self.currentContentId
+          : currentContentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      currentPlaylistId: freezed == currentPlaylistId
+          ? _self.currentPlaylistId
+          : currentPlaylistId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      position: null == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      duration: freezed == duration
+          ? _self.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      speed: null == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as double,
+      isLooping: null == isLooping
+          ? _self.isLooping
+          : isLooping // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMuted: null == isMuted
+          ? _self.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      error: freezed == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$Playlist {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  List<String> get contentIds => throw _privateConstructorUsedError;
-  DateTime get createdAt => throw _privateConstructorUsedError;
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-  DateTime? get lastModified => throw _privateConstructorUsedError;
-  int get currentIndex => throw _privateConstructorUsedError;
-  PlaylistMode get mode => throw _privateConstructorUsedError;
-  bool get isLooping => throw _privateConstructorUsedError;
-  bool get isShuffled => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
-
-  /// Serializes this Playlist to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  List<String> get contentIds;
+  DateTime get createdAt;
+  DateTime get updatedAt;
+  DateTime? get lastModified;
+  int get currentIndex;
+  PlaylistMode get mode;
+  bool get isLooping;
+  bool get isShuffled;
+  String? get description;
+  List<String> get tags;
 
   /// Create a copy of Playlist
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PlaylistCopyWith<Playlist> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PlaylistCopyWith<$Res> {
-  factory $PlaylistCopyWith(Playlist value, $Res Function(Playlist) then) =
-      _$PlaylistCopyWithImpl<$Res, Playlist>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      List<String> contentIds,
-      DateTime createdAt,
-      DateTime updatedAt,
-      DateTime? lastModified,
-      int currentIndex,
-      PlaylistMode mode,
-      bool isLooping,
-      bool isShuffled,
-      String? description,
-      List<String> tags});
-}
-
-/// @nodoc
-class _$PlaylistCopyWithImpl<$Res, $Val extends Playlist>
-    implements $PlaylistCopyWith<$Res> {
-  _$PlaylistCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Playlist
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $PlaylistCopyWith<Playlist> get copyWith =>
+      _$PlaylistCopyWithImpl<Playlist>(this as Playlist, _$identity);
+
+  /// Serializes this Playlist to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? contentIds = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? lastModified = freezed,
-    Object? currentIndex = null,
-    Object? mode = null,
-    Object? isLooping = null,
-    Object? isShuffled = null,
-    Object? description = freezed,
-    Object? tags = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      contentIds: null == contentIds
-          ? _value.contentIds
-          : contentIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      lastModified: freezed == lastModified
-          ? _value.lastModified
-          : lastModified // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      currentIndex: null == currentIndex
-          ? _value.currentIndex
-          : currentIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-      mode: null == mode
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as PlaylistMode,
-      isLooping: null == isLooping
-          ? _value.isLooping
-          : isLooping // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isShuffled: null == isShuffled
-          ? _value.isShuffled
-          : isShuffled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Playlist &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other.contentIds, contentIds) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.lastModified, lastModified) ||
+                other.lastModified == lastModified) &&
+            (identical(other.currentIndex, currentIndex) ||
+                other.currentIndex == currentIndex) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.isLooping, isLooping) ||
+                other.isLooping == isLooping) &&
+            (identical(other.isShuffled, isShuffled) ||
+                other.isShuffled == isShuffled) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.tags, tags));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(contentIds),
+      createdAt,
+      updatedAt,
+      lastModified,
+      currentIndex,
+      mode,
+      isLooping,
+      isShuffled,
+      description,
+      const DeepCollectionEquality().hash(tags));
+
+  @override
+  String toString() {
+    return 'Playlist(id: $id, name: $name, contentIds: $contentIds, createdAt: $createdAt, updatedAt: $updatedAt, lastModified: $lastModified, currentIndex: $currentIndex, mode: $mode, isLooping: $isLooping, isShuffled: $isShuffled, description: $description, tags: $tags)';
   }
 }
 
 /// @nodoc
-abstract class _$$PlaylistImplCopyWith<$Res>
-    implements $PlaylistCopyWith<$Res> {
-  factory _$$PlaylistImplCopyWith(
-          _$PlaylistImpl value, $Res Function(_$PlaylistImpl) then) =
-      __$$PlaylistImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PlaylistCopyWith<$Res> {
+  factory $PlaylistCopyWith(Playlist value, $Res Function(Playlist) _then) =
+      _$PlaylistCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1002,12 +1394,11 @@ abstract class _$$PlaylistImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PlaylistImplCopyWithImpl<$Res>
-    extends _$PlaylistCopyWithImpl<$Res, _$PlaylistImpl>
-    implements _$$PlaylistImplCopyWith<$Res> {
-  __$$PlaylistImplCopyWithImpl(
-      _$PlaylistImpl _value, $Res Function(_$PlaylistImpl) _then)
-      : super(_value, _then);
+class _$PlaylistCopyWithImpl<$Res> implements $PlaylistCopyWith<$Res> {
+  _$PlaylistCopyWithImpl(this._self, this._then);
+
+  final Playlist _self;
+  final $Res Function(Playlist) _then;
 
   /// Create a copy of Playlist
   /// with the given fields replaced by the non-null parameter values.
@@ -1027,63 +1418,295 @@ class __$$PlaylistImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? tags = null,
   }) {
-    return _then(_$PlaylistImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       contentIds: null == contentIds
-          ? _value._contentIds
+          ? _self.contentIds
           : contentIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       lastModified: freezed == lastModified
-          ? _value.lastModified
+          ? _self.lastModified
           : lastModified // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       currentIndex: null == currentIndex
-          ? _value.currentIndex
+          ? _self.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
       mode: null == mode
-          ? _value.mode
+          ? _self.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as PlaylistMode,
       isLooping: null == isLooping
-          ? _value.isLooping
+          ? _self.isLooping
           : isLooping // ignore: cast_nullable_to_non_nullable
               as bool,
       isShuffled: null == isShuffled
-          ? _value.isShuffled
+          ? _self.isShuffled
           : isShuffled // ignore: cast_nullable_to_non_nullable
               as bool,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       tags: null == tags
-          ? _value._tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Playlist].
+extension PlaylistPatterns on Playlist {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Playlist value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Playlist() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Playlist value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Playlist():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Playlist value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Playlist() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            List<String> contentIds,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? lastModified,
+            int currentIndex,
+            PlaylistMode mode,
+            bool isLooping,
+            bool isShuffled,
+            String? description,
+            List<String> tags)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Playlist() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.contentIds,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.lastModified,
+            _that.currentIndex,
+            _that.mode,
+            _that.isLooping,
+            _that.isShuffled,
+            _that.description,
+            _that.tags);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            List<String> contentIds,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? lastModified,
+            int currentIndex,
+            PlaylistMode mode,
+            bool isLooping,
+            bool isShuffled,
+            String? description,
+            List<String> tags)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Playlist():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.contentIds,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.lastModified,
+            _that.currentIndex,
+            _that.mode,
+            _that.isLooping,
+            _that.isShuffled,
+            _that.description,
+            _that.tags);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            List<String> contentIds,
+            DateTime createdAt,
+            DateTime updatedAt,
+            DateTime? lastModified,
+            int currentIndex,
+            PlaylistMode mode,
+            bool isLooping,
+            bool isShuffled,
+            String? description,
+            List<String> tags)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Playlist() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.contentIds,
+            _that.createdAt,
+            _that.updatedAt,
+            _that.lastModified,
+            _that.currentIndex,
+            _that.mode,
+            _that.isLooping,
+            _that.isShuffled,
+            _that.description,
+            _that.tags);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$PlaylistImpl implements _Playlist {
-  const _$PlaylistImpl(
+class _Playlist implements Playlist {
+  const _Playlist(
       {required this.id,
       required this.name,
       required final List<String> contentIds,
@@ -1098,9 +1721,8 @@ class _$PlaylistImpl implements _Playlist {
       final List<String> tags = const []})
       : _contentIds = contentIds,
         _tags = tags;
-
-  factory _$PlaylistImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PlaylistImplFromJson(json);
+  factory _Playlist.fromJson(Map<String, dynamic> json) =>
+      _$PlaylistFromJson(json);
 
   @override
   final String id;
@@ -1143,16 +1765,26 @@ class _$PlaylistImpl implements _Playlist {
     return EqualUnmodifiableListView(_tags);
   }
 
+  /// Create a copy of Playlist
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Playlist(id: $id, name: $name, contentIds: $contentIds, createdAt: $createdAt, updatedAt: $updatedAt, lastModified: $lastModified, currentIndex: $currentIndex, mode: $mode, isLooping: $isLooping, isShuffled: $isShuffled, description: $description, tags: $tags)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PlaylistCopyWith<_Playlist> get copyWith =>
+      __$PlaylistCopyWithImpl<_Playlist>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PlaylistToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PlaylistImpl &&
+            other is _Playlist &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
@@ -1192,176 +1824,172 @@ class _$PlaylistImpl implements _Playlist {
       description,
       const DeepCollectionEquality().hash(_tags));
 
-  /// Create a copy of Playlist
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith =>
-      __$$PlaylistImplCopyWithImpl<_$PlaylistImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PlaylistImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Playlist(id: $id, name: $name, contentIds: $contentIds, createdAt: $createdAt, updatedAt: $updatedAt, lastModified: $lastModified, currentIndex: $currentIndex, mode: $mode, isLooping: $isLooping, isShuffled: $isShuffled, description: $description, tags: $tags)';
   }
 }
 
-abstract class _Playlist implements Playlist {
-  const factory _Playlist(
-      {required final String id,
-      required final String name,
-      required final List<String> contentIds,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final DateTime? lastModified,
-      final int currentIndex,
-      final PlaylistMode mode,
-      final bool isLooping,
-      final bool isShuffled,
-      final String? description,
-      final List<String> tags}) = _$PlaylistImpl;
+/// @nodoc
+abstract mixin class _$PlaylistCopyWith<$Res>
+    implements $PlaylistCopyWith<$Res> {
+  factory _$PlaylistCopyWith(_Playlist value, $Res Function(_Playlist) _then) =
+      __$PlaylistCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<String> contentIds,
+      DateTime createdAt,
+      DateTime updatedAt,
+      DateTime? lastModified,
+      int currentIndex,
+      PlaylistMode mode,
+      bool isLooping,
+      bool isShuffled,
+      String? description,
+      List<String> tags});
+}
 
-  factory _Playlist.fromJson(Map<String, dynamic> json) =
-      _$PlaylistImpl.fromJson;
+/// @nodoc
+class __$PlaylistCopyWithImpl<$Res> implements _$PlaylistCopyWith<$Res> {
+  __$PlaylistCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  List<String> get contentIds;
-  @override
-  DateTime get createdAt;
-  @override
-  DateTime get updatedAt;
-  @override
-  DateTime? get lastModified;
-  @override
-  int get currentIndex;
-  @override
-  PlaylistMode get mode;
-  @override
-  bool get isLooping;
-  @override
-  bool get isShuffled;
-  @override
-  String? get description;
-  @override
-  List<String> get tags;
+  final _Playlist _self;
+  final $Res Function(_Playlist) _then;
 
   /// Create a copy of Playlist
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PlaylistImplCopyWith<_$PlaylistImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-InteractiveContent _$InteractiveContentFromJson(Map<String, dynamic> json) {
-  return _InteractiveContent.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? contentIds = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? lastModified = freezed,
+    Object? currentIndex = null,
+    Object? mode = null,
+    Object? isLooping = null,
+    Object? isShuffled = null,
+    Object? description = freezed,
+    Object? tags = null,
+  }) {
+    return _then(_Playlist(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      contentIds: null == contentIds
+          ? _self._contentIds
+          : contentIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lastModified: freezed == lastModified
+          ? _self.lastModified
+          : lastModified // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      currentIndex: null == currentIndex
+          ? _self.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      mode: null == mode
+          ? _self.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as PlaylistMode,
+      isLooping: null == isLooping
+          ? _self.isLooping
+          : isLooping // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isShuffled: null == isShuffled
+          ? _self.isShuffled
+          : isShuffled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tags: null == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$InteractiveContent {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get appName => throw _privateConstructorUsedError;
-  Map<String, dynamic> get appData => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-
-  /// Serializes this InteractiveContent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get appName;
+  Map<String, dynamic> get appData;
+  String? get description;
+  List<String> get tags;
+  DateTime? get createdAt;
 
   /// Create a copy of InteractiveContent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $InteractiveContentCopyWith<InteractiveContent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InteractiveContentCopyWith<$Res> {
-  factory $InteractiveContentCopyWith(
-          InteractiveContent value, $Res Function(InteractiveContent) then) =
-      _$InteractiveContentCopyWithImpl<$Res, InteractiveContent>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String appName,
-      Map<String, dynamic> appData,
-      String? description,
-      List<String> tags,
-      DateTime? createdAt});
-}
-
-/// @nodoc
-class _$InteractiveContentCopyWithImpl<$Res, $Val extends InteractiveContent>
-    implements $InteractiveContentCopyWith<$Res> {
-  _$InteractiveContentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of InteractiveContent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $InteractiveContentCopyWith<InteractiveContent> get copyWith =>
+      _$InteractiveContentCopyWithImpl<InteractiveContent>(
+          this as InteractiveContent, _$identity);
+
+  /// Serializes this InteractiveContent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? appName = null,
-    Object? appData = null,
-    Object? description = freezed,
-    Object? tags = null,
-    Object? createdAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      appName: null == appName
-          ? _value.appName
-          : appName // ignore: cast_nullable_to_non_nullable
-              as String,
-      appData: null == appData
-          ? _value.appData
-          : appData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is InteractiveContent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.appName, appName) || other.appName == appName) &&
+            const DeepCollectionEquality().equals(other.appData, appData) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.tags, tags) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      appName,
+      const DeepCollectionEquality().hash(appData),
+      description,
+      const DeepCollectionEquality().hash(tags),
+      createdAt);
+
+  @override
+  String toString() {
+    return 'InteractiveContent(id: $id, name: $name, appName: $appName, appData: $appData, description: $description, tags: $tags, createdAt: $createdAt)';
   }
 }
 
 /// @nodoc
-abstract class _$$InteractiveContentImplCopyWith<$Res>
-    implements $InteractiveContentCopyWith<$Res> {
-  factory _$$InteractiveContentImplCopyWith(_$InteractiveContentImpl value,
-          $Res Function(_$InteractiveContentImpl) then) =
-      __$$InteractiveContentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $InteractiveContentCopyWith<$Res> {
+  factory $InteractiveContentCopyWith(
+          InteractiveContent value, $Res Function(InteractiveContent) _then) =
+      _$InteractiveContentCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1374,12 +2002,12 @@ abstract class _$$InteractiveContentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InteractiveContentImplCopyWithImpl<$Res>
-    extends _$InteractiveContentCopyWithImpl<$Res, _$InteractiveContentImpl>
-    implements _$$InteractiveContentImplCopyWith<$Res> {
-  __$$InteractiveContentImplCopyWithImpl(_$InteractiveContentImpl _value,
-      $Res Function(_$InteractiveContentImpl) _then)
-      : super(_value, _then);
+class _$InteractiveContentCopyWithImpl<$Res>
+    implements $InteractiveContentCopyWith<$Res> {
+  _$InteractiveContentCopyWithImpl(this._self, this._then);
+
+  final InteractiveContent _self;
+  final $Res Function(InteractiveContent) _then;
 
   /// Create a copy of InteractiveContent
   /// with the given fields replaced by the non-null parameter values.
@@ -1394,43 +2022,227 @@ class __$$InteractiveContentImplCopyWithImpl<$Res>
     Object? tags = null,
     Object? createdAt = freezed,
   }) {
-    return _then(_$InteractiveContentImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       appName: null == appName
-          ? _value.appName
+          ? _self.appName
           : appName // ignore: cast_nullable_to_non_nullable
               as String,
       appData: null == appData
-          ? _value._appData
+          ? _self.appData
           : appData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       tags: null == tags
-          ? _value._tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       createdAt: freezed == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [InteractiveContent].
+extension InteractiveContentPatterns on InteractiveContent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_InteractiveContent value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _InteractiveContent() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_InteractiveContent value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InteractiveContent():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_InteractiveContent value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InteractiveContent() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String appName,
+            Map<String, dynamic> appData,
+            String? description,
+            List<String> tags,
+            DateTime? createdAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _InteractiveContent() when $default != null:
+        return $default(_that.id, _that.name, _that.appName, _that.appData,
+            _that.description, _that.tags, _that.createdAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String appName,
+            Map<String, dynamic> appData,
+            String? description,
+            List<String> tags,
+            DateTime? createdAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InteractiveContent():
+        return $default(_that.id, _that.name, _that.appName, _that.appData,
+            _that.description, _that.tags, _that.createdAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String appName,
+            Map<String, dynamic> appData,
+            String? description,
+            List<String> tags,
+            DateTime? createdAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _InteractiveContent() when $default != null:
+        return $default(_that.id, _that.name, _that.appName, _that.appData,
+            _that.description, _that.tags, _that.createdAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$InteractiveContentImpl implements _InteractiveContent {
-  const _$InteractiveContentImpl(
+class _InteractiveContent implements InteractiveContent {
+  const _InteractiveContent(
       {required this.id,
       required this.name,
       required this.appName,
@@ -1440,9 +2252,8 @@ class _$InteractiveContentImpl implements _InteractiveContent {
       this.createdAt})
       : _appData = appData,
         _tags = tags;
-
-  factory _$InteractiveContentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InteractiveContentImplFromJson(json);
+  factory _InteractiveContent.fromJson(Map<String, dynamic> json) =>
+      _$InteractiveContentFromJson(json);
 
   @override
   final String id;
@@ -1472,16 +2283,26 @@ class _$InteractiveContentImpl implements _InteractiveContent {
   @override
   final DateTime? createdAt;
 
+  /// Create a copy of InteractiveContent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'InteractiveContent(id: $id, name: $name, appName: $appName, appData: $appData, description: $description, tags: $tags, createdAt: $createdAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InteractiveContentCopyWith<_InteractiveContent> get copyWith =>
+      __$InteractiveContentCopyWithImpl<_InteractiveContent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InteractiveContentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InteractiveContentImpl &&
+            other is _InteractiveContent &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.appName, appName) || other.appName == appName) &&
@@ -1505,155 +2326,142 @@ class _$InteractiveContentImpl implements _InteractiveContent {
       const DeepCollectionEquality().hash(_tags),
       createdAt);
 
-  /// Create a copy of InteractiveContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$InteractiveContentImplCopyWith<_$InteractiveContentImpl> get copyWith =>
-      __$$InteractiveContentImplCopyWithImpl<_$InteractiveContentImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InteractiveContentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'InteractiveContent(id: $id, name: $name, appName: $appName, appData: $appData, description: $description, tags: $tags, createdAt: $createdAt)';
   }
 }
 
-abstract class _InteractiveContent implements InteractiveContent {
-  const factory _InteractiveContent(
-      {required final String id,
-      required final String name,
-      required final String appName,
-      required final Map<String, dynamic> appData,
-      final String? description,
-      final List<String> tags,
-      final DateTime? createdAt}) = _$InteractiveContentImpl;
+/// @nodoc
+abstract mixin class _$InteractiveContentCopyWith<$Res>
+    implements $InteractiveContentCopyWith<$Res> {
+  factory _$InteractiveContentCopyWith(
+          _InteractiveContent value, $Res Function(_InteractiveContent) _then) =
+      __$InteractiveContentCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String appName,
+      Map<String, dynamic> appData,
+      String? description,
+      List<String> tags,
+      DateTime? createdAt});
+}
 
-  factory _InteractiveContent.fromJson(Map<String, dynamic> json) =
-      _$InteractiveContentImpl.fromJson;
+/// @nodoc
+class __$InteractiveContentCopyWithImpl<$Res>
+    implements _$InteractiveContentCopyWith<$Res> {
+  __$InteractiveContentCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get appName;
-  @override
-  Map<String, dynamic> get appData;
-  @override
-  String? get description;
-  @override
-  List<String> get tags;
-  @override
-  DateTime? get createdAt;
+  final _InteractiveContent _self;
+  final $Res Function(_InteractiveContent) _then;
 
   /// Create a copy of InteractiveContent
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InteractiveContentImplCopyWith<_$InteractiveContentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RealtimeContent _$RealtimeContentFromJson(Map<String, dynamic> json) {
-  return _RealtimeContent.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? appName = null,
+    Object? appData = null,
+    Object? description = freezed,
+    Object? tags = null,
+    Object? createdAt = freezed,
+  }) {
+    return _then(_InteractiveContent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      appName: null == appName
+          ? _self.appName
+          : appName // ignore: cast_nullable_to_non_nullable
+              as String,
+      appData: null == appData
+          ? _self._appData
+          : appData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tags: null == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RealtimeContent {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get sourceType => throw _privateConstructorUsedError;
-  Map<String, dynamic> get sourceConfig => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
-
-  /// Serializes this RealtimeContent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get sourceType;
+  Map<String, dynamic> get sourceConfig;
+  String? get description;
+  List<String> get tags;
 
   /// Create a copy of RealtimeContent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RealtimeContentCopyWith<RealtimeContent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RealtimeContentCopyWith<$Res> {
-  factory $RealtimeContentCopyWith(
-          RealtimeContent value, $Res Function(RealtimeContent) then) =
-      _$RealtimeContentCopyWithImpl<$Res, RealtimeContent>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String sourceType,
-      Map<String, dynamic> sourceConfig,
-      String? description,
-      List<String> tags});
-}
-
-/// @nodoc
-class _$RealtimeContentCopyWithImpl<$Res, $Val extends RealtimeContent>
-    implements $RealtimeContentCopyWith<$Res> {
-  _$RealtimeContentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RealtimeContent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RealtimeContentCopyWith<RealtimeContent> get copyWith =>
+      _$RealtimeContentCopyWithImpl<RealtimeContent>(
+          this as RealtimeContent, _$identity);
+
+  /// Serializes this RealtimeContent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? sourceType = null,
-    Object? sourceConfig = null,
-    Object? description = freezed,
-    Object? tags = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceType: null == sourceType
-          ? _value.sourceType
-          : sourceType // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceConfig: null == sourceConfig
-          ? _value.sourceConfig
-          : sourceConfig // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RealtimeContent &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.sourceType, sourceType) ||
+                other.sourceType == sourceType) &&
+            const DeepCollectionEquality()
+                .equals(other.sourceConfig, sourceConfig) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.tags, tags));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      sourceType,
+      const DeepCollectionEquality().hash(sourceConfig),
+      description,
+      const DeepCollectionEquality().hash(tags));
+
+  @override
+  String toString() {
+    return 'RealtimeContent(id: $id, name: $name, sourceType: $sourceType, sourceConfig: $sourceConfig, description: $description, tags: $tags)';
   }
 }
 
 /// @nodoc
-abstract class _$$RealtimeContentImplCopyWith<$Res>
-    implements $RealtimeContentCopyWith<$Res> {
-  factory _$$RealtimeContentImplCopyWith(_$RealtimeContentImpl value,
-          $Res Function(_$RealtimeContentImpl) then) =
-      __$$RealtimeContentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RealtimeContentCopyWith<$Res> {
+  factory $RealtimeContentCopyWith(
+          RealtimeContent value, $Res Function(RealtimeContent) _then) =
+      _$RealtimeContentCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1665,12 +2473,12 @@ abstract class _$$RealtimeContentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RealtimeContentImplCopyWithImpl<$Res>
-    extends _$RealtimeContentCopyWithImpl<$Res, _$RealtimeContentImpl>
-    implements _$$RealtimeContentImplCopyWith<$Res> {
-  __$$RealtimeContentImplCopyWithImpl(
-      _$RealtimeContentImpl _value, $Res Function(_$RealtimeContentImpl) _then)
-      : super(_value, _then);
+class _$RealtimeContentCopyWithImpl<$Res>
+    implements $RealtimeContentCopyWith<$Res> {
+  _$RealtimeContentCopyWithImpl(this._self, this._then);
+
+  final RealtimeContent _self;
+  final $Res Function(RealtimeContent) _then;
 
   /// Create a copy of RealtimeContent
   /// with the given fields replaced by the non-null parameter values.
@@ -1684,39 +2492,220 @@ class __$$RealtimeContentImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? tags = null,
   }) {
-    return _then(_$RealtimeContentImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       sourceType: null == sourceType
-          ? _value.sourceType
+          ? _self.sourceType
           : sourceType // ignore: cast_nullable_to_non_nullable
               as String,
       sourceConfig: null == sourceConfig
-          ? _value._sourceConfig
+          ? _self.sourceConfig
           : sourceConfig // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       tags: null == tags
-          ? _value._tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [RealtimeContent].
+extension RealtimeContentPatterns on RealtimeContent {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_RealtimeContent value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RealtimeContent() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_RealtimeContent value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RealtimeContent():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_RealtimeContent value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RealtimeContent() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String sourceType,
+            Map<String, dynamic> sourceConfig,
+            String? description,
+            List<String> tags)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _RealtimeContent() when $default != null:
+        return $default(_that.id, _that.name, _that.sourceType,
+            _that.sourceConfig, _that.description, _that.tags);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String sourceType,
+            Map<String, dynamic> sourceConfig,
+            String? description,
+            List<String> tags)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RealtimeContent():
+        return $default(_that.id, _that.name, _that.sourceType,
+            _that.sourceConfig, _that.description, _that.tags);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String sourceType,
+            Map<String, dynamic> sourceConfig,
+            String? description,
+            List<String> tags)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _RealtimeContent() when $default != null:
+        return $default(_that.id, _that.name, _that.sourceType,
+            _that.sourceConfig, _that.description, _that.tags);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$RealtimeContentImpl implements _RealtimeContent {
-  const _$RealtimeContentImpl(
+class _RealtimeContent implements RealtimeContent {
+  const _RealtimeContent(
       {required this.id,
       required this.name,
       required this.sourceType,
@@ -1725,9 +2714,8 @@ class _$RealtimeContentImpl implements _RealtimeContent {
       final List<String> tags = const []})
       : _sourceConfig = sourceConfig,
         _tags = tags;
-
-  factory _$RealtimeContentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RealtimeContentImplFromJson(json);
+  factory _RealtimeContent.fromJson(Map<String, dynamic> json) =>
+      _$RealtimeContentFromJson(json);
 
   @override
   final String id;
@@ -1754,16 +2742,26 @@ class _$RealtimeContentImpl implements _RealtimeContent {
     return EqualUnmodifiableListView(_tags);
   }
 
+  /// Create a copy of RealtimeContent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RealtimeContent(id: $id, name: $name, sourceType: $sourceType, sourceConfig: $sourceConfig, description: $description, tags: $tags)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RealtimeContentCopyWith<_RealtimeContent> get copyWith =>
+      __$RealtimeContentCopyWithImpl<_RealtimeContent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RealtimeContentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RealtimeContentImpl &&
+            other is _RealtimeContent &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.sourceType, sourceType) ||
@@ -1786,159 +2784,140 @@ class _$RealtimeContentImpl implements _RealtimeContent {
       description,
       const DeepCollectionEquality().hash(_tags));
 
-  /// Create a copy of RealtimeContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RealtimeContentImplCopyWith<_$RealtimeContentImpl> get copyWith =>
-      __$$RealtimeContentImplCopyWithImpl<_$RealtimeContentImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RealtimeContentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RealtimeContent(id: $id, name: $name, sourceType: $sourceType, sourceConfig: $sourceConfig, description: $description, tags: $tags)';
   }
 }
 
-abstract class _RealtimeContent implements RealtimeContent {
-  const factory _RealtimeContent(
-      {required final String id,
-      required final String name,
-      required final String sourceType,
-      required final Map<String, dynamic> sourceConfig,
-      final String? description,
-      final List<String> tags}) = _$RealtimeContentImpl;
+/// @nodoc
+abstract mixin class _$RealtimeContentCopyWith<$Res>
+    implements $RealtimeContentCopyWith<$Res> {
+  factory _$RealtimeContentCopyWith(
+          _RealtimeContent value, $Res Function(_RealtimeContent) _then) =
+      __$RealtimeContentCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String sourceType,
+      Map<String, dynamic> sourceConfig,
+      String? description,
+      List<String> tags});
+}
 
-  factory _RealtimeContent.fromJson(Map<String, dynamic> json) =
-      _$RealtimeContentImpl.fromJson;
+/// @nodoc
+class __$RealtimeContentCopyWithImpl<$Res>
+    implements _$RealtimeContentCopyWith<$Res> {
+  __$RealtimeContentCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get sourceType;
-  @override
-  Map<String, dynamic> get sourceConfig;
-  @override
-  String? get description;
-  @override
-  List<String> get tags;
+  final _RealtimeContent _self;
+  final $Res Function(_RealtimeContent) _then;
 
   /// Create a copy of RealtimeContent
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RealtimeContentImplCopyWith<_$RealtimeContentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ContentLibrary _$ContentLibraryFromJson(Map<String, dynamic> json) {
-  return _ContentLibrary.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? sourceType = null,
+    Object? sourceConfig = null,
+    Object? description = freezed,
+    Object? tags = null,
+  }) {
+    return _then(_RealtimeContent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      sourceType: null == sourceType
+          ? _self.sourceType
+          : sourceType // ignore: cast_nullable_to_non_nullable
+              as String,
+      sourceConfig: null == sourceConfig
+          ? _self._sourceConfig
+          : sourceConfig // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tags: null == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$ContentLibrary {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  List<String> get contentIds => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-
-  /// Serializes this ContentLibrary to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  List<String> get contentIds;
+  String? get description;
+  List<String> get tags;
+  DateTime? get createdAt;
+  DateTime? get updatedAt;
 
   /// Create a copy of ContentLibrary
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ContentLibraryCopyWith<ContentLibrary> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ContentLibraryCopyWith<$Res> {
-  factory $ContentLibraryCopyWith(
-          ContentLibrary value, $Res Function(ContentLibrary) then) =
-      _$ContentLibraryCopyWithImpl<$Res, ContentLibrary>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      List<String> contentIds,
-      String? description,
-      List<String> tags,
-      DateTime? createdAt,
-      DateTime? updatedAt});
-}
-
-/// @nodoc
-class _$ContentLibraryCopyWithImpl<$Res, $Val extends ContentLibrary>
-    implements $ContentLibraryCopyWith<$Res> {
-  _$ContentLibraryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ContentLibrary
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ContentLibraryCopyWith<ContentLibrary> get copyWith =>
+      _$ContentLibraryCopyWithImpl<ContentLibrary>(
+          this as ContentLibrary, _$identity);
+
+  /// Serializes this ContentLibrary to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? contentIds = null,
-    Object? description = freezed,
-    Object? tags = null,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      contentIds: null == contentIds
-          ? _value.contentIds
-          : contentIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ContentLibrary &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other.contentIds, contentIds) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.tags, tags) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(contentIds),
+      description,
+      const DeepCollectionEquality().hash(tags),
+      createdAt,
+      updatedAt);
+
+  @override
+  String toString() {
+    return 'ContentLibrary(id: $id, name: $name, contentIds: $contentIds, description: $description, tags: $tags, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 }
 
 /// @nodoc
-abstract class _$$ContentLibraryImplCopyWith<$Res>
-    implements $ContentLibraryCopyWith<$Res> {
-  factory _$$ContentLibraryImplCopyWith(_$ContentLibraryImpl value,
-          $Res Function(_$ContentLibraryImpl) then) =
-      __$$ContentLibraryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ContentLibraryCopyWith<$Res> {
+  factory $ContentLibraryCopyWith(
+          ContentLibrary value, $Res Function(ContentLibrary) _then) =
+      _$ContentLibraryCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1951,12 +2930,12 @@ abstract class _$$ContentLibraryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ContentLibraryImplCopyWithImpl<$Res>
-    extends _$ContentLibraryCopyWithImpl<$Res, _$ContentLibraryImpl>
-    implements _$$ContentLibraryImplCopyWith<$Res> {
-  __$$ContentLibraryImplCopyWithImpl(
-      _$ContentLibraryImpl _value, $Res Function(_$ContentLibraryImpl) _then)
-      : super(_value, _then);
+class _$ContentLibraryCopyWithImpl<$Res>
+    implements $ContentLibraryCopyWith<$Res> {
+  _$ContentLibraryCopyWithImpl(this._self, this._then);
+
+  final ContentLibrary _self;
+  final $Res Function(ContentLibrary) _then;
 
   /// Create a copy of ContentLibrary
   /// with the given fields replaced by the non-null parameter values.
@@ -1971,43 +2950,227 @@ class __$$ContentLibraryImplCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
-    return _then(_$ContentLibraryImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       contentIds: null == contentIds
-          ? _value._contentIds
+          ? _self.contentIds
           : contentIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       tags: null == tags
-          ? _value._tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
       createdAt: freezed == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       updatedAt: freezed == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [ContentLibrary].
+extension ContentLibraryPatterns on ContentLibrary {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ContentLibrary value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ContentLibrary() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ContentLibrary value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContentLibrary():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ContentLibrary value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContentLibrary() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            List<String> contentIds,
+            String? description,
+            List<String> tags,
+            DateTime? createdAt,
+            DateTime? updatedAt)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ContentLibrary() when $default != null:
+        return $default(_that.id, _that.name, _that.contentIds,
+            _that.description, _that.tags, _that.createdAt, _that.updatedAt);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            List<String> contentIds,
+            String? description,
+            List<String> tags,
+            DateTime? createdAt,
+            DateTime? updatedAt)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContentLibrary():
+        return $default(_that.id, _that.name, _that.contentIds,
+            _that.description, _that.tags, _that.createdAt, _that.updatedAt);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            List<String> contentIds,
+            String? description,
+            List<String> tags,
+            DateTime? createdAt,
+            DateTime? updatedAt)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ContentLibrary() when $default != null:
+        return $default(_that.id, _that.name, _that.contentIds,
+            _that.description, _that.tags, _that.createdAt, _that.updatedAt);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$ContentLibraryImpl implements _ContentLibrary {
-  const _$ContentLibraryImpl(
+class _ContentLibrary implements ContentLibrary {
+  const _ContentLibrary(
       {required this.id,
       required this.name,
       required final List<String> contentIds,
@@ -2017,9 +3180,8 @@ class _$ContentLibraryImpl implements _ContentLibrary {
       this.updatedAt})
       : _contentIds = contentIds,
         _tags = tags;
-
-  factory _$ContentLibraryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ContentLibraryImplFromJson(json);
+  factory _ContentLibrary.fromJson(Map<String, dynamic> json) =>
+      _$ContentLibraryFromJson(json);
 
   @override
   final String id;
@@ -2049,16 +3211,26 @@ class _$ContentLibraryImpl implements _ContentLibrary {
   @override
   final DateTime? updatedAt;
 
+  /// Create a copy of ContentLibrary
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ContentLibrary(id: $id, name: $name, contentIds: $contentIds, description: $description, tags: $tags, createdAt: $createdAt, updatedAt: $updatedAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ContentLibraryCopyWith<_ContentLibrary> get copyWith =>
+      __$ContentLibraryCopyWithImpl<_ContentLibrary>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ContentLibraryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ContentLibraryImpl &&
+            other is _ContentLibrary &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
@@ -2084,55 +3256,82 @@ class _$ContentLibraryImpl implements _ContentLibrary {
       createdAt,
       updatedAt);
 
-  /// Create a copy of ContentLibrary
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ContentLibraryImplCopyWith<_$ContentLibraryImpl> get copyWith =>
-      __$$ContentLibraryImplCopyWithImpl<_$ContentLibraryImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ContentLibraryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ContentLibrary(id: $id, name: $name, contentIds: $contentIds, description: $description, tags: $tags, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 }
 
-abstract class _ContentLibrary implements ContentLibrary {
-  const factory _ContentLibrary(
-      {required final String id,
-      required final String name,
-      required final List<String> contentIds,
-      final String? description,
-      final List<String> tags,
-      final DateTime? createdAt,
-      final DateTime? updatedAt}) = _$ContentLibraryImpl;
+/// @nodoc
+abstract mixin class _$ContentLibraryCopyWith<$Res>
+    implements $ContentLibraryCopyWith<$Res> {
+  factory _$ContentLibraryCopyWith(
+          _ContentLibrary value, $Res Function(_ContentLibrary) _then) =
+      __$ContentLibraryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<String> contentIds,
+      String? description,
+      List<String> tags,
+      DateTime? createdAt,
+      DateTime? updatedAt});
+}
 
-  factory _ContentLibrary.fromJson(Map<String, dynamic> json) =
-      _$ContentLibraryImpl.fromJson;
+/// @nodoc
+class __$ContentLibraryCopyWithImpl<$Res>
+    implements _$ContentLibraryCopyWith<$Res> {
+  __$ContentLibraryCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  List<String> get contentIds;
-  @override
-  String? get description;
-  @override
-  List<String> get tags;
-  @override
-  DateTime? get createdAt;
-  @override
-  DateTime? get updatedAt;
+  final _ContentLibrary _self;
+  final $Res Function(_ContentLibrary) _then;
 
   /// Create a copy of ContentLibrary
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ContentLibraryImplCopyWith<_$ContentLibraryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? contentIds = null,
+    Object? description = freezed,
+    Object? tags = null,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+  }) {
+    return _then(_ContentLibrary(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      contentIds: null == contentIds
+          ? _self._contentIds
+          : contentIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tags: null == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      createdAt: freezed == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
+
+// dart format on

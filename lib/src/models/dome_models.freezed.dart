@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,177 +9,104 @@ part of 'dome_models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-DomeSystem _$DomeSystemFromJson(Map<String, dynamic> json) {
-  return _DomeSystem.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DomeSystem {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get ipAddress => throw _privateConstructorUsedError;
-  int get port => throw _privateConstructorUsedError;
-  DomeSystemType get type => throw _privateConstructorUsedError;
-  DomeSystemStatus get status => throw _privateConstructorUsedError;
-  bool get isConnected => throw _privateConstructorUsedError;
-  List<ProjectorConfig> get projectors => throw _privateConstructorUsedError;
-  List<AudioChannel> get audioChannels => throw _privateConstructorUsedError;
-  DateTime? get lastConnected => throw _privateConstructorUsedError;
-  String? get firmwareVersion => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get capabilities => throw _privateConstructorUsedError;
-  String? get activeVendor => throw _privateConstructorUsedError;
-  double get systemVolume => throw _privateConstructorUsedError;
-  double get systemBrightness => throw _privateConstructorUsedError;
-  double get systemRotation => throw _privateConstructorUsedError;
-
-  /// Serializes this DomeSystem to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  String get ipAddress;
+  int get port;
+  DomeSystemType get type;
+  DomeSystemStatus get status;
+  bool get isConnected;
+  List<ProjectorConfig> get projectors;
+  List<AudioChannel> get audioChannels;
+  DateTime? get lastConnected;
+  String? get firmwareVersion;
+  Map<String, dynamic>? get capabilities;
+  String? get activeVendor;
+  double get systemVolume;
+  double get systemBrightness;
+  double get systemRotation;
 
   /// Create a copy of DomeSystem
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DomeSystemCopyWith<DomeSystem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DomeSystemCopyWith<$Res> {
-  factory $DomeSystemCopyWith(
-          DomeSystem value, $Res Function(DomeSystem) then) =
-      _$DomeSystemCopyWithImpl<$Res, DomeSystem>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String ipAddress,
-      int port,
-      DomeSystemType type,
-      DomeSystemStatus status,
-      bool isConnected,
-      List<ProjectorConfig> projectors,
-      List<AudioChannel> audioChannels,
-      DateTime? lastConnected,
-      String? firmwareVersion,
-      Map<String, dynamic>? capabilities,
-      String? activeVendor,
-      double systemVolume,
-      double systemBrightness,
-      double systemRotation});
-}
-
-/// @nodoc
-class _$DomeSystemCopyWithImpl<$Res, $Val extends DomeSystem>
-    implements $DomeSystemCopyWith<$Res> {
-  _$DomeSystemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of DomeSystem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $DomeSystemCopyWith<DomeSystem> get copyWith =>
+      _$DomeSystemCopyWithImpl<DomeSystem>(this as DomeSystem, _$identity);
+
+  /// Serializes this DomeSystem to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? ipAddress = null,
-    Object? port = null,
-    Object? type = null,
-    Object? status = null,
-    Object? isConnected = null,
-    Object? projectors = null,
-    Object? audioChannels = null,
-    Object? lastConnected = freezed,
-    Object? firmwareVersion = freezed,
-    Object? capabilities = freezed,
-    Object? activeVendor = freezed,
-    Object? systemVolume = null,
-    Object? systemBrightness = null,
-    Object? systemRotation = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      ipAddress: null == ipAddress
-          ? _value.ipAddress
-          : ipAddress // ignore: cast_nullable_to_non_nullable
-              as String,
-      port: null == port
-          ? _value.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as DomeSystemType,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as DomeSystemStatus,
-      isConnected: null == isConnected
-          ? _value.isConnected
-          : isConnected // ignore: cast_nullable_to_non_nullable
-              as bool,
-      projectors: null == projectors
-          ? _value.projectors
-          : projectors // ignore: cast_nullable_to_non_nullable
-              as List<ProjectorConfig>,
-      audioChannels: null == audioChannels
-          ? _value.audioChannels
-          : audioChannels // ignore: cast_nullable_to_non_nullable
-              as List<AudioChannel>,
-      lastConnected: freezed == lastConnected
-          ? _value.lastConnected
-          : lastConnected // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      firmwareVersion: freezed == firmwareVersion
-          ? _value.firmwareVersion
-          : firmwareVersion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      capabilities: freezed == capabilities
-          ? _value.capabilities
-          : capabilities // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      activeVendor: freezed == activeVendor
-          ? _value.activeVendor
-          : activeVendor // ignore: cast_nullable_to_non_nullable
-              as String?,
-      systemVolume: null == systemVolume
-          ? _value.systemVolume
-          : systemVolume // ignore: cast_nullable_to_non_nullable
-              as double,
-      systemBrightness: null == systemBrightness
-          ? _value.systemBrightness
-          : systemBrightness // ignore: cast_nullable_to_non_nullable
-              as double,
-      systemRotation: null == systemRotation
-          ? _value.systemRotation
-          : systemRotation // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DomeSystem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.ipAddress, ipAddress) ||
+                other.ipAddress == ipAddress) &&
+            (identical(other.port, port) || other.port == port) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.isConnected, isConnected) ||
+                other.isConnected == isConnected) &&
+            const DeepCollectionEquality()
+                .equals(other.projectors, projectors) &&
+            const DeepCollectionEquality()
+                .equals(other.audioChannels, audioChannels) &&
+            (identical(other.lastConnected, lastConnected) ||
+                other.lastConnected == lastConnected) &&
+            (identical(other.firmwareVersion, firmwareVersion) ||
+                other.firmwareVersion == firmwareVersion) &&
+            const DeepCollectionEquality()
+                .equals(other.capabilities, capabilities) &&
+            (identical(other.activeVendor, activeVendor) ||
+                other.activeVendor == activeVendor) &&
+            (identical(other.systemVolume, systemVolume) ||
+                other.systemVolume == systemVolume) &&
+            (identical(other.systemBrightness, systemBrightness) ||
+                other.systemBrightness == systemBrightness) &&
+            (identical(other.systemRotation, systemRotation) ||
+                other.systemRotation == systemRotation));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      ipAddress,
+      port,
+      type,
+      status,
+      isConnected,
+      const DeepCollectionEquality().hash(projectors),
+      const DeepCollectionEquality().hash(audioChannels),
+      lastConnected,
+      firmwareVersion,
+      const DeepCollectionEquality().hash(capabilities),
+      activeVendor,
+      systemVolume,
+      systemBrightness,
+      systemRotation);
+
+  @override
+  String toString() {
+    return 'DomeSystem(id: $id, name: $name, ipAddress: $ipAddress, port: $port, type: $type, status: $status, isConnected: $isConnected, projectors: $projectors, audioChannels: $audioChannels, lastConnected: $lastConnected, firmwareVersion: $firmwareVersion, capabilities: $capabilities, activeVendor: $activeVendor, systemVolume: $systemVolume, systemBrightness: $systemBrightness, systemRotation: $systemRotation)';
   }
 }
 
 /// @nodoc
-abstract class _$$DomeSystemImplCopyWith<$Res>
-    implements $DomeSystemCopyWith<$Res> {
-  factory _$$DomeSystemImplCopyWith(
-          _$DomeSystemImpl value, $Res Function(_$DomeSystemImpl) then) =
-      __$$DomeSystemImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DomeSystemCopyWith<$Res> {
+  factory $DomeSystemCopyWith(
+          DomeSystem value, $Res Function(DomeSystem) _then) =
+      _$DomeSystemCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -201,12 +128,11 @@ abstract class _$$DomeSystemImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DomeSystemImplCopyWithImpl<$Res>
-    extends _$DomeSystemCopyWithImpl<$Res, _$DomeSystemImpl>
-    implements _$$DomeSystemImplCopyWith<$Res> {
-  __$$DomeSystemImplCopyWithImpl(
-      _$DomeSystemImpl _value, $Res Function(_$DomeSystemImpl) _then)
-      : super(_value, _then);
+class _$DomeSystemCopyWithImpl<$Res> implements $DomeSystemCopyWith<$Res> {
+  _$DomeSystemCopyWithImpl(this._self, this._then);
+
+  final DomeSystem _self;
+  final $Res Function(DomeSystem) _then;
 
   /// Create a copy of DomeSystem
   /// with the given fields replaced by the non-null parameter values.
@@ -230,79 +156,335 @@ class __$$DomeSystemImplCopyWithImpl<$Res>
     Object? systemBrightness = null,
     Object? systemRotation = null,
   }) {
-    return _then(_$DomeSystemImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       ipAddress: null == ipAddress
-          ? _value.ipAddress
+          ? _self.ipAddress
           : ipAddress // ignore: cast_nullable_to_non_nullable
               as String,
       port: null == port
-          ? _value.port
+          ? _self.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as DomeSystemType,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as DomeSystemStatus,
       isConnected: null == isConnected
-          ? _value.isConnected
+          ? _self.isConnected
           : isConnected // ignore: cast_nullable_to_non_nullable
               as bool,
       projectors: null == projectors
-          ? _value._projectors
+          ? _self.projectors
           : projectors // ignore: cast_nullable_to_non_nullable
               as List<ProjectorConfig>,
       audioChannels: null == audioChannels
-          ? _value._audioChannels
+          ? _self.audioChannels
           : audioChannels // ignore: cast_nullable_to_non_nullable
               as List<AudioChannel>,
       lastConnected: freezed == lastConnected
-          ? _value.lastConnected
+          ? _self.lastConnected
           : lastConnected // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       firmwareVersion: freezed == firmwareVersion
-          ? _value.firmwareVersion
+          ? _self.firmwareVersion
           : firmwareVersion // ignore: cast_nullable_to_non_nullable
               as String?,
       capabilities: freezed == capabilities
-          ? _value._capabilities
+          ? _self.capabilities
           : capabilities // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       activeVendor: freezed == activeVendor
-          ? _value.activeVendor
+          ? _self.activeVendor
           : activeVendor // ignore: cast_nullable_to_non_nullable
               as String?,
       systemVolume: null == systemVolume
-          ? _value.systemVolume
+          ? _self.systemVolume
           : systemVolume // ignore: cast_nullable_to_non_nullable
               as double,
       systemBrightness: null == systemBrightness
-          ? _value.systemBrightness
+          ? _self.systemBrightness
           : systemBrightness // ignore: cast_nullable_to_non_nullable
               as double,
       systemRotation: null == systemRotation
-          ? _value.systemRotation
+          ? _self.systemRotation
           : systemRotation // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [DomeSystem].
+extension DomeSystemPatterns on DomeSystem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_DomeSystem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DomeSystem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_DomeSystem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DomeSystem():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_DomeSystem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DomeSystem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String ipAddress,
+            int port,
+            DomeSystemType type,
+            DomeSystemStatus status,
+            bool isConnected,
+            List<ProjectorConfig> projectors,
+            List<AudioChannel> audioChannels,
+            DateTime? lastConnected,
+            String? firmwareVersion,
+            Map<String, dynamic>? capabilities,
+            String? activeVendor,
+            double systemVolume,
+            double systemBrightness,
+            double systemRotation)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DomeSystem() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.ipAddress,
+            _that.port,
+            _that.type,
+            _that.status,
+            _that.isConnected,
+            _that.projectors,
+            _that.audioChannels,
+            _that.lastConnected,
+            _that.firmwareVersion,
+            _that.capabilities,
+            _that.activeVendor,
+            _that.systemVolume,
+            _that.systemBrightness,
+            _that.systemRotation);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            String ipAddress,
+            int port,
+            DomeSystemType type,
+            DomeSystemStatus status,
+            bool isConnected,
+            List<ProjectorConfig> projectors,
+            List<AudioChannel> audioChannels,
+            DateTime? lastConnected,
+            String? firmwareVersion,
+            Map<String, dynamic>? capabilities,
+            String? activeVendor,
+            double systemVolume,
+            double systemBrightness,
+            double systemRotation)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DomeSystem():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.ipAddress,
+            _that.port,
+            _that.type,
+            _that.status,
+            _that.isConnected,
+            _that.projectors,
+            _that.audioChannels,
+            _that.lastConnected,
+            _that.firmwareVersion,
+            _that.capabilities,
+            _that.activeVendor,
+            _that.systemVolume,
+            _that.systemBrightness,
+            _that.systemRotation);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            String ipAddress,
+            int port,
+            DomeSystemType type,
+            DomeSystemStatus status,
+            bool isConnected,
+            List<ProjectorConfig> projectors,
+            List<AudioChannel> audioChannels,
+            DateTime? lastConnected,
+            String? firmwareVersion,
+            Map<String, dynamic>? capabilities,
+            String? activeVendor,
+            double systemVolume,
+            double systemBrightness,
+            double systemRotation)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DomeSystem() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.ipAddress,
+            _that.port,
+            _that.type,
+            _that.status,
+            _that.isConnected,
+            _that.projectors,
+            _that.audioChannels,
+            _that.lastConnected,
+            _that.firmwareVersion,
+            _that.capabilities,
+            _that.activeVendor,
+            _that.systemVolume,
+            _that.systemBrightness,
+            _that.systemRotation);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$DomeSystemImpl implements _DomeSystem {
-  const _$DomeSystemImpl(
+class _DomeSystem implements DomeSystem {
+  const _DomeSystem(
       {required this.id,
       required this.name,
       required this.ipAddress,
@@ -322,9 +504,8 @@ class _$DomeSystemImpl implements _DomeSystem {
       : _projectors = projectors,
         _audioChannels = audioChannels,
         _capabilities = capabilities;
-
-  factory _$DomeSystemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DomeSystemImplFromJson(json);
+  factory _DomeSystem.fromJson(Map<String, dynamic> json) =>
+      _$DomeSystemFromJson(json);
 
   @override
   final String id;
@@ -385,16 +566,26 @@ class _$DomeSystemImpl implements _DomeSystem {
   @JsonKey()
   final double systemRotation;
 
+  /// Create a copy of DomeSystem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DomeSystem(id: $id, name: $name, ipAddress: $ipAddress, port: $port, type: $type, status: $status, isConnected: $isConnected, projectors: $projectors, audioChannels: $audioChannels, lastConnected: $lastConnected, firmwareVersion: $firmwareVersion, capabilities: $capabilities, activeVendor: $activeVendor, systemVolume: $systemVolume, systemBrightness: $systemBrightness, systemRotation: $systemRotation)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DomeSystemCopyWith<_DomeSystem> get copyWith =>
+      __$DomeSystemCopyWithImpl<_DomeSystem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DomeSystemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DomeSystemImpl &&
+            other is _DomeSystem &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.ipAddress, ipAddress) ||
@@ -445,252 +636,228 @@ class _$DomeSystemImpl implements _DomeSystem {
       systemBrightness,
       systemRotation);
 
-  /// Create a copy of DomeSystem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DomeSystemImplCopyWith<_$DomeSystemImpl> get copyWith =>
-      __$$DomeSystemImplCopyWithImpl<_$DomeSystemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DomeSystemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'DomeSystem(id: $id, name: $name, ipAddress: $ipAddress, port: $port, type: $type, status: $status, isConnected: $isConnected, projectors: $projectors, audioChannels: $audioChannels, lastConnected: $lastConnected, firmwareVersion: $firmwareVersion, capabilities: $capabilities, activeVendor: $activeVendor, systemVolume: $systemVolume, systemBrightness: $systemBrightness, systemRotation: $systemRotation)';
   }
 }
 
-abstract class _DomeSystem implements DomeSystem {
-  const factory _DomeSystem(
-      {required final String id,
-      required final String name,
-      required final String ipAddress,
-      required final int port,
-      required final DomeSystemType type,
-      required final DomeSystemStatus status,
-      final bool isConnected,
-      final List<ProjectorConfig> projectors,
-      final List<AudioChannel> audioChannels,
-      final DateTime? lastConnected,
-      final String? firmwareVersion,
-      final Map<String, dynamic>? capabilities,
-      final String? activeVendor,
-      final double systemVolume,
-      final double systemBrightness,
-      final double systemRotation}) = _$DomeSystemImpl;
+/// @nodoc
+abstract mixin class _$DomeSystemCopyWith<$Res>
+    implements $DomeSystemCopyWith<$Res> {
+  factory _$DomeSystemCopyWith(
+          _DomeSystem value, $Res Function(_DomeSystem) _then) =
+      __$DomeSystemCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String ipAddress,
+      int port,
+      DomeSystemType type,
+      DomeSystemStatus status,
+      bool isConnected,
+      List<ProjectorConfig> projectors,
+      List<AudioChannel> audioChannels,
+      DateTime? lastConnected,
+      String? firmwareVersion,
+      Map<String, dynamic>? capabilities,
+      String? activeVendor,
+      double systemVolume,
+      double systemBrightness,
+      double systemRotation});
+}
 
-  factory _DomeSystem.fromJson(Map<String, dynamic> json) =
-      _$DomeSystemImpl.fromJson;
+/// @nodoc
+class __$DomeSystemCopyWithImpl<$Res> implements _$DomeSystemCopyWith<$Res> {
+  __$DomeSystemCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get ipAddress;
-  @override
-  int get port;
-  @override
-  DomeSystemType get type;
-  @override
-  DomeSystemStatus get status;
-  @override
-  bool get isConnected;
-  @override
-  List<ProjectorConfig> get projectors;
-  @override
-  List<AudioChannel> get audioChannels;
-  @override
-  DateTime? get lastConnected;
-  @override
-  String? get firmwareVersion;
-  @override
-  Map<String, dynamic>? get capabilities;
-  @override
-  String? get activeVendor;
-  @override
-  double get systemVolume;
-  @override
-  double get systemBrightness;
-  @override
-  double get systemRotation;
+  final _DomeSystem _self;
+  final $Res Function(_DomeSystem) _then;
 
   /// Create a copy of DomeSystem
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DomeSystemImplCopyWith<_$DomeSystemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ProjectorConfig _$ProjectorConfigFromJson(Map<String, dynamic> json) {
-  return _ProjectorConfig.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? ipAddress = null,
+    Object? port = null,
+    Object? type = null,
+    Object? status = null,
+    Object? isConnected = null,
+    Object? projectors = null,
+    Object? audioChannels = null,
+    Object? lastConnected = freezed,
+    Object? firmwareVersion = freezed,
+    Object? capabilities = freezed,
+    Object? activeVendor = freezed,
+    Object? systemVolume = null,
+    Object? systemBrightness = null,
+    Object? systemRotation = null,
+  }) {
+    return _then(_DomeSystem(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ipAddress: null == ipAddress
+          ? _self.ipAddress
+          : ipAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      port: null == port
+          ? _self.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as DomeSystemType,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as DomeSystemStatus,
+      isConnected: null == isConnected
+          ? _self.isConnected
+          : isConnected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      projectors: null == projectors
+          ? _self._projectors
+          : projectors // ignore: cast_nullable_to_non_nullable
+              as List<ProjectorConfig>,
+      audioChannels: null == audioChannels
+          ? _self._audioChannels
+          : audioChannels // ignore: cast_nullable_to_non_nullable
+              as List<AudioChannel>,
+      lastConnected: freezed == lastConnected
+          ? _self.lastConnected
+          : lastConnected // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      firmwareVersion: freezed == firmwareVersion
+          ? _self.firmwareVersion
+          : firmwareVersion // ignore: cast_nullable_to_non_nullable
+              as String?,
+      capabilities: freezed == capabilities
+          ? _self._capabilities
+          : capabilities // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      activeVendor: freezed == activeVendor
+          ? _self.activeVendor
+          : activeVendor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      systemVolume: null == systemVolume
+          ? _self.systemVolume
+          : systemVolume // ignore: cast_nullable_to_non_nullable
+              as double,
+      systemBrightness: null == systemBrightness
+          ? _self.systemBrightness
+          : systemBrightness // ignore: cast_nullable_to_non_nullable
+              as double,
+      systemRotation: null == systemRotation
+          ? _self.systemRotation
+          : systemRotation // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$ProjectorConfig {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  ProjectorType get type => throw _privateConstructorUsedError;
-  int get brightness => throw _privateConstructorUsedError;
-  int get contrast => throw _privateConstructorUsedError;
-  ProjectorStatus get status => throw _privateConstructorUsedError;
-  double get x => throw _privateConstructorUsedError;
-  double get y => throw _privateConstructorUsedError;
-  double get z => throw _privateConstructorUsedError;
-  double get pitch => throw _privateConstructorUsedError;
-  double get yaw => throw _privateConstructorUsedError;
-  double get roll => throw _privateConstructorUsedError;
-  int get resolutionWidth => throw _privateConstructorUsedError;
-  int get resolutionHeight => throw _privateConstructorUsedError;
-  double get refreshRate => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get calibrationData =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this ProjectorConfig to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  ProjectorType get type;
+  int get brightness;
+  int get contrast;
+  ProjectorStatus get status;
+  double get x;
+  double get y;
+  double get z;
+  double get pitch;
+  double get yaw;
+  double get roll;
+  int get resolutionWidth;
+  int get resolutionHeight;
+  double get refreshRate;
+  Map<String, dynamic>? get calibrationData;
 
   /// Create a copy of ProjectorConfig
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ProjectorConfigCopyWith<ProjectorConfig> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProjectorConfigCopyWith<$Res> {
-  factory $ProjectorConfigCopyWith(
-          ProjectorConfig value, $Res Function(ProjectorConfig) then) =
-      _$ProjectorConfigCopyWithImpl<$Res, ProjectorConfig>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      ProjectorType type,
-      int brightness,
-      int contrast,
-      ProjectorStatus status,
-      double x,
-      double y,
-      double z,
-      double pitch,
-      double yaw,
-      double roll,
-      int resolutionWidth,
-      int resolutionHeight,
-      double refreshRate,
-      Map<String, dynamic>? calibrationData});
-}
-
-/// @nodoc
-class _$ProjectorConfigCopyWithImpl<$Res, $Val extends ProjectorConfig>
-    implements $ProjectorConfigCopyWith<$Res> {
-  _$ProjectorConfigCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ProjectorConfig
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ProjectorConfigCopyWith<ProjectorConfig> get copyWith =>
+      _$ProjectorConfigCopyWithImpl<ProjectorConfig>(
+          this as ProjectorConfig, _$identity);
+
+  /// Serializes this ProjectorConfig to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? type = null,
-    Object? brightness = null,
-    Object? contrast = null,
-    Object? status = null,
-    Object? x = null,
-    Object? y = null,
-    Object? z = null,
-    Object? pitch = null,
-    Object? yaw = null,
-    Object? roll = null,
-    Object? resolutionWidth = null,
-    Object? resolutionHeight = null,
-    Object? refreshRate = null,
-    Object? calibrationData = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ProjectorType,
-      brightness: null == brightness
-          ? _value.brightness
-          : brightness // ignore: cast_nullable_to_non_nullable
-              as int,
-      contrast: null == contrast
-          ? _value.contrast
-          : contrast // ignore: cast_nullable_to_non_nullable
-              as int,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ProjectorStatus,
-      x: null == x
-          ? _value.x
-          : x // ignore: cast_nullable_to_non_nullable
-              as double,
-      y: null == y
-          ? _value.y
-          : y // ignore: cast_nullable_to_non_nullable
-              as double,
-      z: null == z
-          ? _value.z
-          : z // ignore: cast_nullable_to_non_nullable
-              as double,
-      pitch: null == pitch
-          ? _value.pitch
-          : pitch // ignore: cast_nullable_to_non_nullable
-              as double,
-      yaw: null == yaw
-          ? _value.yaw
-          : yaw // ignore: cast_nullable_to_non_nullable
-              as double,
-      roll: null == roll
-          ? _value.roll
-          : roll // ignore: cast_nullable_to_non_nullable
-              as double,
-      resolutionWidth: null == resolutionWidth
-          ? _value.resolutionWidth
-          : resolutionWidth // ignore: cast_nullable_to_non_nullable
-              as int,
-      resolutionHeight: null == resolutionHeight
-          ? _value.resolutionHeight
-          : resolutionHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      refreshRate: null == refreshRate
-          ? _value.refreshRate
-          : refreshRate // ignore: cast_nullable_to_non_nullable
-              as double,
-      calibrationData: freezed == calibrationData
-          ? _value.calibrationData
-          : calibrationData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ProjectorConfig &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.brightness, brightness) ||
+                other.brightness == brightness) &&
+            (identical(other.contrast, contrast) ||
+                other.contrast == contrast) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.x, x) || other.x == x) &&
+            (identical(other.y, y) || other.y == y) &&
+            (identical(other.z, z) || other.z == z) &&
+            (identical(other.pitch, pitch) || other.pitch == pitch) &&
+            (identical(other.yaw, yaw) || other.yaw == yaw) &&
+            (identical(other.roll, roll) || other.roll == roll) &&
+            (identical(other.resolutionWidth, resolutionWidth) ||
+                other.resolutionWidth == resolutionWidth) &&
+            (identical(other.resolutionHeight, resolutionHeight) ||
+                other.resolutionHeight == resolutionHeight) &&
+            (identical(other.refreshRate, refreshRate) ||
+                other.refreshRate == refreshRate) &&
+            const DeepCollectionEquality()
+                .equals(other.calibrationData, calibrationData));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      type,
+      brightness,
+      contrast,
+      status,
+      x,
+      y,
+      z,
+      pitch,
+      yaw,
+      roll,
+      resolutionWidth,
+      resolutionHeight,
+      refreshRate,
+      const DeepCollectionEquality().hash(calibrationData));
+
+  @override
+  String toString() {
+    return 'ProjectorConfig(id: $id, name: $name, type: $type, brightness: $brightness, contrast: $contrast, status: $status, x: $x, y: $y, z: $z, pitch: $pitch, yaw: $yaw, roll: $roll, resolutionWidth: $resolutionWidth, resolutionHeight: $resolutionHeight, refreshRate: $refreshRate, calibrationData: $calibrationData)';
   }
 }
 
 /// @nodoc
-abstract class _$$ProjectorConfigImplCopyWith<$Res>
-    implements $ProjectorConfigCopyWith<$Res> {
-  factory _$$ProjectorConfigImplCopyWith(_$ProjectorConfigImpl value,
-          $Res Function(_$ProjectorConfigImpl) then) =
-      __$$ProjectorConfigImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ProjectorConfigCopyWith<$Res> {
+  factory $ProjectorConfigCopyWith(
+          ProjectorConfig value, $Res Function(ProjectorConfig) _then) =
+      _$ProjectorConfigCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -712,12 +879,12 @@ abstract class _$$ProjectorConfigImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ProjectorConfigImplCopyWithImpl<$Res>
-    extends _$ProjectorConfigCopyWithImpl<$Res, _$ProjectorConfigImpl>
-    implements _$$ProjectorConfigImplCopyWith<$Res> {
-  __$$ProjectorConfigImplCopyWithImpl(
-      _$ProjectorConfigImpl _value, $Res Function(_$ProjectorConfigImpl) _then)
-      : super(_value, _then);
+class _$ProjectorConfigCopyWithImpl<$Res>
+    implements $ProjectorConfigCopyWith<$Res> {
+  _$ProjectorConfigCopyWithImpl(this._self, this._then);
+
+  final ProjectorConfig _self;
+  final $Res Function(ProjectorConfig) _then;
 
   /// Create a copy of ProjectorConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -741,79 +908,335 @@ class __$$ProjectorConfigImplCopyWithImpl<$Res>
     Object? refreshRate = null,
     Object? calibrationData = freezed,
   }) {
-    return _then(_$ProjectorConfigImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProjectorType,
       brightness: null == brightness
-          ? _value.brightness
+          ? _self.brightness
           : brightness // ignore: cast_nullable_to_non_nullable
               as int,
       contrast: null == contrast
-          ? _value.contrast
+          ? _self.contrast
           : contrast // ignore: cast_nullable_to_non_nullable
               as int,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProjectorStatus,
       x: null == x
-          ? _value.x
+          ? _self.x
           : x // ignore: cast_nullable_to_non_nullable
               as double,
       y: null == y
-          ? _value.y
+          ? _self.y
           : y // ignore: cast_nullable_to_non_nullable
               as double,
       z: null == z
-          ? _value.z
+          ? _self.z
           : z // ignore: cast_nullable_to_non_nullable
               as double,
       pitch: null == pitch
-          ? _value.pitch
+          ? _self.pitch
           : pitch // ignore: cast_nullable_to_non_nullable
               as double,
       yaw: null == yaw
-          ? _value.yaw
+          ? _self.yaw
           : yaw // ignore: cast_nullable_to_non_nullable
               as double,
       roll: null == roll
-          ? _value.roll
+          ? _self.roll
           : roll // ignore: cast_nullable_to_non_nullable
               as double,
       resolutionWidth: null == resolutionWidth
-          ? _value.resolutionWidth
+          ? _self.resolutionWidth
           : resolutionWidth // ignore: cast_nullable_to_non_nullable
               as int,
       resolutionHeight: null == resolutionHeight
-          ? _value.resolutionHeight
+          ? _self.resolutionHeight
           : resolutionHeight // ignore: cast_nullable_to_non_nullable
               as int,
       refreshRate: null == refreshRate
-          ? _value.refreshRate
+          ? _self.refreshRate
           : refreshRate // ignore: cast_nullable_to_non_nullable
               as double,
       calibrationData: freezed == calibrationData
-          ? _value._calibrationData
+          ? _self.calibrationData
           : calibrationData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [ProjectorConfig].
+extension ProjectorConfigPatterns on ProjectorConfig {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ProjectorConfig value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectorConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ProjectorConfig value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectorConfig():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ProjectorConfig value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectorConfig() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            ProjectorType type,
+            int brightness,
+            int contrast,
+            ProjectorStatus status,
+            double x,
+            double y,
+            double z,
+            double pitch,
+            double yaw,
+            double roll,
+            int resolutionWidth,
+            int resolutionHeight,
+            double refreshRate,
+            Map<String, dynamic>? calibrationData)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectorConfig() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.brightness,
+            _that.contrast,
+            _that.status,
+            _that.x,
+            _that.y,
+            _that.z,
+            _that.pitch,
+            _that.yaw,
+            _that.roll,
+            _that.resolutionWidth,
+            _that.resolutionHeight,
+            _that.refreshRate,
+            _that.calibrationData);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            ProjectorType type,
+            int brightness,
+            int contrast,
+            ProjectorStatus status,
+            double x,
+            double y,
+            double z,
+            double pitch,
+            double yaw,
+            double roll,
+            int resolutionWidth,
+            int resolutionHeight,
+            double refreshRate,
+            Map<String, dynamic>? calibrationData)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectorConfig():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.brightness,
+            _that.contrast,
+            _that.status,
+            _that.x,
+            _that.y,
+            _that.z,
+            _that.pitch,
+            _that.yaw,
+            _that.roll,
+            _that.resolutionWidth,
+            _that.resolutionHeight,
+            _that.refreshRate,
+            _that.calibrationData);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            ProjectorType type,
+            int brightness,
+            int contrast,
+            ProjectorStatus status,
+            double x,
+            double y,
+            double z,
+            double pitch,
+            double yaw,
+            double roll,
+            int resolutionWidth,
+            int resolutionHeight,
+            double refreshRate,
+            Map<String, dynamic>? calibrationData)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ProjectorConfig() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.brightness,
+            _that.contrast,
+            _that.status,
+            _that.x,
+            _that.y,
+            _that.z,
+            _that.pitch,
+            _that.yaw,
+            _that.roll,
+            _that.resolutionWidth,
+            _that.resolutionHeight,
+            _that.refreshRate,
+            _that.calibrationData);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$ProjectorConfigImpl implements _ProjectorConfig {
-  const _$ProjectorConfigImpl(
+class _ProjectorConfig implements ProjectorConfig {
+  const _ProjectorConfig(
       {required this.id,
       required this.name,
       required this.type,
@@ -831,9 +1254,8 @@ class _$ProjectorConfigImpl implements _ProjectorConfig {
       this.refreshRate = 60.0,
       final Map<String, dynamic>? calibrationData})
       : _calibrationData = calibrationData;
-
-  factory _$ProjectorConfigImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProjectorConfigImplFromJson(json);
+  factory _ProjectorConfig.fromJson(Map<String, dynamic> json) =>
+      _$ProjectorConfigFromJson(json);
 
   @override
   final String id;
@@ -884,16 +1306,26 @@ class _$ProjectorConfigImpl implements _ProjectorConfig {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of ProjectorConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ProjectorConfig(id: $id, name: $name, type: $type, brightness: $brightness, contrast: $contrast, status: $status, x: $x, y: $y, z: $z, pitch: $pitch, yaw: $yaw, roll: $roll, resolutionWidth: $resolutionWidth, resolutionHeight: $resolutionHeight, refreshRate: $refreshRate, calibrationData: $calibrationData)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ProjectorConfigCopyWith<_ProjectorConfig> get copyWith =>
+      __$ProjectorConfigCopyWithImpl<_ProjectorConfig>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ProjectorConfigToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProjectorConfigImpl &&
+            other is _ProjectorConfig &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
@@ -939,302 +1371,132 @@ class _$ProjectorConfigImpl implements _ProjectorConfig {
       refreshRate,
       const DeepCollectionEquality().hash(_calibrationData));
 
-  /// Create a copy of ProjectorConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ProjectorConfigImplCopyWith<_$ProjectorConfigImpl> get copyWith =>
-      __$$ProjectorConfigImplCopyWithImpl<_$ProjectorConfigImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProjectorConfigImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ProjectorConfig implements ProjectorConfig {
-  const factory _ProjectorConfig(
-      {required final String id,
-      required final String name,
-      required final ProjectorType type,
-      required final int brightness,
-      required final int contrast,
-      required final ProjectorStatus status,
-      final double x,
-      final double y,
-      final double z,
-      final double pitch,
-      final double yaw,
-      final double roll,
-      final int resolutionWidth,
-      final int resolutionHeight,
-      final double refreshRate,
-      final Map<String, dynamic>? calibrationData}) = _$ProjectorConfigImpl;
-
-  factory _ProjectorConfig.fromJson(Map<String, dynamic> json) =
-      _$ProjectorConfigImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  ProjectorType get type;
-  @override
-  int get brightness;
-  @override
-  int get contrast;
-  @override
-  ProjectorStatus get status;
-  @override
-  double get x;
-  @override
-  double get y;
-  @override
-  double get z;
-  @override
-  double get pitch;
-  @override
-  double get yaw;
-  @override
-  double get roll;
-  @override
-  int get resolutionWidth;
-  @override
-  int get resolutionHeight;
-  @override
-  double get refreshRate;
-  @override
-  Map<String, dynamic>? get calibrationData;
-
-  /// Create a copy of ProjectorConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProjectorConfigImplCopyWith<_$ProjectorConfigImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AudioChannel _$AudioChannelFromJson(Map<String, dynamic> json) {
-  return _AudioChannel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$AudioChannel {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  AudioChannelType get type => throw _privateConstructorUsedError;
-  double get volume => throw _privateConstructorUsedError;
-  bool get isMuted => throw _privateConstructorUsedError;
-  double get x => throw _privateConstructorUsedError;
-  double get y => throw _privateConstructorUsedError;
-  double get z => throw _privateConstructorUsedError;
-  double get delay => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get equalizerSettings =>
-      throw _privateConstructorUsedError;
-  Map<String, dynamic>? get calibrationData =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this AudioChannel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AudioChannel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AudioChannelCopyWith<AudioChannel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AudioChannelCopyWith<$Res> {
-  factory $AudioChannelCopyWith(
-          AudioChannel value, $Res Function(AudioChannel) then) =
-      _$AudioChannelCopyWithImpl<$Res, AudioChannel>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      AudioChannelType type,
-      double volume,
-      bool isMuted,
-      double x,
-      double y,
-      double z,
-      double delay,
-      Map<String, dynamic>? equalizerSettings,
-      Map<String, dynamic>? calibrationData});
-}
-
-/// @nodoc
-class _$AudioChannelCopyWithImpl<$Res, $Val extends AudioChannel>
-    implements $AudioChannelCopyWith<$Res> {
-  _$AudioChannelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AudioChannel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? type = null,
-    Object? volume = null,
-    Object? isMuted = null,
-    Object? x = null,
-    Object? y = null,
-    Object? z = null,
-    Object? delay = null,
-    Object? equalizerSettings = freezed,
-    Object? calibrationData = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as AudioChannelType,
-      volume: null == volume
-          ? _value.volume
-          : volume // ignore: cast_nullable_to_non_nullable
-              as double,
-      isMuted: null == isMuted
-          ? _value.isMuted
-          : isMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
-      x: null == x
-          ? _value.x
-          : x // ignore: cast_nullable_to_non_nullable
-              as double,
-      y: null == y
-          ? _value.y
-          : y // ignore: cast_nullable_to_non_nullable
-              as double,
-      z: null == z
-          ? _value.z
-          : z // ignore: cast_nullable_to_non_nullable
-              as double,
-      delay: null == delay
-          ? _value.delay
-          : delay // ignore: cast_nullable_to_non_nullable
-              as double,
-      equalizerSettings: freezed == equalizerSettings
-          ? _value.equalizerSettings
-          : equalizerSettings // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      calibrationData: freezed == calibrationData
-          ? _value.calibrationData
-          : calibrationData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'ProjectorConfig(id: $id, name: $name, type: $type, brightness: $brightness, contrast: $contrast, status: $status, x: $x, y: $y, z: $z, pitch: $pitch, yaw: $yaw, roll: $roll, resolutionWidth: $resolutionWidth, resolutionHeight: $resolutionHeight, refreshRate: $refreshRate, calibrationData: $calibrationData)';
   }
 }
 
 /// @nodoc
-abstract class _$$AudioChannelImplCopyWith<$Res>
-    implements $AudioChannelCopyWith<$Res> {
-  factory _$$AudioChannelImplCopyWith(
-          _$AudioChannelImpl value, $Res Function(_$AudioChannelImpl) then) =
-      __$$AudioChannelImplCopyWithImpl<$Res>;
+abstract mixin class _$ProjectorConfigCopyWith<$Res>
+    implements $ProjectorConfigCopyWith<$Res> {
+  factory _$ProjectorConfigCopyWith(
+          _ProjectorConfig value, $Res Function(_ProjectorConfig) _then) =
+      __$ProjectorConfigCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
       String name,
-      AudioChannelType type,
-      double volume,
-      bool isMuted,
+      ProjectorType type,
+      int brightness,
+      int contrast,
+      ProjectorStatus status,
       double x,
       double y,
       double z,
-      double delay,
-      Map<String, dynamic>? equalizerSettings,
+      double pitch,
+      double yaw,
+      double roll,
+      int resolutionWidth,
+      int resolutionHeight,
+      double refreshRate,
       Map<String, dynamic>? calibrationData});
 }
 
 /// @nodoc
-class __$$AudioChannelImplCopyWithImpl<$Res>
-    extends _$AudioChannelCopyWithImpl<$Res, _$AudioChannelImpl>
-    implements _$$AudioChannelImplCopyWith<$Res> {
-  __$$AudioChannelImplCopyWithImpl(
-      _$AudioChannelImpl _value, $Res Function(_$AudioChannelImpl) _then)
-      : super(_value, _then);
+class __$ProjectorConfigCopyWithImpl<$Res>
+    implements _$ProjectorConfigCopyWith<$Res> {
+  __$ProjectorConfigCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of AudioChannel
+  final _ProjectorConfig _self;
+  final $Res Function(_ProjectorConfig) _then;
+
+  /// Create a copy of ProjectorConfig
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
     Object? name = null,
     Object? type = null,
-    Object? volume = null,
-    Object? isMuted = null,
+    Object? brightness = null,
+    Object? contrast = null,
+    Object? status = null,
     Object? x = null,
     Object? y = null,
     Object? z = null,
-    Object? delay = null,
-    Object? equalizerSettings = freezed,
+    Object? pitch = null,
+    Object? yaw = null,
+    Object? roll = null,
+    Object? resolutionWidth = null,
+    Object? resolutionHeight = null,
+    Object? refreshRate = null,
     Object? calibrationData = freezed,
   }) {
-    return _then(_$AudioChannelImpl(
+    return _then(_ProjectorConfig(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AudioChannelType,
-      volume: null == volume
-          ? _value.volume
-          : volume // ignore: cast_nullable_to_non_nullable
-              as double,
-      isMuted: null == isMuted
-          ? _value.isMuted
-          : isMuted // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as ProjectorType,
+      brightness: null == brightness
+          ? _self.brightness
+          : brightness // ignore: cast_nullable_to_non_nullable
+              as int,
+      contrast: null == contrast
+          ? _self.contrast
+          : contrast // ignore: cast_nullable_to_non_nullable
+              as int,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ProjectorStatus,
       x: null == x
-          ? _value.x
+          ? _self.x
           : x // ignore: cast_nullable_to_non_nullable
               as double,
       y: null == y
-          ? _value.y
+          ? _self.y
           : y // ignore: cast_nullable_to_non_nullable
               as double,
       z: null == z
-          ? _value.z
+          ? _self.z
           : z // ignore: cast_nullable_to_non_nullable
               as double,
-      delay: null == delay
-          ? _value.delay
-          : delay // ignore: cast_nullable_to_non_nullable
+      pitch: null == pitch
+          ? _self.pitch
+          : pitch // ignore: cast_nullable_to_non_nullable
               as double,
-      equalizerSettings: freezed == equalizerSettings
-          ? _value._equalizerSettings
-          : equalizerSettings // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+      yaw: null == yaw
+          ? _self.yaw
+          : yaw // ignore: cast_nullable_to_non_nullable
+              as double,
+      roll: null == roll
+          ? _self.roll
+          : roll // ignore: cast_nullable_to_non_nullable
+              as double,
+      resolutionWidth: null == resolutionWidth
+          ? _self.resolutionWidth
+          : resolutionWidth // ignore: cast_nullable_to_non_nullable
+              as int,
+      resolutionHeight: null == resolutionHeight
+          ? _self.resolutionHeight
+          : resolutionHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      refreshRate: null == refreshRate
+          ? _self.refreshRate
+          : refreshRate // ignore: cast_nullable_to_non_nullable
+              as double,
       calibrationData: freezed == calibrationData
-          ? _value._calibrationData
+          ? _self._calibrationData
           : calibrationData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -1242,9 +1504,395 @@ class __$$AudioChannelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$AudioChannel {
+  String get id;
+  String get name;
+  AudioChannelType get type;
+  double get volume;
+  bool get isMuted;
+  double get x;
+  double get y;
+  double get z;
+  double get delay;
+  Map<String, dynamic>? get equalizerSettings;
+  Map<String, dynamic>? get calibrationData;
+
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AudioChannelCopyWith<AudioChannel> get copyWith =>
+      _$AudioChannelCopyWithImpl<AudioChannel>(
+          this as AudioChannel, _$identity);
+
+  /// Serializes this AudioChannel to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AudioChannel &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
+            (identical(other.x, x) || other.x == x) &&
+            (identical(other.y, y) || other.y == y) &&
+            (identical(other.z, z) || other.z == z) &&
+            (identical(other.delay, delay) || other.delay == delay) &&
+            const DeepCollectionEquality()
+                .equals(other.equalizerSettings, equalizerSettings) &&
+            const DeepCollectionEquality()
+                .equals(other.calibrationData, calibrationData));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      type,
+      volume,
+      isMuted,
+      x,
+      y,
+      z,
+      delay,
+      const DeepCollectionEquality().hash(equalizerSettings),
+      const DeepCollectionEquality().hash(calibrationData));
+
+  @override
+  String toString() {
+    return 'AudioChannel(id: $id, name: $name, type: $type, volume: $volume, isMuted: $isMuted, x: $x, y: $y, z: $z, delay: $delay, equalizerSettings: $equalizerSettings, calibrationData: $calibrationData)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $AudioChannelCopyWith<$Res> {
+  factory $AudioChannelCopyWith(
+          AudioChannel value, $Res Function(AudioChannel) _then) =
+      _$AudioChannelCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      AudioChannelType type,
+      double volume,
+      bool isMuted,
+      double x,
+      double y,
+      double z,
+      double delay,
+      Map<String, dynamic>? equalizerSettings,
+      Map<String, dynamic>? calibrationData});
+}
+
+/// @nodoc
+class _$AudioChannelCopyWithImpl<$Res> implements $AudioChannelCopyWith<$Res> {
+  _$AudioChannelCopyWithImpl(this._self, this._then);
+
+  final AudioChannel _self;
+  final $Res Function(AudioChannel) _then;
+
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? type = null,
+    Object? volume = null,
+    Object? isMuted = null,
+    Object? x = null,
+    Object? y = null,
+    Object? z = null,
+    Object? delay = null,
+    Object? equalizerSettings = freezed,
+    Object? calibrationData = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as AudioChannelType,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      isMuted: null == isMuted
+          ? _self.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      x: null == x
+          ? _self.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as double,
+      y: null == y
+          ? _self.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as double,
+      z: null == z
+          ? _self.z
+          : z // ignore: cast_nullable_to_non_nullable
+              as double,
+      delay: null == delay
+          ? _self.delay
+          : delay // ignore: cast_nullable_to_non_nullable
+              as double,
+      equalizerSettings: freezed == equalizerSettings
+          ? _self.equalizerSettings
+          : equalizerSettings // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      calibrationData: freezed == calibrationData
+          ? _self.calibrationData
+          : calibrationData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [AudioChannel].
+extension AudioChannelPatterns on AudioChannel {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_AudioChannel value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AudioChannel() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_AudioChannel value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AudioChannel():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_AudioChannel value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AudioChannel() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            AudioChannelType type,
+            double volume,
+            bool isMuted,
+            double x,
+            double y,
+            double z,
+            double delay,
+            Map<String, dynamic>? equalizerSettings,
+            Map<String, dynamic>? calibrationData)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _AudioChannel() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.volume,
+            _that.isMuted,
+            _that.x,
+            _that.y,
+            _that.z,
+            _that.delay,
+            _that.equalizerSettings,
+            _that.calibrationData);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            AudioChannelType type,
+            double volume,
+            bool isMuted,
+            double x,
+            double y,
+            double z,
+            double delay,
+            Map<String, dynamic>? equalizerSettings,
+            Map<String, dynamic>? calibrationData)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AudioChannel():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.volume,
+            _that.isMuted,
+            _that.x,
+            _that.y,
+            _that.z,
+            _that.delay,
+            _that.equalizerSettings,
+            _that.calibrationData);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            AudioChannelType type,
+            double volume,
+            bool isMuted,
+            double x,
+            double y,
+            double z,
+            double delay,
+            Map<String, dynamic>? equalizerSettings,
+            Map<String, dynamic>? calibrationData)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _AudioChannel() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.type,
+            _that.volume,
+            _that.isMuted,
+            _that.x,
+            _that.y,
+            _that.z,
+            _that.delay,
+            _that.equalizerSettings,
+            _that.calibrationData);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$AudioChannelImpl implements _AudioChannel {
-  const _$AudioChannelImpl(
+class _AudioChannel implements AudioChannel {
+  const _AudioChannel(
       {required this.id,
       required this.name,
       required this.type,
@@ -1258,9 +1906,8 @@ class _$AudioChannelImpl implements _AudioChannel {
       final Map<String, dynamic>? calibrationData})
       : _equalizerSettings = equalizerSettings,
         _calibrationData = calibrationData;
-
-  factory _$AudioChannelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AudioChannelImplFromJson(json);
+  factory _AudioChannel.fromJson(Map<String, dynamic> json) =>
+      _$AudioChannelFromJson(json);
 
   @override
   final String id;
@@ -1307,16 +1954,26 @@ class _$AudioChannelImpl implements _AudioChannel {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of AudioChannel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AudioChannel(id: $id, name: $name, type: $type, volume: $volume, isMuted: $isMuted, x: $x, y: $y, z: $z, delay: $delay, equalizerSettings: $equalizerSettings, calibrationData: $calibrationData)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AudioChannelCopyWith<_AudioChannel> get copyWith =>
+      __$AudioChannelCopyWithImpl<_AudioChannel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AudioChannelToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AudioChannelImpl &&
+            other is _AudioChannel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.type, type) || other.type == type) &&
@@ -1348,301 +2005,135 @@ class _$AudioChannelImpl implements _AudioChannel {
       const DeepCollectionEquality().hash(_equalizerSettings),
       const DeepCollectionEquality().hash(_calibrationData));
 
-  /// Create a copy of AudioChannel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AudioChannelImplCopyWith<_$AudioChannelImpl> get copyWith =>
-      __$$AudioChannelImplCopyWithImpl<_$AudioChannelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AudioChannelImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _AudioChannel implements AudioChannel {
-  const factory _AudioChannel(
-      {required final String id,
-      required final String name,
-      required final AudioChannelType type,
-      final double volume,
-      final bool isMuted,
-      final double x,
-      final double y,
-      final double z,
-      final double delay,
-      final Map<String, dynamic>? equalizerSettings,
-      final Map<String, dynamic>? calibrationData}) = _$AudioChannelImpl;
-
-  factory _AudioChannel.fromJson(Map<String, dynamic> json) =
-      _$AudioChannelImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  AudioChannelType get type;
-  @override
-  double get volume;
-  @override
-  bool get isMuted;
-  @override
-  double get x;
-  @override
-  double get y;
-  @override
-  double get z;
-  @override
-  double get delay;
-  @override
-  Map<String, dynamic>? get equalizerSettings;
-  @override
-  Map<String, dynamic>? get calibrationData;
-
-  /// Create a copy of AudioChannel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AudioChannelImplCopyWith<_$AudioChannelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-FreeDomeConnectionStatus _$FreeDomeConnectionStatusFromJson(
-    Map<String, dynamic> json) {
-  return _FreeDomeConnectionStatus.fromJson(json);
-}
-
-/// @nodoc
-mixin _$FreeDomeConnectionStatus {
-  bool get isConnected => throw _privateConstructorUsedError;
-  bool get isConnecting => throw _privateConstructorUsedError;
-  String? get connectedDomeId => throw _privateConstructorUsedError;
-  String? get serverUrl => throw _privateConstructorUsedError;
-  DateTime? get lastConnected => throw _privateConstructorUsedError;
-  String? get error => throw _privateConstructorUsedError;
-  int get reconnectAttempts => throw _privateConstructorUsedError;
-  int get maxReconnectAttempts => throw _privateConstructorUsedError;
-
-  /// Serializes this FreeDomeConnectionStatus to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FreeDomeConnectionStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $FreeDomeConnectionStatusCopyWith<FreeDomeConnectionStatus> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FreeDomeConnectionStatusCopyWith<$Res> {
-  factory $FreeDomeConnectionStatusCopyWith(FreeDomeConnectionStatus value,
-          $Res Function(FreeDomeConnectionStatus) then) =
-      _$FreeDomeConnectionStatusCopyWithImpl<$Res, FreeDomeConnectionStatus>;
-  @useResult
-  $Res call(
-      {bool isConnected,
-      bool isConnecting,
-      String? connectedDomeId,
-      String? serverUrl,
-      DateTime? lastConnected,
-      String? error,
-      int reconnectAttempts,
-      int maxReconnectAttempts});
-}
-
-/// @nodoc
-class _$FreeDomeConnectionStatusCopyWithImpl<$Res,
-        $Val extends FreeDomeConnectionStatus>
-    implements $FreeDomeConnectionStatusCopyWith<$Res> {
-  _$FreeDomeConnectionStatusCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FreeDomeConnectionStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isConnected = null,
-    Object? isConnecting = null,
-    Object? connectedDomeId = freezed,
-    Object? serverUrl = freezed,
-    Object? lastConnected = freezed,
-    Object? error = freezed,
-    Object? reconnectAttempts = null,
-    Object? maxReconnectAttempts = null,
-  }) {
-    return _then(_value.copyWith(
-      isConnected: null == isConnected
-          ? _value.isConnected
-          : isConnected // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isConnecting: null == isConnecting
-          ? _value.isConnecting
-          : isConnecting // ignore: cast_nullable_to_non_nullable
-              as bool,
-      connectedDomeId: freezed == connectedDomeId
-          ? _value.connectedDomeId
-          : connectedDomeId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serverUrl: freezed == serverUrl
-          ? _value.serverUrl
-          : serverUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastConnected: freezed == lastConnected
-          ? _value.lastConnected
-          : lastConnected // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reconnectAttempts: null == reconnectAttempts
-          ? _value.reconnectAttempts
-          : reconnectAttempts // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxReconnectAttempts: null == maxReconnectAttempts
-          ? _value.maxReconnectAttempts
-          : maxReconnectAttempts // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  String toString() {
+    return 'AudioChannel(id: $id, name: $name, type: $type, volume: $volume, isMuted: $isMuted, x: $x, y: $y, z: $z, delay: $delay, equalizerSettings: $equalizerSettings, calibrationData: $calibrationData)';
   }
 }
 
 /// @nodoc
-abstract class _$$FreeDomeConnectionStatusImplCopyWith<$Res>
-    implements $FreeDomeConnectionStatusCopyWith<$Res> {
-  factory _$$FreeDomeConnectionStatusImplCopyWith(
-          _$FreeDomeConnectionStatusImpl value,
-          $Res Function(_$FreeDomeConnectionStatusImpl) then) =
-      __$$FreeDomeConnectionStatusImplCopyWithImpl<$Res>;
+abstract mixin class _$AudioChannelCopyWith<$Res>
+    implements $AudioChannelCopyWith<$Res> {
+  factory _$AudioChannelCopyWith(
+          _AudioChannel value, $Res Function(_AudioChannel) _then) =
+      __$AudioChannelCopyWithImpl;
   @override
   @useResult
   $Res call(
-      {bool isConnected,
-      bool isConnecting,
-      String? connectedDomeId,
-      String? serverUrl,
-      DateTime? lastConnected,
-      String? error,
-      int reconnectAttempts,
-      int maxReconnectAttempts});
+      {String id,
+      String name,
+      AudioChannelType type,
+      double volume,
+      bool isMuted,
+      double x,
+      double y,
+      double z,
+      double delay,
+      Map<String, dynamic>? equalizerSettings,
+      Map<String, dynamic>? calibrationData});
 }
 
 /// @nodoc
-class __$$FreeDomeConnectionStatusImplCopyWithImpl<$Res>
-    extends _$FreeDomeConnectionStatusCopyWithImpl<$Res,
-        _$FreeDomeConnectionStatusImpl>
-    implements _$$FreeDomeConnectionStatusImplCopyWith<$Res> {
-  __$$FreeDomeConnectionStatusImplCopyWithImpl(
-      _$FreeDomeConnectionStatusImpl _value,
-      $Res Function(_$FreeDomeConnectionStatusImpl) _then)
-      : super(_value, _then);
+class __$AudioChannelCopyWithImpl<$Res>
+    implements _$AudioChannelCopyWith<$Res> {
+  __$AudioChannelCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of FreeDomeConnectionStatus
+  final _AudioChannel _self;
+  final $Res Function(_AudioChannel) _then;
+
+  /// Create a copy of AudioChannel
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? isConnected = null,
-    Object? isConnecting = null,
-    Object? connectedDomeId = freezed,
-    Object? serverUrl = freezed,
-    Object? lastConnected = freezed,
-    Object? error = freezed,
-    Object? reconnectAttempts = null,
-    Object? maxReconnectAttempts = null,
+    Object? id = null,
+    Object? name = null,
+    Object? type = null,
+    Object? volume = null,
+    Object? isMuted = null,
+    Object? x = null,
+    Object? y = null,
+    Object? z = null,
+    Object? delay = null,
+    Object? equalizerSettings = freezed,
+    Object? calibrationData = freezed,
   }) {
-    return _then(_$FreeDomeConnectionStatusImpl(
-      isConnected: null == isConnected
-          ? _value.isConnected
-          : isConnected // ignore: cast_nullable_to_non_nullable
+    return _then(_AudioChannel(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as AudioChannelType,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      isMuted: null == isMuted
+          ? _self.isMuted
+          : isMuted // ignore: cast_nullable_to_non_nullable
               as bool,
-      isConnecting: null == isConnecting
-          ? _value.isConnecting
-          : isConnecting // ignore: cast_nullable_to_non_nullable
-              as bool,
-      connectedDomeId: freezed == connectedDomeId
-          ? _value.connectedDomeId
-          : connectedDomeId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      serverUrl: freezed == serverUrl
-          ? _value.serverUrl
-          : serverUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastConnected: freezed == lastConnected
-          ? _value.lastConnected
-          : lastConnected // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reconnectAttempts: null == reconnectAttempts
-          ? _value.reconnectAttempts
-          : reconnectAttempts // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxReconnectAttempts: null == maxReconnectAttempts
-          ? _value.maxReconnectAttempts
-          : maxReconnectAttempts // ignore: cast_nullable_to_non_nullable
-              as int,
+      x: null == x
+          ? _self.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as double,
+      y: null == y
+          ? _self.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as double,
+      z: null == z
+          ? _self.z
+          : z // ignore: cast_nullable_to_non_nullable
+              as double,
+      delay: null == delay
+          ? _self.delay
+          : delay // ignore: cast_nullable_to_non_nullable
+              as double,
+      equalizerSettings: freezed == equalizerSettings
+          ? _self._equalizerSettings
+          : equalizerSettings // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      calibrationData: freezed == calibrationData
+          ? _self._calibrationData
+          : calibrationData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$FreeDomeConnectionStatusImpl implements _FreeDomeConnectionStatus {
-  const _$FreeDomeConnectionStatusImpl(
-      {required this.isConnected,
-      required this.isConnecting,
-      this.connectedDomeId,
-      this.serverUrl,
-      this.lastConnected,
-      this.error,
-      this.reconnectAttempts = 0,
-      this.maxReconnectAttempts = 5});
+mixin _$FreeDomeConnectionStatus {
+  bool get isConnected;
+  bool get isConnecting;
+  String? get connectedDomeId;
+  String? get serverUrl;
+  DateTime? get lastConnected;
+  String? get error;
+  int get reconnectAttempts;
+  int get maxReconnectAttempts;
 
-  factory _$FreeDomeConnectionStatusImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FreeDomeConnectionStatusImplFromJson(json);
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $FreeDomeConnectionStatusCopyWith<FreeDomeConnectionStatus> get copyWith =>
+      _$FreeDomeConnectionStatusCopyWithImpl<FreeDomeConnectionStatus>(
+          this as FreeDomeConnectionStatus, _$identity);
 
-  @override
-  final bool isConnected;
-  @override
-  final bool isConnecting;
-  @override
-  final String? connectedDomeId;
-  @override
-  final String? serverUrl;
-  @override
-  final DateTime? lastConnected;
-  @override
-  final String? error;
-  @override
-  @JsonKey()
-  final int reconnectAttempts;
-  @override
-  @JsonKey()
-  final int maxReconnectAttempts;
-
-  @override
-  String toString() {
-    return 'FreeDomeConnectionStatus(isConnected: $isConnected, isConnecting: $isConnecting, connectedDomeId: $connectedDomeId, serverUrl: $serverUrl, lastConnected: $lastConnected, error: $error, reconnectAttempts: $reconnectAttempts, maxReconnectAttempts: $maxReconnectAttempts)';
-  }
+  /// Serializes this FreeDomeConnectionStatus to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FreeDomeConnectionStatusImpl &&
+            other is FreeDomeConnectionStatus &&
             (identical(other.isConnected, isConnected) ||
                 other.isConnected == isConnected) &&
             (identical(other.isConnecting, isConnecting) ||
@@ -1673,166 +2164,526 @@ class _$FreeDomeConnectionStatusImpl implements _FreeDomeConnectionStatus {
       reconnectAttempts,
       maxReconnectAttempts);
 
-  /// Create a copy of FreeDomeConnectionStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FreeDomeConnectionStatusImplCopyWith<_$FreeDomeConnectionStatusImpl>
-      get copyWith => __$$FreeDomeConnectionStatusImplCopyWithImpl<
-          _$FreeDomeConnectionStatusImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FreeDomeConnectionStatusImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FreeDomeConnectionStatus(isConnected: $isConnected, isConnecting: $isConnecting, connectedDomeId: $connectedDomeId, serverUrl: $serverUrl, lastConnected: $lastConnected, error: $error, reconnectAttempts: $reconnectAttempts, maxReconnectAttempts: $maxReconnectAttempts)';
   }
 }
 
-abstract class _FreeDomeConnectionStatus implements FreeDomeConnectionStatus {
-  const factory _FreeDomeConnectionStatus(
-      {required final bool isConnected,
-      required final bool isConnecting,
-      final String? connectedDomeId,
-      final String? serverUrl,
-      final DateTime? lastConnected,
-      final String? error,
-      final int reconnectAttempts,
-      final int maxReconnectAttempts}) = _$FreeDomeConnectionStatusImpl;
+/// @nodoc
+abstract mixin class $FreeDomeConnectionStatusCopyWith<$Res> {
+  factory $FreeDomeConnectionStatusCopyWith(FreeDomeConnectionStatus value,
+          $Res Function(FreeDomeConnectionStatus) _then) =
+      _$FreeDomeConnectionStatusCopyWithImpl;
+  @useResult
+  $Res call(
+      {bool isConnected,
+      bool isConnecting,
+      String? connectedDomeId,
+      String? serverUrl,
+      DateTime? lastConnected,
+      String? error,
+      int reconnectAttempts,
+      int maxReconnectAttempts});
+}
 
-  factory _FreeDomeConnectionStatus.fromJson(Map<String, dynamic> json) =
-      _$FreeDomeConnectionStatusImpl.fromJson;
+/// @nodoc
+class _$FreeDomeConnectionStatusCopyWithImpl<$Res>
+    implements $FreeDomeConnectionStatusCopyWith<$Res> {
+  _$FreeDomeConnectionStatusCopyWithImpl(this._self, this._then);
+
+  final FreeDomeConnectionStatus _self;
+  final $Res Function(FreeDomeConnectionStatus) _then;
+
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isConnected = null,
+    Object? isConnecting = null,
+    Object? connectedDomeId = freezed,
+    Object? serverUrl = freezed,
+    Object? lastConnected = freezed,
+    Object? error = freezed,
+    Object? reconnectAttempts = null,
+    Object? maxReconnectAttempts = null,
+  }) {
+    return _then(_self.copyWith(
+      isConnected: null == isConnected
+          ? _self.isConnected
+          : isConnected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isConnecting: null == isConnecting
+          ? _self.isConnecting
+          : isConnecting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      connectedDomeId: freezed == connectedDomeId
+          ? _self.connectedDomeId
+          : connectedDomeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serverUrl: freezed == serverUrl
+          ? _self.serverUrl
+          : serverUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastConnected: freezed == lastConnected
+          ? _self.lastConnected
+          : lastConnected // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      error: freezed == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reconnectAttempts: null == reconnectAttempts
+          ? _self.reconnectAttempts
+          : reconnectAttempts // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxReconnectAttempts: null == maxReconnectAttempts
+          ? _self.maxReconnectAttempts
+          : maxReconnectAttempts // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [FreeDomeConnectionStatus].
+extension FreeDomeConnectionStatusPatterns on FreeDomeConnectionStatus {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_FreeDomeConnectionStatus value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeConnectionStatus() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_FreeDomeConnectionStatus value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeConnectionStatus():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_FreeDomeConnectionStatus value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeConnectionStatus() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            bool isConnected,
+            bool isConnecting,
+            String? connectedDomeId,
+            String? serverUrl,
+            DateTime? lastConnected,
+            String? error,
+            int reconnectAttempts,
+            int maxReconnectAttempts)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeConnectionStatus() when $default != null:
+        return $default(
+            _that.isConnected,
+            _that.isConnecting,
+            _that.connectedDomeId,
+            _that.serverUrl,
+            _that.lastConnected,
+            _that.error,
+            _that.reconnectAttempts,
+            _that.maxReconnectAttempts);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            bool isConnected,
+            bool isConnecting,
+            String? connectedDomeId,
+            String? serverUrl,
+            DateTime? lastConnected,
+            String? error,
+            int reconnectAttempts,
+            int maxReconnectAttempts)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeConnectionStatus():
+        return $default(
+            _that.isConnected,
+            _that.isConnecting,
+            _that.connectedDomeId,
+            _that.serverUrl,
+            _that.lastConnected,
+            _that.error,
+            _that.reconnectAttempts,
+            _that.maxReconnectAttempts);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            bool isConnected,
+            bool isConnecting,
+            String? connectedDomeId,
+            String? serverUrl,
+            DateTime? lastConnected,
+            String? error,
+            int reconnectAttempts,
+            int maxReconnectAttempts)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeConnectionStatus() when $default != null:
+        return $default(
+            _that.isConnected,
+            _that.isConnecting,
+            _that.connectedDomeId,
+            _that.serverUrl,
+            _that.lastConnected,
+            _that.error,
+            _that.reconnectAttempts,
+            _that.maxReconnectAttempts);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _FreeDomeConnectionStatus implements FreeDomeConnectionStatus {
+  const _FreeDomeConnectionStatus(
+      {required this.isConnected,
+      required this.isConnecting,
+      this.connectedDomeId,
+      this.serverUrl,
+      this.lastConnected,
+      this.error,
+      this.reconnectAttempts = 0,
+      this.maxReconnectAttempts = 5});
+  factory _FreeDomeConnectionStatus.fromJson(Map<String, dynamic> json) =>
+      _$FreeDomeConnectionStatusFromJson(json);
 
   @override
-  bool get isConnected;
+  final bool isConnected;
   @override
-  bool get isConnecting;
+  final bool isConnecting;
   @override
-  String? get connectedDomeId;
+  final String? connectedDomeId;
   @override
-  String? get serverUrl;
+  final String? serverUrl;
   @override
-  DateTime? get lastConnected;
+  final DateTime? lastConnected;
   @override
-  String? get error;
+  final String? error;
   @override
-  int get reconnectAttempts;
+  @JsonKey()
+  final int reconnectAttempts;
   @override
-  int get maxReconnectAttempts;
+  @JsonKey()
+  final int maxReconnectAttempts;
 
   /// Create a copy of FreeDomeConnectionStatus
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FreeDomeConnectionStatusImplCopyWith<_$FreeDomeConnectionStatusImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$FreeDomeConnectionStatusCopyWith<_FreeDomeConnectionStatus> get copyWith =>
+      __$FreeDomeConnectionStatusCopyWithImpl<_FreeDomeConnectionStatus>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FreeDomeConnectionStatusToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _FreeDomeConnectionStatus &&
+            (identical(other.isConnected, isConnected) ||
+                other.isConnected == isConnected) &&
+            (identical(other.isConnecting, isConnecting) ||
+                other.isConnecting == isConnecting) &&
+            (identical(other.connectedDomeId, connectedDomeId) ||
+                other.connectedDomeId == connectedDomeId) &&
+            (identical(other.serverUrl, serverUrl) ||
+                other.serverUrl == serverUrl) &&
+            (identical(other.lastConnected, lastConnected) ||
+                other.lastConnected == lastConnected) &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.reconnectAttempts, reconnectAttempts) ||
+                other.reconnectAttempts == reconnectAttempts) &&
+            (identical(other.maxReconnectAttempts, maxReconnectAttempts) ||
+                other.maxReconnectAttempts == maxReconnectAttempts));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      isConnected,
+      isConnecting,
+      connectedDomeId,
+      serverUrl,
+      lastConnected,
+      error,
+      reconnectAttempts,
+      maxReconnectAttempts);
+
+  @override
+  String toString() {
+    return 'FreeDomeConnectionStatus(isConnected: $isConnected, isConnecting: $isConnecting, connectedDomeId: $connectedDomeId, serverUrl: $serverUrl, lastConnected: $lastConnected, error: $error, reconnectAttempts: $reconnectAttempts, maxReconnectAttempts: $maxReconnectAttempts)';
+  }
 }
 
-FreeDomeUser _$FreeDomeUserFromJson(Map<String, dynamic> json) {
-  return _FreeDomeUser.fromJson(json);
+/// @nodoc
+abstract mixin class _$FreeDomeConnectionStatusCopyWith<$Res>
+    implements $FreeDomeConnectionStatusCopyWith<$Res> {
+  factory _$FreeDomeConnectionStatusCopyWith(_FreeDomeConnectionStatus value,
+          $Res Function(_FreeDomeConnectionStatus) _then) =
+      __$FreeDomeConnectionStatusCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool isConnected,
+      bool isConnecting,
+      String? connectedDomeId,
+      String? serverUrl,
+      DateTime? lastConnected,
+      String? error,
+      int reconnectAttempts,
+      int maxReconnectAttempts});
+}
+
+/// @nodoc
+class __$FreeDomeConnectionStatusCopyWithImpl<$Res>
+    implements _$FreeDomeConnectionStatusCopyWith<$Res> {
+  __$FreeDomeConnectionStatusCopyWithImpl(this._self, this._then);
+
+  final _FreeDomeConnectionStatus _self;
+  final $Res Function(_FreeDomeConnectionStatus) _then;
+
+  /// Create a copy of FreeDomeConnectionStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? isConnected = null,
+    Object? isConnecting = null,
+    Object? connectedDomeId = freezed,
+    Object? serverUrl = freezed,
+    Object? lastConnected = freezed,
+    Object? error = freezed,
+    Object? reconnectAttempts = null,
+    Object? maxReconnectAttempts = null,
+  }) {
+    return _then(_FreeDomeConnectionStatus(
+      isConnected: null == isConnected
+          ? _self.isConnected
+          : isConnected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isConnecting: null == isConnecting
+          ? _self.isConnecting
+          : isConnecting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      connectedDomeId: freezed == connectedDomeId
+          ? _self.connectedDomeId
+          : connectedDomeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      serverUrl: freezed == serverUrl
+          ? _self.serverUrl
+          : serverUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastConnected: freezed == lastConnected
+          ? _self.lastConnected
+          : lastConnected // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      error: freezed == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reconnectAttempts: null == reconnectAttempts
+          ? _self.reconnectAttempts
+          : reconnectAttempts // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxReconnectAttempts: null == maxReconnectAttempts
+          ? _self.maxReconnectAttempts
+          : maxReconnectAttempts // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$FreeDomeUser {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  FreeDomeUserRole get role => throw _privateConstructorUsedError;
-  List<FreeDomePermission> get permissions =>
-      throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  DateTime? get lastLogin => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get preferences => throw _privateConstructorUsedError;
-
-  /// Serializes this FreeDomeUser to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  FreeDomeUserRole get role;
+  List<FreeDomePermission> get permissions;
+  String? get email;
+  DateTime? get lastLogin;
+  Map<String, dynamic>? get preferences;
 
   /// Create a copy of FreeDomeUser
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FreeDomeUserCopyWith<FreeDomeUser> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FreeDomeUserCopyWith<$Res> {
-  factory $FreeDomeUserCopyWith(
-          FreeDomeUser value, $Res Function(FreeDomeUser) then) =
-      _$FreeDomeUserCopyWithImpl<$Res, FreeDomeUser>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      FreeDomeUserRole role,
-      List<FreeDomePermission> permissions,
-      String? email,
-      DateTime? lastLogin,
-      Map<String, dynamic>? preferences});
-}
-
-/// @nodoc
-class _$FreeDomeUserCopyWithImpl<$Res, $Val extends FreeDomeUser>
-    implements $FreeDomeUserCopyWith<$Res> {
-  _$FreeDomeUserCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FreeDomeUser
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $FreeDomeUserCopyWith<FreeDomeUser> get copyWith =>
+      _$FreeDomeUserCopyWithImpl<FreeDomeUser>(
+          this as FreeDomeUser, _$identity);
+
+  /// Serializes this FreeDomeUser to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? role = null,
-    Object? permissions = null,
-    Object? email = freezed,
-    Object? lastLogin = freezed,
-    Object? preferences = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as FreeDomeUserRole,
-      permissions: null == permissions
-          ? _value.permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<FreeDomePermission>,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastLogin: freezed == lastLogin
-          ? _value.lastLogin
-          : lastLogin // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      preferences: freezed == preferences
-          ? _value.preferences
-          : preferences // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FreeDomeUser &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.role, role) || other.role == role) &&
+            const DeepCollectionEquality()
+                .equals(other.permissions, permissions) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.lastLogin, lastLogin) ||
+                other.lastLogin == lastLogin) &&
+            const DeepCollectionEquality()
+                .equals(other.preferences, preferences));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      role,
+      const DeepCollectionEquality().hash(permissions),
+      email,
+      lastLogin,
+      const DeepCollectionEquality().hash(preferences));
+
+  @override
+  String toString() {
+    return 'FreeDomeUser(id: $id, name: $name, role: $role, permissions: $permissions, email: $email, lastLogin: $lastLogin, preferences: $preferences)';
   }
 }
 
 /// @nodoc
-abstract class _$$FreeDomeUserImplCopyWith<$Res>
-    implements $FreeDomeUserCopyWith<$Res> {
-  factory _$$FreeDomeUserImplCopyWith(
-          _$FreeDomeUserImpl value, $Res Function(_$FreeDomeUserImpl) then) =
-      __$$FreeDomeUserImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $FreeDomeUserCopyWith<$Res> {
+  factory $FreeDomeUserCopyWith(
+          FreeDomeUser value, $Res Function(FreeDomeUser) _then) =
+      _$FreeDomeUserCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1845,12 +2696,11 @@ abstract class _$$FreeDomeUserImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FreeDomeUserImplCopyWithImpl<$Res>
-    extends _$FreeDomeUserCopyWithImpl<$Res, _$FreeDomeUserImpl>
-    implements _$$FreeDomeUserImplCopyWith<$Res> {
-  __$$FreeDomeUserImplCopyWithImpl(
-      _$FreeDomeUserImpl _value, $Res Function(_$FreeDomeUserImpl) _then)
-      : super(_value, _then);
+class _$FreeDomeUserCopyWithImpl<$Res> implements $FreeDomeUserCopyWith<$Res> {
+  _$FreeDomeUserCopyWithImpl(this._self, this._then);
+
+  final FreeDomeUser _self;
+  final $Res Function(FreeDomeUser) _then;
 
   /// Create a copy of FreeDomeUser
   /// with the given fields replaced by the non-null parameter values.
@@ -1865,43 +2715,227 @@ class __$$FreeDomeUserImplCopyWithImpl<$Res>
     Object? lastLogin = freezed,
     Object? preferences = freezed,
   }) {
-    return _then(_$FreeDomeUserImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       role: null == role
-          ? _value.role
+          ? _self.role
           : role // ignore: cast_nullable_to_non_nullable
               as FreeDomeUserRole,
       permissions: null == permissions
-          ? _value._permissions
+          ? _self.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as List<FreeDomePermission>,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       lastLogin: freezed == lastLogin
-          ? _value.lastLogin
+          ? _self.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       preferences: freezed == preferences
-          ? _value._preferences
+          ? _self.preferences
           : preferences // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [FreeDomeUser].
+extension FreeDomeUserPatterns on FreeDomeUser {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_FreeDomeUser value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeUser() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_FreeDomeUser value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeUser():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_FreeDomeUser value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeUser() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            FreeDomeUserRole role,
+            List<FreeDomePermission> permissions,
+            String? email,
+            DateTime? lastLogin,
+            Map<String, dynamic>? preferences)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeUser() when $default != null:
+        return $default(_that.id, _that.name, _that.role, _that.permissions,
+            _that.email, _that.lastLogin, _that.preferences);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            FreeDomeUserRole role,
+            List<FreeDomePermission> permissions,
+            String? email,
+            DateTime? lastLogin,
+            Map<String, dynamic>? preferences)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeUser():
+        return $default(_that.id, _that.name, _that.role, _that.permissions,
+            _that.email, _that.lastLogin, _that.preferences);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            FreeDomeUserRole role,
+            List<FreeDomePermission> permissions,
+            String? email,
+            DateTime? lastLogin,
+            Map<String, dynamic>? preferences)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeUser() when $default != null:
+        return $default(_that.id, _that.name, _that.role, _that.permissions,
+            _that.email, _that.lastLogin, _that.preferences);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$FreeDomeUserImpl implements _FreeDomeUser {
-  const _$FreeDomeUserImpl(
+class _FreeDomeUser implements FreeDomeUser {
+  const _FreeDomeUser(
       {required this.id,
       required this.name,
       required this.role,
@@ -1911,9 +2945,8 @@ class _$FreeDomeUserImpl implements _FreeDomeUser {
       final Map<String, dynamic>? preferences})
       : _permissions = permissions,
         _preferences = preferences;
-
-  factory _$FreeDomeUserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FreeDomeUserImplFromJson(json);
+  factory _FreeDomeUser.fromJson(Map<String, dynamic> json) =>
+      _$FreeDomeUserFromJson(json);
 
   @override
   final String id;
@@ -1943,16 +2976,26 @@ class _$FreeDomeUserImpl implements _FreeDomeUser {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of FreeDomeUser
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'FreeDomeUser(id: $id, name: $name, role: $role, permissions: $permissions, email: $email, lastLogin: $lastLogin, preferences: $preferences)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FreeDomeUserCopyWith<_FreeDomeUser> get copyWith =>
+      __$FreeDomeUserCopyWithImpl<_FreeDomeUser>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FreeDomeUserToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FreeDomeUserImpl &&
+            other is _FreeDomeUser &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.role, role) || other.role == role) &&
@@ -1977,243 +3020,432 @@ class _$FreeDomeUserImpl implements _FreeDomeUser {
       lastLogin,
       const DeepCollectionEquality().hash(_preferences));
 
-  /// Create a copy of FreeDomeUser
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FreeDomeUserImplCopyWith<_$FreeDomeUserImpl> get copyWith =>
-      __$$FreeDomeUserImplCopyWithImpl<_$FreeDomeUserImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FreeDomeUserImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _FreeDomeUser implements FreeDomeUser {
-  const factory _FreeDomeUser(
-      {required final String id,
-      required final String name,
-      required final FreeDomeUserRole role,
-      required final List<FreeDomePermission> permissions,
-      final String? email,
-      final DateTime? lastLogin,
-      final Map<String, dynamic>? preferences}) = _$FreeDomeUserImpl;
-
-  factory _FreeDomeUser.fromJson(Map<String, dynamic> json) =
-      _$FreeDomeUserImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  FreeDomeUserRole get role;
-  @override
-  List<FreeDomePermission> get permissions;
-  @override
-  String? get email;
-  @override
-  DateTime? get lastLogin;
-  @override
-  Map<String, dynamic>? get preferences;
-
-  /// Create a copy of FreeDomeUser
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FreeDomeUserImplCopyWith<_$FreeDomeUserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-FreeDomeSession _$FreeDomeSessionFromJson(Map<String, dynamic> json) {
-  return _FreeDomeSession.fromJson(json);
-}
-
-/// @nodoc
-mixin _$FreeDomeSession {
-  String get id => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
-  String get domeId => throw _privateConstructorUsedError;
-  DateTime get startTime => throw _privateConstructorUsedError;
-  DateTime? get endTime => throw _privateConstructorUsedError;
-  Duration get duration => throw _privateConstructorUsedError;
-  String? get currentContentId => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get sessionData => throw _privateConstructorUsedError;
-
-  /// Serializes this FreeDomeSession to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FreeDomeSession
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $FreeDomeSessionCopyWith<FreeDomeSession> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FreeDomeSessionCopyWith<$Res> {
-  factory $FreeDomeSessionCopyWith(
-          FreeDomeSession value, $Res Function(FreeDomeSession) then) =
-      _$FreeDomeSessionCopyWithImpl<$Res, FreeDomeSession>;
-  @useResult
-  $Res call(
-      {String id,
-      String userId,
-      String domeId,
-      DateTime startTime,
-      DateTime? endTime,
-      Duration duration,
-      String? currentContentId,
-      Map<String, dynamic>? sessionData});
-}
-
-/// @nodoc
-class _$FreeDomeSessionCopyWithImpl<$Res, $Val extends FreeDomeSession>
-    implements $FreeDomeSessionCopyWith<$Res> {
-  _$FreeDomeSessionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FreeDomeSession
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? userId = null,
-    Object? domeId = null,
-    Object? startTime = null,
-    Object? endTime = freezed,
-    Object? duration = null,
-    Object? currentContentId = freezed,
-    Object? sessionData = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      domeId: null == domeId
-          ? _value.domeId
-          : domeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      startTime: null == startTime
-          ? _value.startTime
-          : startTime // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      endTime: freezed == endTime
-          ? _value.endTime
-          : endTime // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      currentContentId: freezed == currentContentId
-          ? _value.currentContentId
-          : currentContentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sessionData: freezed == sessionData
-          ? _value.sessionData
-          : sessionData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  String toString() {
+    return 'FreeDomeUser(id: $id, name: $name, role: $role, permissions: $permissions, email: $email, lastLogin: $lastLogin, preferences: $preferences)';
   }
 }
 
 /// @nodoc
-abstract class _$$FreeDomeSessionImplCopyWith<$Res>
-    implements $FreeDomeSessionCopyWith<$Res> {
-  factory _$$FreeDomeSessionImplCopyWith(_$FreeDomeSessionImpl value,
-          $Res Function(_$FreeDomeSessionImpl) then) =
-      __$$FreeDomeSessionImplCopyWithImpl<$Res>;
+abstract mixin class _$FreeDomeUserCopyWith<$Res>
+    implements $FreeDomeUserCopyWith<$Res> {
+  factory _$FreeDomeUserCopyWith(
+          _FreeDomeUser value, $Res Function(_FreeDomeUser) _then) =
+      __$FreeDomeUserCopyWithImpl;
   @override
   @useResult
   $Res call(
       {String id,
-      String userId,
-      String domeId,
-      DateTime startTime,
-      DateTime? endTime,
-      Duration duration,
-      String? currentContentId,
-      Map<String, dynamic>? sessionData});
+      String name,
+      FreeDomeUserRole role,
+      List<FreeDomePermission> permissions,
+      String? email,
+      DateTime? lastLogin,
+      Map<String, dynamic>? preferences});
 }
 
 /// @nodoc
-class __$$FreeDomeSessionImplCopyWithImpl<$Res>
-    extends _$FreeDomeSessionCopyWithImpl<$Res, _$FreeDomeSessionImpl>
-    implements _$$FreeDomeSessionImplCopyWith<$Res> {
-  __$$FreeDomeSessionImplCopyWithImpl(
-      _$FreeDomeSessionImpl _value, $Res Function(_$FreeDomeSessionImpl) _then)
-      : super(_value, _then);
+class __$FreeDomeUserCopyWithImpl<$Res>
+    implements _$FreeDomeUserCopyWith<$Res> {
+  __$FreeDomeUserCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of FreeDomeSession
+  final _FreeDomeUser _self;
+  final $Res Function(_FreeDomeUser) _then;
+
+  /// Create a copy of FreeDomeUser
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? userId = null,
-    Object? domeId = null,
-    Object? startTime = null,
-    Object? endTime = freezed,
-    Object? duration = null,
-    Object? currentContentId = freezed,
-    Object? sessionData = freezed,
+    Object? name = null,
+    Object? role = null,
+    Object? permissions = null,
+    Object? email = freezed,
+    Object? lastLogin = freezed,
+    Object? preferences = freezed,
   }) {
-    return _then(_$FreeDomeSessionImpl(
+    return _then(_FreeDomeUser(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      domeId: null == domeId
-          ? _value.domeId
-          : domeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      startTime: null == startTime
-          ? _value.startTime
-          : startTime // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      endTime: freezed == endTime
-          ? _value.endTime
-          : endTime // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      currentContentId: freezed == currentContentId
-          ? _value.currentContentId
-          : currentContentId // ignore: cast_nullable_to_non_nullable
+      role: null == role
+          ? _self.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as FreeDomeUserRole,
+      permissions: null == permissions
+          ? _self._permissions
+          : permissions // ignore: cast_nullable_to_non_nullable
+              as List<FreeDomePermission>,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      sessionData: freezed == sessionData
-          ? _value._sessionData
-          : sessionData // ignore: cast_nullable_to_non_nullable
+      lastLogin: freezed == lastLogin
+          ? _self.lastLogin
+          : lastLogin // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      preferences: freezed == preferences
+          ? _self._preferences
+          : preferences // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$FreeDomeSession {
+  String get id;
+  String get userId;
+  String get domeId;
+  DateTime get startTime;
+  DateTime? get endTime;
+  Duration get duration;
+  String? get currentContentId;
+  Map<String, dynamic>? get sessionData;
+
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $FreeDomeSessionCopyWith<FreeDomeSession> get copyWith =>
+      _$FreeDomeSessionCopyWithImpl<FreeDomeSession>(
+          this as FreeDomeSession, _$identity);
+
+  /// Serializes this FreeDomeSession to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FreeDomeSession &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.domeId, domeId) || other.domeId == domeId) &&
+            (identical(other.startTime, startTime) ||
+                other.startTime == startTime) &&
+            (identical(other.endTime, endTime) || other.endTime == endTime) &&
+            (identical(other.duration, duration) ||
+                other.duration == duration) &&
+            (identical(other.currentContentId, currentContentId) ||
+                other.currentContentId == currentContentId) &&
+            const DeepCollectionEquality()
+                .equals(other.sessionData, sessionData));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      userId,
+      domeId,
+      startTime,
+      endTime,
+      duration,
+      currentContentId,
+      const DeepCollectionEquality().hash(sessionData));
+
+  @override
+  String toString() {
+    return 'FreeDomeSession(id: $id, userId: $userId, domeId: $domeId, startTime: $startTime, endTime: $endTime, duration: $duration, currentContentId: $currentContentId, sessionData: $sessionData)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $FreeDomeSessionCopyWith<$Res> {
+  factory $FreeDomeSessionCopyWith(
+          FreeDomeSession value, $Res Function(FreeDomeSession) _then) =
+      _$FreeDomeSessionCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String userId,
+      String domeId,
+      DateTime startTime,
+      DateTime? endTime,
+      Duration duration,
+      String? currentContentId,
+      Map<String, dynamic>? sessionData});
+}
+
+/// @nodoc
+class _$FreeDomeSessionCopyWithImpl<$Res>
+    implements $FreeDomeSessionCopyWith<$Res> {
+  _$FreeDomeSessionCopyWithImpl(this._self, this._then);
+
+  final FreeDomeSession _self;
+  final $Res Function(FreeDomeSession) _then;
+
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? userId = null,
+    Object? domeId = null,
+    Object? startTime = null,
+    Object? endTime = freezed,
+    Object? duration = null,
+    Object? currentContentId = freezed,
+    Object? sessionData = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      domeId: null == domeId
+          ? _self.domeId
+          : domeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      startTime: null == startTime
+          ? _self.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endTime: freezed == endTime
+          ? _self.endTime
+          : endTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      duration: null == duration
+          ? _self.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      currentContentId: freezed == currentContentId
+          ? _self.currentContentId
+          : currentContentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sessionData: freezed == sessionData
+          ? _self.sessionData
+          : sessionData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [FreeDomeSession].
+extension FreeDomeSessionPatterns on FreeDomeSession {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_FreeDomeSession value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeSession() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_FreeDomeSession value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeSession():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_FreeDomeSession value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeSession() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String userId,
+            String domeId,
+            DateTime startTime,
+            DateTime? endTime,
+            Duration duration,
+            String? currentContentId,
+            Map<String, dynamic>? sessionData)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeSession() when $default != null:
+        return $default(
+            _that.id,
+            _that.userId,
+            _that.domeId,
+            _that.startTime,
+            _that.endTime,
+            _that.duration,
+            _that.currentContentId,
+            _that.sessionData);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String userId,
+            String domeId,
+            DateTime startTime,
+            DateTime? endTime,
+            Duration duration,
+            String? currentContentId,
+            Map<String, dynamic>? sessionData)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeSession():
+        return $default(
+            _that.id,
+            _that.userId,
+            _that.domeId,
+            _that.startTime,
+            _that.endTime,
+            _that.duration,
+            _that.currentContentId,
+            _that.sessionData);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String userId,
+            String domeId,
+            DateTime startTime,
+            DateTime? endTime,
+            Duration duration,
+            String? currentContentId,
+            Map<String, dynamic>? sessionData)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FreeDomeSession() when $default != null:
+        return $default(
+            _that.id,
+            _that.userId,
+            _that.domeId,
+            _that.startTime,
+            _that.endTime,
+            _that.duration,
+            _that.currentContentId,
+            _that.sessionData);
+      case _:
+        return null;
+    }
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _$FreeDomeSessionImpl implements _FreeDomeSession {
-  const _$FreeDomeSessionImpl(
+class _FreeDomeSession implements FreeDomeSession {
+  const _FreeDomeSession(
       {required this.id,
       required this.userId,
       required this.domeId,
@@ -2223,9 +3455,8 @@ class _$FreeDomeSessionImpl implements _FreeDomeSession {
       this.currentContentId,
       final Map<String, dynamic>? sessionData})
       : _sessionData = sessionData;
-
-  factory _$FreeDomeSessionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FreeDomeSessionImplFromJson(json);
+  factory _FreeDomeSession.fromJson(Map<String, dynamic> json) =>
+      _$FreeDomeSessionFromJson(json);
 
   @override
   final String id;
@@ -2252,16 +3483,26 @@ class _$FreeDomeSessionImpl implements _FreeDomeSession {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of FreeDomeSession
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'FreeDomeSession(id: $id, userId: $userId, domeId: $domeId, startTime: $startTime, endTime: $endTime, duration: $duration, currentContentId: $currentContentId, sessionData: $sessionData)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FreeDomeSessionCopyWith<_FreeDomeSession> get copyWith =>
+      __$FreeDomeSessionCopyWithImpl<_FreeDomeSession>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FreeDomeSessionToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FreeDomeSessionImpl &&
+            other is _FreeDomeSession &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.domeId, domeId) || other.domeId == domeId) &&
@@ -2289,58 +3530,88 @@ class _$FreeDomeSessionImpl implements _FreeDomeSession {
       currentContentId,
       const DeepCollectionEquality().hash(_sessionData));
 
-  /// Create a copy of FreeDomeSession
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FreeDomeSessionImplCopyWith<_$FreeDomeSessionImpl> get copyWith =>
-      __$$FreeDomeSessionImplCopyWithImpl<_$FreeDomeSessionImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FreeDomeSessionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FreeDomeSession(id: $id, userId: $userId, domeId: $domeId, startTime: $startTime, endTime: $endTime, duration: $duration, currentContentId: $currentContentId, sessionData: $sessionData)';
   }
 }
 
-abstract class _FreeDomeSession implements FreeDomeSession {
-  const factory _FreeDomeSession(
-      {required final String id,
-      required final String userId,
-      required final String domeId,
-      required final DateTime startTime,
-      final DateTime? endTime,
-      final Duration duration,
-      final String? currentContentId,
-      final Map<String, dynamic>? sessionData}) = _$FreeDomeSessionImpl;
+/// @nodoc
+abstract mixin class _$FreeDomeSessionCopyWith<$Res>
+    implements $FreeDomeSessionCopyWith<$Res> {
+  factory _$FreeDomeSessionCopyWith(
+          _FreeDomeSession value, $Res Function(_FreeDomeSession) _then) =
+      __$FreeDomeSessionCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String userId,
+      String domeId,
+      DateTime startTime,
+      DateTime? endTime,
+      Duration duration,
+      String? currentContentId,
+      Map<String, dynamic>? sessionData});
+}
 
-  factory _FreeDomeSession.fromJson(Map<String, dynamic> json) =
-      _$FreeDomeSessionImpl.fromJson;
+/// @nodoc
+class __$FreeDomeSessionCopyWithImpl<$Res>
+    implements _$FreeDomeSessionCopyWith<$Res> {
+  __$FreeDomeSessionCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get userId;
-  @override
-  String get domeId;
-  @override
-  DateTime get startTime;
-  @override
-  DateTime? get endTime;
-  @override
-  Duration get duration;
-  @override
-  String? get currentContentId;
-  @override
-  Map<String, dynamic>? get sessionData;
+  final _FreeDomeSession _self;
+  final $Res Function(_FreeDomeSession) _then;
 
   /// Create a copy of FreeDomeSession
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FreeDomeSessionImplCopyWith<_$FreeDomeSessionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? userId = null,
+    Object? domeId = null,
+    Object? startTime = null,
+    Object? endTime = freezed,
+    Object? duration = null,
+    Object? currentContentId = freezed,
+    Object? sessionData = freezed,
+  }) {
+    return _then(_FreeDomeSession(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      userId: null == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      domeId: null == domeId
+          ? _self.domeId
+          : domeId // ignore: cast_nullable_to_non_nullable
+              as String,
+      startTime: null == startTime
+          ? _self.startTime
+          : startTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endTime: freezed == endTime
+          ? _self.endTime
+          : endTime // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      duration: null == duration
+          ? _self.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      currentContentId: freezed == currentContentId
+          ? _self.currentContentId
+          : currentContentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sessionData: freezed == sessionData
+          ? _self._sessionData
+          : sessionData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
+
+// dart format on
