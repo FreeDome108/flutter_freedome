@@ -353,7 +353,7 @@ class FreeDomeProvider extends ChangeNotifier {
   }
 
   /// ПРЕДНАСТРОЙКА: "Гробовая тишина" перед сеансом
-  /// 
+  ///
   /// Создает полную тишину в куполе для подготовки к проекциям.
   /// Использует квантовые интерференционные паттерны для поглощения звука.
   Future<bool> presetGraveSilence({
@@ -373,7 +373,7 @@ class FreeDomeProvider extends ChangeNotifier {
 
       // Активируем гробовую тишину
       final success = await quantumSilence!.startGraveSilence();
-      
+
       if (success) {
         if (kDebugMode) {
           print('🔇 ПРЕДНАСТРОЙКА: Гробовая тишина активирована');
@@ -409,7 +409,7 @@ class FreeDomeProvider extends ChangeNotifier {
   }
 
   /// ПРЕДНАСТРОЙКА: "Генерация тумана" для проекций
-  /// 
+  ///
   /// Создает оптимальную среду тумана для голографических проекций.
   /// Использует 108 квантовых паттернов для равномерного распределения.
   Future<bool> presetFogGeneration({
@@ -429,7 +429,7 @@ class FreeDomeProvider extends ChangeNotifier {
 
       // Активируем генерацию тумана
       final success = await quantumFog!.startDomeFogGeneration();
-      
+
       if (success) {
         if (kDebugMode) {
           print('🌫️ ПРЕДНАСТРОЙКА: Генерация тумана активирована');
@@ -466,7 +466,7 @@ class FreeDomeProvider extends ChangeNotifier {
   }
 
   /// ПРЕДНАСТРОЙКА: "Полное отсутствие тумана" - очистка купола
-  /// 
+  ///
   /// Полностью рассеивает туман и нормализует пространство купола.
   /// Использует частоту Шумана для естественной очистки.
   Future<bool> presetNoFog({
@@ -486,7 +486,7 @@ class FreeDomeProvider extends ChangeNotifier {
 
       // Активируем рассеивание тумана
       final success = await quantumFog!.startDomeFogClearing();
-      
+
       if (success) {
         if (kDebugMode) {
           print('🌤️ ПРЕДНАСТРОЙКА: Полное отсутствие тумана активировано');
@@ -523,7 +523,7 @@ class FreeDomeProvider extends ChangeNotifier {
   }
 
   /// ПРЕДНАСТРОЙКА: "Полный режим купола" - комбинированная настройка
-  /// 
+  ///
   /// Активирует генерацию тумана + нормализацию пространства.
   /// Оптимальная настройка для голографических проекций.
   Future<bool> presetFullDomeMode({
@@ -543,7 +543,7 @@ class FreeDomeProvider extends ChangeNotifier {
 
       // Активируем полный режим купола
       final success = await quantumFog!.startDomeFullMode();
-      
+
       if (success) {
         if (kDebugMode) {
           print('🎪 ПРЕДНАСТРОЙКА: Полный режим купола активирован');
@@ -580,7 +580,7 @@ class FreeDomeProvider extends ChangeNotifier {
   }
 
   /// ПРЕДНАСТРОЙКА: "Медитативная атмосфера" - мягкая настройка
-  /// 
+  ///
   /// Создает мягкую атмосферу с легким туманом и медитативной тишиной.
   /// Идеально для релаксации и медитации.
   Future<bool> presetMeditativeAtmosphere({
@@ -600,12 +600,12 @@ class FreeDomeProvider extends ChangeNotifier {
 
       // Активируем медитативную тишину
       final silenceSuccess = await quantumSilence!.startMeditativeSilence();
-      
+
       // Активируем легкую генерацию тумана
       final fogSuccess = await quantumFog!.startDomeFogGeneration();
-      
+
       final success = silenceSuccess && fogSuccess;
-      
+
       if (success) {
         if (kDebugMode) {
           print('🧘 ПРЕДНАСТРОЙКА: Медитативная атмосфера активирована');
@@ -681,7 +681,7 @@ class FreeDomeProvider extends ChangeNotifier {
     try {
       await disconnect();
       await logout();
-      
+
       // Останавливаем все квантовые системы
       await stopAllQuantumSystems();
 
@@ -692,7 +692,7 @@ class FreeDomeProvider extends ChangeNotifier {
       // Очищаем админские сервисы
       _calibrationService = null;
       _systemService = null;
-      
+
       // Очищаем квантовые системы
       _quantumFogService?.dispose();
       _quantumSilenceService?.dispose();
@@ -721,7 +721,7 @@ class FreeDomeProvider extends ChangeNotifier {
 
     _calibrationService?.dispose();
     _systemService?.dispose();
-    
+
     // Очищаем квантовые системы
     _quantumFogService?.dispose();
     _quantumSilenceService?.dispose();

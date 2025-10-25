@@ -7,10 +7,12 @@ class QuantumSilenceExampleScreen extends StatefulWidget {
   const QuantumSilenceExampleScreen({super.key});
 
   @override
-  State<QuantumSilenceExampleScreen> createState() => _QuantumSilenceExampleScreenState();
+  State<QuantumSilenceExampleScreen> createState() =>
+      _QuantumSilenceExampleScreenState();
 }
 
-class _QuantumSilenceExampleScreenState extends State<QuantumSilenceExampleScreen> {
+class _QuantumSilenceExampleScreenState
+    extends State<QuantumSilenceExampleScreen> {
   late QuantumSilenceService _silenceService;
   bool _isInitialized = false;
   String _status = 'Инициализация...';
@@ -25,7 +27,7 @@ class _QuantumSilenceExampleScreenState extends State<QuantumSilenceExampleScree
     try {
       _silenceService = QuantumSilenceService();
       await _silenceService.initialize();
-      
+
       setState(() {
         _isInitialized = true;
         _status = 'Система готова к работе';
@@ -51,9 +53,7 @@ class _QuantumSilenceExampleScreenState extends State<QuantumSilenceExampleScree
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
       ),
-      body: _isInitialized
-          ? _buildMainContent()
-          : _buildLoadingScreen(),
+      body: _isInitialized ? _buildMainContent() : _buildLoadingScreen(),
     );
   }
 
@@ -105,22 +105,22 @@ class _QuantumSilenceExampleScreenState extends State<QuantumSilenceExampleScree
               ),
             ),
           ),
-          
+
           const SizedBox(height: 16),
-          
+
           // Управление тишиной
           QuantumSilenceControl(
             service: _silenceService,
             showAdvanced: true,
           ),
-          
+
           const SizedBox(height: 16),
-          
+
           // Информация о системе
           _buildSystemInfo(),
-          
+
           const SizedBox(height: 16),
-          
+
           // Примеры использования
           _buildUsageExamples(),
         ],
@@ -150,12 +150,18 @@ class _QuantumSilenceExampleScreenState extends State<QuantumSilenceExampleScree
                 return Column(
                   children: [
                     _buildInfoRow('Режим', _getModeName(state.mode)),
-                    _buildInfoRow('Активность', state.isActive ? 'Активна' : 'Неактивна'),
-                    _buildInfoRow('Уровень тишины', '${(state.silenceLevel * 100).toInt()}%'),
-                    _buildInfoRow('Поглощение звука', '${state.soundAbsorption.toInt()}%'),
-                    _buildInfoRow('Фоновый шум', '${state.ambientNoise.toInt()} дБ'),
-                    _buildInfoRow('Когерентность', '${state.quantumCoherence.toInt()}%'),
-                    _buildInfoRow('Стабильность', '${state.resonanceStability.toInt()}%'),
+                    _buildInfoRow(
+                        'Активность', state.isActive ? 'Активна' : 'Неактивна'),
+                    _buildInfoRow('Уровень тишины',
+                        '${(state.silenceLevel * 100).toInt()}%'),
+                    _buildInfoRow('Поглощение звука',
+                        '${state.soundAbsorption.toInt()}%'),
+                    _buildInfoRow(
+                        'Фоновый шум', '${state.ambientNoise.toInt()} дБ'),
+                    _buildInfoRow(
+                        'Когерентность', '${state.quantumCoherence.toInt()}%'),
+                    _buildInfoRow(
+                        'Стабильность', '${state.resonanceStability.toInt()}%'),
                   ],
                 );
               },

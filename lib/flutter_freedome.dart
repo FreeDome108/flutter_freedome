@@ -43,6 +43,26 @@
 /// );
 /// ```
 ///
+/// ## Квантовые преднастройки
+///
+/// ```dart
+/// // Гробовая тишина перед сеансом
+/// await freedome.presetGraveSilence(
+///   duration: Duration(minutes: 5),
+///   applyLocally: true,
+/// );
+///
+/// // Генерация тумана для проекций
+/// await freedome.presetFogGeneration(
+///   duration: Duration(minutes: 30),
+/// );
+///
+/// // Очистка купола после сеанса
+/// await freedome.presetNoFog(
+///   duration: Duration(minutes: 10),
+/// );
+/// ```
+///
 /// ## Архитектура
 ///
 /// - **FreeDomeProvider** - главная точка входа
@@ -180,27 +200,30 @@ class FlutterFreeDome {
 
   /// Получение информации о библиотеке
   static Map<String, dynamic> get info => {
-    'name': 'flutter_freedome',
-    'version': version,
-    'description':
-        'Унифицированная библиотека для интеграции с купольными кинотеатрами FreeDome',
-    'author': 'NativeMind Team',
-    'license': 'NativeMindNONC',
-    'supportedPlatforms': [
-      'Android',
-      'iOS',
-      'Web',
-      'Windows',
-      'macOS',
-      'Linux',
-    ],
-    'features': [
-      'Автоматическое обнаружение куполов',
-      'Гостевой и административный режимы',
-      'Система ролей и разрешений',
-      'Аудио и видео калибровка',
-      'Поддержка множественных форматов контента',
-      'Готовые UI виджеты',
-    ],
-  };
+        'name': 'flutter_freedome',
+        'version': version,
+        'description':
+            'Унифицированная библиотека для интеграции с купольными кинотеатрами FreeDome',
+        'author': 'NativeMind Team',
+        'license': 'NativeMindNONC',
+        'supportedPlatforms': [
+          'Android',
+          'iOS',
+          'Web',
+          'Windows',
+          'macOS',
+          'Linux',
+        ],
+        'features': [
+          'Автоматическое обнаружение куполов',
+          'Гостевой и административный режимы',
+          'Система ролей и разрешений',
+          'Аудио и видео калибровка',
+          'Поддержка множественных форматов контента',
+          'Готовые UI виджеты',
+          'Квантовые преднастройки тумана и тишины',
+          'Голографические проекции',
+          'Медитативные атмосферы',
+        ],
+      };
 }

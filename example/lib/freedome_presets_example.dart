@@ -1,8 +1,8 @@
 /// Пример использования FreeDome Sphere преднастроек
-/// 
+///
 /// Демонстрирует все доступные методы преднастройки:
 /// - Гробовая тишина
-/// - Генерация тумана  
+/// - Генерация тумана
 /// - Полное отсутствие тумана
 /// - Полный режим купола
 /// - Медитативная атмосфера
@@ -19,7 +19,7 @@ class FreeDomePresetsExample extends StatefulWidget {
 
 class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
   final FreeDomeProvider _freedome = FreeDomeProvider();
-  
+
   bool _isInitialized = false;
   bool _isConnected = false;
   String _status = 'Не инициализирован';
@@ -48,7 +48,7 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
 
       // Подключение к куполу
       final connected = await _freedome.connectToNearestDome();
-      
+
       setState(() {
         _isInitialized = true;
         _isConnected = connected;
@@ -72,16 +72,19 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
     }
   }
 
-  Future<void> _activatePreset(String presetName, Future<bool> Function() presetFunction) async {
+  Future<void> _activatePreset(
+      String presetName, Future<bool> Function() presetFunction) async {
     try {
       setState(() {
         _status = 'Активация $presetName...';
       });
 
       final success = await presetFunction();
-      
+
       setState(() {
-        _status = success ? '$presetName активирован' : 'Ошибка активации $presetName';
+        _status = success
+            ? '$presetName активирован'
+            : 'Ошибка активации $presetName';
       });
 
       _updateQuantumStatus();
@@ -116,8 +119,8 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
                     Text(
                       'Статус системы',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                     const SizedBox(height: 8),
                     Text('Состояние: $_status'),
@@ -141,9 +144,10 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
                     children: [
                       Text(
                         'Квантовые системы',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
                       ),
                       const SizedBox(height: 8),
                       Text('Туман: ${_quantumStatus!['fog']['mode']}'),
@@ -159,8 +163,8 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
             Text(
               'Преднастройки',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             const SizedBox(height: 16),
 
@@ -244,13 +248,15 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
               children: [
                 Expanded(
                   child: ElevatedButton.icon(
-                    onPressed: _isInitialized ? () async {
-                      await _freedome.stopAllQuantumSystems();
-                      _updateQuantumStatus();
-                      setState(() {
-                        _status = 'Все системы остановлены';
-                      });
-                    } : null,
+                    onPressed: _isInitialized
+                        ? () async {
+                            await _freedome.stopAllQuantumSystems();
+                            _updateQuantumStatus();
+                            setState(() {
+                              _status = 'Все системы остановлены';
+                            });
+                          }
+                        : null,
                     icon: const Icon(Icons.stop),
                     label: const Text('Остановить все'),
                     style: ElevatedButton.styleFrom(
@@ -287,8 +293,8 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
                     Text(
                       'ℹ️ Информация',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                     const SizedBox(height: 8),
                     const Text(
@@ -308,7 +314,8 @@ class _FreeDomePresetsExampleState extends State<FreeDomePresetsExample> {
     );
   }
 
-  Widget _buildPresetButton(String title, String description, VoidCallback onPressed) {
+  Widget _buildPresetButton(
+      String title, String description, VoidCallback onPressed) {
     return ElevatedButton(
       onPressed: _isInitialized ? onPressed : null,
       style: ElevatedButton.styleFrom(

@@ -10,14 +10,14 @@ class QuantumSilenceIndicator extends StatelessWidget {
   final QuantumSilenceService service;
   final double size;
   final bool showDetails;
-  
+
   const QuantumSilenceIndicator({
     super.key,
     required this.service,
     this.size = 60.0,
     this.showDetails = true,
   });
-  
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -26,7 +26,7 @@ class QuantumSilenceIndicator extends StatelessWidget {
         final state = service.state;
         final isActive = state.isActive;
         final silenceLevel = state.silenceLevel;
-        
+
         return Container(
           width: size,
           height: size,
@@ -35,7 +35,8 @@ class QuantumSilenceIndicator extends StatelessWidget {
             color: _getIndicatorColor(silenceLevel, isActive),
             boxShadow: [
               BoxShadow(
-                color: _getIndicatorColor(silenceLevel, isActive).withOpacity(0.3),
+                color:
+                    _getIndicatorColor(silenceLevel, isActive).withOpacity(0.3),
                 blurRadius: 8,
                 spreadRadius: 2,
               ),
@@ -66,20 +67,20 @@ class QuantumSilenceIndicator extends StatelessWidget {
       },
     );
   }
-  
+
   Color _getIndicatorColor(double silenceLevel, bool isActive) {
     if (!isActive) return Colors.grey;
-    
+
     if (silenceLevel >= 0.9) return Colors.deepPurple;
     if (silenceLevel >= 0.7) return Colors.indigo;
     if (silenceLevel >= 0.5) return Colors.blue;
     if (silenceLevel >= 0.3) return Colors.orange;
     return Colors.red;
   }
-  
+
   IconData _getIndicatorIcon(double silenceLevel, bool isActive) {
     if (!isActive) return Icons.volume_up;
-    
+
     if (silenceLevel >= 0.9) return Icons.volume_off;
     if (silenceLevel >= 0.7) return Icons.volume_mute;
     if (silenceLevel >= 0.5) return Icons.volume_down;
@@ -91,13 +92,13 @@ class QuantumSilenceIndicator extends StatelessWidget {
 class QuantumSilenceControl extends StatefulWidget {
   final QuantumSilenceService service;
   final bool showAdvanced;
-  
+
   const QuantumSilenceControl({
     super.key,
     required this.service,
     this.showAdvanced = false,
   });
-  
+
   @override
   State<QuantumSilenceControl> createState() => _QuantumSilenceControlState();
 }
@@ -111,7 +112,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
         final state = widget.service.state;
         final isActive = state.isActive;
         final currentMode = widget.service.currentMode;
-        
+
         return Card(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -138,23 +139,27 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
                   ],
                 ),
                 const SizedBox(height: 16),
-                
+
                 // Статус
                 _buildStatusRow('Режим', _getModeName(currentMode)),
-                _buildStatusRow('Активность', isActive ? 'Активна' : 'Неактивна'),
-                _buildStatusRow('Уровень тишины', '${(state.silenceLevel * 100).toInt()}%'),
-                _buildStatusRow('Поглощение звука', '${state.soundAbsorption.toInt()}%'),
-                _buildStatusRow('Фоновый шум', '${state.ambientNoise.toInt()} дБ'),
-                
+                _buildStatusRow(
+                    'Активность', isActive ? 'Активна' : 'Неактивна'),
+                _buildStatusRow(
+                    'Уровень тишины', '${(state.silenceLevel * 100).toInt()}%'),
+                _buildStatusRow(
+                    'Поглощение звука', '${state.soundAbsorption.toInt()}%'),
+                _buildStatusRow(
+                    'Фоновый шум', '${state.ambientNoise.toInt()} дБ'),
+
                 const SizedBox(height: 16),
-                
+
                 // Управление
                 if (!isActive) ...[
                   _buildModeButtons(),
                 ] else ...[
                   _buildActiveControls(),
                 ],
-                
+
                 if (widget.showAdvanced) ...[
                   const SizedBox(height: 16),
                   _buildAdvancedControls(),
@@ -166,7 +171,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       },
     );
   }
-  
+
   Widget _buildStatusRow(String label, String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
@@ -184,7 +189,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       ),
     );
   }
-  
+
   Widget _buildModeButtons() {
     return Column(
       children: [
@@ -232,7 +237,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       ],
     );
   }
-  
+
   Widget _buildModeButton(
     String label,
     QuantumSilenceMode mode,
@@ -250,7 +255,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       ),
     );
   }
-  
+
   Widget _buildActiveControls() {
     return Column(
       children: [
@@ -282,8 +287,8 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
           value: widget.service.state.silenceLevel,
           backgroundColor: Colors.grey[300],
           valueColor: AlwaysStoppedAnimation<Color>(
-            widget.service.isTargetSilenceReached 
-                ? Colors.green 
+            widget.service.isTargetSilenceReached
+                ? Colors.green
                 : Colors.orange,
           ),
         ),
@@ -295,7 +300,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       ],
     );
   }
-  
+
   Widget _buildAdvancedControls() {
     return ExpansionTile(
       title: const Text('Расширенные настройки'),
@@ -307,7 +312,8 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
             min: 0.0,
             max: 1.0,
             divisions: 20,
-            label: '${(widget.service.config.targetSilenceLevel * 100).toInt()}%',
+            label:
+                '${(widget.service.config.targetSilenceLevel * 100).toInt()}%',
             onChanged: (value) {
               widget.service.setTargetSilenceLevel(value);
             },
@@ -336,11 +342,11 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       ],
     );
   }
-  
+
   Future<void> _startMode(QuantumSilenceMode mode) async {
     try {
       bool success = false;
-      
+
       switch (mode) {
         case QuantumSilenceMode.graveSilence:
           success = await widget.service.startGraveSilence();
@@ -360,7 +366,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
         default:
           break;
       }
-      
+
       if (success && mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -380,7 +386,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       }
     }
   }
-  
+
   Future<void> _stopAll() async {
     try {
       await widget.service.stopAll();
@@ -403,7 +409,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       }
     }
   }
-  
+
   void _showConfigDialog() {
     showDialog(
       context: context,
@@ -412,7 +418,8 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Целевой уровень: ${(widget.service.config.targetSilenceLevel * 100).toInt()}%'),
+            Text(
+                'Целевой уровень: ${(widget.service.config.targetSilenceLevel * 100).toInt()}%'),
             Slider(
               value: widget.service.config.targetSilenceLevel,
               min: 0.0,
@@ -433,7 +440,7 @@ class _QuantumSilenceControlState extends State<QuantumSilenceControl> {
       ),
     );
   }
-  
+
   String _getModeName(QuantumSilenceMode mode) {
     switch (mode) {
       case QuantumSilenceMode.idle:

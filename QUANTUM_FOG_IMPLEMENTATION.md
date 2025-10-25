@@ -156,7 +156,7 @@ await fog.startDevFogGeneration(confirmed: true); // Генерация ⛔
 
 ## 📊 Сравнение с Python Версией
 
-| Функция | Python (Raspberry Pi) | Flutter (Dart + C++) |
+| Функция | Python (Samsung A06/Android) | Flutter (Dart + C++) |
 |---------|----------------------|----------------------|
 | **108 паттернов** | ✅ | ✅ |
 | **Режимы купола** | ❌ | ✅ 4 режима |
@@ -304,7 +304,7 @@ class VehicleFogScreen extends StatelessWidget {
 - [ ] iOS/macOS C++ plugin
 - [ ] Android Kotlin/C++ plugin
 - [ ] Windows C++ plugin
-- [ ] Real GPIO integration (Raspberry Pi)
+- [ ] Real hardware integration (Samsung A06 Serial/USB)
 
 ### v2.3.0 (будущее)
 - [ ] CAN-bus интеграция

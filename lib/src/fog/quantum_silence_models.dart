@@ -7,13 +7,13 @@ import 'package:flutter/foundation.dart';
 class QuantumSilencePattern {
   final int id;
   final String name;
-  final double frequency;        // Частота поглощения (Гц)
-  final double amplitude;         // Амплитуда (0.0-1.0)
-  final double phase;            // Фаза (радианы)
-  final double absorptionRate;   // Коэффициент поглощения (0.0-1.0)
-  final double resonanceFactor;  // Фактор резонанса
+  final double frequency; // Частота поглощения (Гц)
+  final double amplitude; // Амплитуда (0.0-1.0)
+  final double phase; // Фаза (радианы)
+  final double absorptionRate; // Коэффициент поглощения (0.0-1.0)
+  final double resonanceFactor; // Фактор резонанса
   final String description;
-  
+
   const QuantumSilencePattern({
     required this.id,
     required this.name,
@@ -24,7 +24,7 @@ class QuantumSilencePattern {
     required this.resonanceFactor,
     required this.description,
   });
-  
+
   factory QuantumSilencePattern.fromJson(Map<String, dynamic> json) {
     return QuantumSilencePattern(
       id: json['id'] as int,
@@ -37,7 +37,7 @@ class QuantumSilencePattern {
       description: json['description'] as String,
     );
   }
-  
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -57,15 +57,15 @@ class QuantumSilencePattern {
 class QuantumSilenceState {
   final String mode;
   final bool isActive;
-  final double silenceLevel;        // Уровень тишины (0.0-1.0)
-  final double soundAbsorption;    // Поглощение звука (%)
-  final double ambientNoise;       // Фоновый шум (дБ)
-  final double quantumCoherence;  // Квантовая когерентность (%)
+  final double silenceLevel; // Уровень тишины (0.0-1.0)
+  final double soundAbsorption; // Поглощение звука (%)
+  final double ambientNoise; // Фоновый шум (дБ)
+  final double quantumCoherence; // Квантовая когерентность (%)
   final double resonanceStability; // Стабильность резонанса (%)
   final String? activePattern;
   final String? errorState;
   final DateTime timestamp;
-  
+
   const QuantumSilenceState({
     required this.mode,
     required this.isActive,
@@ -78,14 +78,14 @@ class QuantumSilenceState {
     this.errorState,
     required this.timestamp,
   });
-  
+
   factory QuantumSilenceState.initial() {
     return QuantumSilenceState(
       mode: 'idle',
       isActive: false,
       silenceLevel: 0.0,
       soundAbsorption: 0.0,
-      ambientNoise: 40.0,  // Типичный фоновый шум
+      ambientNoise: 40.0, // Типичный фоновый шум
       quantumCoherence: 99.7,
       resonanceStability: 100.0,
       activePattern: null,
@@ -93,7 +93,7 @@ class QuantumSilenceState {
       timestamp: DateTime.now(),
     );
   }
-  
+
   factory QuantumSilenceState.fromJson(Map<String, dynamic> json) {
     return QuantumSilenceState(
       mode: json['mode'] as String,
@@ -108,7 +108,7 @@ class QuantumSilenceState {
       timestamp: DateTime.parse(json['timestamp'] as String),
     );
   }
-  
+
   Map<String, dynamic> toJson() {
     return {
       'mode': mode,
@@ -123,7 +123,7 @@ class QuantumSilenceState {
       'timestamp': timestamp.toIso8601String(),
     };
   }
-  
+
   QuantumSilenceState copyWith({
     String? mode,
     bool? isActive,
@@ -154,58 +154,58 @@ class QuantumSilenceState {
 /// Режимы поглощения звука
 enum QuantumSilenceMode {
   idle,
-  
+
   /// Гробовая тишина - полное поглощение звука
   graveSilence,
-  
+
   /// Медитативная тишина - мягкое поглощение
   meditativeSilence,
-  
+
   /// Фокусная тишина - поглощение отвлекающих звуков
   focusSilence,
-  
+
   /// Квантовая тишина - максимальная когерентность
   quantumSilence,
-  
+
   /// Адаптивная тишина - автоматическая настройка
   adaptiveSilence,
-  
+
   error,
 }
 
 /// Частоты для поглощения звука
 class QuantumSilenceFrequencies {
   // Основные частоты поглощения
-  static const double schumann = 7.83;           // Частота Шумана
-  static const double theta = 4.0;               // Тета-волны (медитация)
-  static const double alpha = 10.0;              // Альфа-волны (расслабление)
-  static const double beta = 20.0;              // Бета-волны (фокус)
-  static const double gamma = 40.0;              // Гамма-волны (когниция)
-  
+  static const double schumann = 7.83; // Частота Шумана
+  static const double theta = 4.0; // Тета-волны (медитация)
+  static const double alpha = 10.0; // Альфа-волны (расслабление)
+  static const double beta = 20.0; // Бета-волны (фокус)
+  static const double gamma = 40.0; // Гамма-волны (когниция)
+
   // Резонансные частоты для поглощения
-  static const double humanVoice = 200.0;        // Человеческий голос
-  static const double trafficNoise = 1000.0;     // Дорожный шум
+  static const double humanVoice = 200.0; // Человеческий голос
+  static const double trafficNoise = 1000.0; // Дорожный шум
   static const double constructionNoise = 2000.0; // Строительный шум
-  static const double electronicNoise = 5000.0;   // Электронный шум
-  
+  static const double electronicNoise = 5000.0; // Электронный шум
+
   // Квантовые частоты
-  static const double quantumResonance = 528.0;  // Солфеджио 528
-  static const double heartCoherence = 341.3;    // Сердечная когерентность
-  static const double goldenRatio = 432.0;       // Золотое сечение
-  static const double sacredGeometry = 963.0;   // Сакральная геометрия
+  static const double quantumResonance = 528.0; // Солфеджио 528
+  static const double heartCoherence = 341.3; // Сердечная когерентность
+  static const double goldenRatio = 432.0; // Золотое сечение
+  static const double sacredGeometry = 963.0; // Сакральная геометрия
 }
 
 /// Конфигурация системы поглощения звука
 @immutable
 class QuantumSilenceConfig {
-  final double targetSilenceLevel;    // Целевой уровень тишины (0.0-1.0)
-  final double maxAmplitude;          // Максимальная амплитуда
-  final double resonanceBandwidth;    // Полоса резонанса
-  final bool adaptiveMode;            // Адаптивный режим
-  final bool quantumCoherence;       // Квантовая когерентность
-  final Duration fadeInDuration;      // Время нарастания
-  final Duration fadeOutDuration;     // Время затухания
-  
+  final double targetSilenceLevel; // Целевой уровень тишины (0.0-1.0)
+  final double maxAmplitude; // Максимальная амплитуда
+  final double resonanceBandwidth; // Полоса резонанса
+  final bool adaptiveMode; // Адаптивный режим
+  final bool quantumCoherence; // Квантовая когерентность
+  final Duration fadeInDuration; // Время нарастания
+  final Duration fadeOutDuration; // Время затухания
+
   const QuantumSilenceConfig({
     this.targetSilenceLevel = 0.95,
     this.maxAmplitude = 0.8,
@@ -215,7 +215,7 @@ class QuantumSilenceConfig {
     this.fadeInDuration = const Duration(seconds: 5),
     this.fadeOutDuration = const Duration(seconds: 3),
   });
-  
+
   factory QuantumSilenceConfig.fromJson(Map<String, dynamic> json) {
     return QuantumSilenceConfig(
       targetSilenceLevel: (json['target_silence_level'] as num).toDouble(),
@@ -227,7 +227,7 @@ class QuantumSilenceConfig {
       fadeOutDuration: Duration(milliseconds: json['fade_out_duration'] as int),
     );
   }
-  
+
   Map<String, dynamic> toJson() {
     return {
       'target_silence_level': targetSilenceLevel,

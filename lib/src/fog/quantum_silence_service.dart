@@ -14,31 +14,31 @@ import 'quantum_silence_platform.dart';
 /// Квантовая система поглощения звука
 class QuantumSilenceService extends ChangeNotifier {
   final QuantumSilencePlatform _platform = QuantumSilencePlatform.instance;
-  
+
   QuantumSilenceMode _currentMode = QuantumSilenceMode.idle;
   QuantumSilenceState _state = QuantumSilenceState.initial();
   QuantumSilenceConfig _config = const QuantumSilenceConfig();
-  
+
   StreamSubscription<QuantumSilenceState>? _stateSubscription;
-  
+
   /// Текущий режим работы
   QuantumSilenceMode get currentMode => _currentMode;
-  
+
   /// Текущее состояние системы
   QuantumSilenceState get state => _state;
-  
+
   /// Текущая конфигурация
   QuantumSilenceConfig get config => _config;
-  
+
   /// Доступные режимы
   List<QuantumSilenceMode> get availableModes => [
-    QuantumSilenceMode.graveSilence,
-    QuantumSilenceMode.meditativeSilence,
-    QuantumSilenceMode.focusSilence,
-    QuantumSilenceMode.quantumSilence,
-    QuantumSilenceMode.adaptiveSilence,
-  ];
-  
+        QuantumSilenceMode.graveSilence,
+        QuantumSilenceMode.meditativeSilence,
+        QuantumSilenceMode.focusSilence,
+        QuantumSilenceMode.quantumSilence,
+        QuantumSilenceMode.adaptiveSilence,
+      ];
+
   /// Инициализация сервиса
   Future<void> initialize({
     QuantumSilenceConfig? config,
@@ -46,19 +46,20 @@ class QuantumSilenceService extends ChangeNotifier {
     if (config != null) {
       _config = config;
     }
-    
+
     try {
       await _platform.initialize(config: _config);
-      
+
       // Подписка на обновления состояния
       _stateSubscription = _platform.stateStream.listen((state) {
         _state = state;
         notifyListeners();
       });
-      
+
       if (kDebugMode) {
         print('✅ QuantumSilenceService инициализирован');
-        print('   Целевой уровень тишины: ${_config.targetSilenceLevel * 100}%');
+        print(
+            '   Целевой уровень тишины: ${_config.targetSilenceLevel * 100}%');
         print('   Адаптивный режим: ${_config.adaptiveMode}');
         print('   Квантовая когерентность: ${_config.quantumCoherence}');
       }
@@ -69,7 +70,7 @@ class QuantumSilenceService extends ChangeNotifier {
       rethrow;
     }
   }
-  
+
   /// Освобождение ресурсов
   @override
   void dispose() {
@@ -77,18 +78,18 @@ class QuantumSilenceService extends ChangeNotifier {
     _platform.cleanup();
     super.dispose();
   }
-  
+
   // ═══════════════════════════════════════════════════════════
   // РЕЖИМЫ ПОГЛОЩЕНИЯ ЗВУКА
   // ═══════════════════════════════════════════════════════════
-  
+
   /// Запуск "гробовой тишины" - полное поглощение звука
   Future<bool> startGraveSilence() async {
     try {
       await _platform.startMode(QuantumSilenceMode.graveSilence);
       _currentMode = QuantumSilenceMode.graveSilence;
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('🔇 Гробовая тишина активирована');
         print('   • Полное поглощение звука');
@@ -96,7 +97,7 @@ class QuantumSilenceService extends ChangeNotifier {
         print('   • Уровень тишины: 95-99%');
         print('   • Назначение: Подготовка к проекциям');
       }
-      
+
       return true;
     } catch (e) {
       if (kDebugMode) {
@@ -105,14 +106,14 @@ class QuantumSilenceService extends ChangeNotifier {
       return false;
     }
   }
-  
+
   /// Запуск медитативной тишины - мягкое поглощение
   Future<bool> startMeditativeSilence() async {
     try {
       await _platform.startMode(QuantumSilenceMode.meditativeSilence);
       _currentMode = QuantumSilenceMode.meditativeSilence;
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('🧘 Медитативная тишина активирована');
         print('   • Мягкое поглощение звука');
@@ -120,7 +121,7 @@ class QuantumSilenceService extends ChangeNotifier {
         print('   • Уровень тишины: 70-80%');
         print('   • Назначение: Медитация и релаксация');
       }
-      
+
       return true;
     } catch (e) {
       if (kDebugMode) {
@@ -129,14 +130,14 @@ class QuantumSilenceService extends ChangeNotifier {
       return false;
     }
   }
-  
+
   /// Запуск фокусной тишины - поглощение отвлекающих звуков
   Future<bool> startFocusSilence() async {
     try {
       await _platform.startMode(QuantumSilenceMode.focusSilence);
       _currentMode = QuantumSilenceMode.focusSilence;
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('🎯 Фокусная тишина активирована');
         print('   • Поглощение отвлекающих звуков');
@@ -144,7 +145,7 @@ class QuantumSilenceService extends ChangeNotifier {
         print('   • Уровень тишины: 60-70%');
         print('   • Назначение: Концентрация и работа');
       }
-      
+
       return true;
     } catch (e) {
       if (kDebugMode) {
@@ -153,14 +154,14 @@ class QuantumSilenceService extends ChangeNotifier {
       return false;
     }
   }
-  
+
   /// Запуск квантовой тишины - максимальная когерентность
   Future<bool> startQuantumSilence() async {
     try {
       await _platform.startMode(QuantumSilenceMode.quantumSilence);
       _currentMode = QuantumSilenceMode.quantumSilence;
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('⚛️ Квантовая тишина активирована');
         print('   • Максимальная когерентность');
@@ -168,7 +169,7 @@ class QuantumSilenceService extends ChangeNotifier {
         print('   • Уровень тишины: 90-95%');
         print('   • Назначение: Квантовые эксперименты');
       }
-      
+
       return true;
     } catch (e) {
       if (kDebugMode) {
@@ -177,14 +178,14 @@ class QuantumSilenceService extends ChangeNotifier {
       return false;
     }
   }
-  
+
   /// Запуск адаптивной тишины - автоматическая настройка
   Future<bool> startAdaptiveSilence() async {
     try {
       await _platform.startMode(QuantumSilenceMode.adaptiveSilence);
       _currentMode = QuantumSilenceMode.adaptiveSilence;
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('🔄 Адаптивная тишина активирована');
         print('   • Автоматическая настройка');
@@ -192,7 +193,7 @@ class QuantumSilenceService extends ChangeNotifier {
         print('   • Динамическое поглощение');
         print('   • Назначение: Универсальное использование');
       }
-      
+
       return true;
     } catch (e) {
       if (kDebugMode) {
@@ -201,14 +202,14 @@ class QuantumSilenceService extends ChangeNotifier {
       return false;
     }
   }
-  
+
   /// Остановка всех систем поглощения звука
   Future<void> stopAll() async {
     try {
       await _platform.stopAll();
       _currentMode = QuantumSilenceMode.idle;
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('✅ Все системы поглощения звука остановлены');
       }
@@ -218,7 +219,7 @@ class QuantumSilenceService extends ChangeNotifier {
       }
     }
   }
-  
+
   /// Получение списка паттернов поглощения звука
   Future<List<QuantumSilencePattern>> getSilencePatterns() async {
     try {
@@ -230,14 +231,14 @@ class QuantumSilenceService extends ChangeNotifier {
       return [];
     }
   }
-  
+
   /// Установка конфигурации
   Future<void> setConfig(QuantumSilenceConfig config) async {
     try {
       await _platform.setConfig(config);
       _config = config;
       notifyListeners();
-      
+
       if (kDebugMode) {
         print('✅ Конфигурация обновлена');
         print('   Целевой уровень тишины: ${config.targetSilenceLevel * 100}%');
@@ -248,7 +249,7 @@ class QuantumSilenceService extends ChangeNotifier {
       }
     }
   }
-  
+
   /// Установка целевого уровня тишины
   Future<void> setTargetSilenceLevel(double level) async {
     final newConfig = QuantumSilenceConfig(
@@ -260,10 +261,10 @@ class QuantumSilenceService extends ChangeNotifier {
       fadeInDuration: _config.fadeInDuration,
       fadeOutDuration: _config.fadeOutDuration,
     );
-    
+
     await setConfig(newConfig);
   }
-  
+
   /// Активация квантовой когерентности
   Future<void> enableQuantumCoherence() async {
     final newConfig = QuantumSilenceConfig(
@@ -275,23 +276,23 @@ class QuantumSilenceService extends ChangeNotifier {
       fadeInDuration: _config.fadeInDuration,
       fadeOutDuration: _config.fadeOutDuration,
     );
-    
+
     await setConfig(newConfig);
   }
-  
+
   /// Получение текущего уровня тишины
   double get currentSilenceLevel => _state.silenceLevel;
-  
+
   /// Получение уровня поглощения звука
   double get soundAbsorptionLevel => _state.soundAbsorption;
-  
+
   /// Получение уровня фонового шума
   double get ambientNoiseLevel => _state.ambientNoise;
-  
+
   /// Проверка активности системы
   bool get isActive => _state.isActive;
-  
+
   /// Проверка достижения целевого уровня тишины
-  bool get isTargetSilenceReached => 
+  bool get isTargetSilenceReached =>
       _state.silenceLevel >= _config.targetSilenceLevel;
 }
