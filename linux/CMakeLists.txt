@@ -14,6 +14,8 @@ set(PLUGIN_NAME "flutter_freedome_plugin")
 # Any new source files that you add to the plugin should be added here.
 list(APPEND PLUGIN_SOURCES
   "flutter_freedome_plugin.cc"
+  "quantum_fog_engine.cc"
+  "quantum_fog_plugin.cc"
 )
 
 # Define the plugin library target. Its name must not be changed (see comment

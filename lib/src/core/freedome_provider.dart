@@ -6,6 +6,8 @@ import '../admin/calibration_service.dart';
 import '../admin/system_service.dart';
 import '../models/dome_models.dart';
 import '../models/content_models.dart';
+import '../fog/quantum_fog_service.dart';
+import '../fog/quantum_silence_service.dart';
 
 /// Главный провайдер FreeDome - точка входа для всех операций
 class FreeDomeProvider extends ChangeNotifier {
@@ -21,6 +23,10 @@ class FreeDomeProvider extends ChangeNotifier {
   // Админские сервисы (ленивая инициализация)
   FreeDomeCalibrationService? _calibrationService;
   FreeDomeSystemService? _systemService;
+
+  // Квантовые системы (ленивая инициализация)
+  QuantumFogService? _quantumFogService;
+  QuantumSilenceService? _quantumSilenceService;
 
   // Состояние инициализации
   bool _isInitialized = false;
@@ -51,6 +57,19 @@ class FreeDomeProvider extends ChangeNotifier {
     }
     _systemService ??= FreeDomeSystemService();
     return _systemService;
+  }
+
+  // Геттеры для квантовых систем
+  QuantumFogService? get quantumFog {
+    if (!_isInitialized) return null;
+    _quantumFogService ??= QuantumFogService();
+    return _quantumFogService;
+  }
+
+  QuantumSilenceService? get quantumSilence {
+    if (!_isInitialized) return null;
+    _quantumSilenceService ??= QuantumSilenceService();
+    return _quantumSilenceService;
   }
 
   // Геттеры состояния
@@ -304,11 +323,367 @@ class FreeDomeProvider extends ChangeNotifier {
     };
   }
 
+  // ═══════════════════════════════════════════════════════════
+  // ПРЕДНАСТРОЙКИ FREEDOME SPHERE
+  // ═══════════════════════════════════════════════════════════
+
+  /// Инициализация квантовых систем
+  Future<void> _initializeQuantumSystems() async {
+    if (!_isInitialized) return;
+
+    try {
+      // Инициализируем систему тумана для купола
+      if (quantumFog != null) {
+        await quantumFog!.initialize(environment: FogEnvironment.dome);
+      }
+
+      // Инициализируем систему тишины
+      if (quantumSilence != null) {
+        await quantumSilence!.initialize();
+      }
+
+      if (kDebugMode) {
+        print('✅ Квантовые системы инициализированы');
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Ошибка инициализации квантовых систем: $e');
+      }
+    }
+  }
+
+  /// ПРЕДНАСТРОЙКА: "Гробовая тишина" перед сеансом
+  /// 
+  /// Создает полную тишину в куполе для подготовки к проекциям.
+  /// Использует квантовые интерференционные паттерны для поглощения звука.
+  Future<bool> presetGraveSilence({
+    Duration? duration,
+    bool applyLocally = false,
+  }) async {
+    if (!_isInitialized || quantumSilence == null) {
+      if (kDebugMode) {
+        print('❌ FreeDome не инициализирован или система тишины недоступна');
+      }
+      return false;
+    }
+
+    try {
+      // Инициализируем квантовые системы если нужно
+      await _initializeQuantumSystems();
+
+      // Активируем гробовую тишину
+      final success = await quantumSilence!.startGraveSilence();
+      
+      if (success) {
+        if (kDebugMode) {
+          print('🔇 ПРЕДНАСТРОЙКА: Гробовая тишина активирована');
+          print('   • Полное поглощение звука (95-99%)');
+          print('   • Частота: 7.83 Гц (Шуманн)');
+          print('   • Назначение: Подготовка к проекциям');
+          if (duration != null) {
+            print('   • Длительность: ${duration.inMinutes} минут');
+          }
+          if (applyLocally) {
+            print('   • Применяется локально');
+          }
+        }
+
+        // Автоматическое отключение через указанное время
+        if (duration != null) {
+          Future.delayed(duration, () {
+            quantumSilence?.stopAll();
+            if (kDebugMode) {
+              print('🔇 Гробовая тишина автоматически отключена');
+            }
+          });
+        }
+      }
+
+      return success;
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Ошибка активации гробовой тишины: $e');
+      }
+      return false;
+    }
+  }
+
+  /// ПРЕДНАСТРОЙКА: "Генерация тумана" для проекций
+  /// 
+  /// Создает оптимальную среду тумана для голографических проекций.
+  /// Использует 108 квантовых паттернов для равномерного распределения.
+  Future<bool> presetFogGeneration({
+    Duration? duration,
+    bool applyLocally = false,
+  }) async {
+    if (!_isInitialized || quantumFog == null) {
+      if (kDebugMode) {
+        print('❌ FreeDome не инициализирован или система тумана недоступна');
+      }
+      return false;
+    }
+
+    try {
+      // Инициализируем квантовые системы если нужно
+      await _initializeQuantumSystems();
+
+      // Активируем генерацию тумана
+      final success = await quantumFog!.startDomeFogGeneration();
+      
+      if (success) {
+        if (kDebugMode) {
+          print('🌫️ ПРЕДНАСТРОЙКА: Генерация тумана активирована');
+          print('   • Плотность тумана: 0.4-0.6');
+          print('   • Частота: 528 Гц (Солфеджио)');
+          print('   • 108 квантовых паттернов');
+          print('   • Назначение: Среда для голографических проекций');
+          if (duration != null) {
+            print('   • Длительность: ${duration.inMinutes} минут');
+          }
+          if (applyLocally) {
+            print('   • Применяется локально');
+          }
+        }
+
+        // Автоматическое отключение через указанное время
+        if (duration != null) {
+          Future.delayed(duration, () {
+            quantumFog?.stopAll();
+            if (kDebugMode) {
+              print('🌫️ Генерация тумана автоматически отключена');
+            }
+          });
+        }
+      }
+
+      return success;
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Ошибка активации генерации тумана: $e');
+      }
+      return false;
+    }
+  }
+
+  /// ПРЕДНАСТРОЙКА: "Полное отсутствие тумана" - очистка купола
+  /// 
+  /// Полностью рассеивает туман и нормализует пространство купола.
+  /// Использует частоту Шумана для естественной очистки.
+  Future<bool> presetNoFog({
+    Duration? duration,
+    bool applyLocally = false,
+  }) async {
+    if (!_isInitialized || quantumFog == null) {
+      if (kDebugMode) {
+        print('❌ FreeDome не инициализирован или система тумана недоступна');
+      }
+      return false;
+    }
+
+    try {
+      // Инициализируем квантовые системы если нужно
+      await _initializeQuantumSystems();
+
+      // Активируем рассеивание тумана
+      final success = await quantumFog!.startDomeFogClearing();
+      
+      if (success) {
+        if (kDebugMode) {
+          print('🌤️ ПРЕДНАСТРОЙКА: Полное отсутствие тумана активировано');
+          print('   • Рассеивание тумана: 100%');
+          print('   • Частота: 7.83 Гц (Шуманн)');
+          print('   • Видимость: максимальная');
+          print('   • Назначение: Очистка купола');
+          if (duration != null) {
+            print('   • Длительность: ${duration.inMinutes} минут');
+          }
+          if (applyLocally) {
+            print('   • Применяется локально');
+          }
+        }
+
+        // Автоматическое отключение через указанное время
+        if (duration != null) {
+          Future.delayed(duration, () {
+            quantumFog?.stopAll();
+            if (kDebugMode) {
+              print('🌤️ Очистка тумана автоматически отключена');
+            }
+          });
+        }
+      }
+
+      return success;
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Ошибка активации очистки тумана: $e');
+      }
+      return false;
+    }
+  }
+
+  /// ПРЕДНАСТРОЙКА: "Полный режим купола" - комбинированная настройка
+  /// 
+  /// Активирует генерацию тумана + нормализацию пространства.
+  /// Оптимальная настройка для голографических проекций.
+  Future<bool> presetFullDomeMode({
+    Duration? duration,
+    bool applyLocally = false,
+  }) async {
+    if (!_isInitialized || quantumFog == null) {
+      if (kDebugMode) {
+        print('❌ FreeDome не инициализирован или система тумана недоступна');
+      }
+      return false;
+    }
+
+    try {
+      // Инициализируем квантовые системы если нужно
+      await _initializeQuantumSystems();
+
+      // Активируем полный режим купола
+      final success = await quantumFog!.startDomeFullMode();
+      
+      if (success) {
+        if (kDebugMode) {
+          print('🎪 ПРЕДНАСТРОЙКА: Полный режим купола активирован');
+          print('   • Генерация тумана для проекций');
+          print('   • Нормализация пространства');
+          print('   • Частота: 528 Гц + 341.3 Гц');
+          print('   • Назначение: Оптимальная среда для проекций');
+          if (duration != null) {
+            print('   • Длительность: ${duration.inMinutes} минут');
+          }
+          if (applyLocally) {
+            print('   • Применяется локально');
+          }
+        }
+
+        // Автоматическое отключение через указанное время
+        if (duration != null) {
+          Future.delayed(duration, () {
+            quantumFog?.stopAll();
+            if (kDebugMode) {
+              print('🎪 Полный режим купола автоматически отключен');
+            }
+          });
+        }
+      }
+
+      return success;
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Ошибка активации полного режима купола: $e');
+      }
+      return false;
+    }
+  }
+
+  /// ПРЕДНАСТРОЙКА: "Медитативная атмосфера" - мягкая настройка
+  /// 
+  /// Создает мягкую атмосферу с легким туманом и медитативной тишиной.
+  /// Идеально для релаксации и медитации.
+  Future<bool> presetMeditativeAtmosphere({
+    Duration? duration,
+    bool applyLocally = false,
+  }) async {
+    if (!_isInitialized || quantumFog == null || quantumSilence == null) {
+      if (kDebugMode) {
+        print('❌ FreeDome не инициализирован или квантовые системы недоступны');
+      }
+      return false;
+    }
+
+    try {
+      // Инициализируем квантовые системы если нужно
+      await _initializeQuantumSystems();
+
+      // Активируем медитативную тишину
+      final silenceSuccess = await quantumSilence!.startMeditativeSilence();
+      
+      // Активируем легкую генерацию тумана
+      final fogSuccess = await quantumFog!.startDomeFogGeneration();
+      
+      final success = silenceSuccess && fogSuccess;
+      
+      if (success) {
+        if (kDebugMode) {
+          print('🧘 ПРЕДНАСТРОЙКА: Медитативная атмосфера активирована');
+          print('   • Медитативная тишина (70-80%)');
+          print('   • Легкий туман для атмосферы');
+          print('   • Частота: 4.0 Гц + 528 Гц');
+          print('   • Назначение: Релаксация и медитация');
+          if (duration != null) {
+            print('   • Длительность: ${duration.inMinutes} минут');
+          }
+          if (applyLocally) {
+            print('   • Применяется локально');
+          }
+        }
+
+        // Автоматическое отключение через указанное время
+        if (duration != null) {
+          Future.delayed(duration, () {
+            quantumSilence?.stopAll();
+            quantumFog?.stopAll();
+            if (kDebugMode) {
+              print('🧘 Медитативная атмосфера автоматически отключена');
+            }
+          });
+        }
+      }
+
+      return success;
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Ошибка активации медитативной атмосферы: $e');
+      }
+      return false;
+    }
+  }
+
+  /// Остановка всех квантовых систем
+  Future<void> stopAllQuantumSystems() async {
+    try {
+      await Future.wait([
+        quantumFog?.stopAll() ?? Future.value(),
+        quantumSilence?.stopAll() ?? Future.value(),
+      ]);
+
+      if (kDebugMode) {
+        print('✅ Все квантовые системы остановлены');
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('❌ Ошибка остановки квантовых систем: $e');
+      }
+    }
+  }
+
+  /// Получение статуса квантовых систем
+  Map<String, dynamic> getQuantumSystemsStatus() {
+    return {
+      'fog': {
+        'available': quantumFog != null,
+        'mode': quantumFog?.currentMode.name ?? 'idle',
+        'state': quantumFog?.state.toJson(),
+      },
+      'silence': {
+        'available': quantumSilence != null,
+        'mode': quantumSilence?.currentMode.name ?? 'idle',
+        'state': quantumSilence?.state.toJson(),
+      },
+    };
+  }
+
   /// Сброс состояния
   Future<void> reset() async {
     try {
       await disconnect();
       await logout();
+      
+      // Останавливаем все квантовые системы
+      await stopAllQuantumSystems();
 
       _isInitialized = false;
       _isInitializing = false;
@@ -317,6 +692,12 @@ class FreeDomeProvider extends ChangeNotifier {
       // Очищаем админские сервисы
       _calibrationService = null;
       _systemService = null;
+      
+      // Очищаем квантовые системы
+      _quantumFogService?.dispose();
+      _quantumSilenceService?.dispose();
+      _quantumFogService = null;
+      _quantumSilenceService = null;
 
       notifyListeners();
 
@@ -340,6 +721,10 @@ class FreeDomeProvider extends ChangeNotifier {
 
     _calibrationService?.dispose();
     _systemService?.dispose();
+    
+    // Очищаем квантовые системы
+    _quantumFogService?.dispose();
+    _quantumSilenceService?.dispose();
 
     super.dispose();
   }

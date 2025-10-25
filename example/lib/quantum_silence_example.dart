@@ -1,25 +1,7 @@
+/// Пример использования квантовой системы поглощения звука
+
 import 'package:flutter/material.dart';
 import 'package:flutter_freedome/flutter_freedome.dart';
-
-void main() {
-  runApp(const QuantumSilenceApp());
-}
-
-class QuantumSilenceApp extends StatelessWidget {
-  const QuantumSilenceApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Квантовая Тишина',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        useMaterial3: true,
-      ),
-      home: const QuantumSilenceExampleScreen(),
-    );
-  }
-}
 
 class QuantumSilenceExampleScreen extends StatefulWidget {
   const QuantumSilenceExampleScreen({super.key});
@@ -265,4 +247,26 @@ class _QuantumSilenceExampleScreenState extends State<QuantumSilenceExampleScree
         return 'Неизвестно';
     }
   }
+}
+
+/// Главный экран приложения
+class QuantumSilenceApp extends StatelessWidget {
+  const QuantumSilenceApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Квантовая Тишина',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        useMaterial3: true,
+      ),
+      home: const QuantumSilenceExampleScreen(),
+    );
+  }
+}
+
+/// Точка входа для примера
+void main() {
+  runApp(const QuantumSilenceApp());
 }
