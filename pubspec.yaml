@@ -1,7 +1,7 @@
 name: flutter_freedome
 description: Унифицированная Flutter библиотека для интеграции с купольными кинотеатрами FreeDome
 license: NativeMindNONC
-version: 2.1.1+108
+version: 2.2.2
 homepage: https://github.com/nativemind/flutter_freedome
 
 # 2025 Best Practice: Минимальная версия SDK для новых фич и безопасности
