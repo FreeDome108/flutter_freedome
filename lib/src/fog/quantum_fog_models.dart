@@ -2,6 +2,19 @@
 
 import 'package:flutter/foundation.dart';
 
+/// Режимы работы системы тумана
+enum FogSystemMode {
+  idle,
+  domeFogGeneration,
+  domeFogClearing,
+  domeSpaceNormalization,
+  domeFull,
+  vehicleFogTunnel,
+  devH2Harvest,
+  devFogGeneration,
+  error,
+}
+
 /// Квантовый интерференционный паттерн
 @immutable
 class QuantumPattern {
