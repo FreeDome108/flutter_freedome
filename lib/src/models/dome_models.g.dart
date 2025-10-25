@@ -6,8 +6,7 @@ part of 'dome_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DomeSystemImpl _$$DomeSystemImplFromJson(Map<String, dynamic> json) =>
-    _$DomeSystemImpl(
+_DomeSystem _$DomeSystemFromJson(Map<String, dynamic> json) => _DomeSystem(
       id: json['id'] as String,
       name: json['name'] as String,
       ipAddress: json['ipAddress'] as String,
@@ -34,7 +33,7 @@ _$DomeSystemImpl _$$DomeSystemImplFromJson(Map<String, dynamic> json) =>
       systemRotation: (json['systemRotation'] as num?)?.toDouble() ?? 0.0,
     );
 
-Map<String, dynamic> _$$DomeSystemImplToJson(_$DomeSystemImpl instance) =>
+Map<String, dynamic> _$DomeSystemToJson(_DomeSystem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -69,9 +68,8 @@ const _$DomeSystemStatusEnumMap = {
   DomeSystemStatus.calibrating: 'calibrating',
 };
 
-_$ProjectorConfigImpl _$$ProjectorConfigImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ProjectorConfigImpl(
+_ProjectorConfig _$ProjectorConfigFromJson(Map<String, dynamic> json) =>
+    _ProjectorConfig(
       id: json['id'] as String,
       name: json['name'] as String,
       type: $enumDecode(_$ProjectorTypeEnumMap, json['type']),
@@ -90,8 +88,7 @@ _$ProjectorConfigImpl _$$ProjectorConfigImplFromJson(
       calibrationData: json['calibrationData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$ProjectorConfigImplToJson(
-        _$ProjectorConfigImpl instance) =>
+Map<String, dynamic> _$ProjectorConfigToJson(_ProjectorConfig instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -127,8 +124,8 @@ const _$ProjectorStatusEnumMap = {
   ProjectorStatus.coolingDown: 'coolingDown',
 };
 
-_$AudioChannelImpl _$$AudioChannelImplFromJson(Map<String, dynamic> json) =>
-    _$AudioChannelImpl(
+_AudioChannel _$AudioChannelFromJson(Map<String, dynamic> json) =>
+    _AudioChannel(
       id: json['id'] as String,
       name: json['name'] as String,
       type: $enumDecode(_$AudioChannelTypeEnumMap, json['type']),
@@ -142,7 +139,7 @@ _$AudioChannelImpl _$$AudioChannelImplFromJson(Map<String, dynamic> json) =>
       calibrationData: json['calibrationData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$AudioChannelImplToJson(_$AudioChannelImpl instance) =>
+Map<String, dynamic> _$AudioChannelToJson(_AudioChannel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -164,9 +161,9 @@ const _$AudioChannelTypeEnumMap = {
   AudioChannelType.ambisonic: 'ambisonic',
 };
 
-_$FreeDomeConnectionStatusImpl _$$FreeDomeConnectionStatusImplFromJson(
+_FreeDomeConnectionStatus _$FreeDomeConnectionStatusFromJson(
         Map<String, dynamic> json) =>
-    _$FreeDomeConnectionStatusImpl(
+    _FreeDomeConnectionStatus(
       isConnected: json['isConnected'] as bool,
       isConnecting: json['isConnecting'] as bool,
       connectedDomeId: json['connectedDomeId'] as String?,
@@ -180,8 +177,8 @@ _$FreeDomeConnectionStatusImpl _$$FreeDomeConnectionStatusImplFromJson(
           (json['maxReconnectAttempts'] as num?)?.toInt() ?? 5,
     );
 
-Map<String, dynamic> _$$FreeDomeConnectionStatusImplToJson(
-        _$FreeDomeConnectionStatusImpl instance) =>
+Map<String, dynamic> _$FreeDomeConnectionStatusToJson(
+        _FreeDomeConnectionStatus instance) =>
     <String, dynamic>{
       'isConnected': instance.isConnected,
       'isConnecting': instance.isConnecting,
@@ -193,8 +190,8 @@ Map<String, dynamic> _$$FreeDomeConnectionStatusImplToJson(
       'maxReconnectAttempts': instance.maxReconnectAttempts,
     };
 
-_$FreeDomeUserImpl _$$FreeDomeUserImplFromJson(Map<String, dynamic> json) =>
-    _$FreeDomeUserImpl(
+_FreeDomeUser _$FreeDomeUserFromJson(Map<String, dynamic> json) =>
+    _FreeDomeUser(
       id: json['id'] as String,
       name: json['name'] as String,
       role: $enumDecode(_$FreeDomeUserRoleEnumMap, json['role']),
@@ -208,7 +205,7 @@ _$FreeDomeUserImpl _$$FreeDomeUserImplFromJson(Map<String, dynamic> json) =>
       preferences: json['preferences'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$FreeDomeUserImplToJson(_$FreeDomeUserImpl instance) =>
+Map<String, dynamic> _$FreeDomeUserToJson(_FreeDomeUser instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -238,9 +235,8 @@ const _$FreeDomePermissionEnumMap = {
   FreeDomePermission.vendorManagement: 'vendorManagement',
 };
 
-_$FreeDomeSessionImpl _$$FreeDomeSessionImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FreeDomeSessionImpl(
+_FreeDomeSession _$FreeDomeSessionFromJson(Map<String, dynamic> json) =>
+    _FreeDomeSession(
       id: json['id'] as String,
       userId: json['userId'] as String,
       domeId: json['domeId'] as String,
@@ -255,8 +251,7 @@ _$FreeDomeSessionImpl _$$FreeDomeSessionImplFromJson(
       sessionData: json['sessionData'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$FreeDomeSessionImplToJson(
-        _$FreeDomeSessionImpl instance) =>
+Map<String, dynamic> _$FreeDomeSessionToJson(_FreeDomeSession instance) =>
     <String, dynamic>{
       'id': instance.id,
       'userId': instance.userId,
