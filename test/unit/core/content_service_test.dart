@@ -10,7 +10,9 @@ import 'package:flutter_freedome/src/models/dome_models.dart';
 import 'package:flutter_freedome/src/models/calibration_models.dart';
 
 // Mocktail моки без кодогенерации
-class MockFreeDomeConnectionService extends Mock implements FreeDomeConnectionService {}
+class MockFreeDomeConnectionService extends Mock
+    implements FreeDomeConnectionService {}
+
 class MockFreeDomeAuthService extends Mock implements FreeDomeAuthService {}
 
 void main() {
@@ -22,11 +24,11 @@ void main() {
     setUp(() async {
       // Set up SharedPreferences mock
       SharedPreferences.setMockInitialValues({});
-      
+
       contentService = FreeDomeContentService();
       mockConnectionService = MockFreeDomeConnectionService();
       mockAuthService = MockFreeDomeAuthService();
-      
+
       // Initialize service
       await contentService.initialize();
     });
@@ -39,7 +41,7 @@ void main() {
       test('should initialize with demo content', () {
         expect(contentService.contentLibrary.length, 3);
         expect(contentService.playlists.length, 0);
-        
+
         final starryContent = contentService.contentLibrary
             .firstWhere((c) => c.id == 'demo_starry_sky');
         expect(starryContent.name, 'Звездное небо');
@@ -53,7 +55,7 @@ void main() {
         final service = FreeDomeContentService();
         await service.initialize();
         final results = service.searchContent(query: 'звезд');
-        
+
         expect(results.length, 1);
         expect(results.first.name, 'Звездное небо');
         service.dispose();
@@ -63,7 +65,7 @@ void main() {
         final service = FreeDomeContentService();
         await service.initialize();
         final results = service.searchContent(type: ContentType.video);
-        
+
         expect(results.length, 3); // All demo content is video
         service.dispose();
       });
@@ -72,7 +74,7 @@ void main() {
         final service = FreeDomeContentService();
         await service.initialize();
         final results = service.searchContent(tags: ['космос']);
-        
+
         expect(results.length, 2); // Two items have 'космос' tag
         service.dispose();
       });
@@ -81,7 +83,7 @@ void main() {
         final service = FreeDomeContentService();
         await service.initialize();
         final results = service.searchContent(query: 'ЗВЕЗД');
-        
+
         expect(results.length, 1);
         expect(results.first.name, 'Звездное небо');
         service.dispose();
@@ -95,7 +97,7 @@ void main() {
           type: ContentType.video,
           tags: ['планеты'],
         );
-        
+
         expect(results.length, 1);
         expect(results.first.name, 'Солнечная система');
         service.dispose();
@@ -105,7 +107,7 @@ void main() {
         final service = FreeDomeContentService();
         await service.initialize();
         final results = service.searchContent(query: 'nonexistent');
-        
+
         expect(results.isEmpty, true);
         service.dispose();
       });
@@ -116,7 +118,7 @@ void main() {
         final service = FreeDomeContentService();
         await service.initialize();
         final content = service.getContent('demo_starry_sky');
-        
+
         expect(content, isNotNull);
         expect(content!.name, 'Звездное небо');
         service.dispose();
@@ -126,7 +128,7 @@ void main() {
         final service = FreeDomeContentService();
         await service.initialize();
         final content = service.getContent('nonexistent');
-        
+
         expect(content, null);
         service.dispose();
       });

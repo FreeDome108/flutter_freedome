@@ -32,7 +32,7 @@ void main() {
       test('should login with valid credentials', () async {
         try {
           final user = await authService.login('test@example.com', 'password');
-          
+
           expect(user, isNotNull);
           expect(user.email, 'test@example.com');
           expect(authService.isAuthenticated, true);

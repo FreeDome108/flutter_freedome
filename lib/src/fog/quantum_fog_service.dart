@@ -14,23 +14,7 @@ import 'package:flutter/foundation.dart';
 import 'quantum_fog_models.dart';
 import 'quantum_fog_platform.dart';
 
-/// Режимы работы системы
-enum FogSystemMode {
-  idle,
-
-  /// Режимы для купола FreeDome
-  domeFogGeneration, // Генерация тумана для проекций
-  domeFogClearing, // Рассеивание тумана
-  domeSpaceNormalization, // Нормализация пространства
-  domeFull, // Полный режим купола
-  /// Режимы для транспорта (безопасные)
-  vehicleFogTunnel, // Рассеивание тумана на дороге
-  /// Режимы разработчика (скрытые)
-  devH2Harvest, // Сбор водорода
-  devFogGeneration, // Генерация тумана (опасно на дороге!)
-
-  error,
-}
+// FogSystemMode enum is now defined in quantum_fog_models.dart
 
 /// Окружение работы системы
 enum FogEnvironment {

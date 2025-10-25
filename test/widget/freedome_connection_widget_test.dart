@@ -29,7 +29,8 @@ void main() {
       expect(find.byType(FreeDomeConnectionWidget), findsOneWidget);
     });
 
-    testWidgets('should handle connection button tap', (WidgetTester tester) async {
+    testWidgets('should handle connection button tap',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(

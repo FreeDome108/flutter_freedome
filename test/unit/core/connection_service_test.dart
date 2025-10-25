@@ -77,7 +77,7 @@ void main() {
 
       test('should connect to dome system', () async {
         const domeId = 'test-dome-123';
-        
+
         try {
           await connectionService.connectToDome(domeId);
           // Connection attempt should be made
